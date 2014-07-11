@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+	div(class= (success==true?".panel.panel-success":".panel.panel-danger"))
+		.panel-heading
+			if success
+				.panel-title= "Операция выполнена успешно"
+			else
+				.panel-title= "Операция выполнена с ошибкой"
+		.panel-body= message
+		.panel-body(style="text-align: center;")
+			a(href="javascript:history.back()")= "Назад"

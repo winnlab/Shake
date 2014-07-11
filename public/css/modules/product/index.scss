@@ -1,0 +1,14 @@
+@charset "UTF-8";
+@import '../bourbon/_bourbon.scss';
+
+.product {
+	background-size: cover;
+	background-position: center center;
+}
+
+#notification {
+	position: fixed;
+	bottom: 50px;
+	left: 50px;
+	z-index: 100;
+}

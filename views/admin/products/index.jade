@@ -1,0 +1,74 @@
+extends ../layout
+
+block append header
+	link(href="/css/modules/product/index.css" rel="stylesheet" type="text/css")
+
+block content	
+	.content-header
+		h3.content-title.clearfix= "Список продуктов"
+			a.pull-right.btn.btn-primary(href="product/set")
+				i.fa.fa-plus
+				|&nbsp;Добавить продукт
+	.content
+		- if (products && products.length)
+			.row
+				each item, key in products
+					- var bg = (item.img.bottle) ? "background-image: url('/uploads/" + item.img.bottle + "');" : ""
+					.col-lg-3.col-xs-6
+						.product.small-box.clearfix.bg-yellow(style="#{bg}")
+							.inner
+								h2= item.name
+							a.small-box-footer(href="/admin/product/fragments/#{item._id}")
+								| Фрагменты&nbsp;
+								i.fa.fa-film
+							a.small-box-footer.col-md-6.pull-left(href="/admin/product/set/#{item._id}")
+								| Изменить&nbsp;
+								i.fa.fa-pencil
+							a.small-box-footer.col-md-6.pull-right.remove-product(href="/admin/product/remove/#{item._id}" data-id="#{item._id}")
+								| Удалить&nbsp;
+								i.fa.fa-trash-o
+		- else
+			.alert.alert-info
+				i.fa.fa-info
+				b= "Примечание! "
+				| Ни одного продукта еще не добавлено
+
+block append scripts
+	script(type="text/javascript").
+		$(function() {
+			
+			$('.remove-product').on('click', function(ev) {
+				ev.preventDefault();
+
+				var id = $(this).data('id');
+
+				if (confirm('Вы действительно хотите удалить этот продукт?')) {
+					$.ajax({
+						url: '/admin/product/remove/' + id,
+						type: 'GET',						
+						success: function (data) {
+							if (data.success) {								
+								$(ev.target).parents('.col-lg-3').remove();
+								var notification = 
+								'<div id="notification" class="alert alert-success alert-dismissable">' +
+									'<i class="fa fa-check"></i>' +
+									'<b>Внимание:&nbsp;</b>' +
+									'Продукт успешно удален' +
+								'</div>';
+								$('body').append(notification);
+
+								setTimeout(function() {
+									$('#notification').fadeOut(300, function() {
+										$(this).remove
+									});
+								}, 3000);
+							}
+						},
+						error: function () {
+							console.log(arguments);
+						}
+					});
+				}
+			})
+
+		});

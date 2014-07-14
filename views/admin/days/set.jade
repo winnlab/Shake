@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+	.content-header
+		h1= "Редактирование дня"
+
+	.content.row
+		.col-md-12
+			.box.box-primary
+				.box-header
+				form.form-horizontal(role="form" method="POST" action!="/admin/day/save/")
+					input(type="hidden" name="_id" value=day._id)
+					.box-body
+						.form-group
+							label.col-md-2.control-label(for="name")= "Название:"
+							.col-md-10
+								input.form-control(type="text" value=day.name name="name" placeholder="Название дня")
+								.help.help-block
+						.form-group
+							label.col-md-2.control-label(for="position")= "Позиция:"
+							.col-md-10
+								input.form-control(type="text" value=day.position name="position" placeholder="Позиция дня")
+								.help.help-block
+						.form-group
+							label.col-md-2.control-label(for="active")= "Активный:"
+							.col-md-10
+								- if (day.active)
+									input(type="checkbox" name="active" value="1" checked)
+								- else 
+									input(type="checkbox" name="active" value="1")
+								.help.help-block
+
+					.box-footer
+						button.btn.btn-primary(type="submit")= "Сохранить изменения"

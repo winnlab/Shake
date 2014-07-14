@@ -5,11 +5,7 @@ ObjectId = mongoose.Schema.Types.ObjectId
 DayShemaFields = 
 	name:
 		type: String
-		required: true	
-	fragments: [
-		type: String
-		ref: 'Fragment'
-	]
+		required: true
 	position:
 		type: Number
 		required: true

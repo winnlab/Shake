@@ -1,0 +1,67 @@
+extends ../layout	
+
+block append scripts
+	script(type="text/javascript" src="/js/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js")
+	script(type="text/javascript").
+		$(function() {
+			$(".textarea").wysihtml5();
+		});
+
+block content
+	.content-header
+		h1= "Редактирование фрагмента"
+
+	.content.row
+		.col-md-12
+			.box.box-primary
+				.box-header
+				form.form-horizontal(role="form" method="POST" action!="/admin/fragment/save/" enctype="multipart/form-data")
+					input(type="hidden" name="product_id" value=product_id)
+					input(type="hidden" name="_id" value=fragment._id)
+					.box-body
+						.form-group
+							label.col-md-2.control-label(for="name")= "Название:"
+							.col-md-10
+								input.form-control(type="text" value=fragment.name name="name" placeholder="Наименование фрагмента")
+								.help.help-block
+						.form-group
+							label.col-md-2.control-label(for="description")= "Описание:"
+							.col-md-10
+								textarea.textarea(name="description" placeholder="Описание фрагмента" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;") #{fragment.description}
+								.help.help-block
+						.form-group
+							label.col-md-2.control-label(for="day_id")= "День:"
+							.col-md-4
+								select.form-control(name="day_id")
+									each item in days
+										option(
+											selected=(fragment.day_id.toString() == item._id)
+											value="#{item._id}" 
+										)= item.name
+							label.col-md-2.control-label(for="position")= "Позиция:"
+							.col-md-4
+								input.form-control(type="text" value=fragment.position name="position" placeholder="Позиция фрагмента")
+								.help.help-block
+						.form-group
+							h3(style="text-align: center;")= "Видео форматы фрагмента"
+						.form-group
+							label.col-md-2.control-label(for="mp4")= "MP4:"
+							.col-md-2
+								input.form-control(type="file" name="mp4" accept="video/mp4")
+								.help.help-block
+							label.col-md-2.control-label(for="webm")= "WEBM:"
+							.col-md-2
+								input.form-control(type="file" name="webm" accept="video/webm")
+								.help.help-block
+							label.col-md-2.control-label(for="ogv")= "OGV:"
+							.col-md-2
+								input.form-control(type="file" name="ogv"  accept="video/ogg")
+								.help.help-block
+						.form-group
+							label.col-md-2.control-label(for="img")= "Картинка:"
+							.col-md-4
+								input.form-control(type="file" name="img" accept="image")
+								.help.help-block
+
+					.box-footer
+						button.btn.btn-primary(type="submit")= "Сохранить изменения"

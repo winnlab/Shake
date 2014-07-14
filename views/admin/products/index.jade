@@ -6,7 +6,7 @@ block append header
 block content	
 	.content-header
 		h3.content-title.clearfix= "Список продуктов"
-			a.pull-right.btn.btn-primary(href="product/set")
+			a.pull-right.btn.btn-primary(href="/admin/product/set")
 				i.fa.fa-plus
 				|&nbsp;Добавить продукт
 	.content
@@ -18,7 +18,7 @@ block content
 						.product.small-box.clearfix.bg-yellow(style="#{bg}")
 							.inner
 								h2= item.name
-							a.small-box-footer(href="/admin/product/fragments/#{item._id}")
+							a.small-box-footer(href="/admin/fragments/#{item._id}")
 								| Фрагменты&nbsp;
 								i.fa.fa-film
 							a.small-box-footer.col-md-6.pull-left(href="/admin/product/set/#{item._id}")

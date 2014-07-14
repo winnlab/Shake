@@ -1,0 +1,109 @@
+extends ../layout
+
+block append header	
+	link(href="/css/modules/product/index.css" rel="stylesheet" type="text/css")
+	style.
+		.pagination {
+			margin: 0 0 10px;
+		}
+
+block content	
+	.content-header
+		h3.content-title.clearfix= "Список фрагментов продукта: "
+			strong= product.name
+			a.pull-right.btn.btn-primary(href="/admin/fragment/set/#{product._id}")
+				i.fa.fa-plus
+				|&nbsp;Добавить фрагмент
+	.content
+		- if (fragments && fragments.length)
+			table.table.table-bordered.table-striped#dtable
+				thead
+					tr
+						th= "Название"
+						th= "Видео"
+						th= "Изображение"
+						th= "Действия"
+				tbody
+					each item, key in fragments
+						tr
+							td= item.name
+							td
+								- if (item.video)
+									- if (item.video.mp4)
+										span.label.label-info= 'mp4'
+										|&nbsp;
+									- if (item.video.webm)
+										span.label.label-warning= 'webm'
+										|&nbsp;
+									- if (item.video.ogv)
+										span.label.label-primary= 'ogv'
+							td
+								- if (item.img)
+									span.label.label-success= "Да"
+								- else 
+									span.label.label-default= "Нет"
+							td
+								.col-md-6
+									a(href="/admin/fragment/set/#{product._id}/#{item._id}")
+										button.btn.btn-default(type="button")
+											i.fa.fa-pencil
+								.col-md-6
+									a.remove-fragment(href="/admin/fragment/remove/#{item._id}" data-id="#{item._id}")
+										button.btn.btn-danger(type="button")
+											i.fa.fa-trash-o
+
+		- else
+			.alert.alert-info
+				i.fa.fa-info
+				b= "Примечание! "
+				| Ни одного фрагмента еще не добавлено
+
+block append scripts
+	script(src="/js/admin/plugins/datatables/jquery.dataTables.js")
+	script(src="/js/admin/plugins/datatables/dataTables.bootstrap.js")
+	script(type="text/javascript").
+		$(function() {
+			$('#dtable').dataTable({
+				"bPaginate": true,
+				"bLengthChange": false,
+				"bFilter": false,
+				"bSort": true,
+				"bInfo": true,
+				"bAutoWidth": false
+			});
+
+			$('.remove-fragment').on('click', function(ev) {
+				ev.preventDefault();
+
+				var id = $(this).data('id');
+
+				if (confirm('Вы действительно хотите удалить этот фрагмент?')) {
+					$.ajax({
+						url: '/admin/fragment/remove/' + id,
+						type: 'GET',						
+						success: function (data) {
+							if (data.success) {								
+								$(ev.target).parents('tr').remove();
+								var notification = 
+								'<div id="notification" class="alert alert-success alert-dismissable">' +
+									'<i class="fa fa-check"></i>' +
+									'<b>Внимание:&nbsp;</b>' +
+									'фрагмент успешно удален' +
+								'</div>';
+								$('body').append(notification);
+
+								setTimeout(function() {
+									$('#notification').fadeOut(300, function() {
+										$(this).remove
+									});
+								}, 3000);
+							}
+						},
+						error: function () {
+							console.log(arguments);
+						}
+					});
+				}
+			})
+
+		});

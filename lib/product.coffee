@@ -30,7 +30,7 @@ exports.save = (req, res, cb)->
 			if (data.img)
 				removeImages _id, Object.keys(data.img), next
 			else 
-				next
+				next()
 		() ->
 			if _id
 				async.waterfall [
@@ -38,7 +38,7 @@ exports.save = (req, res, cb)->
 						Model 'Product', 'findOne', next, {_id}
 					(doc) ->
 						for own prop, val of data
-							unless prop is '_id'
+							unless prop is '_id' or val is undefined
 								doc[prop] = val
 
 						doc.active = data.active or false
@@ -54,7 +54,7 @@ exports.save = (req, res, cb)->
 		cb err
 
 removeImages = (id, img, cb) ->
-	if id		
+	if id and img.length
 		async.waterfall [
 			(next)->
 				Model 'Product', 'findById', next, id

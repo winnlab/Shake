@@ -11,7 +11,7 @@ imgPath = './uploads/'
 exports.index = (req, res) ->
 	async.waterfall [
 		(next)->
-			Model 'Product', 'find', next, {}
+			Model 'Product', 'find', next, {}, null, {sort: 'position'}
 		(products)->
 			View.render 'admin/products/index', res,
 				products: products
@@ -67,5 +67,5 @@ exports.remove = (req, res) ->
 				View.clientSuccess 'Продукт успешно удален!', res
 	], (err) ->
 		Logger.log 'info', "Error in controllers/admin/ages/remove: %s #{err.message or err}"
-		msg = "Произошла ошибка при удалении возраста: #{err.message or err}"
+		msg = "Произошла ошибка при удалении продукта: #{err.message or err}"
 		View.clientFail msg, res

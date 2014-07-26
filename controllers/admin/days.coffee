@@ -4,94 +4,52 @@ _ = require 'underscore'
 View = require '../../lib/view'
 Model = require '../../lib/model'
 Logger = require '../../lib/logger'
+Document = require '../../utils/document'
 
-exports.index = (req, res) ->
+setFail = (err, res) ->
+	msg = "Error in #{__filename}: #{err.message or err}"
+	Logger.log 'error', msg
+	View.clientFail err, res
+
+exports.findAll = (req, res) ->
 	async.waterfall [
-		(next) ->
-			async.parallel [
-				(cb) ->
-					Days = Model 'Day', 'find', null, {}, null, {sort: 'position'}
-					Days.lean().exec cb
-			,
-				(cb) ->
-					Model 'Fragment', 'find', cb, {}, '-description -video -img', {sort: 'position'}
-			], next
-		(data) ->			
-
-			days = _.map data[0], (day, key, list) ->				
-				day.fragments = _.filter data[1], (fragment) ->					
-					return fragment.day_id.toString() == day._id.toString()
-				return day
-			
-			View.render 'admin/days/index', res,
-				days: days
-	], (err) ->
-		View.error err, res
-
-exports.getDay = (req, res) ->
-	async.waterfall [
-		(next) ->
-			if req.params.id
-				Model 'Day', 'findById', next, req.params.id
-			else
-				next null, {}
-		(day) ->
-			View.render 'admin/days/set', res,
-				day: day
-	], (err) ->
-		View.error err, res
+		(next)->
+			Model 'Day', 'find', next, {}, null, {sort: 'position'}
+		(days)->
+			View.clientSuccess {days}, res
+	], (err)->
+		setFail err, res
 
 exports.save = (req, res) ->
-
 	_id = req.body._id
-
 	data = req.body
 
 	async.waterfall [
 		(next) ->
 			if _id
-				async.waterfall [
-					(next2) ->
-						Model 'Day', 'findOne', next2, {_id}
-					(doc) ->
-						for own prop, val of data
-							unless prop is 'id' or val is undefined
-								doc[prop] = val
-						
-						doc.active = data.active or false
-
-						doc.save next
-				], (err) ->
-					next err
+				Model 'Day', 'findOne', next, {_id}
 			else
-				delete data._id
+				next null, null
+		(doc, next) ->
+			if doc
+				doc = Document.setDocumentData doc, data
+				doc.save next
+			else 
 				Model 'Day', 'create', next, data
 		(doc, next) ->
-			if not doc
-				return next "Произошла неизвестная ошибка."
-			opts = 
-				success: true
-				message: "День успешно сохранен!"
-			View.render 'admin/message', res, opts
+			View.clientSuccess _id: doc._id, res
 	], (err) ->
-		Logger.log 'info', "Error in controllers/admin/days/save: %s #{err.message or err}"
-		opts = 
-			success: false
-			message: "Произошла ошибка при сохранении дня: #{err.message or err}"
-		View.render 'admin/message', res, opts
-		
+		setFail err, res
 
-exports.remove = (req, res) ->
+exports.delete = (req, res) ->
 	_id = req.params.id
 
 	async.waterfall [
 		(next) ->
-			Model 'Day', 'findOne', next, {_id}		
+			Model 'Day', 'findOne', next, {_id}
 		(doc, next) ->
-			doc.remove (err) ->
-				next err if err
-				View.clientSuccess 'День успешно удален!', res
+			doc.remove next
+		(next) ->
+			View.clientSuccess 'День успешно удален!', res
 	], (err) ->
-		Logger.log 'info', "Error in controllers/admin/ages/remove: %s #{err.message or err}"
-		msg = "Произошла ошибка при удалении дня: #{err.message or err}"
-		View.clientFail msg, res
+		setFail err, res

@@ -15,12 +15,22 @@ FragmentShemaFields =
 		required: true
 	description:
 		type: String
-		required: true	
+		required: true
 	position:
 		type: Number
 		required: true
+	active:
+		type: Boolean
+		default: true
 	video: 
-		type: Mixed
+		type: Object
+		default: {}
+		mp4:
+			type: String
+		webm:
+			type: String
+		ogv: 
+			type: String
 	img: 
 		type: String
 		default: ''

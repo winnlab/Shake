@@ -430,11 +430,7 @@ $(window).load(function() {
             }, a
         }(), J = null, G = null, q = null, K = null, o = null, r = null, Pace.running = !1, y = function() {
             return C.restartOnPushState ? Pace.restart() : void 0
-        }, null != window.history.pushState && (R = window.history.pushState, window.history.pushState = function() {
-            return y(), R.apply(window.history, arguments)
-        }), null != window.history.replaceState && (U = window.history.replaceState, window.history.replaceState = function() {
-            return y(), U.apply(window.history, arguments)
-        }), k = {ajax: a, elements: d, document: c, eventLag: f}, (A = function() {
+        }, k = {ajax: a, elements: d, document: c, eventLag: f}, (A = function() {
             var a, c, d, e, f, g, h, i;
             for (Pace.sources = J = [], g = ["ajax", "elements", "document", "eventLag"], c = 0, e = g.length; e > c; c++)
                 a = g[c], C[a] !== !1 && J.push(new k[a](C[a]));

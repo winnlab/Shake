@@ -1,0 +1,17 @@
+upload {
+  display: block;
+  margin-bottom: 15px; }
+  upload .uploadedWrap {
+    margin-top: 10px; }
+  upload .uploaded {
+    display: inline-block;
+    vertical-align: middle;
+    width: 250px;
+    height: 150px;
+    margin-right: 10px;
+    background-size: cover;
+    background-position: center center; }
+  upload label {
+    cursor: pointer; }
+  upload form {
+    display: none; }

@@ -1,82 +1,163 @@
 async = require 'async'
+_ = require 'underscore'
 fs = require 'fs'
 
+
 View = require '../../lib/view'
+Files = require '../../lib/files'
 Model = require '../../lib/model'
 Logger = require '../../lib/logger'
-Fragments = require '../../lib/fragments'
 
-imgPath = './uploads/'
+uploadPath = './uploads/'
 
-exports.index = (req, res) ->
+setFail = (err, res) ->
+	msg = "Error in #{__filename}: #{err.message or err}"
+	Logger.log 'error', msg
+	View.clientFail err, res
+
+exports.removeData = removeData = (doc, cb) ->
+	async.parallel [
+		(proceed) ->
+			video = _.pick doc.video, [
+				"mp4"
+				"webm"
+				"ogv"
+			]
+			Files.unlinkArray _.values(video), uploadPath, proceed
+		(proceed) ->
+			unlinkImage doc.img, proceed
+		(proceed) ->
+			doc.remove proceed
+	], (err) ->
+		cb err
+		
+unlinkImage = (img, cb) ->
+	if img
+		fs.unlink uploadPath + img, cb
+	else 
+		cb()
+
+exports.findAll = (req, res) ->
+	# product_id = req.query.product_id
 	async.waterfall [
 		(next)->
-			async.parallel [
-				(cb) ->
-					Model 'Fragment', 'find', cb, {product_id: req.params.id}
-			,
-				(cb) ->
-					Model 'Product', 'findById', cb, req.params.id, 'name'
-			], next
-		(results)->
-			View.render 'admin/fragments/index', res,
-				fragments: results[0],
-				product: results[1]
+			Model 'Fragment', 'find', next, req.query, null, {sort: 'position'}
+		(fragments)->
+			View.clientSuccess {fragments}, res
 	], (err)->
-		View.error err, res
-
-exports.getFragment = (req, res) ->
-	async.waterfall [
-		(next)->
-			async.parallel [
-				(cb) ->
-					Model 'Day', 'find', cb, {}
-			,
-				(cb) ->
-					if req.params.id
-						Model 'Fragment', 'findById', cb, req.params.id
-					else
-						cb null, {}
-			], next			
-		(data)->
-			View.render 'admin/fragments/set', res,
-				product_id: req.params.product_id
-				days: data[0]
-				fragment: data[1]
-	], (err)->
-		View.error err, res
+		setFail err, res
 
 exports.save = (req, res) ->
-	async.waterfall [
-		(next)->
-			Fragments.save req, res, next
-		(fragment)->
-			opts = 
-				success: true
-				message: "Фрагмент успешно сохранен!"
-			View.render 'admin/message', res, opts
-	], (err)->
-		Logger.log 'info', "Error in controllers/admin/fragment/save: #{err.message or err}"
-		opts = 
-			success: false
-			message: "Произошла ошибка при сохранении фрагмента: #{err.message or err}"
-		View.render 'admin/message', res, opts
-
-exports.remove = (req, res) ->
-	_id = req.params.id
+	data = req.body
+	_id = data._id
 
 	async.waterfall [
 		(next) ->
-			Fragments.removeVideos _id, Fragments.videoTypes, next
-		(next) ->
-			Fragments.removeImage _id, true, next
-		(next) ->
-			Model 'Fragment', 'findOne', next, {_id}		
+			if _id
+				Model 'Fragment', 'findOne', next, {_id}
+			else
+				next null, null
 		(doc, next) ->
-			doc.remove (err) ->
-				next err if err
-				View.clientSuccess 'Фрагмент успешно удален!', res
+			if doc
+				for own prop, val of data
+					unless prop is '_id' or val is undefined
+						doc[prop] = val
+
+				doc.save next
+			else 
+				Model 'Fragment', 'create', next, data
+		(fragment) ->
+			View.clientSuccess _id: fragment._id, res
+	], (err)->
+		setFail err, res
+
+exports.delete = (req, res) ->
+	_id = req.params.id
+	async.waterfall [
+		(next) ->
+			Model 'Fragment', 'findOne', next, {_id}
+		(fragment, next) ->
+			removeData fragment, next		
+		() ->
+			View.clientSuccess 'Фрагмент успешно удален!', res
 	], (err) ->
-		Logger.log 'info', "Error in controllers/admin/fragments/remove: #{err.message or err}"
-		msg = "Произошла ошибка при удалении фрагмента: #{err.message or err}"
-		View.clientFail msg, res
+		setFail err, res
+
+
+exports.imgSave = (req, res) ->	
+	_id = req.body.id
+	imgName = req.body.name
+
+	async.waterfall [
+		(next) ->
+			Model 'Fragment', 'findOne', next, {_id}
+		(doc, next) ->
+			unlinkImage doc.img, (err) ->
+				next err, doc
+		(doc, next) ->
+			if req.files?[imgName]?.name
+				doc.img = req.files[imgName].name
+			
+			doc.save next
+		(doc) ->
+			View.clientSuccess name: doc.img, res
+	], (err) ->
+		setFail err, res
+
+exports.imgDelete = (req, res) ->
+	_id = req.body.id
+	imgName = req.body.name
+
+	async.waterfall [
+		(next) ->
+			Model 'Fragment', 'findOne', next, {_id}
+		(doc, next) ->
+			unlinkImage doc.img, (err) ->
+				next err, doc
+		(doc, next) ->
+			doc.img = ''
+			doc.save next
+		() ->
+			View.clientSuccess 'Картинка успешно удалена', res
+	], (err) ->
+		setFail err, res
+
+exports.videoSave = (req, res) ->	
+	_id = req.body.id
+	videoName = req.body.name
+
+	async.waterfall [
+		(next) ->
+			Model 'Fragment', 'findOne', next, {_id}
+		(doc, next) ->
+			video = []
+			video = [doc.video[videoName]] if doc?.video?[videoName]
+			Files.unlinkArray video, uploadPath, (err) ->
+				next err, doc
+		(doc, next) ->
+			if req.files?[videoName]?.name
+				(doc.video ?= {})[videoName] = req.files[videoName].name
+			
+			doc.save next
+		(doc) ->
+			View.clientSuccess name: doc.video[videoName], res
+	], (err) ->
+		setFail err, res
+
+exports.videoDelete = (req, res) ->
+	_id = req.body.id
+	videoName = req.body.name
+
+	async.waterfall [
+		(next) ->
+			Model 'Fragment', 'findOne', next, {_id}
+		(doc, next) ->
+			Files.unlinkArray [doc?.video?[videoName]], uploadPath, (err) ->
+				next err, doc
+		(doc, next) ->
+			doc.video[videoName] = undefined
+			doc.save next
+		() ->
+			View.clientSuccess 'Видео успешно удалено', res
+	], (err) ->
+		setFail err, res

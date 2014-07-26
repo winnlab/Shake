@@ -11,7 +11,14 @@ ProductShemaFields =
 		type: String
 		required: true
 	img:
-		type: Mixed
+		bottle:
+			type: String
+		bottle_thumb:
+			type: String
+		jar:
+			type: String
+		jar_thumb:
+			type: String
 	position:
 		type: Number
 		required: true

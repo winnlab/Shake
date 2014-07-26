@@ -18,30 +18,38 @@ Router.get '/dashboard', Main.dashboard
 
 Router.post '/login', Main.doLogin
 
-#----------------#
+# Product REST api
 
-Router.get '/products', Products.index
-Router.get '/product/set/:id?', Products.getProduct
-Router.get '/product/remove/:id', Products.remove
+Router.post '/product/img', Products.imgSave
+Router.delete '/product/img', Products.imgDelete
 
-Router.post '/product/save', Products.save
-
-#----------------#
-
-Router.get '/days', Days.index
-Router.get '/day/set/:id?', Days.getDay
-Router.get '/day/remove/:id', Days.remove
-
-Router.post '/day/save', Days.save
+Router.get '/product', Products.findAll
+Router.get '/product/:id?', Products.findOne
+Router.post '/product', Products.save
+Router.put '/product/:id?', Products.save
+Router.delete '/product/:id?', Products.delete
 
 #----------------#
 
-Router.get '/fragments/:id', Fragments.index
-Router.get '/fragment/set/:product_id/:id?', Fragments.getFragment
-Router.get '/fragment/remove/:id', Fragments.remove
+Router.get '/day', Days.findAll
+Router.post '/day', Days.save
+Router.put '/day/:id?', Days.save
+Router.delete '/day/:id?', Days.delete
 
-Router.post '/fragment/save', Fragments.save
+#----------------#
+
+Router.post '/fragment/img', Fragments.imgSave
+Router.delete '/fragment/img', Fragments.imgDelete
+
+Router.post '/fragment/video', Fragments.videoSave
+Router.delete '/fragment/video', Fragments.videoDelete
+
+Router.get '/fragment', Fragments.findAll
+Router.post '/fragment', Fragments.save
+Router.put '/fragment/:id?', Fragments.save
+Router.delete '/fragment/:id?', Fragments.delete
 
 #----------------#
 
 exports.Router = Router
+exports.layoutPage = Main.dashboard

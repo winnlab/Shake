@@ -15,10 +15,13 @@ compression = require 'compression'
 gzip = require 'connect-gzip'
 
 Crypto = require '../utils/crypto'
-Auth = require '../lib/auth'
 Cache = require '../lib/cache'
 View = require '../lib/view'
+Auth = require '../lib/auth'
 Admin = require '../lib/admin'
+Ajax = require '../lib/ajax'
+
+adminPages = require '../meta/pages'
 
 admin_controller = require '../controllers/admin'
 user_controller = require '../controllers/user'
@@ -69,6 +72,8 @@ configure = () ->
 	@use '/admin', Auth.isAuth
 	@use methodOverride()
 	@use View.globals
+	@use '/admin', (req, res, next) ->
+		Ajax.isAjax(req, res, next, adminPages, admin_controller.layoutPage)
 
 exports.init = (callback) ->
 	exports.express = app = express()

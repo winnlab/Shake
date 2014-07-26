@@ -1,0 +1,42 @@
+<div class="content-header">
+	<h3 class="content-title clearfix">Редактирование Дня</h3>
+</div>
+<div class="content">
+	<div class="col-md-12">
+		<div class="box box-primary">
+			<form class="form-horizontal setDay">
+				<div class="box-body">
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="name">Название:</label>
+						<div class="col-md-10">
+							<input class="form-control" type="text" value="{{day.name}}" name="name" placeholder="Название дня">
+							<div class="help help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="position">Позиция:</label>
+						<div class="col-md-10">
+							<input class="form-control" type="text" value="{{day.position}}" name="position" placeholder="Позиция дня">
+							<div class="help help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="active">Активный:</label>
+						<div class="col-md-10">
+							<input type="checkbox" value="true" name="active" {{#if day.active}}checked{{/if}}>
+							<div class="help help-block"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="box-footer">
+					<button class="btn btn-primary col-md-offset-2" type="submit">
+						Сохранить изменения
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

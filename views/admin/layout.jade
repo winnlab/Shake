@@ -41,18 +41,18 @@ html(lang="ru")
 				section.sidebar
 					ul.sidebar-menu
 						li(class= (currentHref == 'dashboard' ? "active" : ""))
-							a(href="/admin/dashboard")
+							a.module(href="/admin/dashboard")
 								i.fa.fa-dashboard
 								span= "Главная"
 						li(class= (currentHref == 'products' ? "active" : ""))
-							a(href="/admin/products")
+							a.module(href="/admin/products")
 								i.fa.fa-th
 								span= "Продукты"
 						li(class= (currentHref == 'days' ? "active" : ""))
-							a(href="/admin/days")
+							a.module(href="/admin/days")
 								i.fa.fa-calendar
 								span= "Дни"
-			aside.right-side
+			aside#moduleContent
 				block content
 		block scripts
 			script(src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js")
@@ -68,4 +68,5 @@ html(lang="ru")
 			script(src="/js/admin/plugins/daterangepicker/daterangepicker.js" type="text/javascript")
 			script(src="/js/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript")
 			script(src="/js/admin/plugins/iCheck/icheck.min.js" type="text/javascript")
-		script(src="/js/admin/AdminLTE/app.js" type="text/javascript")
+			script(src="/js/admin/AdminLTE/app.js" type="text/javascript")
+			script(src="/js/lib/require.js" data-main="/js/app/admin/core/core.js")

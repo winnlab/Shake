@@ -2,6 +2,8 @@ async = require 'async'
 _ = require 'underscore'
 _.str = require 'underscore.string'
 
+_.mixin _.str.exports()
+
 Database = require './database'
 Logger = require '../lib/logger'
 Migrate = require './migrate'
@@ -11,8 +13,6 @@ AuthStartegies = require './auth'
 ModelPreloader = require './mpload'
 
 appPort = 3000
-
-_.mixin _.str.exports()
 
 async.waterfall [
 	(next) ->

@@ -1,0 +1,26 @@
+upload {
+	display: block;
+	margin-bottom: 15px;
+
+	.uploadedWrap {
+		margin-top: 10px;
+	}	
+
+	.uploaded {
+		display: inline-block;
+		vertical-align: middle;
+		width: 250px;
+		height: 150px;
+		margin-right: 10px;
+		background-size: cover;
+		background-position: center center;
+	}
+
+	label {
+		cursor: pointer;
+	}
+
+	form {
+		display: none;
+	}
+}

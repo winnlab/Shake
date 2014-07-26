@@ -1,0 +1,64 @@
+{{#checkState}}
+	<div class="right-side">
+		<div class="content-header">
+			<h3 class="content-title clearfix">
+				Список дней
+				
+				<div class="pull-right btn btn-primary addDay">
+					<i class="fa fa-plus"></i>
+					&nbsp;Добавить день
+				</div>
+			</h3>
+		</div>
+		<div class="content">
+			{{#if days.isResolved}}
+				{{#if days.length}}
+					{{#each days}}
+						<div class="col-md-4 day" {{data 'day'}}>
+							<div class="box box-solid {{getBoxName @index}}">
+								<div class="box-header">
+									<div class="box-title">
+										{{name}}
+									</div>
+								</div>
+								<div class="box-body clearfix">
+									<span class="clearfix">Связанные фрагменты:</span>
+									{{#each fragments}}										
+										{{#checkRelation ../_id day_id}}
+											<a 
+												href="/admin/fragments/{{product_id}}/set/{{_id}}"
+												class="module btn btn-default btn-sm clearfix"
+											>
+												{{name}} <i class="fa fa-pencil"></i>
+											</a>
+										{{/checkRelation}}
+									{{/each}}
+								</div>
+								<div class="box-footer clearfix">
+									<div class="pull-right">
+										<div class="btn btn-default editDay">
+											<i class="fa fa-pencil"></i>
+										</div>
+										<div class="btn btn-danger removeDay">
+											<i class="fa fa-trash-o"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						{{{make3Col @index}}}
+					{{/each}}
+				{{else}}
+					<div class="alert alert-info">
+						<i class="fa fa-info"></i>
+						<b>Примечание! </b>
+						Ни одного дня еще не добавлено
+					</div>
+				{{/if}}
+			{{/if}}
+		</div>
+	</div>
+{{else}}
+	<div class="btn btn-primary toList" can-click="toList">Вернутся к списку фрагментов</div>	
+	{{{createForm id 'setDayWrap'}}}
+{{/checkState}}

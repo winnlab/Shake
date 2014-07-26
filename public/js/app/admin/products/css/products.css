@@ -1,0 +1,20 @@
+#products {
+  position: relative; }
+  #products .toList {
+    position: absolute;
+    z-index: 1;
+    right: 15px;
+    top: 30px; }
+
+.product {
+  background-size: cover;
+  background-position: center center; }
+  .product a, .product .small-box-footer {
+    color: #fff;
+    display: inline-block; }
+  .product .small-box-footer {
+    cursor: pointer;
+    padding: 5px 0;
+    background: rgba(0, 0, 0, 0.15); }
+    .product .small-box-footer:hover {
+      background: rgba(0, 0, 0, 0.3); }

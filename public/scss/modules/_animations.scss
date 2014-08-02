@@ -1,0 +1,14 @@
+@charset "UTF-8";
+@import '../../css/bourbon/_bourbon.scss';
+
+@include keyframes(disappearing) {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

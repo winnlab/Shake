@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@import '../../css/bourbon/_bourbon.scss';
+
+%bg-image-cover {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+%bg-image-contain {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+%in-block-middle {
+	display: inline-block;
+	vertical-align: middle;
+}

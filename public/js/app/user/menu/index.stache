@@ -1,0 +1,76 @@
+<header class="header {{menu}}" 
+	{{#isPrimitive menu 'opened'}}
+		style="height: {{size.height}}px; background-image: url({{imgPath}}introBg.jpg);"
+	{{/isPrimitive}}
+>
+	<div class="content">
+		<a id="logo" class="module" href="/products"></a>
+
+		<div class="menuWrap clearfix">
+			<div class="icons">
+				<span class="soundIcon"></span>
+				<span class="menuIconWrap menu">
+					<span class="menuIcon"></span>
+				</span>
+				<span class="line"></span>
+			</div>
+			<div class="control">
+				<span class="menu text-uppercase">
+					{{#isPrimitive menu 'closed'}}
+						{{locale.menu}}
+					{{else}}
+						{{locale.close}}
+					{{/isPrimitive}}
+				</span>
+			</div>
+		</div>
+
+		<div class="shakeMixWrap">
+			<div class="shakeMix text-uppercase">
+				<span class="mixLabel">
+					<span class="text-bold">shake</span>mix
+				</span>
+				<div class="playBtn"></div>
+			</div>
+			{{#if podcast}}
+				<div class="podcast">{{podcast}}</div>
+			{{/if}}			
+		</div>
+	</div>
+
+	<nav class="pages text-uppercase">
+		<a class="module" href="/article/about">About</a>
+		<a class="module" href="/product/{{randProduct.name}}">Shake it</a>
+		<a class="module" href="/products">Coctails</a>
+		<a class="module" href="/podcast">Shakemix</a>
+		<a class="module" href="/contacts">Contacts</a>
+
+		<section class="socIcons">
+			<a target="_blank" class="fb" href="/"></a>
+			<a target="_blank" class="vk" href="/"></a>
+			<a target="_blank" class="yt" href="/"></a>
+			<a target="_blank" class="in" href="/"></a>
+			<a target="_blank" class="coub" href="/"></a>
+		</section>
+	</nav>
+</header>
+
+<div class="healtWarn">
+	<div class="content text-uppercase">
+		<span class="warnAside">
+			<span class="warnLbl">
+				{{{locale.consume}}}
+			</span>
+			<span class="warn"></span>
+		</span>
+		<span class="bigWarn">
+			{{{locale.healthWarn}}}
+		</span>
+		<span class="warnAside">
+			<span class="warn"></span>
+			<span class="warnLbl text-right">
+				{{{locale.consume}}}
+			</span>
+		</span>
+	</div>
+</div>

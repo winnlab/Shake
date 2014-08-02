@@ -1,0 +1,24 @@
+<div class="bg" style="height: {{size.height}}px;">
+	<div class="logo"></div>
+
+	{{#if is18Show}}
+		<div class="title">
+			{{{locale.checkAge}}}
+		</div>
+
+		<div class="checkerBtns">
+			<div class="btn yes">
+				{{locale.yes}}
+				<div class="rounded"></div>
+			</div>
+			<div class="btn no">
+				{{locale.no}}
+				<div class="rounded"></div>
+			</div>
+		</div>
+	{{else}}
+		<div class="title">
+			Oooops!
+		</div>
+	{{/if}}
+</div>

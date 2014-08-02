@@ -1,0 +1,137 @@
+@charset "UTF-8";
+@import '../../../../../css/bourbon/_bourbon.scss';
+@import '../../../../../scss/base/_variables.scss';
+@import '../../../../../scss/base/_mixins.scss';
+@import '../../../../../scss/base/_placeholders.scss';
+
+$logo_width: 13rem;
+$logo_height: 10.6rem;
+
+#checker {	
+	height: 100%;
+
+	position: relative;
+	z-index: 5;
+
+	.bg {
+		padding-top: 5.5rem;
+		@extend %bg-image-cover;
+		background-image: url('#{$img_path}introBg.jpg');
+	}
+
+	.logo {
+		@include size($logo_width $logo_height);
+		margin-left: -$logo_width / 2;
+		left: 50%;
+		
+		position: relative;
+
+		background-image: url('#{$img_path}introLogo.png');
+		@extend %bg-image-contain;
+	}
+
+	.title {
+		font: 5.2rem PFDinTextCondPro;
+		font-weight: 500;
+		line-height: 4.8rem;
+
+		letter-spacing: 3px;
+
+		padding-top: 2.35rem;
+
+		color: #ffffff;
+
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	.checkerBtns {
+		position: relative;
+		text-align: center;
+		padding: 2rem 0 2rem;
+
+		.btn {
+			display: inline-block;
+			position: relative;
+
+			width: 5.5rem;
+			height: 5.5rem;
+			margin: 0 7rem;
+			padding: 1.1rem 0;
+			
+			text-align: center;
+			text-transform: uppercase;
+			
+			cursor: pointer;
+			color: #fff;
+			font: 3.2rem PFDinTextCondPro;
+			font-weight: 500;
+
+			&:before,
+			&:after {
+				content: "";
+				
+				border: 2px solid #fff;
+				
+				opacity: 0;
+			}
+
+			&:before {
+				@include emptyCircles(0);
+			}
+
+			&:after {
+				@include emptyCircles(-5px);
+			}
+
+			&:hover {
+
+				&:before {
+					@include animation(disappearing 2s linear 0s infinite);
+				}
+
+				&:after {
+					@include animation(disappearing 2s linear 0s infinite);
+				}
+
+				.rounded {
+					@include animation(disappearing 2s linear 0s infinite);
+
+					&:before {
+						@include animation(disappearing 2s linear 0s infinite);
+					}
+
+					&:after {
+						@include animation(disappearing 2s linear 0s infinite);
+					}
+				}
+			}
+		}
+
+		.rounded {
+			@include emptyCircles(-10px);
+
+			border: 2px solid #fff;
+			opacity: 0;
+
+			&:before,
+			&:after {
+				content: "";
+
+				border: 2px solid #fff;
+
+				opacity: 0;
+			}
+
+			&:before {
+				@include emptyCircles(-7px);
+			}
+
+			&:after {				
+				@include emptyCircles(-12px);
+			}
+		}
+
+	}
+}
+

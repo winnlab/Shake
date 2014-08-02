@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@import '../../../../../css/bourbon/_bourbon.scss';
+@import '../../../../../scss/base/_variables.scss';
+@import '../../../../../scss/base/_mixins.scss';
+@import '../../../../../scss/base/_placeholders.scss';
+@import '../../../../../scss/modules/_animations.scss';
+
+@include font-face(PFDinTextCondPro, '#{$font_path}PFDinTextCondPro-Medium/_', 500);
+@include font-face(PFDinTextCondPro, '#{$font_path}PFDinTextCondPro-Thin/_', 200);
+@include font-face(PFDinTextCompPro, '#{$font_path}PFDinTextCompPro-Thin/_', 200);
+@include font-face(PFDinTextPro, '#{$font_path}PFDinTextPro-Light/_', 100);
+@include font-face(PFDinTextPro, '#{$font_path}PFDinTextPro-Thin/_', 200);
+
+*,
+*:before,
+*:after {
+	@include box-sizing(border-box);
+}
+
+html, body {
+	width: 100%;
+	min-height: 42rem;
+
+	font-size: 16px;
+}
+
+body {
+	font-family: PFDinTextCondPro;
+
+	position: relative;
+
+	@extend %bg-image-cover;
+	background-image: url('#{$img_path}introBg.jpg');	
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+module {
+	display: none;
+	min-height: 100%;
+
+	&.active {
+		display: block;
+	}
+
+	.moduleContent {
+		height: 100%;
+		position: relative;
+	}
+}
+
+.content {
+	width: 54rem;
+	margin: 0 auto;
+
+	position: relative;	
+}
+
+.healtWarn {
+	z-index: 20;
+	position: absolute;
+	bottom: 0;
+
+	background: #000;
+	color: #fff;
+
+	width: 100%;
+	padding: 0.5rem 0;
+
+	font-family: PFDinTextCompPro;
+	font-weight: 200;
+	line-height: 1;
+
+
+	.warnAside {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.bigWarn {
+		display: inline-block;
+		font-size: 2rem;
+		vertical-align: middle;
+		margin: 0 0.125rem;
+	}
+
+	.warn {
+		display: inline-block;
+
+		vertical-align: middle;
+
+		width: 1.8rem;
+		height: 1.8rem;
+
+		margin: -0.5rem 0 0;
+
+		background-image: url('#{$img_path}warn.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	.warnLbl {
+		font-size: 1rem;
+		line-height: 0.9rem;
+		
+		vertical-align: middle;
+		display: inline-block;
+
+		margin-top: -0.3rem;
+	}
+}
+
+/* 
+	Text styles
+*/
+
+.text-bold {
+	font-weight: 500;
+}
+
+.text-left {
+	text-align: left
+}
+
+.text-right {
+	text-align: right
+}
+
+.text-center {
+	text-align: center
+}
+
+.text-justify {
+	text-align: justify
+}
+
+.text-nowrap {
+	white-space: nowrap
+}
+
+.text-lowercase {
+	text-transform: lowercase
+}
+
+.text-uppercase {
+	text-transform: uppercase
+}
+
+.text-capitalize {
+	text-transform: capitalize
+}

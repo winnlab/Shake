@@ -1,0 +1,60 @@
+#products .bottleType .bottlesIcon, #products .productItem .img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+#products .bottleType span, #products .productItem {
+  display: inline-block;
+  vertical-align: middle; }
+
+#products {
+  color: #ffffff;
+  padding: 6rem 0 3rem; }
+  #products .bottleType {
+    text-align: center;
+    font-family: PFDinTextCompPro;
+    font-size: 1rem; }
+    #products .bottleType .bottlesIcon {
+      height: 3.9rem;
+      width: 4rem;
+      margin: -0.7rem 0.5rem 0;
+      background-image: url("/img/user/bottles.png"); }
+  #products .bigTitle {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 0;
+    position: absolute;
+    top: 3rem;
+    font-size: 11.2rem;
+    letter-spacing: -0.5rem;
+    text-align: justify;
+    width: 102%;
+    left: 0.2rem; }
+  #products .productsWrap {
+    padding-top: 3rem;
+    margin: 0 -2rem;
+    text-align: center; }
+  #products .productItem {
+    width: 5.5rem;
+    margin: 0 0.5rem;
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center; }
+    #products .productItem .img {
+      height: 21rem;
+      width: 5.5rem;
+      margin-bottom: 0.25rem; }
+      #products .productItem .img:after {
+        content: "";
+        display: table;
+        clear: both; }
+    #products .productItem .name {
+      display: table-cell;
+      vertical-align: middle;
+      height: 3rem;
+      font-weight: 200;
+      font-size: 1.25rem; }

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import '../../css/bourbon/_bourbon.scss';
+
+@mixin emptyCircles($offset) {
+	top: $offset;
+	right: $offset;
+	bottom: $offset;
+	left: $offset;
+	position: absolute;
+	border-radius: 50%;
+}

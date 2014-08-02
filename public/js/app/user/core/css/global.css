@@ -1,0 +1,163 @@
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+@-webkit-keyframes disappearing {
+  0% {
+    opacity: 0; }
+
+  50% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+@-moz-keyframes disappearing {
+  0% {
+    opacity: 0; }
+
+  50% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+@keyframes disappearing {
+  0% {
+    opacity: 0; }
+
+  50% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+@font-face {
+  font-family: PFDinTextCondPro;
+  font-weight: 500;
+  font-style: normal;
+  src: url("/fonts/PFDinTextCondPro-Medium/_.eot");
+  src: url("/fonts/PFDinTextCondPro-Medium/_.eot?#iefix") format("embedded-opentype"), url("/fonts/PFDinTextCondPro-Medium/_.woff") format("woff"), url("/fonts/PFDinTextCondPro-Medium/_.ttf") format("truetype"), url("/fonts/PFDinTextCondPro-Medium/_.svg#PFDinTextCondPro") format("svg"); }
+@font-face {
+  font-family: PFDinTextCondPro;
+  font-weight: 200;
+  font-style: normal;
+  src: url("/fonts/PFDinTextCondPro-Thin/_.eot");
+  src: url("/fonts/PFDinTextCondPro-Thin/_.eot?#iefix") format("embedded-opentype"), url("/fonts/PFDinTextCondPro-Thin/_.woff") format("woff"), url("/fonts/PFDinTextCondPro-Thin/_.ttf") format("truetype"), url("/fonts/PFDinTextCondPro-Thin/_.svg#PFDinTextCondPro") format("svg"); }
+@font-face {
+  font-family: PFDinTextCompPro;
+  font-weight: 200;
+  font-style: normal;
+  src: url("/fonts/PFDinTextCompPro-Thin/_.eot");
+  src: url("/fonts/PFDinTextCompPro-Thin/_.eot?#iefix") format("embedded-opentype"), url("/fonts/PFDinTextCompPro-Thin/_.woff") format("woff"), url("/fonts/PFDinTextCompPro-Thin/_.ttf") format("truetype"), url("/fonts/PFDinTextCompPro-Thin/_.svg#PFDinTextCompPro") format("svg"); }
+@font-face {
+  font-family: PFDinTextPro;
+  font-weight: 100;
+  font-style: normal;
+  src: url("/fonts/PFDinTextPro-Light/_.eot");
+  src: url("/fonts/PFDinTextPro-Light/_.eot?#iefix") format("embedded-opentype"), url("/fonts/PFDinTextPro-Light/_.woff") format("woff"), url("/fonts/PFDinTextPro-Light/_.ttf") format("truetype"), url("/fonts/PFDinTextPro-Light/_.svg#PFDinTextPro") format("svg"); }
+@font-face {
+  font-family: PFDinTextPro;
+  font-weight: 200;
+  font-style: normal;
+  src: url("/fonts/PFDinTextPro-Thin/_.eot");
+  src: url("/fonts/PFDinTextPro-Thin/_.eot?#iefix") format("embedded-opentype"), url("/fonts/PFDinTextPro-Thin/_.woff") format("woff"), url("/fonts/PFDinTextPro-Thin/_.ttf") format("truetype"), url("/fonts/PFDinTextPro-Thin/_.svg#PFDinTextPro") format("svg"); }
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  min-height: 42rem;
+  font-size: 16px; }
+
+body {
+  font-family: PFDinTextCondPro;
+  position: relative;
+  background-image: url("/img/user/introBg.jpg"); }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+module {
+  display: none;
+  min-height: 100%; }
+  module.active {
+    display: block; }
+  module .moduleContent {
+    height: 100%;
+    position: relative; }
+
+.content {
+  width: 54rem;
+  margin: 0 auto;
+  position: relative; }
+
+.healtWarn {
+  z-index: 20;
+  position: absolute;
+  bottom: 0;
+  background: #000;
+  color: #fff;
+  width: 100%;
+  padding: 0.5rem 0;
+  font-family: PFDinTextCompPro;
+  font-weight: 200;
+  line-height: 1; }
+  .healtWarn .warnAside {
+    display: inline-block;
+    vertical-align: middle; }
+  .healtWarn .bigWarn {
+    display: inline-block;
+    font-size: 2rem;
+    vertical-align: middle;
+    margin: 0 0.125rem; }
+  .healtWarn .warn {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: -0.5rem 0 0;
+    background-image: url("/img/user/warn.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center; }
+  .healtWarn .warnLbl {
+    font-size: 1rem;
+    line-height: 0.9rem;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: -0.3rem; }
+
+/* 
+	Text styles
+*/
+.text-bold {
+  font-weight: 500; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
+
+.text-justify {
+  text-align: justify; }
+
+.text-nowrap {
+  white-space: nowrap; }
+
+.text-lowercase {
+  text-transform: lowercase; }
+
+.text-uppercase {
+  text-transform: uppercase; }
+
+.text-capitalize {
+  text-transform: capitalize; }

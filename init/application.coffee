@@ -21,7 +21,7 @@ Auth = require '../lib/auth'
 Admin = require '../lib/admin'
 Ajax = require '../lib/ajax'
 
-adminPages = require '../meta/pages'
+pages = require '../meta/pages'
 
 admin_controller = require '../controllers/admin'
 user_controller = require '../controllers/user'
@@ -32,15 +32,10 @@ jadeOptions =
 sessionParams =
 	secret: '4159J3v6V4rX6y1O6BN3ASuG2aDN7q'
 
-abideOption =
-	supported_languages: ['ru']
-	default_lang: 'ru',
-	translation_directory: 'locale'
-	locale_on_url: false
-
 routes = () ->
 	@use user_controller.Router
 	@use '/', user_controller.Router
+	@use '/:lang(ru|en)', user_controller.Router	
 	@use '/admin', admin_controller.Router
 
 configure = () ->
@@ -71,9 +66,9 @@ configure = () ->
 	@use passport.session()
 	@use '/admin', Auth.isAuth
 	@use methodOverride()
-	@use View.globals
+	@use View.globals	
 	@use '/admin', (req, res, next) ->
-		Ajax.isAjax(req, res, next, adminPages, admin_controller.layoutPage)
+		Ajax.isAjax req, res, next, pages, admin_controller.layoutPage
 
 exports.init = (callback) ->
 	exports.express = app = express()

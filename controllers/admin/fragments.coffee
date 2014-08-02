@@ -136,7 +136,7 @@ exports.videoSave = (req, res) ->
 				next err, doc
 		(doc, next) ->
 			if req.files?[videoName]?.name
-				(doc.video ?= {})[videoName] = req.files[videoName].name
+				doc.video[videoName] = req.files[videoName].name
 			
 			doc.save next
 		(doc) ->

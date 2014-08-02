@@ -10,12 +10,17 @@ FragmentShemaFields =
 	day_id:
 		type: ObjectId
 		ref: 'Day'
-	name:
-		type: String
-		required: true
-	description:
-		type: String
-		required: true
+	lang: [
+		language_id:
+			type: ObjectId
+			ref: 'Language'
+		name: 
+			type: String
+			trim: true
+		description:
+			type: String
+			trim: true
+	]	
 	position:
 		type: Number
 		required: true
@@ -23,14 +28,15 @@ FragmentShemaFields =
 		type: Boolean
 		default: true
 	video: 
-		type: Object
-		default: {}
 		mp4:
 			type: String
+			default: ''
 		webm:
 			type: String
+			default: ''
 		ogv: 
 			type: String
+			default: ''
 	img: 
 		type: String
 		default: ''

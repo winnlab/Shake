@@ -1,24 +1,36 @@
 mongoose = require 'mongoose'
 
 ObjectId = mongoose.Schema.Types.ObjectId
-Mixed = mongoose.Schema.Types.Mixed
 
-ProductShemaFields = 
-	name:
+ProductShemaFields =
+	lang: [
+		language_id:
+			type: ObjectId
+			ref: 'Language'
+		name: 
+			type: String
+			trim: true
+		description:
+			type: String
+			trim: true
+	]
+	link: 
 		type: String
-		required: true
-	description:
-		type: String
+		trim: true
 		required: true
 	img:
 		bottle:
 			type: String
-		bottle_thumb:
+			default: ''
+		bottle_list:
 			type: String
-		jar:
+			default: ''
+		can:
 			type: String
-		jar_thumb:
+			default: ''
+		can_list:
 			type: String
+			default: ''
 	position:
 		type: Number
 		required: true

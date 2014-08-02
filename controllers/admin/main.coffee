@@ -1,8 +1,10 @@
 async = require 'async'
 
 View = require '../../lib/view'
-Admin = require '../../lib/admin'
 Auth = require '../../lib/auth'
+Model = require '../../lib/model'
+Admin = require '../../lib/admin'
+Logger = require '../../lib/logger'
 
 exports.index = (req, res) ->
 	unless req.user
@@ -10,7 +12,7 @@ exports.index = (req, res) ->
 	else
 		res.redirect 'admin/dashboard'
 
-exports.login = (req, res)->	
+exports.login = (req, res)->
 	View.render 'admin/auth/index', res
 
 exports.logout = (req, res)->
@@ -21,4 +23,12 @@ exports.doLogin = (req, res) ->
 	Auth.authenticate('admin') req, res
 
 exports.dashboard = (req, res) ->
-	View.render 'admin/board/index', res
+	async.waterfall [
+		(next) ->
+			Model 'Language', 'find', next, active: true
+		(langs) ->
+			View.render 'admin/board/index', res, {langs}
+	], (err) ->
+		msg = "Error in #{__filename}: #{err.message or err}"
+		Logger.log 'error', msg
+		View.clientFail err, res

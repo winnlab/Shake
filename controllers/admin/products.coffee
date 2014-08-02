@@ -97,18 +97,18 @@ exports.delete = (req, res) ->
 
 exports.imgSave = (req, res) ->	
 	_id = req.body.id
-	imgName = req.body.name
+	imgName = req.body.name	
 
 	async.waterfall [
 		(next) ->
-			Model 'Product', 'findOne', next, {_id}
+			Model 'Product', 'findById', next, _id
 		(product, next) ->
 			Files.unlinkArray [product?.img?[imgName]], uploadPath, (err) ->
 				next err, product
 		(product, next) ->
 			if req.files?[imgName]?.name
-				(product.img ?= {})[imgName] = req.files[imgName].name
-			
+				product.img[imgName] = req.files[imgName].name			
+
 			product.save next
 		(doc, numberAffected) ->
 			View.clientSuccess name: doc.img[imgName], res

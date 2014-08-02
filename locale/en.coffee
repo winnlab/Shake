@@ -1,0 +1,11 @@
+module.exports =
+	checkAge: 'ARE YOU <div class="clearfix"></div> OVER 18 YEARS OLD?' 
+	yes: 'Yes'
+	no: 'No'
+	healthWarn: 'Excessive consumption of alcohol harm your health'
+	consume: 'consume <span class="clearfix"></span> reasonable'
+	allCocktails: 'All cocktails'
+	bottle: 'Bottle'
+	can: 'Can'
+	menu: 'Menu'
+	close: 'Close'

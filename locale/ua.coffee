@@ -1,0 +1,11 @@
+module.exports = 
+	checkAge: 'ВАМ <div class="clearfix"></div> БІЛЬШЕ 18 РОКІВ?'
+	yes: 'Так'
+	no: 'Ні'
+	healthWarn: 'НАДМІРНЕ СПОЖИВАННЯ АЛКОГОЛЮ ШКОДИТЬ ВАШОМУ ЗДОРОВ\'Ю'
+	consume: 'СПОЖИВАЙ <span class="clearfix"></span> РОЗУМНО'
+	allCocktails: 'Всі коктейлі'
+	bottle: 'Бутилка'
+	can: 'Банка'
+	menu: 'Меню'
+	close: 'Зачинити'

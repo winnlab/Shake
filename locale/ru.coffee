@@ -1,0 +1,11 @@
+module.exports =
+	checkAge: 'ВАМ <div class="clearfix"></div> БОЛЬШЕ 18 ЛЕТ?'
+	yes: 'Да'
+	no: 'Нет'
+	healthWarn: 'ЧРЕЗМЕРНОЕ УПОТРЕБЛЕНИЕ АЛКОГОЛЯ ВРЕДИТ ВАШЕМУ ЗДОРОВЬЮ'
+	consume: 'Употребляй <span class="clearfix"></span> ответственно'
+	allCocktails: 'Все коктейли'
+	bottle: 'Бутылка'
+	can: 'Банка'
+	menu: 'Меню'
+	close: 'Закрыть'

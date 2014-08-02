@@ -36,9 +36,7 @@ define([
 					: (document.documentElement.clientHeight
 						? document.documentElement.clientHeight
 						: document.body.offsetHeight)),
-					height = htmlHeight > viewportHeight ? htmlHeight : viewportHeight;
-
-				console.log(htmlHeight, viewportHeight);
+					height = htmlHeight > viewportHeight ? htmlHeight : viewportHeight;				
 
 				$('body').css('min-height', height);
 

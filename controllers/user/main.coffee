@@ -1,3 +1,4 @@
+
 async = require 'async'
 _ = require 'underscore'
 
@@ -40,6 +41,12 @@ changeDay = (cb) ->
 				changeDay cb
 	], cb
 
+filterLang = (array, languageId) ->
+	_.map array, (el) ->
+		el.lang = _.find el.lang, (lang) ->
+			lang.language_id.toString() == languageId.toString()
+		return el
+
 getData = (lang, cb) -> 
 	async.parallel
 		products: (proceed) ->
@@ -58,18 +65,12 @@ getData = (lang, cb) ->
 		data.locale = locale[lang.isoCode]
 		data.products = filterLang data.products, lang._id
 		data.parties = filterLang data.parties, lang._id
-		console.log data
 		cb null, data
 
-filterLang = (array, languageId) ->
-	_.map array, (el) ->
-		el.lang = _.find el.lang, (lang) ->
-			lang.language_id.toString() == languageId.toString()
-		return el		
-
 getQueryLang = (url, cb) ->
-	queryString = url.split('/')[0]
-	lang = _.findWhere langs, isoCode: queryString
+	# Todo change find lang to regExp
+	queryString = url.split('/')[1]
+	lang = _.findWhere langs, isoCode: queryString	
 	if lang
 		cb null, lang
 	else

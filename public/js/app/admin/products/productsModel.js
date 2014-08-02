@@ -22,6 +22,10 @@ define(
 				return data.message.products;
 			}
 		}, {
+			getName: function () {
+				var name = this.attr('lang.0.name');
+				return name ? name : '';
+			},
 			uploaded: function (name, value) {
 				if (!this.attr('img')) {
 					this.attr('img', {});

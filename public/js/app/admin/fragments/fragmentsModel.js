@@ -21,6 +21,10 @@ define(
 				return data.message.fragments;
 			}
 		}, {
+			getName: function () {
+				var name = this.attr('lang.0.name');
+				return name ? name : '';
+			},
 			uploaded: function (name, value) {
 				if (name === 'img') {
 					this.attr('img', value);

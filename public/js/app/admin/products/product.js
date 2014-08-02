@@ -17,7 +17,8 @@ define(
 					product = self.options.product;				
 
 				self.element.html(can.view(self.options.viewpath + 'set.stache', {
-					product: product
+					product: product,
+					langs: langs
 				}));
 			},
 
@@ -37,11 +38,11 @@ define(
 				product.save()
 				.done(function() {					
 					can.route.attr({'entity_id': product.attr('_id')});					
-					self.setNotification('success', 'Продукт "' + product.name + '" успешно сохранен!')					
+					self.setNotification('success', 'Продукт "' + product.getName() + '" успешно сохранен!')					
 				})
 				.fail(function (product) {
 					console.error(product);
-					self.setNotification('error', 'Ошибка сохранения продукта "' + product.name + '"!')
+					self.setNotification('error', 'Ошибка сохранения продукта "' + product.getName() + '"!')
 				});
 				
 			},

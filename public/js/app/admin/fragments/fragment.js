@@ -38,11 +38,11 @@ define(
 				fragment.save()
 				.done(function() {
 					can.route.attr({'entity_id': fragment.attr('_id')});
-					self.setNotification('success', 'Фрагмент "' + fragment.name + '" успешно сохранен!')
+					self.setNotification('success', 'Фрагмент "' + fragment.getName() + '" успешно сохранен!')
 				})
 				.fail(function (fragment) {
 					console.error(fragment);
-					self.setNotification('error', 'Ошибка сохранения фрагмента "' + fragment.name + '"!')
+					self.setNotification('error', 'Ошибка сохранения фрагмента "' + fragment.getName() + '"!')
 				});
 				
 			},

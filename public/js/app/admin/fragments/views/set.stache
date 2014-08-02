@@ -4,27 +4,12 @@
 <div class="content">
 	<div class="col-md-12">
 		<tabs>
-			<panel title="Форма фрагмента">
+			<panel name="Форма фрагмента">
 				<div class="box box-primary">
 					<form class="form-horizontal setFragment">
 						<input type="hidden" name="product_id" value="{{product_id}}" />
 
 						<div class="box-body">
-							<div class="form-group">
-								<label class="col-md-2 control-label" for="name">Название:</label>
-								<div class="col-md-10">
-									<input class="form-control" type="text" value="{{fragment.name}}" name="name" placeholder="Наименование фрагмента">
-									<div class="help help-block"></div>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label class="col-md-2 control-label" for="description">Описание:</label>
-								<div class="col-md-10">
-									<textarea class="textarea form-control" name="description" placeholder="Описание фрагмента">{{fragment.description}}</textarea>
-									<div class="help help-block"></div>
-								</div>
-							</div>
 
 							<div class="form-group">
 								<label class="col-md-2 control-label" for="description">День:</label>
@@ -55,6 +40,31 @@
 									<div class="help help-block"></div>
 								</div>
 							</div>
+
+							<tabs>
+								{{#each langs}}
+									<panel name="{{name}}">
+										<input type="hidden" value="{{_id}}" name="lang[{{@index}}]language_id">
+
+										<div class="form-group">
+											<label class="col-md-2 control-label" for="name">Название:</label>
+											<div class="col-md-10">
+												<input class="form-control" type="text" value="{{getArrayObjValue fragment.lang @index 'name'}}" name="lang[{{@index}}]name" placeholder="Наименование фрагмента">
+												<div class="help help-block"></div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-md-2 control-label" for="description">Описание:</label>
+											<div class="col-md-10">
+												<textarea class="textarea form-control" name="lang[{{@index}}]description" placeholder="Описание фрагмента">{{getArrayObjValue fragment.lang @index 'description'}}</textarea>
+												<div class="help help-block"></div>
+											</div>
+										</div>
+									</panel>
+								{{/each}}
+							</tabs>
+
 						</div>
 						
 						<div class="box-footer">
@@ -66,7 +76,7 @@
 				</div>
 			</panel>
 
-			<panel title="Материалы фрагмента">
+			<panel name="Материалы фрагмента">
 				<div class="box box-primary">
 					<div class="box-body clearfix">
 						<upload 

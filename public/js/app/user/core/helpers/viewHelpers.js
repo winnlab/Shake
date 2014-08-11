@@ -7,5 +7,11 @@ define([
 			return observer() === primitive ? options.fn() : options.inverse();
 		});
 
+        can.mustache.registerHelper('convertTrackDate', function (date) {
+            var splitBySpace = date.split(' ');
+            var splitBySlash = splitBySpace[0].split('/');
+            return splitBySlash[2] + '/' + splitBySlash[1];
+        });
+
 	}
 );

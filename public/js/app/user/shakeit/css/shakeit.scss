@@ -1,0 +1,342 @@
+@charset "UTF-8";
+@import '../../../../../css/bourbon/_bourbon.scss';
+@import '../../../../../scss/base/_variables.scss';
+@import '../../../../../scss/base/_mixins.scss';
+@import '../../../../../scss/base/_placeholders.scss';
+
+$currentCircleSize: 13rem;
+$prevNextCircleSize: 7rem;
+
+.shakeitWrap {
+
+  width: 54rem;
+  padding: 6rem 0;
+  margin: 0 auto;
+  position: relative;
+
+
+  .fragmentItem {
+
+    display: none;
+    top: 50%;
+    position: absolute;
+    z-index: 5;
+
+    .video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+
+      video {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        overflow: hidden
+      }
+    }
+
+    .fragmentItemContent {
+
+/*      position: relative;*/
+      width: 100%;
+      font-weight: 400;
+
+      .thin {
+        font-weight: 300;
+      }
+
+      .roundedButton {
+
+        text-align: center;
+        position: absolute;
+
+        .btn {
+
+          display: inline-block;
+          position: relative;
+          border-radius: 50%;
+
+          padding: 0.7rem;
+
+          text-align: center;
+          text-transform: uppercase;
+
+          cursor: pointer;
+          color: #fff;
+          font: 2rem PFDinTextCondPro;
+          font-weight: 400;
+
+          .fragmentItemInfo {
+
+            position: relative;
+
+            .image {
+              position: absolute;
+              top: -1em;
+              width: 100%;
+              text-align: center;
+              z-index: -1;
+
+              img {
+                width: 60%;
+              }
+            }
+
+            a {
+              text-decoration: none;
+              color: #ffffff;
+              line-height: 1;
+              margin: 0;
+
+              &:hover {
+                text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+              }
+            }
+
+            p {
+              line-height: 1;
+              margin: 0;
+            }
+
+            .shareMoment {
+              display: none;
+              font-size: 1.5rem;
+            }
+            .productName {
+              display: none;
+              font-size: 2.5rem;
+              margin: 1.4rem 0;
+            }
+            .ringtone {
+              display: none;
+              font-size: 1.5rem;
+            }
+
+          }
+
+          &:before,
+          &:after {
+            content: "";
+            border: 1px solid #fff;
+            opacity: 0;
+            z-index: -1;
+
+          }
+
+          &:before {
+            @include emptyCircles(0);
+          }
+
+          &:after {
+            @include emptyCircles(-5px);
+          }
+
+          &:before {
+            @include animation(disappearing 2s linear 0s infinite);
+          }
+
+          &:after {
+            @include animation(disappearing 2s linear 0s infinite);
+          }
+
+          .rounded {
+            @include animation(disappearing 2s linear 0s infinite);
+
+            &:before {
+              @include animation(disappearing 2s linear 0s infinite);
+            }
+
+            &:after {
+              @include animation(disappearing 2s linear 0s infinite);
+            }
+          }
+        }
+
+        .rounded {
+          @include emptyCircles(-10px);
+
+          border: 1px solid #fff;
+          opacity: 0;
+          z-index: -1;
+
+          &:before,
+          &:after {
+            content: "";
+
+            border: 1px solid #fff;
+
+            opacity: 0;
+          }
+
+          &:before {
+            @include emptyCircles(-7px);
+          }
+
+          &:after {
+            @include emptyCircles(-12px);
+          }
+        }
+      }
+    }
+  }
+
+  .fragmentItem.current {
+
+    display: block;
+    left: 50%;
+    margin-left: -$currentCircleSize/2;
+    margin-top: -$currentCircleSize/2;
+    width: $currentCircleSize;
+    height: $currentCircleSize;
+
+    .fragmentItemContent {
+
+      .roundedButton {
+
+        top: 50%;
+        margin-top: -$currentCircleSize/2;
+
+        left: 50%;
+        margin-left: -$currentCircleSize/2;
+
+        .btn {
+
+          background: rgba(28, 27, 27, 0.8);
+          width: $currentCircleSize;
+          height: $currentCircleSize;
+
+          .fragmentItemInfo {
+
+            .shareMoment {
+              display: block;
+            }
+            .productName {
+              display: block;
+            }
+            .ringtone {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .fragmentItem.previous {
+
+    display: block;
+    left: 0;
+    margin-left: -$prevNextCircleSize/2;
+    margin-top: -$prevNextCircleSize/2;
+    width: $prevNextCircleSize;
+    height: $prevNextCircleSize;
+
+    .fragmentItemContent {
+
+      .roundedButton {
+
+        top: 50%;
+        margin-top: -$prevNextCircleSize/2;
+
+        left: 50%;
+        margin-left: -$prevNextCircleSize/2;
+
+        .btn {
+
+          width: $prevNextCircleSize;
+          height: $prevNextCircleSize;
+        }
+      }
+    }
+  }
+
+  .fragmentItem.next {
+
+    display: block;
+    right: 0;
+    margin-left: -$prevNextCircleSize/2;
+    margin-top: -$prevNextCircleSize/2;
+    width: $prevNextCircleSize;
+    height: $prevNextCircleSize;
+
+    .fragmentItemContent {
+
+      .roundedButton {
+
+        top: 50%;
+        margin-top: -$prevNextCircleSize/2;
+
+        left: 50%;
+        margin-left: -$prevNextCircleSize/2;
+
+        .btn {
+
+          width: $prevNextCircleSize;
+          height: $prevNextCircleSize;
+        }
+      }
+    }
+  }
+
+  .fragmentItem.beforePrevious {
+
+    left: -50%;
+    margin-left: -$prevNextCircleSize/2;
+    margin-top: -$prevNextCircleSize/2;
+    width: $prevNextCircleSize;
+    height: $prevNextCircleSize;
+
+    .fragmentItemContent {
+
+      .roundedButton {
+
+        top: 50%;
+        margin-top: -$prevNextCircleSize/2;
+
+        left: 50%;
+        margin-left: -$prevNextCircleSize/2;
+
+        .btn {
+
+          width: $prevNextCircleSize;
+          height: $prevNextCircleSize;
+        }
+      }
+    }
+  }
+
+  .fragmentItem.afterNext {
+
+    right: -50%;
+    margin-left: -$prevNextCircleSize/2;
+    margin-top: -$prevNextCircleSize/2;
+    width: $prevNextCircleSize;
+    height: $prevNextCircleSize;
+
+    .fragmentItemContent {
+
+      .roundedButton {
+
+        top: 50%;
+        margin-top: -$prevNextCircleSize/2;
+
+        left: 50%;
+        margin-left: -$prevNextCircleSize/2;
+
+        .btn {
+
+          width: $prevNextCircleSize;
+          height: $prevNextCircleSize;
+        }
+      }
+    }
+  }
+}

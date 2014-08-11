@@ -38,8 +38,6 @@ define([
 						: document.body.offsetHeight)),
 					height = htmlHeight > viewportHeight ? htmlHeight : viewportHeight;
 
-				console.log(htmlHeight, viewportHeight);
-
 				$('body').css('min-height', height);
 
 				this.options.state.attr('size.height', height);

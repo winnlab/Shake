@@ -1,0 +1,5 @@
+<marquee direction="left">
+    {{#each tracks}}
+        <a class="trackTitleAnchor" href="{{id}}"><span class="thin">new podcast</span> {{title}} by {{user.username}} <span class="thin">{{{convertTrackDate created_at}}}</span> <span class="thin"></span> <span class="thin divider">||||</span></a>
+    {{/each}}
+</marquee>

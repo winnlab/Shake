@@ -1,0 +1,59 @@
+<div class="contactsWrap">
+
+    <div class="header">
+        <h1>Contacts</h1>
+    </div>
+
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2541.167019398094!2d30.522541499999996!3d50.437989599999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cefe16b84849%3A0x954fceae527935b9!2z0KHQv9C-0YDRgtC40LLQvdCwINC_0LsuLCAzLCDQmtC40ZfQsiwg0LzRltGB0YLQviDQmtC40ZfQsg!5e0!3m2!1suk!2sua!4v1407162227963" frameborder="0" style="border:0"></iframe>
+    </div>
+
+    <div class="footer">
+
+        <div class="footerContent">
+
+            <div class="newProductsInfo">
+
+                <div class="newProductsLogo">
+                    <img src="{{imgPath}}newProductsGroup.png" alt=""/>
+                </div>
+
+                <div class="socialButtons">
+                    <a href="http://www.facebook.com"><img src="{{imgPath}}social/facebook.png" alt=""/></a>
+                    <a href="http://www.vk.com"><img src="{{imgPath}}social/vk.png" alt=""/></a>
+                    <a href="http://www.youtube.com"><img src="{{imgPath}}social/youtube.png" alt=""/></a>
+                    <a href="http://www.instagram.com"><img src="{{imgPath}}social/instagram.png" alt=""/></a>
+                    <a href="http://www.coub.com"><img src="{{imgPath}}social/coub.png" alt=""/></a>
+                </div>
+
+            </div>
+
+            <div class="address">
+                <h5>main office</h5>
+                <p>01601, Kyiv</p>
+                <p>Sportyvna sq, 3</p>
+                <p>044 502 99 00</p>
+            </div>
+
+            <div class="importer">
+                <h5>importer in rf</h5>
+                <p>"Novye Producty"</p>
+                <p>Russian Federation, 107078, Moscow</p>
+                <p>Novaya Basmannaya str. 9/2-4, 6,</p>
+                <p>phone: (495) 9210326</p>
+                <p>np@newproducts.ru</p>
+            </div>
+
+            <div class="exportDepartment">
+                <h5>export department</h5>
+                <p>korniyuk@newproducts.ua</p>
+                <p>+38 (067) 5484945</p>
+            </div>
+
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+
+</div>

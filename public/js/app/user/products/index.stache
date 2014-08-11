@@ -16,7 +16,7 @@
 					<div class="img" 
 						style="background-image: url('{{uploadPath}}{{#isPrimitive viewMode 'bottle'}}{{img.bottle}}{{else}}{{img.can}}{{/isPrimitive}}')"
 					></div>
-					<div class="name">{{name}}</div>
+					<div class="name">{{lang.name}}</div>
 				</a>
 			{{/if}}
 		{{/each}}

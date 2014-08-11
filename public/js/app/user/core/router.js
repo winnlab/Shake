@@ -82,16 +82,22 @@ define([
 			'.module click': function (el, ev) {
 				ev.preventDefault();
 
-				var options = this.options,
-					href = el.attr('href').split(options.base)[1],
-					routeObj = can.route.deparam(href);
+                var href = el.attr('href') ? el.attr('href') : el.attr('data-href');
 
 				try {
-					if (!_.isEmpty(routeObj)) {
-						can.route.attr(routeObj, true);
-					} else {
-						throw new  Error("There now such routing rule for '" + href + "', please check your configuration file");
-					}
+                    if ( href ) {
+
+                        var routeObj = can.route.deparam(href);
+
+                        if (!_.isEmpty(routeObj)) {
+                            can.route.attr(routeObj, true);
+                        } else {
+                            throw new  Error("There now such routing rule for '" + href + "', please check your configuration file");
+                        }
+
+                    } else {
+                        throw new  Error("href parameter is undefined");
+                    }
 				} catch (e) {
 					console.error(e);
 				}

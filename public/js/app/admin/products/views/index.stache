@@ -18,11 +18,22 @@
 								<div class="product small-box clearfix {{getBoxName @index}}" {{data "product"}}>
 									<div class="inner">
 										<h2>{{getName}}</h2>
-										<p>Языки: </p>
+										<p>Языки:
+                                            {{{checkLanguages lang 'name' 'description'}}}
+                                        </p>
 										<p>
 											Картики: 
 											{{#if img.bottle}}
 												<span class="label label-info">Бутылка</span>
+                                            {{/if}}
+                                            {{#if img.bottle_list}}
+                                                <span class="label label-info">Бутылка (список)</span>
+                                            {{/if}}
+                                            {{#if img.can}}
+                                                <span class="label label-info">Банка</span>
+                                            {{/if}}
+                                            {{#if img.can_list}}
+                                                <span class="label label-info">Банка (список)</span>
 											{{/if}}
 										</p>
 									</div>

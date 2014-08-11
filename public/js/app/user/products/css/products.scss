@@ -76,8 +76,7 @@ $productWidth: 5.5rem;
 		.name {
 			display: table-cell;
 			vertical-align: middle;
-
-			height: 3rem;
+            @include size($productWidth 3rem);
 
 			font-weight: 200;
 			font-size: 1.25rem;

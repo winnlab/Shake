@@ -17,7 +17,8 @@ header {
   height: 5rem;
   width: 100%;
   color: #fff;
-  font-family: PFDinTextCondPro; }
+  font-family: PFDinTextCondPro;
+  z-index: 1; }
   header #logo {
     height: 5.5rem;
     width: 13.3rem;

@@ -7,7 +7,9 @@ define({
 			defaults: {
 				module: 'checker'
 			}
-		}],
+		}, {
+            route: ':module/:id'
+        }],
 		modules: [{
 			name: 'checker',
 			path: 'app/checker/checker',
@@ -24,6 +26,18 @@ define({
 			name: 'fragments',
 			path: 'app/fragments/fragments',
 			title: ''
-		}]
+		}, {
+            name: 'podcast',
+            path: 'app/podcast/podcast',
+            title: ''
+        }, {
+            name: 'contacts',
+            path: 'app/contacts/contacts',
+            title: ''
+        }, {
+            name: 'shakeit',
+            path: 'app/shakeit/shakeit',
+            title: ''
+        }]
 	}
 });

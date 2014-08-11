@@ -17,6 +17,7 @@ define(
 
 				self.element.html(can.view(self.options.viewpath + 'set.stache', {
 					fragment: self.options.fragment,
+                    langs: langs,
 					product_id: can.route.attr('id'),
 					days: self.options.days
 				}));

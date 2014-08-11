@@ -1,0 +1,238 @@
+.podcastWrap .soundCloudPlayer .centralWrapper .centralContent .logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.podcastWrap {
+  color: #ffffff;
+  padding: 6rem 0 3rem;
+  position: relative;
+  width: 54rem;
+  margin: 0 auto; }
+  .podcastWrap .header {
+    text-align: center;
+    color: #ffffff;
+    font-family: PFDinTextCondPro;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2.2rem; }
+    .podcastWrap .header h1 {
+      margin: 0;
+      line-height: 1; }
+      .podcastWrap .header h1 span {
+        font-weight: 300;
+        font-size: 4.6rem;
+        margin-left: -0.8rem; }
+  .podcastWrap .widgetWrapper {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    display: none; }
+  .podcastWrap #soundCloudWidget {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: none; }
+  .podcastWrap .soundCloudPlayer .trackWrapper {
+    position: absolute;
+    z-index: 1; }
+    .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton {
+      text-align: center;
+      padding: 2rem 0 2rem; }
+      .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn {
+        display: inline-block;
+        position: relative;
+        background: rgba(28, 27, 27, 0.8);
+        border-radius: 50%;
+        padding: 0.5rem 0;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        color: #fff;
+        font: 2rem PFDinTextCondPro;
+        font-weight: 400; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn img {
+          width: 25%; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn p {
+          margin: 0;
+          line-height: 1;
+          font-weight: 300; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn p.bold {
+          font-weight: 500; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn:hover {
+          cursor: pointer; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn:before, .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn:after {
+          content: "";
+          border: 1px solid #fff;
+          opacity: 0; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn:before {
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          border-radius: 50%; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn:after {
+          top: -5px;
+          right: -5px;
+          bottom: -5px;
+          left: -5px;
+          position: absolute;
+          border-radius: 50%; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn:before {
+          -webkit-animation: disappearing 2s linear 0s infinite;
+          -moz-animation: disappearing 2s linear 0s infinite;
+          animation: disappearing 2s linear 0s infinite; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn:after {
+          -webkit-animation: disappearing 2s linear 0s infinite;
+          -moz-animation: disappearing 2s linear 0s infinite;
+          animation: disappearing 2s linear 0s infinite; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn .rounded {
+          -webkit-animation: disappearing 2s linear 0s infinite;
+          -moz-animation: disappearing 2s linear 0s infinite;
+          animation: disappearing 2s linear 0s infinite; }
+          .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn .rounded:before {
+            -webkit-animation: disappearing 2s linear 0s infinite;
+            -moz-animation: disappearing 2s linear 0s infinite;
+            animation: disappearing 2s linear 0s infinite; }
+          .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .btn .rounded:after {
+            -webkit-animation: disappearing 2s linear 0s infinite;
+            -moz-animation: disappearing 2s linear 0s infinite;
+            animation: disappearing 2s linear 0s infinite; }
+      .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .rounded {
+        top: -10px;
+        right: -10px;
+        bottom: -10px;
+        left: -10px;
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        opacity: 0; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .rounded:before, .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .rounded:after {
+          content: "";
+          border: 1px solid #fff;
+          opacity: 0; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .rounded:before {
+          top: -7px;
+          right: -7px;
+          bottom: -7px;
+          left: -7px;
+          position: absolute;
+          border-radius: 50%; }
+        .podcastWrap .soundCloudPlayer .trackWrapper .roundedButton .rounded:after {
+          top: -12px;
+          right: -12px;
+          bottom: -12px;
+          left: -12px;
+          position: absolute;
+          border-radius: 50%; }
+  .podcastWrap .soundCloudPlayer .prevTrackWrapper {
+    left: -3.5rem;
+    top: 16.5rem; }
+    .podcastWrap .soundCloudPlayer .prevTrackWrapper .roundedButton .btn {
+      width: 7rem;
+      height: 7rem; }
+      .podcastWrap .soundCloudPlayer .prevTrackWrapper .roundedButton .btn .trackInfo {
+        padding-top: 0.4em; }
+        .podcastWrap .soundCloudPlayer .prevTrackWrapper .roundedButton .btn .trackInfo p {
+          font-size: 1rem;
+          line-height: 1.2;
+          font-weight: 400; }
+        .podcastWrap .soundCloudPlayer .prevTrackWrapper .roundedButton .btn .trackInfo .number {
+          font-weight: 300; }
+        .podcastWrap .soundCloudPlayer .prevTrackWrapper .roundedButton .btn .trackInfo .composer {
+          font-size: 0.6rem; }
+  .podcastWrap .soundCloudPlayer .centralWrapper {
+    position: relative;
+    width: 22rem;
+    margin: 0 auto; }
+    .podcastWrap .soundCloudPlayer .centralWrapper .currentTrackWrapper {
+      top: 4rem;
+      left: 50%;
+      margin-left: -5rem; }
+      .podcastWrap .soundCloudPlayer .centralWrapper .currentTrackWrapper .roundedButton .btn {
+        width: 10rem;
+        height: 10rem; }
+        .podcastWrap .soundCloudPlayer .centralWrapper .currentTrackWrapper .roundedButton .btn .trackInfo {
+          padding: 0.4em 0.2rem 0; }
+          .podcastWrap .soundCloudPlayer .centralWrapper .currentTrackWrapper .roundedButton .btn .trackInfo p {
+            font-size: 1.5rem;
+            line-height: 1.2;
+            font-weight: 400; }
+          .podcastWrap .soundCloudPlayer .centralWrapper .currentTrackWrapper .roundedButton .btn .trackInfo .number {
+            font-weight: 300; }
+          .podcastWrap .soundCloudPlayer .centralWrapper .currentTrackWrapper .roundedButton .btn .trackInfo .composer {
+            font-size: 1rem; }
+    .podcastWrap .soundCloudPlayer .centralWrapper .stripe {
+      width: 100%;
+      height: 5px;
+      background: #ff3500;
+      margin-bottom: 1px; }
+    .podcastWrap .soundCloudPlayer .centralWrapper .centralContent {
+      width: 100%;
+      height: 22rem;
+      background: url("/img/user/playerBackground.png");
+      position: relative; }
+      .podcastWrap .soundCloudPlayer .centralWrapper .centralContent .playTrack {
+        background: #fa5100;
+        /* Old browsers */
+        background: -moz-linear-gradient(top, #fa5100 0%, #ff2601 100%);
+        /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fa5100), color-stop(100%, #ff2601));
+        /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #fa5100 0%, #ff2601 100%);
+        /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #fa5100 0%, #ff2601 100%);
+        /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #fa5100 0%, #ff2601 100%);
+        /* IE10+ */
+        background: linear-gradient(to bottom, #fa5100 0%, #ff2601 100%);
+        /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa5100', endColorstr='#ff2601',GradientType=0 );
+        /* IE6-9 */
+        position: absolute;
+        top: 0.8rem;
+        left: 0.8rem;
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        border-radius: 50%; }
+        .podcastWrap .soundCloudPlayer .centralWrapper .centralContent .playTrack img {
+          width: 40%;
+          margin: 3px 0 0 3px; }
+      .podcastWrap .soundCloudPlayer .centralWrapper .centralContent .logo {
+        height: 5em;
+        width: 5em;
+        margin-left: -2.5em;
+        left: 50%;
+        position: relative;
+        top: 0.8rem;
+        background-image: url("/img/user/introLogo.png"); }
+  .podcastWrap .soundCloudPlayer .nextTrackWrapper {
+    top: 16.5rem;
+    right: -3.5rem; }
+    .podcastWrap .soundCloudPlayer .nextTrackWrapper .roundedButton .btn {
+      width: 7rem;
+      height: 7rem; }
+      .podcastWrap .soundCloudPlayer .nextTrackWrapper .roundedButton .btn .trackInfo {
+        padding-top: 0.4em; }
+        .podcastWrap .soundCloudPlayer .nextTrackWrapper .roundedButton .btn .trackInfo p {
+          font-size: 1rem;
+          line-height: 1.2;
+          font-weight: 400; }
+        .podcastWrap .soundCloudPlayer .nextTrackWrapper .roundedButton .btn .trackInfo .number {
+          font-weight: 300; }
+        .podcastWrap .soundCloudPlayer .nextTrackWrapper .roundedButton .btn .trackInfo .composer {
+          font-size: 0.6rem; }
+
+#marquee a {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.5rem; }
+  #marquee a .thin {
+    font-weight: 300; }
+  #marquee a .divider {
+    margin: 0 5px;
+    font-size: 1.6rem; }

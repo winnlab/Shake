@@ -1,7 +1,8 @@
 define([
-	'canjs'
+	'canjs',
+    'underscore'
 ],
-	function (can) {
+	function (can, _) {
 		
 		can.mustache.registerHelper('checkState', function (options) {
 			return options.context.attr('viewState') === 'list'
@@ -14,7 +15,7 @@ define([
 		});
 
 		can.mustache.registerHelper('getArrayObjValue', function (array, index, key) {			
-			return array().attr(index + '.' + key);			
+			return array() ? array().attr(index + '.' + key) : '';
 		});		
 
 		can.mustache.registerHelper('sortedBy', function (collection, prop, options) {
@@ -49,6 +50,10 @@ define([
 		can.mustache.registerHelper('make3Col', function (index) {
 			return (index() + 1) % 3 === 0 ? '<div class="clearfix"></div>' : '';
 		});
+
+        can.mustache.registerHelper('checkLanguages', function (languages, name, description) {
+            console.log(languages().attr());
+        });
 
 	}
 );

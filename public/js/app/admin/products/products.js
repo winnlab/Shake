@@ -58,7 +58,8 @@ define(
 					self.viewModel.attr('viewState', 'edit');
 				}
 
-				self.element.html(can.view(self.options.viewpath + 'index.stache', this.viewModel, {					
+				self.element.html(can.view(self.options.viewpath + 'index.stache', this.viewModel, {
+                    langs: langs,
 					getBg: function (img, options) {
 						img = img();						
 						var bg = img && img.attr('bottle')

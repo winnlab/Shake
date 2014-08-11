@@ -14,7 +14,7 @@ define([
                 var self = this;
                 var wrapMinHeight = parseInt($(window).height()) - parseInt($('header.header').height());
 
-                console.log(wrapMinHeight);
+                console.log(appState);
 
                 self.element.html(
                     can.view(self.options.viewpath + 'index.stache', {

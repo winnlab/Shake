@@ -5,7 +5,7 @@
         <div class="productWrapLeft">
 
             <div class="img"
-                 style="background-image: url('{{appState.uploadPath}}{{#appState.isPrimitive appState.viewMode 'bottle'}}{{product.img.bottle}}{{else}}{{product.img.can}}{{/appState.isPrimitive}}')"
+                 style="background-image: url('{{appState.uploadPath}}{{#isPrimitive appState.viewMode 'bottle'}}{{product.img.bottle}}{{else}}{{product.img.can}}{{/isPrimitive}}')"
                     >
             </div>
 

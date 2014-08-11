@@ -32,6 +32,7 @@ require([
 		'app/menu/menu',
 		'core/config',
 		'core/appState',
+        'app/soundCloudPlayer/soundCloudPlayer',
 		'core/helpers/viewHelpers',
 
 		'css!core/css/reset.css',

@@ -32,9 +32,7 @@
 				</span>
 				<div class="playBtn"></div>
 			</div>
-			{{#if podcast}}
-				<div class="podcast">{{podcast}}</div>
-			{{/if}}			
+	        <div class="podcast">{{podcast.currentTitle}}</div>
 		</div>
 	</div>
 

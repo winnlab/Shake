@@ -1,8 +1,9 @@
 define([
 	'canjs',
+    'app/soundCloudPlayer/soundCloudPlayer',
 	'css!app/menu/css/menu'
 ], 
-	function (can) {
+	function (can, scplayer) {
 		return can.Control.extend({
 			defaults: {
 				viewpath: 'app/menu/'
@@ -23,7 +24,11 @@ define([
 				var state = this.options.state,
 					menu = state.attr('menu');
 				state.attr('menu', menu == 'opened' ? 'closed' : 'opened');
-			}
+			},
+
+            '.playBtn click': function () {
+                scplayer.togglePause();
+            }
 		});
 	}
 );

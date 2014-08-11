@@ -10,10 +10,10 @@
             <div class="roundedButton">
                 <div class="btn prevTrack">
                     <div class="trackInfo">
-                        {{#if displaySounds.prevSound}}
-                            <p class="number">#{{displaySounds.prevTrackPosition}}</p>
-                            <p class="trackName">{{displaySounds.prevSound.title}}</p>
-                            <p class="composer">{{displaySounds.prevSound.user.username}}</p>
+                        {{#if appState.podcast.prevSound}}
+                            <p class="number">#{{appState.podcast.prevTrackPosition}}</p>
+                            <p class="trackName">{{appState.podcast.prevSound.title}}</p>
+                            <p class="composer">{{appState.podcast.prevSound.user.username}}</p>
                         {{/if}}
                     </div>
                     <div class="rounded"></div>
@@ -35,10 +35,10 @@
                     <div class="roundedButton">
                         <div class="btn">
                             <div class="trackInfo">
-                                {{#if displaySounds.currentSound}}
-                                    <p class="number">#{{displaySounds.currentTrackPosition}}</p>
-                                    <p class="trackName">{{displaySounds.currentSound.title}}</p>
-                                    <p class="composer">{{displaySounds.currentSound.user.username}}</p>
+                                {{#if appState.podcast.currentSound}}
+                                    <p class="number">#{{appState.podcast.currentTrackPosition}}</p>
+                                    <p class="trackName">{{appState.podcast.currentSound.title}}</p>
+                                    <p class="composer">{{appState.podcast.currentSound.user.username}}</p>
                                 {{/if}}
                             </div>
                             <div class="rounded"></div>
@@ -54,10 +54,10 @@
             <div class="roundedButton">
                 <div class="btn nextTrack">
                     <div class="trackInfo">
-                        {{#if displaySounds.nextSound}}
-                            <p class="number">#{{displaySounds.nextTrackPosition}}</p>
-                            <p class="trackName">{{displaySounds.nextSound.title}}</p>
-                            <p class="composer">{{displaySounds.nextSound.user.username}}</p>
+                        {{#if appState.podcast.nextSound}}
+                            <p class="number">#{{appState.podcast.nextTrackPosition}}</p>
+                            <p class="trackName">{{appState.podcast.nextSound.title}}</p>
+                            <p class="composer">{{appState.podcast.nextSound.user.username}}</p>
                         {{/if}}
                     </div>
                     <div class="rounded"></div>

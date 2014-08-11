@@ -253,6 +253,8 @@ $currentBtnTop: 4rem;
         position: relative;
 
         .playTrack {
+          outline: none;
+
           background: #fa5100; /* Old browsers */
           background: -moz-linear-gradient(top, #fa5100 0%, #ff2601 100%); /* FF3.6+ */
           background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fa5100), color-stop(100%,#ff2601)); /* Chrome,Safari4+ */

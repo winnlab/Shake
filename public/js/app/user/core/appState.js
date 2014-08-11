@@ -16,7 +16,16 @@ define([
 				// can be 'bottle' or 'can'
 				viewMode: 'bottle',
 
-				podcast: false,
+				podcast: {
+                    isPlayed: false,
+                    currentTitle: null,
+                    currentSound: null,
+                    prevSound: null,
+                    nextSound: null,
+                    currentTrackPosition: null,
+                    prevTrackPosition: null,
+                    nextTrackPosition: null
+                },
 
 				size: {
 					width: 0,

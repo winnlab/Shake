@@ -175,6 +175,7 @@
       background: url("/img/user/playerBackground.png");
       position: relative; }
       .podcastWrap .soundCloudPlayer .centralWrapper .centralContent .playTrack {
+        outline: none;
         background: #fa5100;
         /* Old browsers */
         background: -moz-linear-gradient(top, #fa5100 0%, #ff2601 100%);

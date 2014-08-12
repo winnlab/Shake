@@ -26,6 +26,10 @@ define([
 				state.attr('menu', menu == 'opened' ? 'closed' : 'opened');
 			},
 
+			'.pages .module click': function () {
+				this.options.state.attr('menu', 'closed');
+			},
+
             '.playBtn click': function () {
                 scplayer.togglePause();
             }

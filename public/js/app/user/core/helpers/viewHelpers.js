@@ -4,6 +4,7 @@ define([
 	function (can) {
 
 		can.mustache.registerHelper('isPrimitive', function (observer, primitive, options) {
+			console.log(options);
 			return observer() === primitive ? options.fn() : options.inverse();
 		});
 

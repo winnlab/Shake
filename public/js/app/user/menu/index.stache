@@ -1,8 +1,4 @@
-<header class="header {{menu}}" 
-	{{#isPrimitive menu 'opened'}}
-		style="height: {{size.height}}px; background-image: url({{imgPath}}introBg.jpg);"
-	{{/isPrimitive}}
->
+<header class="header {{menu}}" style="{{#isPrimitive menu 'opened'}}height: {{size.getHeight}}px; background-image: url({{imgPath}}introBg.jpg);{{/isPrimitive}}">
 	<div class="content">
 		<a id="logo" class="module" href="/products"></a>
 
@@ -16,10 +12,10 @@
 			</div>
 			<div class="control">
 				<span class="menu text-uppercase">
-					{{#isPrimitive menu 'closed'}}
-						{{locale.menu}}
-					{{else}}
+					{{#isPrimitive menu 'opened'}}
 						{{locale.close}}
+					{{else}}
+						{{locale.menu}}
 					{{/isPrimitive}}
 				</span>
 			</div>

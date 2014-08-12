@@ -29,7 +29,10 @@ define([
 
 				size: {
 					width: 0,
-					height: 0
+					height: 0,
+					getHeight: function () {
+						return $('body').height();
+					}
 				},
 
 				// Data
@@ -42,6 +45,7 @@ define([
 			}),
 			appState = new AppState();
 
+		window['appState'] = appState;
 		// delete window.data;
 
 		return appState;

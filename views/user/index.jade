@@ -2,8 +2,18 @@ doctype html
 html(lang="ru")
 	head
 		title Shake coctails
+		style.
+			#preloader {
+				position: fixed;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 100;
+				background: #000;
+			}
 	body(class="#{data.lang}")
-
+		div#preloader
 		script(data-main="/js/app/user/core/core.js" src='/js/lib/require.js')
 		script.
 			window['data'] = !{JSON.stringify(data)};

@@ -55,6 +55,6 @@ require([
 			state: appState
 		});
 
-		new Router(body, config.router);
+		new Router(body, config.router);		
 	}
 );

@@ -31,14 +31,16 @@ define([
 			setViewHeight: function () {
 				$('body').removeAttr('style');
 				var htmlHeight = $('html').height(),
+					healthWarnHeight = Number($('body').css('font-size').replace(/px$/, "")) * 3,
 					viewportHeight = (window.innerHeight
 					? window.innerHeight
 					: (document.documentElement.clientHeight
 						? document.documentElement.clientHeight
 						: document.body.offsetHeight)),
-					height = htmlHeight > viewportHeight ? htmlHeight : viewportHeight;
-
+					height = (htmlHeight > viewportHeight ? htmlHeight : viewportHeight)  + healthWarnHeight;				
 				$('body').css('min-height', height);
+
+				console.log(healthWarnHeight);
 
 				this.options.state.attr('size.height', height);
 			},

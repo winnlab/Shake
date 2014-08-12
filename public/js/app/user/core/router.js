@@ -15,8 +15,8 @@ define([
 					require([module.path], function (Module) {
 						if (Module) {
 							self.addModule(id);
-							self.activateModule(id);
 							new Module('#' + id);
+							self.activateModule(id);
 						} else {
 							if (module.path) {
 								throw new Error('Please check constructor of ' + module.path + '.js');
@@ -52,6 +52,10 @@ define([
 				_.map(this.modules, function (module) {
 					module.attr('active', module.id === id);
 				});
+
+				if (this.modules.attr('length') === 1) {
+					$('#preloader').hide();
+				}
 			}
 
 		});
@@ -77,6 +81,7 @@ define([
 
 				can.route.bindings.pushstate.root = appState.lang;
 				can.route.ready(false);
+
 			},
 
 			'.module click': function (el, ev) {

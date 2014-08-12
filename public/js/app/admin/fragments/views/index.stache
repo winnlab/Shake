@@ -30,7 +30,7 @@
 								<tbody>
 									{{#each fragments}}
 										<tr class="fragment" {{data 'fragment'}}>
-											<td>{{name}}</td>
+											<td>{{getName}}</td>
 											<td>
 												{{#if video.mp4}}
 													<span class="label label-info">mp4</span>

@@ -1,7 +1,7 @@
 <div class="contactsWrap">
 
     <div class="header">
-        <h1>Contacts</h1>
+        <h1>{{locale.contacts.contacts}}</h1>
     </div>
 
     <div class="map">
@@ -29,25 +29,25 @@
             </div>
 
             <div class="address">
-                <h5>main office</h5>
-                <p>01601, Kyiv</p>
-                <p>Sportyvna sq, 3</p>
-                <p>044 502 99 00</p>
+                <h5>{{locale.contacts.mainOffice}}</h5>
+                <p>{{locale.contacts.postAddress}}</p>
+                <p>{{locale.contacts.address}}</p>
+                <p>{{locale.contacts.phone}}</p>
             </div>
 
             <div class="importer">
-                <h5>importer in rf</h5>
-                <p>"Novye Producty"</p>
-                <p>Russian Federation, 107078, Moscow</p>
-                <p>Novaya Basmannaya str. 9/2-4, 6,</p>
-                <p>phone: (495) 9210326</p>
-                <p>np@newproducts.ru</p>
+                <h5>{{locale.contacts.importerInRF}}</h5>
+                <p>{{locale.contacts.novyeProducty}}</p>
+                <p>{{locale.contacts.importerPlacement}}</p>
+                <p>{{locale.contacts.importerAddress}}</p>
+                <p>{{locale.contacts.importerPhone}}</p>
+                <p>{{locale.contacts.importerEmail}}</p>
             </div>
 
             <div class="exportDepartment">
-                <h5>export department</h5>
-                <p>korniyuk@newproducts.ua</p>
-                <p>+38 (067) 5484945</p>
+                <h5>{{locale.contacts.exportDepartment}}</h5>
+                <p>{{locale.contacts.exportEmail}}</p>
+                <p>{{locale.contacts.exportPhone}}</p>
             </div>
 
             <div class="clearfix"></div>

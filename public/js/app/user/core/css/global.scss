@@ -58,6 +58,73 @@ module {
 	position: relative;	
 }
 
+.mainFooter {
+
+    width: 100%;
+    background: #000000;
+
+    .footerContent {
+
+        margin: 0 auto;
+        padding: 20px 0;
+        width: 54rem;
+        color: #ffffff;
+
+        h1 {
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1;
+            font-size: 3.2rem;
+
+        }
+
+        h5 {
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1;
+            margin: 0;
+        }
+
+        p {
+            font-weight: 200;
+            line-height: 1;
+            margin: 0;
+
+        }
+
+        .newProductsInfo {
+
+            float: left;
+            width: 30%;
+            margin-right: 5%;
+
+            .newProductsLogo {
+                margin-bottom: 40px;
+            }
+        }
+
+        .address {
+
+            float: left;
+            width: 15%;
+            margin-right: 5%;
+        }
+
+        .importer {
+
+            float: left;
+            width: 20%;
+            margin-right: 5%;
+        }
+
+        .exportDepartment {
+
+            float: left;
+            width: 20%;
+        }
+    }
+}
+
 .healtWarn {
 	z-index: 20;
 	position: absolute;

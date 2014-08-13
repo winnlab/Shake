@@ -3,7 +3,7 @@ header {
   background-repeat: no-repeat;
   background-position: center center; }
 
-header #logo, header .soundIcon, header .shakeMix:before, header .playBtn {
+header #logo, header .soundIcon, header .soundIcon.muted:after, header .shakeMix:before, header .playBtn {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center; }
@@ -18,7 +18,7 @@ header {
   width: 100%;
   color: #fff;
   font-family: PFDinTextCondPro;
-  z-index: 1; }
+  z-index: 9; }
   header #logo {
     height: 5.5rem;
     width: 13.3rem;
@@ -39,6 +39,19 @@ header {
     height: 1.4rem;
     width: 1.2rem;
     background-image: url("/img/user/sound.png"); }
+    header .soundIcon:hover {
+      cursor: pointer; }
+  header .soundIcon.muted {
+    position: relative; }
+    header .soundIcon.muted:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -3px;
+      left: -5px;
+      height: 1.5rem;
+      width: 1.5rem;
+      background-image: url("/img/user/soundMuted.png"); }
   header .menuIcon {
     -webkit-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     -moz-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);

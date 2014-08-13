@@ -6,7 +6,8 @@ require.config({
 		can: 'canjs/amd/can/',
 		canjs: 'canjs/amd/can',
 		jquery: 'jquery/dist/jquery',
-		underscore: 'underscore/underscore'
+		underscore: 'underscore/underscore',
+        velocity: 'velocity/velocity.min'
 	},
 	map: {
 		'*': {
@@ -23,7 +24,8 @@ require.config({
 		'canjs': {
 			deps: ['jquery', 'can/route/pushstate', 'can/map/define', 'can/map/delegate', 'can/list/promise']
 		}
-	}
+	},
+    waitSeconds: 10
 });
 
 require([

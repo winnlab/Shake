@@ -1,0 +1,47 @@
+<div class="mainFooter">
+
+    <div class="footerContent">
+
+        <div class="newProductsInfo">
+
+            <div class="newProductsLogo">
+                <h1>{{appState.locale.contacts.contacts}}</h1>
+            </div>
+
+            <div class="socialButtons">
+                <a href="http://www.facebook.com"><img src="{{appState.imgPath}}social/facebookWhite.png" alt=""/></a>
+                <a href="http://www.vk.com"><img src="{{appState.imgPath}}social/vkWhite.png" alt=""/></a>
+                <a href="http://www.youtube.com"><img src="{{appState.imgPath}}social/youtubeWhite.png" alt=""/></a>
+                <a href="http://www.instagram.com"><img src="{{appState.imgPath}}social/instagramWhite.png" alt=""/></a>
+                <a href="http://www.coub.com"><img src="{{appState.imgPath}}social/coubWhite.png" alt=""/></a>
+            </div>
+
+        </div>
+
+        <div class="address">
+            <h5>{{appState.locale.contacts.mainOffice}}</h5>
+            <p>{{appState.locale.contacts.postAddress}}</p>
+            <p>{{appState.locale.contacts.address}}</p>
+            <p>{{appState.locale.contacts.phone}}</p>
+        </div>
+
+        <div class="importer">
+            <h5>{{appState.locale.contacts.importerInRF}}</h5>
+            <p>{{appState.locale.contacts.novyeProducty}}</p>
+            <p>{{appState.locale.contacts.importerPlacement}}</p>
+            <p>{{appState.locale.contacts.importerAddress}}</p>
+            <p>{{appState.locale.contacts.importerPhone}}</p>
+            <p>{{appState.locale.contacts.importerEmail}}</p>
+        </div>
+
+        <div class="exportDepartment">
+            <h5>{{appState.locale.contacts.exportDepartment}}</h5>
+            <p>{{appState.locale.contacts.exportEmail}}</p>
+            <p>{{appState.locale.contacts.exportPhone}}</p>
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+</div>

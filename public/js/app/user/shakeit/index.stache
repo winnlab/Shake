@@ -1,12 +1,12 @@
-<div class="shakeitWrap" style="min-height: {{wrapMinHeight}}">
+<div class="shakeitWrap carouselWrap" style="min-height: {{wrapMinHeight}}">
 
-    <div class="fragmentItem current">
+    <div class="fragmentItem">
 
-        <div class="video">
+<!--        <div class="video">
             <video autoplay="autoplay" preload muted="muted">
                 <source src="{{appState.uploadPath}}ofmonstersandmen.mp4">
             </video>
-        </div>
+        </div>-->
 
         <div class="fragmentItemContent">
             <div class="roundedButton">
@@ -17,23 +17,26 @@
                             <img src="{{appState.uploadPath}}6ccc0a7c7cf3ce0821fa3b4ecfc633f5.png" alt=""/>
                         </div>
 
-                        <div class="shareMoment">
-                            <a href="#">
-                                <p>share</p>
-                                <p class="thin">moment</p>
-                            </a>
+                        <div class="fragmentItemInfoContent">
+                            <div class="shareMoment">
+                                <a href="#">
+                                    <p>share</p>
+                                    <p class="thin">moment</p>
+                                </a>
+                            </div>
+
+                            <div class="productName">
+                                <p>bora bora</p>
+                            </div>
+
+                            <div class="ringtone">
+                                <a href="#">
+                                    <p>download</p>
+                                    <p class="thin">ringtone</p>
+                                </a>
+                            </div>
                         </div>
 
-                        <div class="productName">
-                            <p>bora bora</p>
-                        </div>
-
-                        <div class="ringtone">
-                            <a href="#">
-                                <p>download</p>
-                                <p class="thin">ringtone</p>
-                            </a>
-                        </div>
                     </div>
                     <div class="rounded"></div>
                 </div>
@@ -42,7 +45,7 @@
 
     </div>
 
-    <div class="fragmentItem next">
+    <div class="fragmentItem">
 
 <!--        <div class="video">
             <video autoplay="autoplay" preload muted="muted">
@@ -59,17 +62,20 @@
                             <img src="{{appState.uploadPath}}8e1069bb00c343c27e1135be8e089708.png" alt=""/>
                         </div>
 
-                        <div class="shareMoment">
-                            <a href="#">share <span class="thin">moment</span></a>
+                        <div class="fragmentItemInfoContent">
+                            <div class="shareMoment">
+                                <a href="#">share <span class="thin">moment</span></a>
+                            </div>
+
+                            <div class="productName">
+                                <p>mojito</p>
+                            </div>
+
+                            <div class="ringtone">
+                                <a href="#">download <span class="thin">ringtone</span></a>
+                            </div>
                         </div>
 
-                        <div class="productName">
-                            <p>mojito</p>
-                        </div>
-
-                        <div class="ringtone">
-                            <a href="#">download <span class="thin">ringtone</span></a>
-                        </div>
                     </div>
                     <div class="rounded"></div>
                 </div>
@@ -78,7 +84,7 @@
 
     </div>
 
-    <div class="fragmentItem afterNext">
+    <div class="fragmentItem">
 
 <!--        <div class="video">
             <video>
@@ -95,16 +101,173 @@
                             <img src="{{appState.uploadPath}}9e86a8359187b1e6e9de6a3b331c3774.png" alt=""/>
                         </div>
 
-                        <div class="shareMoment">
-                            <a href="#">share <span class="thin">moment</span></a>
+                        <div class="fragmentItemInfoContent">
+                            <div class="shareMoment">
+                                <a href="#">share <span class="thin">moment</span></a>
+                            </div>
+
+                            <div class="productName">
+                                <p>kampino</p>
+                            </div>
+
+                            <div class="ringtone">
+                                <a href="#">download <span class="thin">ringtone</span></a>
+                            </div>
                         </div>
 
-                        <div class="productName">
-                            <p>kampino</p>
+                    </div>
+                    <div class="rounded"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="fragmentItem">
+
+<!--        <div class="video">
+            <video>
+                <source src="{{appState.uploadPath}}kasabian.mp4">
+            </video>
+        </div>-->
+
+        <div class="fragmentItemContent">
+            <div class="roundedButton">
+                <div class="btn">
+                    <div class="fragmentItemInfo">
+
+                        <div class="image">
+                            <img src="{{appState.uploadPath}}6ccc0a7c7cf3ce0821fa3b4ecfc633f5.png" alt=""/>
                         </div>
 
-                        <div class="ringtone">
-                            <a href="#">download <span class="thin">ringtone</span></a>
+                        <div class="fragmentItemInfoContent">
+                            <div class="shareMoment">
+                                <a href="#">share <span class="thin">moment</span></a>
+                            </div>
+
+                            <div class="productName">
+                                <p>daiquiri</p>
+                            </div>
+
+                            <div class="ringtone">
+                                <a href="#">download <span class="thin">ringtone</span></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="rounded"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="fragmentItem">
+
+<!--        <div class="video">
+            <video>
+                <source src="{{appState.uploadPath}}ofmonstersandmen.mp4">
+            </video>
+        </div>-->
+
+        <div class="fragmentItemContent">
+            <div class="roundedButton">
+                <div class="btn">
+                    <div class="fragmentItemInfo">
+
+                        <div class="image">
+                            <img src="{{appState.uploadPath}}6ccc0a7c7cf3ce0821fa3b4ecfc633f5.png" alt=""/>
+                        </div>
+
+                        <div class="fragmentItemInfoContent">
+                            <div class="shareMoment">
+                                <a href="#">share <span class="thin">moment</span></a>
+                            </div>
+
+                            <div class="productName">
+                                <p>bora bora</p>
+                            </div>
+
+                            <div class="ringtone">
+                                <a href="#">download <span class="thin">ringtone</span></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="rounded"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="fragmentItem">
+
+<!--        <div class="video">
+            <video>
+                <source src="{{appState.uploadPath}}killers.mp4">
+            </video>
+        </div>-->
+
+        <div class="fragmentItemContent">
+            <div class="roundedButton">
+                <div class="btn">
+                    <div class="fragmentItemInfo">
+
+                        <div class="image">
+                            <img src="{{appState.uploadPath}}8e1069bb00c343c27e1135be8e089708.png" alt=""/>
+                        </div>
+
+                        <div class="fragmentItemInfoContent">
+                            <div class="shareMoment">
+                                <a href="#">share <span class="thin">moment</span></a>
+                            </div>
+
+                            <div class="productName">
+                                <p>mojito</p>
+                            </div>
+
+                            <div class="ringtone">
+                                <a href="#">download <span class="thin">ringtone</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="fragmentItem">
+
+<!--        <div class="video">
+            <video>
+                <source src="{{appState.uploadPath}}metric.mp4">
+            </video>
+        </div>-->
+
+        <div class="fragmentItemContent">
+            <div class="roundedButton">
+                <div class="btn">
+                    <div class="fragmentItemInfo">
+
+                        <div class="image">
+                            <img src="{{appState.uploadPath}}9e86a8359187b1e6e9de6a3b331c3774.png" alt=""/>
+                        </div>
+
+                        <div class="fragmentItemInfoContent">
+                            <div class="shareMoment">
+                                <a href="#">share <span class="thin">moment</span></a>
+                            </div>
+
+                            <div class="productName">
+                                <p>kampino</p>
+                            </div>
+
+                            <div class="ringtone">
+                                <a href="#">download <span class="thin">ringtone</span></a>
+                            </div>
                         </div>
                     </div>
                     <div class="rounded"></div>
@@ -131,161 +294,22 @@
                             <img src="{{appState.uploadPath}}6ccc0a7c7cf3ce0821fa3b4ecfc633f5.png" alt=""/>
                         </div>
 
-                        <div class="shareMoment">
-                            <a href="#">share <span class="thin">moment</span></a>
+                        <div class="fragmentItemInfoContent">
+
+                            <div class="shareMoment">
+                                <a href="#">share <span class="thin">moment</span></a>
+                            </div>
+
+                            <div class="productName">
+                                <p>daiquiri</p>
+                            </div>
+
+                            <div class="ringtone">
+                                <a href="#">download <span class="thin">ringtone</span></a>
+                            </div>
+
                         </div>
 
-                        <div class="productName">
-                            <p>daiquiri</p>
-                        </div>
-
-                        <div class="ringtone">
-                            <a href="#">download <span class="thin">ringtone</span></a>
-                        </div>
-                    </div>
-                    <div class="rounded"></div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="fragmentItem">
-
-<!--        <div class="video">
-            <video>
-                <source src="{{appState.uploadPath}}ofmonstersandmen.mp4">
-            </video>
-        </div>-->
-
-        <div class="fragmentItemContent">
-            <div class="roundedButton">
-                <div class="btn">
-                    <div class="fragmentItemInfo">
-
-                        <div class="image">
-                            <img src="{{appState.uploadPath}}6ccc0a7c7cf3ce0821fa3b4ecfc633f5.png" alt=""/>
-                        </div>
-
-                        <div class="shareMoment">
-                            <a href="#">share <span class="thin">moment</span></a>
-                        </div>
-
-                        <div class="productName">
-                            <p>bora bora</p>
-                        </div>
-
-                        <div class="ringtone">
-                            <a href="#">download <span class="thin">ringtone</span></a>
-                        </div>
-                    </div>
-                    <div class="rounded"></div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="fragmentItem">
-
-<!--        <div class="video">
-            <video>
-                <source src="{{appState.uploadPath}}killers.mp4">
-            </video>
-        </div>-->
-
-        <div class="fragmentItemContent">
-            <div class="roundedButton">
-                <div class="btn">
-                    <div class="fragmentItemInfo">
-
-                        <div class="image">
-                            <img src="{{appState.uploadPath}}8e1069bb00c343c27e1135be8e089708.png" alt=""/>
-                        </div>
-
-                        <div class="shareMoment">
-                            <a href="#">share <span class="thin">moment</span></a>
-                        </div>
-
-                        <div class="productName">
-                            <p>mojito</p>
-                        </div>
-
-                        <div class="ringtone">
-                            <a href="#">download <span class="thin">ringtone</span></a>
-                        </div>
-                    </div>
-                    <div class="rounded"></div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="fragmentItem beforePrevious">
-
-<!--        <div class="video">
-            <video>
-                <source src="{{appState.uploadPath}}metric.mp4">
-            </video>
-        </div>-->
-
-        <div class="fragmentItemContent">
-            <div class="roundedButton">
-                <div class="btn">
-                    <div class="fragmentItemInfo">
-
-                        <div class="image">
-                            <img src="{{appState.uploadPath}}9e86a8359187b1e6e9de6a3b331c3774.png" alt=""/>
-                        </div>
-
-                        <div class="shareMoment">
-                            <a href="#">share <span class="thin">moment</span></a>
-                        </div>
-
-                        <div class="productName">
-                            <p>kampino</p>
-                        </div>
-
-                        <div class="ringtone">
-                            <a href="#">download <span class="thin">ringtone</span></a>
-                        </div>
-                    </div>
-                    <div class="rounded"></div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="fragmentItem previous">
-
-<!--        <div class="video">
-            <video>
-                <source src="{{appState.uploadPath}}kasabian.mp4">
-            </video>
-        </div>-->
-
-        <div class="fragmentItemContent">
-            <div class="roundedButton">
-                <div class="btn">
-                    <div class="fragmentItemInfo">
-
-                        <div class="image">
-                            <img src="{{appState.uploadPath}}6ccc0a7c7cf3ce0821fa3b4ecfc633f5.png" alt=""/>
-                        </div>
-
-                        <div class="shareMoment">
-                            <a href="#">share <span class="thin">moment</span></a>
-                        </div>
-
-                        <div class="productName">
-                            <p>daiquiri</p>
-                        </div>
-
-                        <div class="ringtone">
-                            <a href="#">download <span class="thin">ringtone</span></a>
-                        </div>
                     </div>
                     <div class="rounded"></div>
                 </div>
@@ -295,3 +319,5 @@
     </div>
 
 </div>
+
+{{>app/core/views/footer.stache}}

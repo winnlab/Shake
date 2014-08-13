@@ -1,20 +1,20 @@
 <div class="content text-uppercase">
 	<div class="bottleType">
-		<span>0.33 {{locale.bottle}}</span>
+		<span>0.33 {{appState.locale.bottle}}</span>
 		<span class="bottlesIcon"></span>
-		<span>0.5 {{locale.can}}</span>
+		<span>0.5 {{appState.locale.can}}</span>
 	</div>
 
 	<div class="bigTitle text-bold">
-		{{locale.allCocktails}}
+		{{appState.locale.allCocktails}}
 	</div>
 
 	<div class="productsWrap">
-		{{#each products}}
+		{{#each appState.products}}
 			{{#if img.bottle}}
 				<a class="productItem module" href="/product/{{link}}">
 					<div class="img" 
-						style="background-image: url('{{uploadPath}}{{#isPrimitive viewMode 'bottle'}}{{img.bottle}}{{else}}{{img.can}}{{/isPrimitive}}')"
+						style="background-image: url('{{appState.uploadPath}}{{#isPrimitive appState.viewMode 'bottle'}}{{img.bottle}}{{else}}{{img.can}}{{/isPrimitive}}')"
 					></div>
 					<div class="name">{{lang.name}}</div>
 				</a>
@@ -22,3 +22,5 @@
 		{{/each}}
 	</div>
 </div>
+
+{{>app/core/views/footer.stache}}

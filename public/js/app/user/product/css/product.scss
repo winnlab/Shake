@@ -67,6 +67,16 @@ $blockMarginRight: 2.2rem;
           cursor: pointer;
         }
       }
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+
+        &:hover {
+          text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+          cursor: pointer;
+        }
+      }
     }
   }
 

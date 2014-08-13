@@ -69,4 +69,4 @@
 
 </div>
 
-<div id="marquee"></div>
+{{>app/core/views/footer.stache}}

@@ -39,7 +39,7 @@
 
                         <div class="bottleType">
                             <span class="bottlesIcon"></span>
-                            <span>{{appState.locale.allCocktails}}</span>
+                            <a class="module" href="/products"><span>{{appState.locale.allCocktails}}</span></a>
                         </div>
 
                     </div>
@@ -53,7 +53,7 @@
         </div>
 
         <div class="roundedButton shakeItButton">
-            <div class="btn shakeIt module" data-href="/products">
+            <div class="btn shakeIt module" data-href="/shakeit">
                 <img src="{{appState.imgPath}}shakeItLogo.png" alt=""/>
                 <p class="bold">shake</p>
                 <p>it</p>
@@ -66,3 +66,5 @@
     </div>
 
 </div>
+
+{{>app/core/views/footer.stache}}

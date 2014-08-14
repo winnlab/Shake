@@ -15,7 +15,8 @@ require.config({
 		TweenLite: 'greensock/TweenLite',
 		CSSPlugin: 'greensock/CSSPlugin',
 		Ease: 'greensock/EasePack',
-		ScrollToPlugin: 'greensock/ScrollToPlugin'
+		ScrollToPlugin: 'greensock/ScrollToPlugin',
+        velocity: 'velocity/velocity.min'
 	},
 	map: {
 		'*': {

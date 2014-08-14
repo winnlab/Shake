@@ -30,7 +30,7 @@ define([
                 });
             },
 
-            '.bottleType click': function () {
+            '.bottlesIcon click': function () {
                 var viewMode = appState.attr('viewMode');
                 appState.attr('viewMode', viewMode == 'bottle' ? 'can' : 'bottle');
             }

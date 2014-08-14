@@ -1,8 +1,8 @@
 langs = [
-	'ua'
-	'ru'
-	'en'
+    'ua'
+    'ru'
+    'en'
 ]
 
 for lang in langs
-	module.exports[lang] = require "./#{lang}"
+    module.exports[lang] = require "./#{lang}"

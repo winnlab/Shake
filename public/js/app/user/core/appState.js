@@ -16,6 +16,8 @@ define([
 				// can be 'bottle' or 'can'
 				viewMode: 'bottle',
 
+                muted: false,
+
 				podcast: {
                     isPlayed: false,
                     currentTitle: null,

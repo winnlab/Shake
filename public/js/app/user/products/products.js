@@ -14,7 +14,9 @@ define([
 				var self = this;
 
 				self.element.html(
-					can.view(self.options.viewpath + 'index.stache', appState)
+					can.view(self.options.viewpath + 'index.stache', {
+                        appState: appState
+                    })
 				);
 			},
 

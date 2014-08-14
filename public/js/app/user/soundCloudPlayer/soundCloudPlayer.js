@@ -63,6 +63,14 @@ define([
                 }
             },
 
+            toggleMute: function () {
+                var self = this;
+
+                if ( self.currentSound ) {
+                    self.currentSound.toggleMute();
+                }
+            },
+
             playNextTrack: function () {
                 this.currentSound.stop();
 

@@ -48,6 +48,12 @@
       .productWrap .productWrapDescriptionSwitcher .bottleType span:hover {
         text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
         cursor: pointer; }
+      .productWrap .productWrapDescriptionSwitcher .bottleType a {
+        color: #ffffff;
+        text-decoration: none; }
+        .productWrap .productWrapDescriptionSwitcher .bottleType a:hover {
+          text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+          cursor: pointer; }
   .productWrap .productWrapHeader h1 {
     -webkit-user-select: none;
     -moz-user-select: none;

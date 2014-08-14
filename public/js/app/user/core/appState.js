@@ -39,7 +39,7 @@ define([
 					height: 0,
 					aspectRatio: 0,
 					getHeight: function () {
-						return $('body').height();
+						return window.outerHeight;
 					}
 				},
 

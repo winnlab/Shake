@@ -1,4 +1,4 @@
-<header class="header {{menu}}" style="{{#isPrimitive menu 'opened'}}height: {{size.getHeight}}px; background-image: url({{imgPath}}introBg.jpg);{{/isPrimitive}}">
+<header class="header {{menu}}" style="{{#isPrimitive menu 'opened'}}height: {{size.getHeight}}px; {{/isPrimitive}}">
 	<div class="content">
 		<a id="logo" class="module" href="/products"></a>
 

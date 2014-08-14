@@ -61,14 +61,14 @@ define([
 		},		
 
 		onWindowResize:function() {			
-			var winWidth = appState.attr('size.width'),
-				winHeight = appState.attr('size.height'),
+			var winWidth = appState.attr('scene.width'),
+				winHeight = appState.attr('scene.height'),
 				w = ~~(winWidth * this.performanceScale),
 				h = ~~(winHeight * this.performanceScale);
 			
 			this.renderer.setSize(w, h);
 			$(this.renderer.domElement).css("width", winWidth + "px").css("height", winHeight + "px");
-			this.camera.aspect = appState.attr('size.aspectRatio');
+			this.camera.aspect = appState.attr('scene.aspectRatio');
 			this.camera.updateProjectionMatrix();
 			this.camera.far = appState.attr('scene.distanceFar');
 			
@@ -84,7 +84,7 @@ define([
 			}
 
 			if (this._canvasContext) {
-				this._canvasContext.clearRect(0, 0, appState.attr('size.width'), appState.attr('size.height'));				
+				this._canvasContext.clearRect(0, 0, appState.attr('scene.width'), appState.attr('scene.height'));				
 				this.renderer.clear();
 			}
 			
@@ -116,7 +116,7 @@ define([
 
 			this.textManager = new TextManager(appState.attr('locale.checkAge'), {
 				//font size in points (roughly)
-				fontSize: 62,
+				fontSize: appState.fontSize() * 5,
 				//number of steps for curves and lines, leads to more triangles
 				// steps: 10,
 
@@ -133,8 +133,8 @@ define([
 
 			this.textManager.style = 0;
 
-			var winWidth = appState.attr('size.width'),
-				winHeight = appState.attr('size.height'),
+			var winWidth = appState.attr('scene.width'),
+				winHeight = appState.attr('scene.height'),
 				w = ~~(winWidth * this.performanceScale),
 				h = ~~(winHeight * this.performanceScale);			
 
@@ -188,8 +188,8 @@ define([
 			}
 
 
-			var TARGET_WIDTH = 1024;
-			var TARGET_HEIGHT = 768;
+			var TARGET_WIDTH = 800;
+			var TARGET_HEIGHT = 300;
 			
 			var scale = width / TARGET_WIDTH;			
 

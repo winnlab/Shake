@@ -14,6 +14,7 @@ header .soundIcon, header .menuIcon, header .line, header .shakeMix:before {
 
 header {
   position: absolute;
+  top: 0;
   height: 5rem;
   width: 100%;
   color: #fff;

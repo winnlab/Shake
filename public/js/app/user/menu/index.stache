@@ -47,23 +47,3 @@
 		</section>
 	</nav>
 </header>
-
-<div class="healtWarn">
-	<div class="content text-uppercase">
-		<span class="warnAside">
-			<span class="warnLbl">
-				{{{locale.consume}}}
-			</span>
-			<span class="warn"></span>
-		</span>
-		<span class="bigWarn">
-			{{{locale.healthWarn}}}
-		</span>
-		<span class="warnAside">
-			<span class="warn"></span>
-			<span class="warnLbl text-right">
-				{{{locale.consume}}}
-			</span>
-		</span>
-	</div>
-</div>

@@ -73,7 +73,7 @@ define([
 					}),
 					self = this;
 
-				$(options.modulesContainer).append(html);
+				$(options.modulesContainer).prepend(html);
 
 				_.each(options.routes, function (route) {
 					can.route(route.route, route.defaults ? route.defaults : {});

@@ -9,6 +9,7 @@ $playBtnOffset: $playBtnSize * 1.2;
 
 header {
 	position: absolute;
+	top: 0;
 
 	@include size(100% 5rem);
 

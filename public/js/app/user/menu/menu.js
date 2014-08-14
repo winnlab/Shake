@@ -18,7 +18,7 @@ define([
 					options.state = new can.Map();
 				}				
 
-				self.element.append(can.view(self.options.viewpath + 'index.stache', options.state));
+				self.element.prepend(can.view(self.options.viewpath + 'index.stache', options.state));
 			},
 
 			'.menu click': function () {

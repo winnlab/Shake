@@ -1,23 +1,22 @@
-<div class="bg" style="height: {{size.height}}px;">
-	<div class="logo"></div>	
-	
-	{{#if is18Show}}
+<div class="topOffset"></div>
+<div class="logo"></div>
 
-		<div id="checkTitle"></div>		
+{{#if is18Show}}
 
-		<div class="checkerBtns">
-			<div class="btn yes">
-				{{locale.yes}}
-				<div class="rounded"></div>
-			</div>
-			<div class="btn no">
-				{{locale.no}}
-				<div class="rounded"></div>
-			</div>
+	<div id="checkTitle"></div>
+
+	<div class="checkerBtns">
+		<div class="btn yes">
+			{{locale.yes}}
+			<div class="rounded"></div>
 		</div>
-	{{else}}
-		<div class="title">
-			Oooops!
+		<div class="btn no">
+			{{locale.no}}
+			<div class="rounded"></div>
 		</div>
-	{{/if}}
-</div>
+	</div>
+{{else}}
+	<div class="title">
+		Oooops!
+	</div>
+{{/if}}

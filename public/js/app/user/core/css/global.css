@@ -63,12 +63,14 @@ body {
 *,
 *:before,
 *:after {
+  margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 html, body {
   width: 100%;
+  height: 100%;
   min-height: 42rem;
   font-size: 16px; }
 
@@ -84,7 +86,12 @@ body {
 
 module {
   display: none;
-  min-height: 100%; }
+  min-height: 100%;
+  margin-bottom: -3rem; }
+  module:after {
+    content: "";
+    display: block;
+    height: 3rem; }
   module.active {
     display: block; }
   module .moduleContent {
@@ -137,12 +144,12 @@ module {
       width: 20%; }
 
 .healtWarn {
+  position: relative;
   z-index: 20;
-  position: absolute;
-  bottom: 0;
   background: #000;
   color: #fff;
   width: 100%;
+  height: 3rem;
   padding: 0.5rem 0;
   font-family: PFDinTextCompPro;
   font-weight: 200;

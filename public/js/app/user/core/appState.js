@@ -4,6 +4,7 @@ define([
 	function (can) {
 
 		var AppState = can.Map.extend({
+
 				//Settings
 				imgPath: '/img/user/',
 				uploadPath: '/uploads/',
@@ -16,18 +17,22 @@ define([
 				// can be 'bottle' or 'can'
 				viewMode: 'bottle',
 
-                muted: false,
+				muted: false,
 
 				podcast: {
-                    isPlayed: false,
-                    currentTitle: null,
-                    currentSound: null,
-                    prevSound: null,
-                    nextSound: null,
-                    currentTrackPosition: null,
-                    prevTrackPosition: null,
-                    nextTrackPosition: null
-                },
+					isPlayed: false,
+					currentTitle: null,
+					currentSound: null,
+					prevSound: null,
+					nextSound: null,
+					currentTrackPosition: null,
+					prevTrackPosition: null,
+					nextTrackPosition: null
+				},
+
+				fontSize: function () {
+					return Number($('body').css('font-size').replace(/px$/, ""));
+				},
 
 				size: {
 					width: 0,
@@ -38,13 +43,17 @@ define([
 					}
 				},
 
-				scene: {},
+				scene: {
+					originWidth: 800,
+					width: 800,
+					height: 300
+				},
 
 				// Data
 				locale: data && data.locale ? data.locale : false,
 				lang: data && data.lang ? '/' + data.lang + '/' : '/',
 				products: data && data.products ? data.products : false,
-                product: data && data.product ? data.product : false,
+				product: data && data.product ? data.product : false,
 				parties: data && data.parties ? data.parties : false
 
 			}),

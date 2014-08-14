@@ -14,6 +14,18 @@ html(lang="ru")
 			}
 	body(class="#{data.lang}")
 		div#preloader
+		.healtWarn
+			.content.text-uppercase
+				span.warnAside
+					span.warnLbl
+						!{data.locale.consume}
+					span.warn
+				span.bigWarn
+					!{data.locale.healthWarn}
+				span.warnAside
+					span.warn
+					span.warnLbl.text-right
+						!{data.locale.consume}
 		script(data-main="/js/app/user/core/core.js" src='/js/lib/require.js')
 		script.
 			window['data'] = !{JSON.stringify(data)};

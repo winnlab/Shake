@@ -48,7 +48,7 @@ define([
 			},
 
 			'.no click': function () {
-				this.state.attr('is18Show', false);
+				appState.attr('is18Show', false);
 			}
 
 		});

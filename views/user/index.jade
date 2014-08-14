@@ -16,16 +16,12 @@ html(lang="ru")
 		div#preloader
 		.healtWarn
 			.content.text-uppercase
-				span.warnAside
-					span.warnLbl
-						| !{data.locale.consume}
-					span.warn
-				span.bigWarn
+				.warning.left
+					img(src="/img/user/warnWhite.png")
+				p.bigWarn
 					| !{data.locale.healthWarn}
-				span.warnAside
-					span.warn
-					span.warnLbl.text-right
-						| !{data.locale.consume}
+				.warning.right
+					img(src="/img/user/warnWhite.png")
 		script(data-main="/js/app/user/core/core.js" src='/js/lib/require.js')
 		script.
 			window['data'] = !{JSON.stringify(data)};

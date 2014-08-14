@@ -147,38 +147,28 @@ module {
 .healtWarn {
   position: relative;
   z-index: 20;
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
   width: 100%;
   height: 3rem;
-  padding: 0.5rem 0;
+  padding: 0.7rem 0;
   font-family: PFDinTextCompPro;
   font-weight: 200;
   line-height: 1; }
-  .healtWarn .warnAside {
-    display: inline-block;
-    vertical-align: middle; }
   .healtWarn .bigWarn {
-    display: inline-block;
     font-size: 2rem;
-    vertical-align: middle;
-    margin: 0 0.125rem; }
-  .healtWarn .warn {
-    display: inline-block;
-    vertical-align: middle;
-    width: 1.8rem;
-    height: 1.8rem;
-    margin: -0.5rem 0 0;
-    background-image: url("/img/user/warn.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center; }
-  .healtWarn .warnLbl {
-    font-size: 1rem;
-    line-height: 0.9rem;
-    vertical-align: middle;
-    display: inline-block;
-    margin-top: -0.3rem; }
+    text-align: center;
+    width: 100%; }
+  .healtWarn .warning {
+    position: absolute;
+    top: 0;
+    height: 100%; }
+    .healtWarn .warning img {
+      height: 100%; }
+  .healtWarn .warning.left {
+    left: 0; }
+  .healtWarn .warning.right {
+    right: 0; }
 
 /* 
 	Text styles

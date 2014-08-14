@@ -34,13 +34,14 @@ define([
 					return Number($('body').css('font-size').replace(/px$/, ""));
 				},
 
+				getPageHeight: function () {					
+					return $('module.active').outerHeight() - this.fontSize() * 3;
+				},
+
 				size: {
 					width: 0,
 					height: 0,
-					aspectRatio: 0,
-					getHeight: function () {
-						return window.outerHeight;
-					}
+					aspectRatio: 0					
 				},
 
 				scene: {

@@ -1,10 +1,9 @@
 <div class="bg" style="height: {{size.height}}px;">
-	<div class="logo"></div>
-
+	<div class="logo"></div>	
+	
 	{{#if is18Show}}
-		<div class="title">
-			{{{locale.checkAge}}}
-		</div>
+
+		<div id="checkTitle"></div>		
 
 		<div class="checkerBtns">
 			<div class="btn yes">

@@ -22,19 +22,31 @@
     left: 50%;
     position: relative;
     background-image: url("/img/user/introLogo.png"); }
-  #checker .title {
-    font: 5.2rem PFDinTextCondPro;
-    font-weight: 500;
-    line-height: 4.8rem;
-    letter-spacing: 3px;
-    padding-top: 2.35rem;
-    color: #ffffff;
-    text-transform: uppercase;
-    text-align: center; }
+  #checker #checkTitle {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow: hidden; }
   #checker .checkerBtns {
+    opacity: 0;
     position: relative;
     text-align: center;
-    padding: 2rem 0 2rem; }
+    padding: 17rem 0 2rem;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px);
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in; }
+    #checker .checkerBtns.active {
+      opacity: 1;
+      -webkit-transform: translateY(0px);
+      -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+      -o-transform: translateY(0px);
+      transform: translateY(0px); }
     #checker .checkerBtns .btn {
       display: inline-block;
       position: relative;

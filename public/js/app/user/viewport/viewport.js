@@ -8,14 +8,12 @@ define([
 				var options = this.options;
 
 				if (!options.state) {
-					options.state = new can.Map({
-						width: 0,
-						height: 0
-					});
+					options.state = new can.Map();
 				}
 
 				this.setViewWidth();
 				this.setViewHeight();
+				this.setAspectRatio();
 			},
 
 			setViewWidth: function () {
@@ -37,17 +35,20 @@ define([
 					: (document.documentElement.clientHeight
 						? document.documentElement.clientHeight
 						: document.body.offsetHeight)),
-					height = (htmlHeight > viewportHeight ? htmlHeight : viewportHeight)  + healthWarnHeight;				
+					height = (htmlHeight > viewportHeight ? htmlHeight : viewportHeight)  + healthWarnHeight;
 				$('body').css('min-height', height);
 
-				console.log(healthWarnHeight);
-
 				this.options.state.attr('size.height', height);
+			},
+
+			setAspectRatio: function () {
+				this.options.state.attr('size.aspectRatio', window.innerWidth / window.innerHeight);
 			},
 
 			'{window} resize': function () {
 				this.setViewWidth();
 				this.setViewHeight();
+				this.setAspectRatio();
 			}
 		});
 

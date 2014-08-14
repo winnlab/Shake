@@ -30,10 +30,13 @@ define([
 				size: {
 					width: 0,
 					height: 0,
+					aspectRatio: 0,
 					getHeight: function () {
 						return $('body').height();
 					}
 				},
+
+				scene: {},
 
 				// Data
 				locale: data && data.locale ? data.locale : false,

@@ -1,5 +1,5 @@
 module.exports =
-	checkAge: 'ВАМ <div class="clearfix"></div> БОЛЬШЕ 18 ЛЕТ?'
+	checkAge: 'ВАМ <br /> БОЛЬШЕ 18 ЛЕТ?'
 	yes: 'Да'
 	no: 'Нет'
 	healthWarn: 'ЧРЕЗМЕРНОЕ УПОТРЕБЛЕНИЕ АЛКОГОЛЯ ВРЕДИТ ВАШЕМУ ЗДОРОВЬЮ'

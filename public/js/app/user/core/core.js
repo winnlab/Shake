@@ -6,7 +6,16 @@ require.config({
 		can: 'canjs/amd/can/',
 		canjs: 'canjs/amd/can',
 		jquery: 'jquery/dist/jquery',
-		underscore: 'underscore/underscore'
+		underscore: 'underscore/underscore',
+		managers: '../app/user/managers',
+
+		Class: 'jsOOP/Class',
+		baseClass: 'jsOOP/baseClass',
+		three: 'three.r60',
+		TweenLite: 'greensock/TweenLite',
+		CSSPlugin: 'greensock/CSSPlugin',
+		Ease: 'greensock/EasePack',
+		ScrollToPlugin: 'greensock/ScrollToPlugin'
 	},
 	map: {
 		'*': {
@@ -15,6 +24,7 @@ require.config({
 	},
 	shim: {
 		'jquery': {
+			deps: ['requestAnimationFrame'],
 			exports: '$'
 		},
 		'underscore': {
@@ -22,8 +32,16 @@ require.config({
 		},
 		'canjs': {
 			deps: ['jquery', 'can/route/pushstate', 'can/map/define', 'can/map/delegate', 'can/list/promise']
-		}
-	}
+		},
+		'three': {
+            exports: 'THREE'
+        },
+        TweenLite: {
+            deps: ['CSSPlugin', 'Ease', 'ScrollToPlugin']
+        }
+	},
+
+	waitSeconds: 10
 });
 
 require([
@@ -32,7 +50,7 @@ require([
 		'app/menu/menu',
 		'core/config',
 		'core/appState',
-        'app/soundCloudPlayer/soundCloudPlayer',
+		'app/soundCloudPlayer/soundCloudPlayer',
 		'core/helpers/viewHelpers',
 
 		'css!core/css/reset.css',

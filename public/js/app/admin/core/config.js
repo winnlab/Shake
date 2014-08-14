@@ -24,6 +24,10 @@ define({
 			name: 'fragments',
 			path: 'app/fragments/fragments',
 			title: ''
-		}]
+		}, {
+            name: 'newPodcasts',
+            path: 'app/newPodcasts/newPodcasts',
+            title: ''
+        }]
 	}
 });

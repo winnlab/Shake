@@ -6,6 +6,7 @@ Main = require './admin/main'
 Products = require './admin/products'
 Fragments = require './admin/fragments'
 Days = require './admin/days'
+NewPodcasts = require './admin/newPodcasts'
 
 Router = express.Router()
 
@@ -35,6 +36,13 @@ Router.get '/day', Days.findAll
 Router.post '/day', Days.save
 Router.put '/day/:id?', Days.save
 Router.delete '/day/:id?', Days.delete
+
+#----------------#
+
+Router.get '/newPodcast', NewPodcasts.findAll
+Router.post '/newPodcast', NewPodcasts.save
+Router.put '/newPodcast/:id?', NewPodcasts.save
+Router.delete '/newPodcast/:id?', NewPodcasts.delete
 
 #----------------#
 

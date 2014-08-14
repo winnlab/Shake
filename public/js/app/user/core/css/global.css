@@ -77,7 +77,8 @@ html, body {
 body {
   font-family: PFDinTextCondPro;
   position: relative;
-  background-image: url("/img/user/introBg.jpg"); }
+  background-image: url("/img/user/introBg.jpg");
+  overflow-x: hidden; }
 
 .clearfix:after {
   content: "";

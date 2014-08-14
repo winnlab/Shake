@@ -21,6 +21,8 @@ define([
                         appState: appState
                     })
                 );
+
+                this.initFuturePodcasts();
             },
 
             '.playTrack click': function () {
@@ -33,6 +35,16 @@ define([
 
             '.prevTrack click': function () {
                 scplayer.playPrevTrack();
+            },
+
+            initFuturePodcasts: function () {
+                var self = this;
+
+                $('#marquee', this.element).html(
+                    can.view(self.options.viewpath + 'marquee.stache', {
+                        appState: appState
+                    })
+                );
             }
         });
     }

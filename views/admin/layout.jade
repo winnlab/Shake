@@ -1,60 +1,64 @@
 doctype html
 html(lang="ru")
-	head
-		block header
-			meta(charset="UTF-8")
-			title= "Shake | Административная панель"
-			meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport')
-			link(href="/css/admin/bootstrap.min.css" rel="stylesheet" type="text/css")
-			link(href="/css/admin/font-awesome.min.css" rel="stylesheet" type="text/css")
-			link(href="/css/admin/ionicons.min.css" rel="stylesheet" type="text/css")
-			link(href="/css/admin/AdminLTE.css" rel="stylesheet" type="text/css")
-	body.skin-blue
-		header.header
-			a.logo(href="dashboard")= "Админ-панель"
-			nav.navbar.navbar-static-top(role="navigation")
-				a.navbar-btn.sidebar-toggle(href="#" data-toggle="offcanvas" role="button")
-					span.sr-only= "Toggle navigation"
-					span.icon-bar
-					span.icon-bar
-					span.icon-bar
-				.navbar-right
-					ul.nav.navbar-nav
-						li.dropdown.user.user-menu
-							a.dropdown-toggle(href="#" data-toggle="dropdown")
-								i.glyphicon.glyphicon-user
-								span= user.username 
-								i.caret
-							ul.dropdown-menu
-								li.user-footer
-									.pull-left
-										a.btn.btn-default.btn-flat(href="#")= "Профиль"
-									.pull-right
-										a.btn.btn-default.btn-flat(href="/admin/logout")= "Выйти"
-		.wrapper.row-offcanvas.row-offcanvas-left
-			aside.left-side.sidebar-offcanvas
-				section.sidebar
-					ul.sidebar-menu
-						li(class= (currentHref == 'dashboard' ? "active" : ""))
-							a.module(href="/admin/dashboard")
-								i.fa.fa-dashboard
-								span= "Главная"
-						li(class= (currentHref == 'products' ? "active" : ""))
-							a.module(href="/admin/products")
-								i.fa.fa-th
-								span= "Продукты"
-						li(class= (currentHref == 'days' ? "active" : ""))
-							a.module(href="/admin/days")
-								i.fa.fa-calendar
-								span= "Дни"
-			aside#moduleContent
-				block content
-		block scripts
-			script(src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js")
-			script(src="/js/admin/jquery-ui-1.10.3.min.js" type="text/javascript")
-			script(src="/js/admin/bootstrap.min.js" type="text/javascript")
-			script(src="/js/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript")
-			script(src="/js/admin/AdminLTE/app.js" type="text/javascript")
-			script(src="/js/lib/require.js" data-main="/js/app/admin/core/core.js")
-			script.
-				window.langs = !{JSON.stringify(langs)}
+    head
+        block header
+            meta(charset="UTF-8")
+            title= "Shake | Административная панель"
+            meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport')
+            link(href="/css/admin/bootstrap.min.css" rel="stylesheet" type="text/css")
+            link(href="/css/admin/font-awesome.min.css" rel="stylesheet" type="text/css")
+            link(href="/css/admin/ionicons.min.css" rel="stylesheet" type="text/css")
+            link(href="/css/admin/AdminLTE.css" rel="stylesheet" type="text/css")
+    body.skin-blue
+        header.header
+            a.logo(href="dashboard")= "Админ-панель"
+            nav.navbar.navbar-static-top(role="navigation")
+                a.navbar-btn.sidebar-toggle(href="#" data-toggle="offcanvas" role="button")
+                    span.sr-only= "Toggle navigation"
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                .navbar-right
+                    ul.nav.navbar-nav
+                        li.dropdown.user.user-menu
+                            a.dropdown-toggle(href="#" data-toggle="dropdown")
+                                i.glyphicon.glyphicon-user
+                                span= user.username
+                                i.caret
+                            ul.dropdown-menu
+                                li.user-footer
+                                    .pull-left
+                                        a.btn.btn-default.btn-flat(href="#")= "Профиль"
+                                    .pull-right
+                                        a.btn.btn-default.btn-flat(href="/admin/logout")= "Выйти"
+        .wrapper.row-offcanvas.row-offcanvas-left
+            aside.left-side.sidebar-offcanvas
+                section.sidebar
+                    ul.sidebar-menu
+                        li(class= (currentHref == 'dashboard' ? "active" : ""))
+                            a.module(href="/admin/dashboard")
+                                i.fa.fa-dashboard
+                                span= "Главная"
+                        li(class= (currentHref == 'products' ? "active" : ""))
+                            a.module(href="/admin/products")
+                                i.fa.fa-th
+                                span= "Продукты"
+                        li(class= (currentHref == 'days' ? "active" : ""))
+                            a.module(href="/admin/days")
+                                i.fa.fa-calendar
+                                span= "Дни"
+                        li(class= (currentHref == 'days' ? "active" : ""))
+                            a.module(href="/admin/newPodcasts")
+                                i.fa.fa-volume-off
+                                span= "Анонсы подкастов"
+            aside#moduleContent
+                block content
+        block scripts
+            script(src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js")
+            script(src="/js/admin/jquery-ui-1.10.3.min.js" type="text/javascript")
+            script(src="/js/admin/bootstrap.min.js" type="text/javascript")
+            script(src="/js/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript")
+            script(src="/js/admin/AdminLTE/app.js" type="text/javascript")
+            script(src="/js/lib/require.js" data-main="/js/app/admin/core/core.js")
+            script.
+                window.langs = !{JSON.stringify(langs)}

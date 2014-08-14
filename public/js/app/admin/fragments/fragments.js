@@ -53,8 +53,7 @@ define(
 			init: function () {
 
 				var self = this,
-					route = can.route.attr(),
-					viewModel = new ViewModel();
+					route = can.route.attr();
 				
 				viewModel = new ViewModel();
 				viewModel.attr('product_id', can.route.attr('id'));
@@ -160,7 +159,7 @@ define(
 			},
 
 			'{FragmentsModel} created': function (Model, ev, fragment) {
-				var self = this
+				var self = this,
 					fragments = self.viewModel.attr('fragments');
 				fragments.push(fragment);
 				this.viewModel.reOrder('fragments');

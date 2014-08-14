@@ -190,7 +190,7 @@
         /* IE10+ */
         background: linear-gradient(to bottom, #fa5100 0%, #ff2601 100%);
         /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa5100', endColorstr='#ff2601',GradientType=0 );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa5100', endColorstr='#ff2601',GradientType=0 );
         /* IE6-9 */
         position: absolute;
         top: 0.8rem;
@@ -227,13 +227,15 @@
         .podcastWrap .soundCloudPlayer .nextTrackWrapper .roundedButton .btn .trackInfo .composer {
           font-size: 0.6rem; }
 
-#marquee a {
-  color: #ffffff;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 1.5rem; }
-  #marquee a .thin {
-    font-weight: 300; }
-  #marquee a .divider {
-    margin: 0 5px;
-    font-size: 1.6rem; }
+#marquee {
+  margin-bottom: 1.7rem; }
+  #marquee a {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.5rem; }
+    #marquee a .thin {
+      font-weight: 300; }
+    #marquee a .divider {
+      margin: 0 5px;
+      font-size: 1.6rem; }

@@ -32,7 +32,9 @@ body {
 	position: relative;
 
 	@extend %bg-image-cover;
-	background-image: url('#{$img_path}introBg.jpg');	
+	background-image: url('#{$img_path}introBg.jpg');
+
+    overflow-x: hidden;
 }
 
 .clearfix {

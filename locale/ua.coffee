@@ -1,5 +1,5 @@
 module.exports =
-    checkAge: 'ВАМ<br>БІЛЬШЕ 18 РОКІВ?'
+    checkAge: 'ВАМ <br> БІЛЬШЕ 18 РОКІВ?'
     yes: 'Так'
     no: 'Ні'
     healthWarn: 'НАДМІРНЕ СПОЖИВАННЯ АЛКОГОЛЮ ШКОДИТЬ ВАШОМУ ЗДОРОВ\'Ю'
@@ -28,3 +28,12 @@ module.exports =
         exportDepartment: 'Відділ експорту'
         exportEmail: 'korniyuk@newproducts.ua'
         exportPhone: '+38 (067) 5484945'
+
+    shakeit:
+        share: 'поделись'
+        moment: 'моментом'
+        download: 'скачай'
+        ringtone: 'рингтон'
+
+    newPodcast: 'новый подкаст'
+    by: 'от'

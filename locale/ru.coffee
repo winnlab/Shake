@@ -28,3 +28,12 @@ module.exports =
         exportDepartment: 'Отдел експорта'
         exportEmail: 'korniyuk@newproducts.ua'
         exportPhone: '+38 (067) 5484945'
+
+    shakeit:
+        share: 'поделись'
+        moment: 'моментом'
+        download: 'скачай'
+        ringtone: 'рингтон'
+
+    newPodcast: 'новый подкаст'
+    by: 'от'

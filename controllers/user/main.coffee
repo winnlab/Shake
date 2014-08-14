@@ -57,6 +57,8 @@ getData = (lang, cb) ->
 		products: (proceed) ->
 			Products = Model 'Product', 'find', null, active: true
 			Products.lean().exec proceed
+		newPodcasts: (proceed) ->
+			Model 'NewPodcast', 'find', proceed
 		parties: (proceed) ->
 			query =
 				active: true

@@ -31,7 +31,7 @@
 				<span class="mixLabel">
 					<span class="text-bold">shake</span>mix
 				</span>
-				<div class="playBtn"></div>
+				<div class="playBtn {{#if paused}}paused{{/if}}"></div>
 			</div>
 	        <div class="podcast">{{podcast.currentTitle}}</div>
 		</div>

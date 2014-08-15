@@ -198,6 +198,10 @@ header {
 		position: absolute;
 		right: -$playBtnOffset;
 		top: 0.35rem;
+
+		&.paused {
+			background-image: url('#{$img_path}pause.png');
+		}
 	}
 
 	.pages {

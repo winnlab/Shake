@@ -149,6 +149,11 @@ header {
       top: 0.2rem;
       left: -0.25rem;
       position: relative; }
+    header .shakeMix .podcast {
+      text-align: right;
+      position: absolute;
+      right: 0;
+      top: 2.5rem; }
   header .playBtn {
     height: 1.6rem;
     width: 1.6rem;

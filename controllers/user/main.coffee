@@ -1,3 +1,4 @@
+
 async = require 'async'
 _ = require 'underscore'
 
@@ -107,3 +108,4 @@ exports.index = (req, res) ->
 			View.render 'user/index', res, {data}
 	], (err) ->
 		res.send err
+		

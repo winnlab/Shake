@@ -164,6 +164,13 @@ header {
 		position: absolute;
 		right: $playBtnOffset;
 		top: 1.6rem;
+
+		.podcast {
+			text-align: right;
+			position: absolute;
+			right: 0;
+			top: 2.5rem;
+		}
 	}
 
 	.shakeMix {
@@ -187,14 +194,7 @@ header {
 			top: 0.2rem;
 			left: -0.25rem;
 			position: relative;
-		}
-
-		.podcast {
-			text-align: right;
-			position: absolute;
-			right: 0;
-			top: 2.5rem;
-		}
+		}		
 	}
 
 	.playBtn {

@@ -53,6 +53,7 @@ define([
 				// Data
 				locale: data && data.locale ? data.locale : false,
 				lang: data && data.lang ? '/' + data.lang + '/' : '/',
+				langs: data && data.langs ? data.langs : false,
 				products: data && data.products ? data.products : false,
                 product: data && data.product ? data.product : false,
 				parties: data && data.parties ? data.parties : false,

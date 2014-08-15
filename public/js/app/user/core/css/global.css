@@ -87,10 +87,6 @@ module {
   display: none;
   min-height: 100%;
   background-image: url("/img/user/introBg.jpg"); }
-  module:after {
-    content: "";
-    display: block;
-    height: 3rem; }
   module.active {
     display: block; }
   module .moduleContent {

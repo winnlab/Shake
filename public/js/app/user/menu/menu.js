@@ -31,9 +31,10 @@ define([
 				this.options.state.attr('menu', 'closed');
 			},
 
-			'.playBtn click': function () {
-				scplayer.togglePause();
-			},
+            '.playBtn click': function () {
+                appState.attr('paused', !appState.attr('paused'));
+                scplayer.togglePause();
+            },
 
 			'.soundIcon click': function () {
 				appState.attr('muted', !appState.attr('muted'));

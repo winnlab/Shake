@@ -156,6 +156,8 @@ header {
     position: absolute;
     right: -1.92rem;
     top: 0.35rem; }
+    header .playBtn.paused {
+      background-image: url("/img/user/pause.png"); }
   header .pages {
     display: none;
     width: 100%;

@@ -5,7 +5,7 @@
         <div class="fragmentItem">
 
             <div class="video">
-                <video muted="muted" loop="loop">
+                <video muted="muted" loop="loop" preload="metadata">
                     <source src="{{appState.uploadPath}}{{fragment.video.mp4}}">
                     <source src="{{appState.uploadPath}}{{fragment.video.ogv}}">
                     <source src="{{appState.uploadPath}}{{fragment.video.webm}}">

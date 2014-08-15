@@ -218,7 +218,7 @@
     display: block;
     left: 50%;
     margin-left: -6.5rem;
-    z-index: -1; }
+    z-index: 1; }
     .shakeitWrap .fragmentItem.current .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent {
       background: rgba(28, 27, 27, 0.8); }
   .shakeitWrap .fragmentItem.previous {

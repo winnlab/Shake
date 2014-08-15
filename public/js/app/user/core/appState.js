@@ -35,7 +35,7 @@ define([
 				},
 
 				getPageHeight: function () {					
-					return $('module.active').outerHeight() - this.fontSize() * 3;
+					return $('module.active').outerHeight();
 				},
 
 				size: {

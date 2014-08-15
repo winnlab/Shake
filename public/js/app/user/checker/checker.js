@@ -36,7 +36,7 @@ define([
 			':module route': function (data) {
 				if (data.module == 'checker'){
 					this.titleManager.animate();
-				}				
+				}
 			},
 
 			'.yes click': function () {

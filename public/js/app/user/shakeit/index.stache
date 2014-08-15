@@ -65,5 +65,3 @@
     {{/each}}
 
 </div>
-
-{{>app/core/views/footer.stache}}

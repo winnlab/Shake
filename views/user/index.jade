@@ -13,15 +13,7 @@ html(lang="ru")
 				background: #000;
 			}
 	body(class="#{data.lang}")
-		div#preloader
-		.healtWarn
-			.content.text-uppercase
-				.warning.left
-					img(src="/img/user/warnWhite.png")
-				p.bigWarn
-					| !{data.locale.healthWarn}
-				.warning.right
-					img(src="/img/user/warnWhite.png")
+		div#preloader		
 		script(data-main="/js/app/user/core/core.js" src='/js/lib/require.js')
 		script.
 			window['data'] = !{JSON.stringify(data)};

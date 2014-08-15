@@ -51,6 +51,7 @@ require([
 		'app/menu/menu',
 		'core/config',
 		'core/appState',
+		'app/global/global',
 		'app/soundCloudPlayer/soundCloudPlayer',
 		'core/helpers/viewHelpers',
 
@@ -62,7 +63,8 @@ require([
 		Viewport,
 		Menu,
 		config,
-		appState
+		appState,
+		Global
 	) {
 		var body = $('body');
 
@@ -74,6 +76,8 @@ require([
 			state: appState
 		});
 
-		new Router(body, config.router);		
+		new Router(body, config.router);
+
+		new Global(body);
 	}
 );

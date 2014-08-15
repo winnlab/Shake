@@ -22,5 +22,3 @@
 		{{/each}}
 	</div>
 </div>
-
-{{>app/core/views/footer.stache}}

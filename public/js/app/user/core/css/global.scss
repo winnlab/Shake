@@ -41,13 +41,7 @@ module {
 	min-height: 100%;
 
 	@extend %bg-image-cover;
-	background-image: url('#{$img_path}introBg.jpg');
-
-	&:after {
-		content: "";
-		display: block;
-		height: $healthWarnHeight;
-	}
+	background-image: url('#{$img_path}introBg.jpg');	
 
 	&.active {
 		display: block;

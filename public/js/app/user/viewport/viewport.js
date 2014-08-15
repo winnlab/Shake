@@ -33,7 +33,7 @@ define([
 					? window.innerHeight
 					: (document.documentElement.clientHeight
 						? document.documentElement.clientHeight
-						: document.body.offsetHeight)),				
+						: document.body.offsetHeight));
 
 				$('body').css('min-height', viewportHeight);
 				this.options.state.attr('size.height', viewportHeight);

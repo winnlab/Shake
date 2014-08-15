@@ -53,6 +53,22 @@ header {
 		@extend %bg-image-contain;
 		@extend %in-block-middle;
 		background-image: url('#{$img_path}sound.png');
+		position: relative;
+
+
+		&.muted {
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				@include size(1.7rem 1.7rem);
+				top: -0.1rem;
+				left: -0.2rem;
+				background-image: url("#{$img_path}soundMuted.png");
+				-webkit-background-size: cover;
+				background-size: cover;
+			}
+		}
 	}
 
 	.menuIcon {

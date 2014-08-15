@@ -41,7 +41,19 @@ header {
   header .soundIcon {
     height: 1.4rem;
     width: 1.2rem;
-    background-image: url("/img/user/sound.png"); }
+    background-image: url("/img/user/sound.png");
+    position: relative; }
+    header .soundIcon.muted:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 1.7rem;
+      width: 1.7rem;
+      top: -0.1rem;
+      left: -0.2rem;
+      background-image: url("/img/user/soundMuted.png");
+      -webkit-background-size: cover;
+      background-size: cover; }
   header .menuIcon {
     -webkit-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     -moz-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);

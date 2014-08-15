@@ -44,7 +44,7 @@ $circleSize: 13rem;
                 min-height: 100%;
                 width: auto;
                 height: auto;
-                overflow: hidden
+                overflow: hidden;
             }
         }
 
@@ -226,8 +226,7 @@ $circleSize: 13rem;
         display: block;
         left: 50%;
         margin-left: -$circleSize/2;
-        z-index: 1;
-
+        z-index: -1;
 
         .fragmentItemContent {
 

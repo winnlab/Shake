@@ -68,7 +68,9 @@ getData = (lang, cb) ->
 			Fragments.lean().exec proceed
 	, (err, data) ->
 		return cb err if err
-		data.lang = if lang.default then '' else lang.isoCode
+		data.lang = if lang.default then '' else lang.isoCode		
+		data.langs = _.map langs, (lang)-> 
+			return lang.isoCode
 		data.locale = locale[lang.isoCode]
 		data.products = filterLang data.products, lang._id
 		data.parties = filterLang data.parties, lang._id

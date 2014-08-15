@@ -30,7 +30,7 @@ header {
     top: 0;
     left: 0; }
   header .menuWrap {
-    width: 20rem;
+    width: 25rem;
     margin: 0 auto;
     padding-top: 1.85rem;
     padding-left: 3.1rem; }
@@ -54,6 +54,21 @@ header {
       background-image: url("/img/user/soundMuted.png");
       -webkit-background-size: cover;
       background-size: cover; }
+  header .langsWrap {
+    display: inline-block;
+    padding: 0 0 0 1rem;
+    vertical-align: middle; }
+    header .langsWrap .isoLang {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      display: inline-block;
+      margin: 0 0.1rem;
+      padding: 0.3rem 0 0;
+      cursor: pointer;
+      color: #ffffff;
+      text-decoration: none; }
   header .menuIcon {
     -webkit-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     -moz-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);

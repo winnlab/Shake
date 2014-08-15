@@ -36,7 +36,7 @@ header {
 	}
 
 	.menuWrap {
-		width: 20rem;
+		width: 25rem;
 		margin: 0 auto;
 		padding-top: 1.85rem;
 		padding-left: 3.1rem;
@@ -68,6 +68,25 @@ header {
 				-webkit-background-size: cover;
 				background-size: cover;
 			}
+		}
+	}
+
+	.langsWrap {
+		display: inline-block;
+		padding: 0 0 0 1rem;
+		vertical-align: middle;
+
+		.isoLang {
+			@include user-select(none);
+
+			display: inline-block;
+			margin: 0 0.1rem;
+			padding: 0.3rem 0 0;
+
+			cursor: pointer;
+
+			color: #ffffff;
+			text-decoration: none;
 		}
 	}
 

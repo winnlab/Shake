@@ -5,6 +5,11 @@
 		<div class="menuWrap clearfix">
 			<div class="icons">
 				<span class="soundIcon {{#if muted}}muted{{/if}}"></span>
+				<span class="langsWrap text-uppercase">
+					{{#langs}}
+						<a href="/{{#unless default}}{{isoCode}}{{/unless}}" class="isoLang">{{isoCode}}</a>
+					{{/langs}}
+				</span>
 				<span class="menuIconWrap menu">
 					<span class="menuIcon"></span>
 				</span>

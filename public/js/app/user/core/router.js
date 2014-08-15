@@ -62,7 +62,8 @@ define([
 
 		return can.Control.extend({
 			defaults: {
-				viewpath: '../app/user/core/views/'
+				viewpath: '../app/user/core/views/',
+				langBtn: '.isoLang'
 			}
 		}, {
 			init: function (el, options) {
@@ -128,6 +129,15 @@ define([
 				} catch (e) {
 					console.error(e);
 				}
+			},
+
+			'{langBtn} click': function (el, ev) {
+				ev.preventDefault();
+				
+				var lang = el.attr('href').replace(/\//, ''),
+					currentLink = '/' + can.route.param(can.route.attr());
+
+				document.location.href = (lang ? '/' + lang : '') + currentLink;
 			}
 
 		});

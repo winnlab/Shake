@@ -1,7 +1,7 @@
 define([
 	'canjs',
-    'core/appState',
-    'app/soundCloudPlayer/soundCloudPlayer',
+	'core/appState',
+	'app/soundCloudPlayer/soundCloudPlayer',
 	'css!app/menu/css/menu'
 ], 
 	function (can, appState, scplayer) {
@@ -31,15 +31,15 @@ define([
 				this.options.state.attr('menu', 'closed');
 			},
 
-            '.playBtn click': function () {
-                scplayer.togglePause();
-            },
+			'.playBtn click': function () {
+				scplayer.togglePause();
+			},
 
-            '.soundIcon click': function () {
-                appState.attr('muted', !appState.attr('muted'));
+			'.soundIcon click': function () {
+				appState.attr('muted', !appState.attr('muted'));
 
-                scplayer.toggleMute();
-            }
+				scplayer.toggleMute();
+			}
 		});
 	}
 );

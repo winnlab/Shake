@@ -60,10 +60,11 @@
       font-weight: 200;
       font-size: 1.25rem; }
   #products .can .productItem {
-    width: 7.5rem; }
+    width: 7rem;
+    margin: 0 1.9rem; }
     #products .can .productItem .img {
       height: 21rem;
-      width: 7.5rem; }
+      width: 7rem; }
     #products .can .productItem .name {
       height: 3rem;
-      width: 7.5rem; }
+      width: 7rem; }

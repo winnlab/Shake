@@ -6,9 +6,9 @@
 
             <div class="video">
                 <video muted="muted" loop="loop" preload="metadata">
-                    <source src="{{appState.uploadPath}}{{fragment.video.mp4}}">
-                    <source src="{{appState.uploadPath}}{{fragment.video.ogv}}">
-                    <source src="{{appState.uploadPath}}{{fragment.video.webm}}">
+                    {{#if fragment.video.mp4}}<source src="{{appState.uploadPath}}{{fragment.video.mp4}}">{{/if}}
+                    {{#if fragment.video.ogv}}<source src="{{appState.uploadPath}}{{fragment.video.ogv}}">{{/if}}
+                    {{#if fragment.video.webm}}<source src="{{appState.uploadPath}}{{fragment.video.webm}}">{{/if}}
                 </video>
             </div>
 

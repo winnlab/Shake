@@ -5,6 +5,7 @@
 @import '../../../../../scss/base/_placeholders.scss';
 
 $productWidth: 5.5rem;
+$canWidth: 7.5rem;
 
 #products {
 	color: #ffffff;
@@ -80,6 +81,22 @@ $productWidth: 5.5rem;
 
 			font-weight: 200;
 			font-size: 1.25rem;
+		}
+	}
+
+	.can {
+
+		.productItem {
+			width: $canWidth;
+
+			.img {
+				@include size($canWidth 21rem);
+			}
+
+			.name {
+				@include size($canWidth 3rem);
+			}
+
 		}
 	}
 }

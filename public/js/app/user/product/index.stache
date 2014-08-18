@@ -1,4 +1,4 @@
-<div class="content text-uppercase">
+<div class="content text-uppercase {{appState.viewMode}}">
 
     <div class="productWrap">
 

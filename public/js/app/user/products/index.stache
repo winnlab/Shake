@@ -1,4 +1,4 @@
-<div class="content text-uppercase">
+<div class="content text-uppercase {{appState.viewMode}}">
 	<div class="bottleType">
 		<span>0.33 {{appState.locale.bottle}}</span>
 		<span class="bottlesIcon"></span>

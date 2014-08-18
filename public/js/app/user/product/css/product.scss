@@ -9,238 +9,248 @@ $blockMarginRight: 2.2rem;
 
 .productWrap {
 
-  color: #ffffff;
-  padding: 7rem 0 3rem;
-  position: relative;
+	color: #ffffff;
+	padding: 7rem 0 3rem;
+	position: relative;
 
-  .productWrapLeft {
+	.productWrapLeft {
 
-    float: left;
-    position: relative;
-    margin-right: $blockMarginRight;
-    margin-left: -4.5rem;
-
-
-    .img {
-      @include size(7rem 28rem);
-      @extend %bg-image-cover;
-      @include clearfix;
-
-      margin-bottom: 0.25rem;
-    }
-  }
-
-  .productWrapCenter {
-
-    float: left;
-    position: relative;
-    width: 44rem;
-
-  }
-
-  .productWrapDescriptionSwitcher {
-
-    margin-top: 2rem;
+		float: left;
+		position: relative;
+		margin-right: $blockMarginRight;
+		margin-left: -4.5rem;
 
 
-    .bottleType {
-      font-family: PFDinTextCompPro;
-      font-size: 1.2rem;
+		.img {
+			@include size(7rem 28rem);
+			@extend %bg-image-cover;
+			@include clearfix;
 
-      .bottlesIcon {
-        @include size(4rem 3.9rem);
-        margin: 0 1rem 0 0;
+			margin-bottom: 0.25rem;
+		}
+	}
 
-        @extend %bg-image-contain;
-        background-image: url('#{$img_path}bottles.png');
+	.productWrapCenter {
 
-        &:hover {
-          cursor: pointer;
-        }
-      }
+		float: left;
+		position: relative;
+		width: 44rem;
 
-      span {
-        @extend %in-block-middle;
+	}
 
-        &:hover {
-          text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
-          cursor: pointer;
-        }
-      }
+	.productWrapDescriptionSwitcher {
 
-      a {
-        color: #ffffff;
-        text-decoration: none;
+		margin-top: 2rem;
 
-        &:hover {
-          text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
-          cursor: pointer;
-        }
-      }
-    }
-  }
 
-  .productWrapHeader {
+		.bottleType {
+			font-family: PFDinTextCompPro;
+			font-size: 1.2rem;
 
-    h1 {
-      @include user-select(none);
-      font-size: 10rem;
-      letter-spacing: -0.25rem;
-      text-align: left;
-      margin: 2rem 0;
-      line-height: 1;
+			.bottlesIcon {
+				@include size(4rem 3.9rem);
+				margin: 0 1rem 0 0;
 
-      left: 0.2rem;
-    }
-  }
+				@extend %bg-image-contain;
+				background-image: url('#{$img_path}bottles.png');
 
-  .productWrapProductsList {
+				&:hover {
+					cursor: pointer;
+				}
+			}
 
-    float: left;
-    width: 35%;
-    margin-right: 5%;
+			span {
+				@extend %in-block-middle;
 
-    .productsListItem {
+				&:hover {
+					text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+					cursor: pointer;
+				}
+			}
 
-      font-family: PFDinTextCondPro;
-      font-weight: 200;
-      font-size: 2rem;
-      color: #ffffff;
-      text-decoration: none;
-      line-height: 1;
+			a {
+				color: #ffffff;
+				text-decoration: none;
 
-      .name {
+				&:hover {
+					text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+					cursor: pointer;
+				}
+			}
+		}
+	}
 
-        &:hover {
-          text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
-        }
-      }
-    }
-  }
+	.productWrapHeader {
 
-  .productWrapDescription {
+		h1 {
+			@include user-select(none);
+			font-size: 10rem;
+			letter-spacing: -0.25rem;
+			text-align: left;
+			margin: 2rem 0;
+			line-height: 1;
 
-    float: left;
-    width: 60%;
+			left: 0.2rem;
+		}
+	}
 
-    .productWrapDescriptionText {
-      font-family: PFDinTextPro;
-      font-weight: 200;
-      font-size: 0.8rem;
+	.productWrapProductsList {
 
-      p {
-        margin: 0;
-        line-height: 1.3;
-      }
-    }
-  }
+		float: left;
+		width: 35%;
+		margin-right: 5%;
 
-  .productWrapRight {
+		.productsListItem {
 
-    position: relative;
-    float: left;
-  }
+			font-family: PFDinTextCondPro;
+			font-weight: 200;
+			font-size: 2rem;
+			color: #ffffff;
+			text-decoration: none;
+			line-height: 1;
 
-  .shakeItButton {
-    position: absolute;
-    top: 13rem;
-    right: -4.5rem;
-  }
+			.name {
 
-  .roundedButton {
+				&:hover {
+					text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+				}
+			}
+		}
+	}
 
-    text-align: center;
-    padding: 2rem 0 2rem;
+	.productWrapDescription {
 
-    .btn {
-      display: inline-block;
-      position: relative;
+		float: left;
+		width: 60%;
 
-      width: 7rem;
-      height: 7rem;
-      padding: 0.5rem 0;
+		.productWrapDescriptionText {
+			font-family: PFDinTextPro;
+			font-weight: 200;
+			font-size: 0.8rem;
 
-      text-align: center;
-      text-transform: uppercase;
+			p {
+				margin: 0;
+				line-height: 1.3;
+			}
+		}
+	}
 
-      cursor: pointer;
-      color: #fff;
-      font: 2rem PFDinTextCondPro;
-      font-weight: 400;
+	.productWrapRight {
 
-      img {
-        width: 25%;
-      }
-      p {
-        margin: 0;
-        line-height: 1;
-        font-weight: 300;
-      }
-      p.bold {
-        font-weight: 500;
-      }
+		position: relative;
+		float: left;
+	}
 
-      &:before,
-      &:after {
-        content: "";
+	.shakeItButton {
+		position: absolute;
+		top: 13rem;
+		right: -4.5rem;
+	}
 
-        border: 1px solid #fff;
+	.roundedButton {
 
-        opacity: 0;
-      }
+		text-align: center;
+		padding: 2rem 0 2rem;
 
-      &:before {
-        @include emptyCircles(0);
-      }
+		.btn {
+			display: inline-block;
+			position: relative;
 
-      &:after {
-        @include emptyCircles(-5px);
-      }
+			width: 7rem;
+			height: 7rem;
+			padding: 0.5rem 0;
 
-      &:before {
-        @include animation(disappearing 2s linear 0s infinite);
-      }
+			text-align: center;
+			text-transform: uppercase;
 
-      &:after {
-        @include animation(disappearing 2s linear 0s infinite);
-      }
+			cursor: pointer;
+			color: #fff;
+			font: 2rem PFDinTextCondPro;
+			font-weight: 400;
 
-      .rounded {
-        @include animation(disappearing 2s linear 0s infinite);
+			img {
+				width: 25%;
+			}
+			p {
+				margin: 0;
+				line-height: 1;
+				font-weight: 300;
+			}
+			p.bold {
+				font-weight: 500;
+			}
 
-        &:before {
-          @include animation(disappearing 2s linear 0s infinite);
-        }
+			&:before,
+			&:after {
+				content: "";
 
-        &:after {
-          @include animation(disappearing 2s linear 0s infinite);
-        }
-      }
-    }
+				border: 1px solid #fff;
 
-    .rounded {
-      @include emptyCircles(-10px);
+				opacity: 0;
+			}
 
-      border: 1px solid #fff;
-      opacity: 0;
+			&:before {
+				@include emptyCircles(0);
+			}
 
-      &:before,
-      &:after {
-        content: "";
+			&:after {
+				@include emptyCircles(-5px);
+			}
 
-        border: 1px solid #fff;
+			&:before {
+				@include animation(disappearing 2s linear 0s infinite);
+			}
 
-        opacity: 0;
-      }
+			&:after {
+				@include animation(disappearing 2s linear 0s infinite);
+			}
 
-      &:before {
-        @include emptyCircles(-7px);
-      }
+			.rounded {
+				@include animation(disappearing 2s linear 0s infinite);
 
-      &:after {
-        @include emptyCircles(-12px);
-      }
-    }
-  }
+				&:before {
+					@include animation(disappearing 2s linear 0s infinite);
+				}
 
+				&:after {
+					@include animation(disappearing 2s linear 0s infinite);
+				}
+			}
+		}
+
+		.rounded {
+			@include emptyCircles(-10px);
+
+			border: 1px solid #fff;
+			opacity: 0;
+
+			&:before,
+			&:after {
+				content: "";
+
+				border: 1px solid #fff;
+
+				opacity: 0;
+			}
+
+			&:before {
+				@include emptyCircles(-7px);
+			}
+
+			&:after {
+				@include emptyCircles(-12px);
+			}
+		}
+	}
+
+}
+
+.can {
+	.productWrap {
+		.productWrapLeft {
+			.img {
+				@include size(11rem 28rem);
+			}
+		}
+	}
 }

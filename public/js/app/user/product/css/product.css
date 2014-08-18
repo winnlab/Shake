@@ -183,3 +183,7 @@
         left: -12px;
         position: absolute;
         border-radius: 50%; }
+
+.can .productWrap .productWrapLeft .img {
+  height: 28rem;
+  width: 11rem; }

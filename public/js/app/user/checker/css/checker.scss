@@ -109,25 +109,7 @@ $logo_height: 10.6rem;
 
 			&:hover {
 
-				&:before {
-					@include animation(disappearing 2s linear 0s infinite);
-				}
-
-				&:after {
-					@include animation(disappearing 2s linear 0s infinite);
-				}
-
-				.rounded {
-					@include animation(disappearing 2s linear 0s infinite);
-
-					&:before {
-						@include animation(disappearing 2s linear 0s infinite);
-					}
-
-					&:after {
-						@include animation(disappearing 2s linear 0s infinite);
-					}
-				}
+				@import '../../../../../scss/blocks/circleAnimation.scss';
 			}
 		}
 

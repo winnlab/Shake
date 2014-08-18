@@ -117,25 +117,7 @@ $currentBtnTop: 4rem;
             @include emptyCircles(-5px);
           }
 
-          &:before {
-            @include animation(disappearing 2s linear 0s infinite);
-          }
-
-          &:after {
-            @include animation(disappearing 2s linear 0s infinite);
-          }
-
-          .rounded {
-            @include animation(disappearing 2s linear 0s infinite);
-
-            &:before {
-              @include animation(disappearing 2s linear 0s infinite);
-            }
-
-            &:after {
-              @include animation(disappearing 2s linear 0s infinite);
-            }
-          }
+	        @import '../../../../../scss/blocks/circleAnimation.scss';
         }
 
         .rounded {

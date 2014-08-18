@@ -71,24 +71,7 @@ header {
 		}
 	}
 
-	.langsWrap {
-		display: inline-block;
-		padding: 0 0 0 1rem;
-		vertical-align: middle;
-
-		.isoLang {
-			@include user-select(none);
-
-			display: inline-block;
-			margin: 0 0.1rem;
-			padding: 0.3rem 0 0;
-
-			cursor: pointer;
-
-			color: #ffffff;
-			text-decoration: none;
-		}
-	}
+	@import '../../../../../scss/blocks/langs.scss';
 
 	.menuIcon {
 		@extend %in-block-middle;
@@ -219,7 +202,7 @@ header {
 		position: absolute;
 		top: 9.2rem;
 
-		a {
+		a.module {
 			width: 20rem;
 			margin: 0 auto;
 
@@ -235,6 +218,11 @@ header {
 			&:hover {
 				text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
 			}
+		}
+
+		.socialButtons {
+			text-align: center;
+			padding-top: 4rem;
 		}
 	}
 

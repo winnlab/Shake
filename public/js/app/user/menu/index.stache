@@ -1,4 +1,4 @@
-<header class="header {{menu}}" style="{{#isPrimitive menu 'opened'}}height: {{getPageHeight}}px; {{/isPrimitive}}">
+<header class="header {{appState.menu}}" style="{{#isPrimitive appState.menu 'opened'}}height: {{appState.getPageHeight}}px; {{/isPrimitive}}">
 	<div class="content">
 		<a id="logo" class="module" href="/products"></a>
 
@@ -6,9 +6,9 @@
 			<div class="icons">
 				<span class="soundIcon {{#if muted}}muted{{/if}}"></span>
 				<span class="langsWrap text-uppercase">
-					{{#langs}}
+					{{#appState.langs}}
 						<a href="/{{#unless default}}{{isoCode}}{{/unless}}" class="isoLang">{{isoCode}}</a>
-					{{/langs}}
+					{{/appState.langs}}
 				</span>
 				<span class="menuIconWrap menu">
 					<span class="menuIcon"></span>
@@ -17,10 +17,10 @@
 			</div>
 			<div class="control">
 				<span class="menu text-uppercase">
-					{{#isPrimitive menu 'opened'}}
-						{{locale.close}}
+					{{#isPrimitive appState.menu 'opened'}}
+						{{appState.locale.close}}
 					{{else}}
-						{{locale.menu}}
+						{{appState.locale.menu}}
 					{{/isPrimitive}}
 				</span>
 			</div>
@@ -31,9 +31,9 @@
 				<span class="mixLabel">
 					<span class="text-bold">shake</span>mix
 				</span>
-				<div class="playBtn {{#if paused}}paused{{/if}}"></div>
+				<div class="playBtn {{#if appState.paused}}paused{{/if}}"></div>
 			</div>
-	        <div class="podcast">{{podcast.currentTitle}}</div>
+	        <div class="podcast">{{appState.podcast.currentTitle}}</div>
 		</div>
 	</div>
 
@@ -43,12 +43,6 @@
 		<a class="module" href="/podcast">Shakemix</a>
 		<a class="module" href="/contacts">Contacts</a>
 
-		<section class="socIcons">
-			<a target="_blank" class="fb" href="/"></a>
-			<a target="_blank" class="vk" href="/"></a>
-			<a target="_blank" class="yt" href="/"></a>
-			<a target="_blank" class="in" href="/"></a>
-			<a target="_blank" class="coub" href="/"></a>
-		</section>
+		{{>app/core/views/socIcons.stache}}
 	</nav>
 </header>

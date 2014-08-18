@@ -14,6 +14,27 @@
   z-index: 19; }
   #checker .topOffset {
     padding-top: 5.5rem; }
+  #checker .langsWrap {
+    display: inline-block;
+    padding: 0 0 0 1rem;
+    vertical-align: middle; }
+    #checker .langsWrap .isoLang {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      display: inline-block;
+      margin: 0 0.1rem;
+      padding: 0.3rem 0 0;
+      cursor: pointer;
+      color: #ffffff;
+      text-decoration: none; }
+  #checker .langsWrap {
+    display: block;
+    margin: 0 auto;
+    width: 7rem;
+    text-align: center;
+    padding: 3rem 0 2rem; }
   #checker .logo {
     height: 10.6rem;
     width: 13rem;
@@ -22,7 +43,8 @@
     position: relative;
     background-image: url("/img/user/introLogo.png"); }
   #checker #checkTitle {
-    text-align: center; }
+    text-align: center;
+    margin: -3rem 0 -6rem; }
   #checker .title {
     font: 5.2rem PFDinTextCondPro;
     font-weight: 500;
@@ -63,7 +85,7 @@
       text-transform: uppercase;
       cursor: pointer;
       color: #fff;
-      font: 3.2rem PFDinTextCondPro;
+      font: 2.8rem PFDinTextCondPro;
       font-weight: 500; }
       #checker .checkerBtns .btn:before, #checker .checkerBtns .btn:after {
         content: "";

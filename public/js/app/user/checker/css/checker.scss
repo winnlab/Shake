@@ -19,6 +19,16 @@ $logo_height: 10.6rem;
 		padding-top: 5.5rem;
 	}
 
+	@import '../../../../../scss/blocks/langs.scss';
+
+	.langsWrap {
+		display: block;
+		margin: 0 auto;
+		width: 7rem;
+		text-align: center;
+		padding: 3rem 0 2rem;
+	}
+
 	.logo {
 		@include size($logo_width $logo_height);
 		margin-left: -$logo_width / 2;
@@ -32,6 +42,7 @@ $logo_height: 10.6rem;
 
 	#checkTitle {
 		text-align: center;
+		margin: -3rem 0 -6rem;
 	}
 
 	.title {
@@ -76,7 +87,7 @@ $logo_height: 10.6rem;
 			
 			cursor: pointer;
 			color: #fff;
-			font: 3.2rem PFDinTextCondPro;
+			font: 2.8rem PFDinTextCondPro;
 			font-weight: 500;
 
 			&:before,

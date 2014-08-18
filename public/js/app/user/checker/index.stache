@@ -1,4 +1,8 @@
-<div class="topOffset"></div>
+<span class="langsWrap text-uppercase">
+	{{#langs}}
+		<a href="/{{#unless default}}{{isoCode}}{{/unless}}" class="isoLang">{{isoCode}}</a>
+	{{/langs}}
+</span>
 <div class="logo"></div>
 
 {{#if is18Show}}

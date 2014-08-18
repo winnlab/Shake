@@ -1,0 +1,20 @@
+@import '../../css/bourbon/_bourbon.scss';
+
+.langsWrap {
+	display: inline-block;
+	padding: 0 0 0 1rem;
+	vertical-align: middle;
+
+	.isoLang {
+		@include user-select(none);
+
+		display: inline-block;
+		margin: 0 0.1rem;
+		padding: 0.3rem 0 0;
+
+		cursor: pointer;
+
+		color: #ffffff;
+		text-decoration: none;
+	}
+}

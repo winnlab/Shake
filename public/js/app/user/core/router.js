@@ -14,6 +14,7 @@ define([
 				var self = this;
 
 				if ( ! self.checkModule(id)) {
+					this.showPreloader();
 					require([module.path], function (Module) {
 						if (Module) {
 							self.addModule(id);
@@ -46,8 +47,7 @@ define([
 				return exist;
 			},
 
-			addModule: function (id) {
-				this.showPreloader();
+			addModule: function (id) {				
 				this.modules.push({
 					id: id,
 					active: false

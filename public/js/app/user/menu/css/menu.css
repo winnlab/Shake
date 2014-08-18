@@ -168,7 +168,7 @@ header {
     width: 100%;
     position: absolute;
     top: 9.2rem; }
-    header .pages a {
+    header .pages a.module {
       width: 20rem;
       margin: 0 auto;
       display: block;
@@ -178,8 +178,11 @@ header {
       line-height: 90%;
       text-decoration: none;
       letter-spacing: -4px; }
-      header .pages a:hover {
+      header .pages a.module:hover {
         text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff; }
+    header .pages .socialButtons {
+      text-align: center;
+      padding-top: 4rem; }
   header.opened {
     z-index: 15; }
     header.opened .pages {

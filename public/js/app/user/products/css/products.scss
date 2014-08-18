@@ -16,10 +16,14 @@ $canWidth: 7rem;
 		font-family: PFDinTextCompPro;
 		font-size: 1rem;
 
+		cursor: default;
+
 		.bottlesIcon {
 			@include size(4rem 3.9rem);
 			margin: -0.7rem 0.5rem 0;
 			
+			cursor: pointer;
+
 			@extend %bg-image-contain;
 			background-image: url('#{$img_path}bottles.png');
 		}
@@ -61,6 +65,7 @@ $canWidth: 7rem;
 		position: relative;
 		z-index: 1;
 
+		line-height: 80%;
 		color: #ffffff;
 		text-decoration: none;
 		text-align: center;

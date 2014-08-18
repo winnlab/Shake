@@ -13,11 +13,13 @@
   #products .bottleType {
     text-align: center;
     font-family: PFDinTextCompPro;
-    font-size: 1rem; }
+    font-size: 1rem;
+    cursor: default; }
     #products .bottleType .bottlesIcon {
       height: 3.9rem;
       width: 4rem;
       margin: -0.7rem 0.5rem 0;
+      cursor: pointer;
       background-image: url("/img/user/bottles.png"); }
   #products .bigTitle {
     -webkit-user-select: none;
@@ -41,6 +43,7 @@
     margin: 0 1.9rem;
     position: relative;
     z-index: 1;
+    line-height: 80%;
     color: #ffffff;
     text-decoration: none;
     text-align: center; }
@@ -61,7 +64,7 @@
       font-size: 1.25rem; }
   #products .can .productItem {
     width: 7rem;
-    margin: 0 1.9rem; }
+    margin: 0 1rem; }
     #products .can .productItem .img {
       height: 21rem;
       width: 7rem; }

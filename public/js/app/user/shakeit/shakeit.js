@@ -41,6 +41,7 @@ define([
                 $current.find('.fragmentItemInfoContent').velocity('fadeIn');
                 var $videoBlock = $current.find('.video');
                 $videoBlock.velocity('fadeIn', function () {
+                    console.log('play video');
                     $videoBlock.find('video')[0].play();
                 });
 
@@ -116,6 +117,7 @@ define([
                         $(this).addClass('current');
                         $(this).find('.fragmentItemInfoContent').velocity('fadeIn');
                         $(this).find('.video').velocity('fadeIn', function () {
+                            console.log('play video');
                             $(this).find('video')[0].play();
                         });
                     });
@@ -195,6 +197,7 @@ define([
                         $(this).addClass('current');
                         $(this).find('.fragmentItemInfoContent').velocity('fadeIn');
                         $(this).find('.video').velocity('fadeIn', function () {
+                            console.log('play video');
                             $(this).find('video')[0].play();
                         });
                     });

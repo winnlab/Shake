@@ -15,9 +15,13 @@ define([
 
 				self.element.html(
 					can.view(self.options.viewpath + 'index.stache', {
-                        appState: appState
-                    })
+						appState: appState
+					})
 				);
+
+				if (self.options.isReady) {
+					self.options.isReady.resolve();
+				}
 			},
 
 			'.bottleType click': function () {

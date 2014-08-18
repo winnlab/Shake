@@ -16,6 +16,10 @@ define([
                 self.element.html(
                     can.view(self.options.viewpath + 'index.stache', appState)
                 );
+
+                if (self.options.isReady) {
+                    self.options.isReady.resolve();
+                }
             }
         });
 

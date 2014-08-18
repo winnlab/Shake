@@ -23,7 +23,11 @@ define([
 					can.view(self.options.viewpath + 'index.stache', appState)
 				);
 
-				this.titleManager = new TitleManager({
+				if (self.options.isReady) {
+					self.options.isReady.resolve();
+				}
+
+				self.titleManager = new TitleManager({
 					bgColor: 'transparent'
 				});
 
@@ -40,9 +44,13 @@ define([
 			},
 
 			'.yes click': function () {
+				var products = appState.attr('products'),
+					randIndex = Math.floor(Math.random() * products.length);
+
 				can.route.attr({
-					module: 'products'
-				});
+					module: 'product',
+					id: products.attr(randIndex + '.link')
+				}, true);
 
 				this.titleManager.stopAnimate()
 			},

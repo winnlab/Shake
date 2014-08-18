@@ -454,7 +454,7 @@ var TextManager = new Class({
 
     create: function() {
         var text = this.options.text||this.text;
-        text = text.replace("<br>", "\n");
+        text = text.replace("<br>", "\n").replace("&nbsp;", "\u0020");        
 
         var options = this.options;
         this.toDefaults(this.options);
@@ -471,7 +471,9 @@ var TextManager = new Class({
 
         Glyph.SAVE_CONTOUR = false;
 
-        var spaceWidth = Math.round(options.spaceWidth || 0) || undefined;
+        // Changed space width to 65 from 0
+
+        var spaceWidth = Math.round(options.spaceWidth || 65) || undefined;
         var letterSpacing = Math.round(options.letterSpacing || 0);
         var lineOffset = Math.round(options.lineOffset||0) || undefined;
 

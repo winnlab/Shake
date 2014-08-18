@@ -5,57 +5,57 @@
   position: relative;
   /*    .fragmentItem.beforePrevious {
   
-          left: -50%;
-          margin-left: -$prevNextCircleSize/2;
-          margin-top: -$prevNextCircleSize/2;
-          width: $prevNextCircleSize;
-          height: $prevNextCircleSize;
+  		left: -50%;
+  		margin-left: -$prevNextCircleSize/2;
+  		margin-top: -$prevNextCircleSize/2;
+  		width: $prevNextCircleSize;
+  		height: $prevNextCircleSize;
   
-          .fragmentItemContent {
+  		.fragmentItemContent {
   
-              .roundedButton {
+  			.roundedButton {
   
-                  top: 50%;
-                  margin-top: -$prevNextCircleSize/2;
+  				top: 50%;
+  				margin-top: -$prevNextCircleSize/2;
   
-                  left: 50%;
-                  margin-left: -$prevNextCircleSize/2;
+  				left: 50%;
+  				margin-left: -$prevNextCircleSize/2;
   
-                  .btn {
+  				.btn {
   
-                      width: $prevNextCircleSize;
-                      height: $prevNextCircleSize;
-                  }
-              }
-          }
-      }
+  					width: $prevNextCircleSize;
+  					height: $prevNextCircleSize;
+  				}
+  			}
+  		}
+  	}
   
-      .fragmentItem.afterNext {
+  	.fragmentItem.afterNext {
   
-          right: -50%;
-          margin-left: -$prevNextCircleSize/2;
-          margin-top: -$prevNextCircleSize/2;
-          width: $prevNextCircleSize;
-          height: $prevNextCircleSize;
+  		right: -50%;
+  		margin-left: -$prevNextCircleSize/2;
+  		margin-top: -$prevNextCircleSize/2;
+  		width: $prevNextCircleSize;
+  		height: $prevNextCircleSize;
   
-          .fragmentItemContent {
+  		.fragmentItemContent {
   
-              .roundedButton {
+  			.roundedButton {
   
-                  top: 50%;
-                  margin-top: -$prevNextCircleSize/2;
+  				top: 50%;
+  				margin-top: -$prevNextCircleSize/2;
   
-                  left: 50%;
-                  margin-left: -$prevNextCircleSize/2;
+  				left: 50%;
+  				margin-left: -$prevNextCircleSize/2;
   
-                  .btn {
+  				.btn {
   
-                      width: $prevNextCircleSize;
-                      height: $prevNextCircleSize;
-                  }
-              }
-          }
-      }*/ }
+  					width: $prevNextCircleSize;
+  					height: $prevNextCircleSize;
+  				}
+  			}
+  		}
+  	}*/ }
   .shakeitWrap .fragmentItem {
     display: none;
     top: 50%;

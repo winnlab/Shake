@@ -23,6 +23,10 @@ define([
                 );
 
                 this.initFuturePodcasts();
+
+                if (self.options.isReady) {
+                    self.options.isReady.resolve();
+                }
             },
 
             '.playTrack click': function () {

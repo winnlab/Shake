@@ -19,7 +19,7 @@ header {
   width: 100%;
   color: #fff;
   font-family: PFDinTextCondPro;
-  z-index: 20; }
+  z-index: 18; }
   header.opened {
     background-image: url("/img/user/introBg.jpg"); }
   header #logo {

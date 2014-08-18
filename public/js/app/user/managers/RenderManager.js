@@ -188,7 +188,7 @@ define([
 			}
 
 
-			var TARGET_WIDTH = 800;
+			var TARGET_WIDTH = 1024;
 			var TARGET_HEIGHT = 300;
 			
 			var scale = width / TARGET_WIDTH;			

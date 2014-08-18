@@ -1,5 +1,5 @@
 module.exports =
-	checkAge: 'ARE YOU <br> OVER 18 YEARS OLD?'
+	checkAge: 'ARE YOU OVER 18 YEARS OLD?'
 	yes: 'Yes'
 	no: 'No'
 	healthWarn: 'Excessive consumption of alcohol harm your health'

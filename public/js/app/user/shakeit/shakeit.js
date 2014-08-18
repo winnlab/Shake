@@ -25,6 +25,10 @@ define([
                 );
 
                 this.initCarousel( $('.shakeitWrap', self.element) );
+
+                if (self.options.isReady) {
+                    self.options.isReady.resolve();
+                }
             },
 
             initCarousel: function ( $wrapper ) {

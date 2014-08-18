@@ -11,7 +11,7 @@
 #checker {
   background-image: url("/img/user/introBg.jpg");
   position: relative;
-  z-index: 5; }
+  z-index: 19; }
   #checker .topOffset {
     padding-top: 5.5rem; }
   #checker .logo {

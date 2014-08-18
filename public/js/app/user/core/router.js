@@ -6,6 +6,8 @@ define([
 	function (can, appState, _) {
 
 		var Modules = can.Map.extend({
+			loaderShown: true,
+
 			modules: [],
 
 			initModule: function (module, id) {
@@ -15,8 +17,11 @@ define([
 					require([module.path], function (Module) {
 						if (Module) {
 							self.addModule(id);
-							new Module('#' + id);
-							self.activateModule(id);
+							var isReady = can.Deferred();
+							new Module('#' + id, {
+								isReady: isReady
+							});
+							self.activateModule(id, isReady);
 						} else {
 							if (module.path) {
 								throw new Error('Please check constructor of ' + module.path + '.js');
@@ -42,19 +47,34 @@ define([
 			},
 
 			addModule: function (id) {
+				this.showPreloader();
 				this.modules.push({
 					id: id,
 					active: false
 				});
 			},
 
-			activateModule: function (id) {
+			activateModule: function (id, isReady) {
 				_.map(this.modules, function (module) {
 					module.attr('active', module.id === id);
 				});
 
-				if (this.modules.attr('length') === 1) {
-					$('#preloader').hide();
+				this.hidePreloader(isReady);
+			},
+
+			showPreloader: function () {
+				if (!this.attr('loaderShown')) {					
+					this.attr('loaderShown', true);
+					$('#preloader').show();
+				}
+			},
+
+			hidePreloader: function (isReady) {
+				if (this.attr('loaderShown')) {
+					isReady.then(function() {						
+						this.attr('loaderShown', false);
+						$('#preloader').hide();
+					}.bind(this));
 				}
 			}
 

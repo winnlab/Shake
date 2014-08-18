@@ -22,6 +22,10 @@ define([
                         appState: appState
                     })
                 );
+
+                if (self.options.isReady) {
+                    self.options.isReady.resolve();
+                }
             },
 
             getProduct: function () {

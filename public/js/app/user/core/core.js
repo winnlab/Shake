@@ -52,6 +52,7 @@ require([
 		'core/config',
 		'core/appState',
 		'app/global/global',
+		'core/helpers/preloader',		
 		'app/soundCloudPlayer/soundCloudPlayer',
 		'core/helpers/viewHelpers',
 
@@ -64,7 +65,8 @@ require([
 		Menu,
 		config,
 		appState,
-		Global
+		Global,
+		Preloader
 	) {
 		var body = $('body');
 
@@ -78,6 +80,26 @@ require([
 
 		new Router(body, config.router);
 
-		new Global(body);
+		new Global(body);		
+
+		var preloader = new Preloader();
+
+		preloader.loadImages(getProductImages());
+
+		function getProductImages() {
+			var products = appState.attr('products'),
+				props = ['bottle', 'can'],
+				imgs = [];
+
+			for (var i = products.length - 1; i >= 0; i--) {
+				for (var j = props.length - 1; j >= 0; j--) {
+					if (products[i].img[props[j]]) {
+						imgs.push(products[i].img[props[j]]);
+					}
+				}
+			}
+
+			return imgs;
+		}
 	}
 );

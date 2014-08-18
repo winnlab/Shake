@@ -63,7 +63,7 @@ define([
 			},
 
 			showPreloader: function () {
-				if (!this.attr('loaderShown')) {					
+				if (!this.attr('loaderShown')) {
 					this.attr('loaderShown', true);
 					$('#preloader').show();
 				}
@@ -71,7 +71,7 @@ define([
 
 			hidePreloader: function (isReady) {
 				if (this.attr('loaderShown')) {
-					isReady.then(function() {						
+					isReady.then(function() {
 						this.attr('loaderShown', false);
 						$('#preloader').hide();
 					}.bind(this));

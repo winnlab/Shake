@@ -84,7 +84,9 @@ require([
 
 		var preloader = new Preloader();
 
-		preloader.loadImages(getProductImages());
+		setTimeout(function () {
+			preloader.loadImages(getProductImages());
+		}, 1000);
 
 		function getProductImages() {
 			var products = appState.attr('products'),

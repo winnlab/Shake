@@ -88,7 +88,8 @@ $canWidth: 7rem;
 
 		.productItem {
 			width: $canWidth;
-			margin: 0 1rem;
+			margin: 0 1.2rem;
+
 
 			.img {
 				@include size($canWidth 21rem);

@@ -192,6 +192,11 @@ header {
 		&.paused {
 			background-image: url('#{$img_path}pause.png');
 		}
+
+		&:hover {
+			cursor: pointer;
+
+		}
 	}
 
 	.pages {

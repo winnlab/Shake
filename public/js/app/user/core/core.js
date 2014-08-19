@@ -80,13 +80,13 @@ require([
 
 		new Router(body, config.router);
 
-		new Global(body);		
-
-		var preloader = new Preloader();
+		new Global(body);
 
 		setTimeout(function () {
-			preloader.loadImages(getProductImages());
-		}, 1000);
+			new Preloader({
+				images: getProductImages()
+			});
+		}, 2000);
 
 		function getProductImages() {
 			var products = appState.attr('products'),

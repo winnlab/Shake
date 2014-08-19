@@ -5,24 +5,28 @@ define([
 	function (can, _) {
 		return can.Map({
 
+			init: function () {
+				this.loadImages();
+			},
+
 			namespace: 'preloader',
 			
 			loadImage: function (imgSrc) {
 				var image = new Image();
 
 				$(image).on('load.' + this.namespace + ' error.' + this.namespace, function (event) {
-					// this.loadedImages.push(image.src);
+					// this.loaded.push(image.src);
 				});
 
 				image.src = imgSrc;
 			},
 
-			loadImages: function (list, folder) {
-				folder = folder || '/uploads/';
+			loadImages: function (folder) {				
+				this.folder = this.folder || '/uploads/';
 
-				_.each(list, function(imgSrc) {
+				_.each(this.images, function(imgSrc) {
 					if (imgSrc) {
-						this.loadImage(folder + imgSrc);
+						this.loadImage(this.folder + imgSrc);
 					}
 				}.bind(this));
 			}

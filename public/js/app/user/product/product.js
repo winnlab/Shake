@@ -37,7 +37,7 @@ define([
 					align: 'left',
 					letterSpacing: -4,
 					fontSize: appState.fontSize() * 10.5,
-					spaceWidth: 85,
+					spaceWidth: 110,
 					lineOffset: -80,
 					mouseRadius: 50
 				});

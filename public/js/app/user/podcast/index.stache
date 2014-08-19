@@ -21,9 +21,11 @@
             </div>
         </div>-->
 
-        <div class="centralWrapper">
+        <div class="leftWrapper"></div>
 
-        </div>
+        <div class="centralWrapper">{{appState.podcast.currentPlaylist}}</div>
+
+        <div class="rightWrapper"></div>
 
 <!--        <div class="trackWrapper nextTrackWrapper">
             <div class="roundedButton">

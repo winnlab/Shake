@@ -27,7 +27,11 @@ define([
                     nextSound: null,
                     currentTrackPosition: null,
                     prevTrackPosition: null,
-                    nextTrackPosition: null
+                    nextTrackPosition: null,
+
+                    currentPlaylist: null,
+                    prevPlaylist: null,
+                    nextPlaylist: null
                 },
 
 				fontSize: function () {

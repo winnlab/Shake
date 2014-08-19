@@ -163,6 +163,8 @@ header {
     top: 0.35rem; }
     header .playBtn.paused {
       background-image: url("/img/user/pause.png"); }
+    header .playBtn:hover {
+      cursor: pointer; }
   header .pages {
     display: none;
     width: 100%;

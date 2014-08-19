@@ -56,7 +56,7 @@ mergeArrays = (origin, merged, originField, mergedField, resultField) ->
 getData = (lang, cb) ->
 	async.parallel
 		products: (proceed) ->
-			Products = Model 'Product', 'find', null, active: true
+			Products = Model 'Product', 'find', null, active: true, null, sort: 'position'
 			Products.lean().exec proceed
 		newPodcasts: (proceed) ->
 			Model 'NewPodcast', 'find', proceed

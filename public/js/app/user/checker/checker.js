@@ -33,13 +33,13 @@ define([
 
 				setTimeout(function () {
 					self.element.find('.checkerBtns').addClass('active');
-				}, 2000);
+				}, 1000);
 
 			},
 
 			':module route': function (data) {
 				if (data.module == 'checker'){
-					this.titleManager.animate();
+					this.titleManager.animate.call(this.titleManager);
 				}
 			},
 
@@ -51,8 +51,7 @@ define([
 					module: 'product',
 					id: products.attr(randIndex + '.link')
 				}, true);
-
-				this.titleManager.stopAnimate()
+				this.titleManager.stopAnimate.call(this.titleManager);
 			},
 
 			'.no click': function () {

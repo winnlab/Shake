@@ -109,7 +109,7 @@ define( [ 'baseClass' ], function( BaseClass ) {
 				} else {
 					var parentFunction = Object.getPrototypeOf( caller.$$owner )[ callerName ];	
 
-    				if( parentFunction === undefined ) {
+					if( parentFunction === undefined ) {
 						throw 'No parent function defined for ' + callerName;
 					}
 				}
@@ -120,6 +120,6 @@ define( [ 'baseClass' ], function( BaseClass ) {
 
 		return parentFunction.apply( scope, arguments );
 	};
-
+	
 	return Class;
 });

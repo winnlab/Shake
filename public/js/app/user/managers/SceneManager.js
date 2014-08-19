@@ -25,7 +25,7 @@ define([
 		lighting: "light",
 
 		initialize: function(params) {
-			if(SceneManager.instance) throw("Singleton enforcer!");
+			// if(SceneManager.instance) throw("Singleton enforcer!");
 			SceneManager.instance = this;
 			this.parent(params);
 		},
@@ -55,7 +55,7 @@ define([
 			appState.attr('scene.distanceFar', this.distanceFar.value);
 
 			this.camera.position = new THREE.Vector3(this.camDefaultPosition.x.value, this.camDefaultPosition.y.value, this.camDefaultPosition.z.value);			
-			this.camera.far = this.distanceFar.value;	
+			this.camera.far = this.distanceFar.value;
 		},
 
 		update: function() {

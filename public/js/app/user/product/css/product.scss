@@ -36,6 +36,19 @@ $blockMarginRight: 2.2rem;
 		position: relative;
 		width: 44rem;
 
+		&.singleLine {
+			padding-top: 15rem;
+			canvas {
+				position: absolute;
+				top: -3rem;
+			}
+		}		
+	}
+
+	.productWrapCenterBottom {
+		position: relative;
+		z-index: 1;
+		cursor: default;
 	}
 
 	.productWrapDescriptionSwitcher {

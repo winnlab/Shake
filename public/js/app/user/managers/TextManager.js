@@ -251,7 +251,7 @@ var TextManager = new Class({
             Preset0.remembered.Default["0"].simplify = 50;
         }
         
-        this.color = { r: 255, g: 255, b: 255, a: 1 };
+        this.color = { r: 255, g: 255, b: 255, a: 1 };        
 
         this.create();
 
@@ -355,7 +355,7 @@ var TextManager = new Class({
         mesh.add(this.options, 'lineOffset', -20, 20);
         mesh.add(this.options, 'periodKerning', -50, 50);
         mesh.add(this.options, 'align', [
-            Text3D.Align.LEFT, Text3D.Align.CENTER, Text3D.Align.RIGHT
+            Text3D.Align.LEFT, Text3D.Align.CENTER, Text3D.Align.RIGHT            
         ]); 
 
         mesh.add(this, 'create');
@@ -388,12 +388,12 @@ var TextManager = new Class({
     },
 
     toDefaults: function(options) {
-        options.text = typeof options.text === "string" ? options.text : "STORYTELLING.<br>CRAFT. TECHNOLOGY.";
+        options.text = typeof options.text === "string" ? options.text : "";
 
         options.style = typeof options.style === "number" ? options.style : 0;
         options.spinStrength = typeof options.spinStrength === "number" ? options.spinStrength : 10;
         options.mouseStrength = typeof options.mouseStrength === "number" ? options.mouseStrength : 5;
-        options.mouseRadius = typeof options.mouseRadius === "number" ? options.mouseRadius : 15;
+        options.mouseRadius = typeof options.mouseRadius === "number" ? options.mouseRadius : 34;        
         options.minMouseMotion = typeof options.minMouseMotion === "number" ? options.minMouseMotion : 2;
         options.resetLinear = !!options.resetLinear;
         options.resetDuration = typeof options.resetDuration === "number" ? options.resetDuration : 1;
@@ -402,7 +402,7 @@ var TextManager = new Class({
         options.resetWhileIdle = typeof options.resetWhileIdle === "boolean" ? options.resetWhileIdle : true;
         options.resetByDistance = typeof options.resetByDistance === "boolean" ? options.resetByDistance : true;
         options.rigidness = typeof options.rigidness === "number" ? options.rigidness : 0.0;
-        options.align = options.align || Text3D.Align.CENTER;
+        options.align = options.align == 'center' ? Text3D.Align.CENTER : Text3D.Align.LEFT;        
         options.letterSpacing = options.letterSpacing || 0;
         options.spaceWidth = typeof options.spaceWidth === "number" ? options.spaceWidth : 0;
         options.periodKerning = typeof options.periodKerning === "number" ? options.periodKerning : 14;
@@ -418,10 +418,10 @@ var TextManager = new Class({
         options.steps = typeof options.steps === "number" ? options.steps : 10;
         options.simplify = typeof options.simplify === "number" ? options.simplify : 50;
 
-
         if (Preset0 && Preset0.remembered && Preset0.remembered.Default) {
             for (var k in options) {
-                if (typeof Preset0.remembered.Default["0"][k] !== "undefined")
+                if (typeof Preset0.remembered.Default["0"][k] !== "undefined" 
+                    && (['align', 'letterSpacing', 'spaceWidth', 'lineOffset', 'mouseRadius']).indexOf(k) == -1)
                     options[k] = Preset0.remembered.Default["0"][k];
             }
         }
@@ -473,15 +473,14 @@ var TextManager = new Class({
 
         // Changed space width to 65 from 0
 
-        var spaceWidth = Math.round(options.spaceWidth || 65) || undefined;
-        var letterSpacing = Math.round(options.letterSpacing || 0);
+        var spaceWidth = Math.round(options.spaceWidth || 55) || undefined;        
+        var letterSpacing = Math.round(options.letterSpacing || 0);        
         var lineOffset = Math.round(options.lineOffset||0) || undefined;
 
-        var align = options.align;
+        var align = this.options.align;
 
         Text3D.PERIOD_KERNING = options.periodKerning||0;
         this.textMesh = new Text3D(text, this.face, this.fontSize, steps, simplify, align, spaceWidth, letterSpacing, lineOffset);
-        
 
         this.tweens = [];
         for (var i=0; i<this.textMesh.wordCount; i++)
@@ -1669,6 +1668,7 @@ var Text3D = new Class({
         this.letterSpacing = letterSpacing||0;
 
         this.lineHeight = util.getFaceHeight(face, size) + lineOffset;
+        
         this.wordCount = 0;
 
         this.bounds = { minX: 0, minY: 0, maxX: 0, maxY: 0 };
@@ -1781,12 +1781,12 @@ var Text3D = new Class({
 
             //determine how much to center it from the left
             var width = rowWidths[row];
-
+            
             //align center
             if (this.align === Text3D.Align.CENTER)
                 xoff += (maxWidth-width)/2;
             else if (this.align === Text3D.Align.RIGHT)
-                xoff += (maxWidth-width);
+                xoff += (maxWidth-width);            
 
             //create a transformation for this glyph
             tmpMat.idt();

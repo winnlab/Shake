@@ -33,6 +33,15 @@
     float: left;
     position: relative;
     width: 44rem; }
+    .productWrap .productWrapCenter.singleLine {
+      padding-top: 15rem; }
+      .productWrap .productWrapCenter.singleLine canvas {
+        position: absolute;
+        top: -3rem; }
+  .productWrap .productWrapCenterBottom {
+    position: relative;
+    z-index: 1;
+    cursor: default; }
   .productWrap .productWrapDescriptionSwitcher {
     margin-top: 2rem; }
     .productWrap .productWrapDescriptionSwitcher .bottleType {

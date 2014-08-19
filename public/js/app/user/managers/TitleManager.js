@@ -12,12 +12,13 @@ define([
 	RenderManager
 ) {
 	var WorldManager = new Class({
+		
 		forceCanvas: false,
 
 		initialize: function(values) {
 
-			if (WorldManager.instance) throw("Singleton enforcer!");
-			WorldManager.instance = this;
+			// if (WorldManager.instance) throw("Singleton enforcer!");
+			// WorldManager.instance = this;
 			
 			THREE.ImageUtils.crossOrigin = "";
 			
@@ -39,24 +40,33 @@ define([
 			});
 
 			//renderer
-			var renderManager = new RenderManager({
+			this.renderManager = new RenderManager({
 				showStats: this.showStats,
 				forceCanvas: this.forceCanvas,
-				qualityDegradeWhenFPSBelow: values.qualityDegradeWhenFPSBelow,
-				qualityUpgradeWhenFPSAbove: values.qualityUpgradeWhenFPSAbove,
+				// qualityDegradeWhenFPSBelow: values.qualityDegradeWhenFPSBelow,
+				// qualityUpgradeWhenFPSAbove: values.qualityUpgradeWhenFPSAbove,
 				alpha: values.alpha,
 				bgColor: values.bgColor,
 				warmupCounter: values.warmupCounter,
+				selector: values.selector || 'checkTitle',
+				title: values.title || appState.attr('locale.checkAge'),
+				align: values.align || 'center',
+				letterSpacing: values.letterSpacing,
+				fontSize: values.fontSize,
+				spaceWidth: values.spaceWidth,
+				lineOffset: values.lineOffset,
+				mouseRadius: values.mouseRadius
 			});
-
-		    RenderManager.instance.onWindowResize();		    
+			
+		    this.renderManager.onWindowResize();
 
 		    this.animateBound = this.animate.bind(this);
 		    requestAnimationFrame(this.animateBound);
 		},
 
-		animate: function (time, once) {			
-			RenderManager.instance.render();
+		animate: function (time, once) {
+			// console.log('!!!');
+			this.renderManager.render();
 			if (!once)
 				this.requestId = requestAnimationFrame(this.animateBound);
 		},

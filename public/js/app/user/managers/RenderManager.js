@@ -30,8 +30,10 @@ define([
 		warmupCounter: 5,
 
 		initialize: function(params){
-			if(RenderManager.instance) throw("Singleton enforcer!");
-			RenderManager.instance = this;			
+			this.options = params;
+			// if(RenderManager.instance) throw("Singleton enforcer!");
+			RenderManager.instance = this;
+
 			this.parent(params);			
 
 			this.camera = SceneManager.instance.camera;
@@ -49,15 +51,13 @@ define([
 
 			this._canvasContext = this.rendererCanvas.domElement.getContext("2d");
 			
-			this.renderer.setClearColor(this.bgColor, this.clearAlpha);
-			
-			var container = document.getElementById('checkTitle');
+			var container = document.getElementById(params.selector);
 			container.appendChild(this.renderer.domElement);
 
 			window.addEventListener('resize', this.onWindowResize.bind(this), false);
 			
 			this.hasRenderedOnce = false;
-			this.initText();
+			this.initText(params);			
 		},		
 
 		onWindowResize:function() {			
@@ -99,7 +99,7 @@ define([
 
 		},
 		
-		initText: function() {
+		initText: function(params) {
 			//We fake anti-aliasing by rendering to a 2x FBO and then down-scaling
 			//If this is causing performance issues, set to false
 
@@ -114,9 +114,9 @@ define([
 			
 			var simpleMesh = !this.rendererWebGL; //simplify the mesh for canvas
 
-			this.textManager = new TextManager(appState.attr('locale.checkAge'), {
+			this.textManager = new TextManager(params.title, {
 				//font size in points (roughly)
-				fontSize: appState.fontSize() * 5,
+				fontSize: params.fontSize || appState.fontSize() * 5,
 				//number of steps for curves and lines, leads to more triangles
 				// steps: 10,
 
@@ -128,7 +128,12 @@ define([
 				//Allows us to control when the text "snaps" back into place,
 				//to avoid thin lines between triangles
 				snap: 0.999,
-				text: appState.attr('locale.checkAge')
+				text: params.title,
+				align: params.align,
+				letterSpacing: params.letterSpacing,
+				spaceWidth: params.spaceWidth,
+				lineOffset: params.lineOffset,
+				mouseRadius: params.mouseRadius
 			}, TweenLite, null, simpleMesh);
 
 			this.textManager.style = 0;
@@ -162,15 +167,15 @@ define([
 			// console.log("ANIM IN TEXT");
 			this.textManager.animateIn({
 				onStart: this.setTextAlpha.bind(this, 1.0),
-				delay: 1.0,
+				delay: 0,
 				delayIncrement: 0.2,
 				duration: 0.8,
-				yOff: 30,
+				yOff: 30,				
 				ease: Expo.easeOut
 			}, { //alpha options
 				ease: Linear.easeNone,
 				duration: 0.3,
-				delay: 1,
+				delay: 0,
 			});
 		},
 
@@ -190,8 +195,8 @@ define([
 
 			var TARGET_WIDTH = 1024;
 			var TARGET_HEIGHT = 300;
-			
-			var scale = width / TARGET_WIDTH;			
+
+			var scale = width / TARGET_WIDTH;
 
 			scale = Math.max(0.75, Math.min(2.2, scale));			
 
@@ -205,12 +210,16 @@ define([
 			//set new window size
 			textManager.resize(width, height);
 
-			//update camera matrices
-			var contentHeight = textManager.height*scale + (80 + 75)*this.performanceScale;			
-			var y = (height-textManager.height*scale)/2;
+			//update camera matrices			
+			var y = (height - textManager.height * scale) / 2;
 
 			textManager.scale = scale;
-			textManager.setPosition( (width-textManager.width*scale)/2, y );
+
+			if (this.options.align == 'center') {
+				textManager.setPosition((width-textManager.width*scale)/2, y );
+			} else if (this.options.align == 'left') {
+				textManager.setPosition(0, y);
+			}
 
 			textManager.updateCamera();
 

@@ -11,7 +11,7 @@
 
         </div>
 
-        <div class="productWrapCenter {{#isPrimitive titleLines 1}}singleLine{{/isPrimitive}}">
+        <div class="productWrapCenter">
             <div id="{{titleId}}"></div>            
 
             <div class="productWrapCenterBottom">

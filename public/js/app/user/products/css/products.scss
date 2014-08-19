@@ -47,7 +47,16 @@ $canWidth: 7rem;
 		width: 102%;
 	
 		left: 0.2rem;
-	}
+
+		.ru & {
+			font-size: 10.3rem;
+		}
+
+		.en & {
+			font-size: 10.4rem;
+		}
+	}	
+
 
 	.productsWrap {
 		padding: 3rem 0 2rem;

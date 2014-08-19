@@ -19,14 +19,11 @@ define([
 					product = self.getProduct(),
 					productTitle = self.getTitle(product.lang.name),
 					titleId = 'productTitle' + Date.now();
-
-				self.titleLines = can.compute(2);
 				
 				self.productId = product.attr('link');
 				
 				self.element.html(
 					can.view(self.options.viewpath + 'index.stache', {
-						titleLines: self.titleLines,
 						product: product,
 						appState: appState,
 						titleId: titleId
@@ -41,18 +38,16 @@ define([
 					letterSpacing: -4,
 					fontSize: appState.fontSize() * 10.5,
 					spaceWidth: 85,
-					lineOffset: -36,
+					lineOffset: -80,
 					mouseRadius: 50
 				});
-
-				self.positioningCanvas(productTitle);
 
 				if (self.options.isReady) {
 					self.options.isReady.resolve();
 				}
 			},
 
-			getProduct: function () {				
+			getProduct: function () {
 				return _.find(appState.products, function(element) {
 					return element.link == can.route.attr('id');
 				});
@@ -69,12 +64,6 @@ define([
 				return title.toUpperCase();
 			},
 
-			positioningCanvas: function (title) {
-				if (title.indexOf('\n') == -1) {
-					this.titleLines(1);
-				}
-			},
-
 			'.bottlesIcon click': function () {
 				var viewMode = appState.attr('viewMode');
 				appState.attr('viewMode', viewMode == 'bottle' ? 'can' : 'bottle');
@@ -83,10 +72,10 @@ define([
 			':module route': 'controllAnimation',
 			':module/:id route': 'controllAnimation',
 
-			controllAnimation: function (data) {				
+			controllAnimation: function (data) {
 				if (data.module === 'product' && data.id === this.productId) {
 					this.titleManager.animate.call(this.titleManager);
-				} else {					
+				} else {
 					this.titleManager.stopAnimate.call(this.titleManager);
 				}
 			}

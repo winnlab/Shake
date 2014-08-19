@@ -22,9 +22,9 @@ $blockMarginRight: 2.2rem;
 
 
 		.img {
-			@include size(7rem 28rem);
-			@extend %bg-image-cover;
 			@include clearfix;
+			@include size(11rem 28rem);
+			@extend %bg-image-contain;			
 
 			margin-bottom: 0.25rem;
 		}
@@ -35,13 +35,11 @@ $blockMarginRight: 2.2rem;
 		float: left;
 		position: relative;
 		width: 44rem;
+		padding-top: 15rem;
 
-		&.singleLine {
-			padding-top: 15rem;
-			canvas {
-				position: absolute;
-				top: -3rem;
-			}
+		canvas {
+			position: absolute;
+			top: -3rem;
 		}		
 	}
 
@@ -238,14 +236,4 @@ $blockMarginRight: 2.2rem;
 		}
 	}
 
-}
-
-.can {
-	.productWrap {
-		.productWrapLeft {
-			.img {
-				@include size(11rem 28rem);
-			}
-		}
-	}
 }

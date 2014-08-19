@@ -15,7 +15,9 @@
             <div class="newProductsInfo">
 
                 <div class="newProductsLogo">
-                    <img src="{{imgPath}}newProductsGroup.png" alt=""/>
+                    <a href="http://www.newproducts.ua/">
+                        <img src="{{imgPath}}newProductsGroup.png" alt=""/>
+                    </a>
                 </div>
 
                 <div class="socialButtons">

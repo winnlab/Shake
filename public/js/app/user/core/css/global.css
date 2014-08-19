@@ -96,6 +96,11 @@ module {
     height: 100%;
     position: relative; }
 
+.module:hover {
+  cursor: pointer; }
+  .module:hover p, .module:hover span, .module:hover h1, .module:hover h2, .module:hover h3, .module:hover h4, .module:hover h5, .module:hover h6 {
+    cursor: pointer; }
+
 .content {
   width: 54rem;
   margin: 0 auto;

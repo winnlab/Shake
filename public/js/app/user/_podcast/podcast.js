@@ -2,10 +2,10 @@ define([
     'canjs',
     'underscore',
     'core/appState',
-    'app/soundCloudWidget/soundCloudWidget',
+    'app/soundCloudPlayer/soundCloudPlayer',
     'css!app/podcast/css/podcast.css'
 ],
-    function (can, _, appState, scwidget) {
+    function (can, _, appState, scplayer) {
 
         return can.Control.extend({
             defaults: {
@@ -22,8 +22,7 @@ define([
                     })
                 );
 
-                self.initFuturePodcasts();
-                scwidget.initSoundCloudWidget();
+                this.initFuturePodcasts();
 
                 if (self.options.isReady) {
                     self.options.isReady.resolve();
@@ -31,7 +30,15 @@ define([
             },
 
             '.playTrack click': function () {
-                scwidget.togglePause();
+                scplayer.togglePause();
+            },
+
+            '.nextTrack click': function () {
+                scplayer.playNextTrack();
+            },
+
+            '.prevTrack click': function () {
+                scplayer.playPrevTrack();
             },
 
             initFuturePodcasts: function () {

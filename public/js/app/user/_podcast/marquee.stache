@@ -1,0 +1,5 @@
+<marquee direction="left">
+    {{#each appState.newPodcasts}}
+        <a class="trackTitleAnchor"><span class="thin">{{appState.locale.newPodcast}}</span> {{name}} {{appState.locale.by}} {{author}} <span class="thin">{{date}}</span> <span class="thin"></span> <span class="thin divider">||||</span></a>
+    {{/each}}
+</marquee>

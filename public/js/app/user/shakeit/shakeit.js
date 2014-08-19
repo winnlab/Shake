@@ -38,11 +38,14 @@ define([
                     $previous = $wrapper.children().last();
 
                 $current.addClass('current');
-                $current.find('.fragmentItemInfoContent').velocity('fadeIn');
+                var $currentInfoContent = $current.find('.fragmentItemInfoContent');
+                $currentInfoContent.velocity('fadeIn');
                 var $videoBlock = $current.find('.video');
                 $videoBlock.velocity('fadeIn', function () {
-                    console.log('play video');
                     $videoBlock.find('video')[0].play();
+                    setTimeout(function () {
+                        $currentInfoContent.velocity('fadeOut', 1000);
+                    }, 3000);
                 });
 
                 $next.velocity({scale: 0.5}, 100, function () {
@@ -218,6 +221,22 @@ define([
                         });
                     });
                 });
+            },
+
+            '.fragmentItemContent mouseenter': function ( el, ev ) {
+                if ( el.parents('.current').length > 0 ) {
+                    el.find('.fragmentItemInfoContent').velocity('fadeIn', 200);
+                } else {
+                    el.find('.image').velocity({opacity: 1}, 200);
+                }
+            },
+
+            '.fragmentItemContent mouseleave': function ( el, ev ) {
+                if ( el.parents('.current').length > 0 ) {
+                    el.find('.fragmentItemInfoContent').velocity('fadeOut', 200);
+                } else {
+                    el.find('.image').velocity({opacity: 0}, 200);
+                }
             }
         });
 

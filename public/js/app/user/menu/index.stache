@@ -28,12 +28,12 @@
 
 		<div class="shakeMixWrap">
 			<div class="shakeMix text-uppercase">
-				<span class="mixLabel">
+				<span class="mixLabel module" data-href="/podcast">
 					<span class="text-bold">shake</span>mix
 				</span>
 				<div class="playBtn {{#if appState.paused}}paused{{/if}}"></div>
 			</div>
-	        <div class="podcast">{{appState.podcast.currentTitle}}</div>
+	        <div class="podcast module" data-href="/podcast">{{appState.podcast.currentTitle}}</div>
 		</div>
 	</div>
 

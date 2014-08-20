@@ -15,7 +15,7 @@ define([
 
 			loadImages: function (folder) {
 				this.folder = this.folder || '/uploads/';
-				console.log(this.images);
+				
 				_.each(this.images, function(imgSrc) {
 					if (imgSrc) {
 						this.loadImage(this.folder + imgSrc);
@@ -31,8 +31,7 @@ define([
 				image.src = imgSrc;
 			},
 
-			imageIsLoaded: function () {
-				console.log('imageIsLoaded');
+			imageIsLoaded: function () {				
 				this.loaded += 1;
 
 				if (this.loaded == this.images.length && this.callback) {

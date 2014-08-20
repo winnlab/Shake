@@ -185,7 +185,7 @@
       /* IE10+ */
       background: linear-gradient(to bottom, #fa5100 0%, #ff2601 100%);
       /* W3C */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa5100', endColorstr='#ff2601',GradientType=0 );
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa5100', endColorstr='#ff2601',GradientType=0 );
       /* IE6-9 */
       position: absolute;
       top: 0.8rem;

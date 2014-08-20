@@ -121,7 +121,7 @@ define([
 					can.route(route.route, route.defaults ? route.defaults : {});
 				});
 
-				can.on.call(hub, 'silentModule', can.proxy(this.Modules.silentInit, this.Modules));				
+				can.on.call(hub, 'silentModule', can.proxy(this.Modules.silentInit, this.Modules));
 
 				can.route.bindings.pushstate.root = appState.lang;
 				can.route.ready(false);

@@ -1,6 +1,7 @@
 doctype html
 html(lang="#{data.lang}")
 	head
+		link(rel="shortcut icon" href="/img/user/favicon.ico" type="image/x-icon")
 		title Shake coctails
 		style.
 			#preloader {
@@ -12,8 +13,17 @@ html(lang="#{data.lang}")
 				z-index: 100;
 				background: #000;
 			}
+			#preloader img {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin: -100px 0 0 -100px;
+				width: 200px;
+				height: 200px;
+			}
 	body(class="#{data.lang}")
 		div#preloader
+			img(src="/img/user/loader.gif")
 		script(data-main="/js/app/user/core/core.js" src='/js/lib/require.js')
 		script.
 			window['data'] = !{JSON.stringify(data)};

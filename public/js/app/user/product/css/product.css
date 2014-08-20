@@ -39,6 +39,10 @@
   .productWrap .productWrapDescriptionSwitcher {
     margin-top: 2rem; }
     .productWrap .productWrapDescriptionSwitcher .bottleType {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
       font-family: PFDinTextCompPro;
       font-size: 1.2rem; }
       .productWrap .productWrapDescriptionSwitcher .bottleType .bottlesIcon {
@@ -48,6 +52,8 @@
         background-image: url("/img/user/bottles.png"); }
         .productWrap .productWrapDescriptionSwitcher .bottleType .bottlesIcon:hover {
           cursor: pointer; }
+        .can .productWrap .productWrapDescriptionSwitcher .bottleType .bottlesIcon {
+          background-image: url("/img/user/bottlesCan.png"); }
       .productWrap .productWrapDescriptionSwitcher .bottleType span:hover {
         text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
         cursor: pointer; }

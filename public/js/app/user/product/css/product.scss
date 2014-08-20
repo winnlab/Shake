@@ -55,6 +55,7 @@ $blockMarginRight: 2.2rem;
 
 
 		.bottleType {
+			@include user-select(none);
 			font-family: PFDinTextCompPro;
 			font-size: 1.2rem;
 
@@ -67,6 +68,10 @@ $blockMarginRight: 2.2rem;
 
 				&:hover {
 					cursor: pointer;
+				}
+
+				.can & {
+					background-image: url('#{$img_path}bottlesCan.png');
 				}
 			}
 

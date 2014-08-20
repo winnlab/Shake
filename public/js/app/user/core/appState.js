@@ -57,7 +57,23 @@ define([
 				products: data && data.products ? data.products : false,
                 product: data && data.product ? data.product : false,
 				parties: data && data.parties ? data.parties : false,
-                newPodcasts: data && data.newPodcasts ? data.newPodcasts : false
+                newPodcasts: data && data.newPodcasts ? data.newPodcasts : false,
+
+                getProductImages: function (props) {
+					var products = this.attr('products'),
+						imgs = [];
+					props = props || ['bottle', 'can'];
+
+					for (var i = products.length - 1; i >= 0; i--) {
+						for (var j = props.length - 1; j >= 0; j--) {
+							if (products[i].img[props[j]]) {
+								imgs.push(products[i].img[props[j]]);
+							}
+						}
+					}
+
+					return imgs;
+				}
 
 			}),
 			appState = new AppState();

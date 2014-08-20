@@ -84,24 +84,9 @@ require([
 
 		setTimeout(function () {
 			new Preloader({
-				images: getProductImages()
+				images: appState.getProductImages()
 			});
 		}, 2000);
-
-		function getProductImages() {
-			var products = appState.attr('products'),
-				props = ['bottle', 'can'],
-				imgs = [];
-
-			for (var i = products.length - 1; i >= 0; i--) {
-				for (var j = props.length - 1; j >= 0; j--) {
-					if (products[i].img[props[j]]) {
-						imgs.push(products[i].img[props[j]]);
-					}
-				}
-			}
-
-			return imgs;
-		}
+		
 	}
 );

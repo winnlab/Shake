@@ -2,12 +2,13 @@ define([
 	'canjs',
 	'underscore',
 	'core/appState',
+	'core/helpers/preloader',
 
 	'managers/TitleManager',
 
 	'css!app/product/css/product.css'
 ],
-	function (can, _, appState, TitleManager) {
+	function (can, _, appState, Preloader, TitleManager) {
 
 		return can.Control.extend({
 			defaults: {
@@ -19,9 +20,9 @@ define([
 					product = self.getProduct(),
 					productTitle = self.getTitle(product.lang.name),
 					titleId = 'productTitle' + Date.now();
-				
+
 				self.productId = product.attr('link');
-				
+
 				self.element.html(
 					can.view(self.options.viewpath + 'index.stache', {
 						product: product,
@@ -43,7 +44,12 @@ define([
 				});
 
 				if (self.options.isReady) {
-					self.options.isReady.resolve();
+					new Preloader({
+						images: [product.img.bottle, product.img.can],
+						callback: function () {
+							self.options.isReady.resolve();
+						}
+					});
 				}
 			},
 

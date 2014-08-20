@@ -1,9 +1,10 @@
 define([
 	'canjs',
 	'core/appState',
+	'core/helpers/preloader',
 	'css!app/products/css/products.css'
 ],
-	function (can, appState) {
+	function (can, appState, Preloader) {
 
 		return can.Control.extend({
 			defaults: {
@@ -20,7 +21,12 @@ define([
 				);
 
 				if (self.options.isReady) {
-					self.options.isReady.resolve();
+					new Preloader({
+						images: appState.getProductImages(['bottle']),
+						callback: function () {
+							self.options.isReady.resolve();
+						}
+					});					
 				}
 			},
 

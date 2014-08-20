@@ -68,6 +68,8 @@ define([
 
                 var animTime = this.options.animTime;
                 var prevNextScale = this.options.prevNextScale;
+                var currentImageTop = '-1em';
+                var prevNextImageTop = '-6.5em';
 
                 var $next = el;
 
@@ -109,6 +111,10 @@ define([
                         $(this).removeClass('current');
                         $(this).addClass('previous');
                     });
+                    $сurrent.find('.image').velocity({
+                        top: prevNextImageTop,
+                        opacity: 0
+                    });
 
                     $next.velocity({
                         scale: 1,
@@ -123,6 +129,10 @@ define([
                             console.log('play video');
                             $(this).find('video')[0].play();
                         });
+                    });
+                    $next.find('.image').velocity({
+                        top: currentImageTop,
+                        opacity: 1
                     });
 
                     $afterNext.velocity({
@@ -140,6 +150,9 @@ define([
                             $(this).addClass('next');
                         });
                     });
+                    $afterNext.find('.image').velocity({
+                        top: prevNextImageTop
+                    });
                 });
             },
 
@@ -147,6 +160,8 @@ define([
 
                 var animTime = this.options.animTime;
                 var prevNextScale = this.options.prevNextScale;
+                var currentImageTop = '-1em';
+                var prevNextImageTop = '-6.5em';
 
                 var $prev = el;
 
@@ -189,6 +204,10 @@ define([
                         $(this).removeClass('current');
                         $(this).addClass('next');
                     });
+                    $сurrent.find('.image').velocity({
+                        top: prevNextImageTop,
+                        opacity: 0
+                    });
 
                     $prev.velocity({
                         scale: 1,
@@ -203,6 +222,10 @@ define([
                             console.log('play video');
                             $(this).find('video')[0].play();
                         });
+                    });
+                    $prev.find('.image').velocity({
+                        top: currentImageTop,
+                        opacity: 1
                     });
 
                     $beforePrev.velocity({
@@ -219,6 +242,9 @@ define([
                         }, animTime, function () {
                             $(this).addClass('previous');
                         });
+                    });
+                    $beforePrev.find('.image').velocity({
+                        top: prevNextImageTop
                     });
                 });
             },

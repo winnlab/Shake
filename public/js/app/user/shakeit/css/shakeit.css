@@ -226,10 +226,12 @@
     left: 0;
     margin-left: -6.5rem; }
     .shakeitWrap .fragmentItem.previous .fragmentItemContent .roundedButton .btn .fragmentItemInfo .image {
-      opacity: 0; }
+      opacity: 0;
+      top: -6.5em; }
   .shakeitWrap .fragmentItem.next {
     display: block;
     right: 0;
     margin-right: -6.5rem; }
     .shakeitWrap .fragmentItem.next .fragmentItemContent .roundedButton .btn .fragmentItemInfo .image {
-      opacity: 0; }
+      opacity: 0;
+      top: -6.5em; }

@@ -109,3 +109,5 @@ exports.index = (req, res) ->
 	], (err) ->
 		res.send err
 		
+exports.ie = (req, res) ->
+	View.render 'user/ie', res, {}

@@ -1,7 +1,7 @@
 define([
 	'canjs',
 	'core/appState',
-	'managers/TitleManager',
+	'managers/TitleManager',	
 
 	'css!app/checker/css/checker.css'
 ],
@@ -55,7 +55,7 @@ define([
 			},
 
 			'.no click': function () {
-				appState.attr('is18Show', false);
+				appState.attr('is18Show', false);				
 			}
 
 		});

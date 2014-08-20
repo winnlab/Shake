@@ -1,47 +1,66 @@
 define([
 	'canjs',
 	'core/appState',
-	'underscore'
+	'underscore',
+	'core/hub'	
 ],
-	function (can, appState, _) {
+	function (can, appState, _, hub) {
 
 		var Modules = can.Map.extend({
 			loaderShown: true,
 
 			modules: [],
 
-			initModule: function (module, id) {
-				var self = this;
+			silentInit: function (ev, module, id) {				
+				this.initModule(module, id, true);
+			},
 
-				if ( ! self.checkModule(id)) {
-					this.showPreloader();
-					require([module.path], function (Module) {
-						if (Module) {
-							self.addModule(id);
-							var isReady = can.Deferred();
-							new Module('#' + id, {
-								isReady: isReady
-							});
-							self.activateModule(id, isReady);
-						} else {
-							if (module.path) {
-								throw new Error('Please check constructor of ' + module.path + '.js');
-							} else {
-								throw new Error('Please check existing of module "' + module.name + '"');
-							}
-						}
+			initModule: function (moduleName, id, silent) {
+				var self = this,
+					module = _.find(self.moduleTypes, function (module) {
+						return module.name === moduleName
 					});
+
+				if (!module) {
+					throw new Error("There no such module '" + moduleName + "', please check your configuration file");
 				}
+
+				if (self.checkModule(id, silent)) {
+					return;
+				}
+
+				if (!silent) {
+					this.showPreloader();
+				}
+
+				require([module.path], function (Module) {
+					if (Module) {
+						self.addModule(id);
+						var isReady = can.Deferred();
+						new Module('#' + id, {
+							isReady: isReady
+						});
+						if (!silent) {
+							self.activateModule(id, isReady);
+						}
+					} else {
+						if (module.path) {
+							throw new Error('Please check constructor of ' + module.path + '.js');
+						} else {
+							throw new Error('Please check existing of module "' + module.name + '"');
+						}
+					}
+				});
 				
 			},
 
-			checkModule: function (id) {
+			checkModule: function (id, silent) {
 				var module = _.find(this.modules, function(module){
 						return module.id === id;
 					}),
 					exist = !_.isEmpty(module);
 
-				if (exist) {
+				if (exist && !silent) {
 					this.activateModule(id);
 				}
 				return exist;
@@ -87,7 +106,9 @@ define([
 			}
 		}, {
 			init: function (el, options) {
-				this.Modules = new Modules();
+				this.Modules = new Modules({
+					moduleTypes: this.options.modules
+				});
 
 				var html = can.view(this.options.viewpath + 'route.stache', {
 						modules: this.Modules.attr('modules')
@@ -99,6 +120,8 @@ define([
 				_.each(options.routes, function (route) {
 					can.route(route.route, route.defaults ? route.defaults : {});
 				});
+
+				can.on.call(hub, 'silentModule', can.proxy(this.Modules.silentInit, this.Modules));				
 
 				can.route.bindings.pushstate.root = appState.lang;
 				can.route.ready(false);
@@ -133,22 +156,10 @@ define([
 			':module/:id route': 'routeChanged',
 
 			routeChanged: function(data) {
-				var modules = this.options.modules,
-					moduleName = data.module,
-					id = moduleName + (data.id ? '-' + data.id : '');
-					module = _.find(modules, function (module) {
-						return module.name === moduleName
-					});
-
-				try {
-					if (module) {
-						this.Modules.initModule(module, id);
-					} else {
-						throw new  Error("There no such module '" + moduleName + "', please check your configuration file");
-					}
-				} catch (e) {
-					console.error(e);
-				}
+				var moduleName = data.module,
+					id = moduleName + (data.id ? '-' + data.id : '');					
+								
+				this.Modules.initModule(moduleName, id);				
 			},
 
 			'{langBtn} click': function (el, ev) {

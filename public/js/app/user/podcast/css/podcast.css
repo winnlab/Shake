@@ -1,4 +1,4 @@
-.podcastWrap .soundCloudPlayer .centralWrapper .centralContent .logo {
+.podcastWrap .soundCloudPlayer .centralWrapper .logo {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center; }
@@ -169,47 +169,42 @@
       height: 5px;
       background: #ff3500;
       margin-bottom: 1px; }
-    .podcastWrap .soundCloudPlayer .centralWrapper .centralContent {
-      width: 100%;
-      height: 22rem;
-      background: url("/img/user/playerBackground.png");
-      position: relative; }
-      .podcastWrap .soundCloudPlayer .centralWrapper .centralContent .playTrack {
-        outline: none;
-        background: #fa5100;
-        /* Old browsers */
-        background: -moz-linear-gradient(top, #fa5100 0%, #ff2601 100%);
-        /* FF3.6+ */
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fa5100), color-stop(100%, #ff2601));
-        /* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(top, #fa5100 0%, #ff2601 100%);
-        /* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(top, #fa5100 0%, #ff2601 100%);
-        /* Opera 11.10+ */
-        background: -ms-linear-gradient(top, #fa5100 0%, #ff2601 100%);
-        /* IE10+ */
-        background: linear-gradient(to bottom, #fa5100 0%, #ff2601 100%);
-        /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa5100', endColorstr='#ff2601',GradientType=0 );
-        /* IE6-9 */
-        position: absolute;
-        top: 0.8rem;
-        left: 0.8rem;
-        width: 3rem;
-        height: 3rem;
-        border: none;
-        border-radius: 50%; }
-        .podcastWrap .soundCloudPlayer .centralWrapper .centralContent .playTrack img {
-          width: 40%;
-          margin: 3px 0 0 3px; }
-      .podcastWrap .soundCloudPlayer .centralWrapper .centralContent .logo {
-        height: 5em;
-        width: 5em;
-        margin-left: -2.5em;
-        left: 50%;
-        position: relative;
-        top: 0.8rem;
-        background-image: url("/img/user/introLogo.png"); }
+    .podcastWrap .soundCloudPlayer .centralWrapper .playTrack {
+      outline: none;
+      background: #fa5100;
+      /* Old browsers */
+      background: -moz-linear-gradient(top, #fa5100 0%, #ff2601 100%);
+      /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fa5100), color-stop(100%, #ff2601));
+      /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top, #fa5100 0%, #ff2601 100%);
+      /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top, #fa5100 0%, #ff2601 100%);
+      /* Opera 11.10+ */
+      background: -ms-linear-gradient(top, #fa5100 0%, #ff2601 100%);
+      /* IE10+ */
+      background: linear-gradient(to bottom, #fa5100 0%, #ff2601 100%);
+      /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa5100', endColorstr='#ff2601',GradientType=0 );
+      /* IE6-9 */
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      width: 3rem;
+      height: 3rem;
+      border: none;
+      border-radius: 50%; }
+      .podcastWrap .soundCloudPlayer .centralWrapper .playTrack img {
+        width: 40%;
+        margin: 3px 0 0 3px; }
+    .podcastWrap .soundCloudPlayer .centralWrapper .logo {
+      height: 5em;
+      width: 5em;
+      margin-left: -2.5em;
+      left: 50%;
+      position: absolute;
+      top: 0.8rem;
+      background-image: url("/img/user/introLogo.png"); }
   .podcastWrap .soundCloudPlayer .nextTrackWrapper {
     top: 16.5rem;
     right: -3.5rem; }

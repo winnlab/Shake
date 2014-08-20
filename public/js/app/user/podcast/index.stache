@@ -6,41 +6,59 @@
 
     <div class="soundCloudPlayer">
 
-<!--        <div class="trackWrapper prevTrackWrapper">
+        <div class="trackWrapper prevTrackWrapper">
             <div class="roundedButton">
                 <div class="btn prevTrack">
                     <div class="trackInfo">
-                        {{#if appState.podcast.prevSound}}
-                            <p class="number">#{{appState.podcast.prevTrackPosition}}</p>
-                            <p class="trackName">{{appState.podcast.prevSound.title}}</p>
-                            <p class="composer">{{appState.podcast.prevSound.user.username}}</p>
+                        {{#if appState.podcast.prevPlaylist}}
+                            <p class="number">#{{appState.podcast.prevPlaylistPosition}}</p>
+                            <p class="trackName">{{appState.podcast.prevPlaylist.title}}</p>
+                            <p class="composer">{{appState.podcast.prevPlaylist.user.username}}</p>
                         {{/if}}
                     </div>
                     <div class="rounded"></div>
                 </div>
             </div>
-        </div>-->
+        </div>
 
-        <div class="leftWrapper"></div>
+        <div class="centralWrapper">
 
-        <div class="centralWrapper">{{appState.podcast.currentPlaylist}}</div>
+            <div id="widgetWrapper"></div>
 
-        <div class="rightWrapper"></div>
 
-<!--        <div class="trackWrapper nextTrackWrapper">
+                <div class="logo"></div>
+
+                <div class="trackWrapper currentTrackWrapper">
+                    <div class="roundedButton">
+                        <div class="btn">
+                            <div class="trackInfo">
+                                {{#if appState.podcast.currentPlaylist}}
+                                    <p class="number">#{{appState.podcast.currentPlaylistPosition}}</p>
+                                    <p class="trackName">{{appState.podcast.currentPlaylist.title}}</p>
+                                    <p class="composer">{{appState.podcast.currentPlaylist.user.username}}</p>
+                                {{/if}}
+                            </div>
+                            <div class="rounded"></div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+
+        <div class="trackWrapper nextTrackWrapper">
             <div class="roundedButton">
                 <div class="btn nextTrack">
                     <div class="trackInfo">
-                        {{#if appState.podcast.nextSound}}
-                            <p class="number">#{{appState.podcast.nextTrackPosition}}</p>
-                            <p class="trackName">{{appState.podcast.nextSound.title}}</p>
-                            <p class="composer">{{appState.podcast.nextSound.user.username}}</p>
+                        {{#if appState.podcast.nextPlaylist}}
+                            <p class="number">#{{appState.podcast.nextPlaylistPosition}}</p>
+                            <p class="trackName">{{appState.podcast.nextPlaylist.title}}</p>
+                            <p class="composer">{{appState.podcast.nextPlaylist.user.username}}</p>
                         {{/if}}
                     </div>
                     <div class="rounded"></div>
                 </div>
             </div>
-        </div>-->
+        </div>
 
     </div>
 

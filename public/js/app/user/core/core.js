@@ -53,7 +53,7 @@ require([
 		'core/appState',
 		'app/global/global',
 		'core/helpers/preloader',		
-		'app/soundCloudPlayer/soundCloudPlayer',
+		'app/soundCloudWidget/soundCloudWidget',
 		'core/helpers/viewHelpers',
 
 		'css!core/css/reset.css',

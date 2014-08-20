@@ -19,7 +19,7 @@ define([
 
                 muted: false,
 
-				podcast: {
+/*				podcast: {
                     isPlayed: false,
                     currentTitle: null,
                     currentSound: null,
@@ -32,6 +32,20 @@ define([
                     currentPlaylist: null,
                     prevPlaylist: null,
                     nextPlaylist: null
+                },*/
+
+                podcast: {
+                    currentTitle: null,
+                    currentSound: null,
+
+                    currentPlaylist: null,
+                    prevPlaylist: null,
+                    nextPlaylist: null,
+
+                    currentPlaylistPosition: null,
+                    currentPlaylistSystemPosition: null,
+                    prevPlaylistPosition: null,
+                    nextPlaylistPosition: null
                 },
 
 				fontSize: function () {

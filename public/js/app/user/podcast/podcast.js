@@ -23,15 +23,11 @@ define([
                 );
 
                 self.initFuturePodcasts();
-                scwidget.initSoundCloudWidget();
+                scwidget.initSoundCloudWidget($('#widgetWrapper', self.element));
 
                 if (self.options.isReady) {
                     self.options.isReady.resolve();
                 }
-            },
-
-            '.playTrack click': function () {
-                scwidget.togglePause();
             },
 
             initFuturePodcasts: function () {
@@ -42,6 +38,14 @@ define([
                         appState: appState
                     })
                 );
+            },
+
+            '.nextTrack click': function () {
+                scwidget.playNextPlaylist($('#widgetWrapper', self.element));
+            },
+
+            '.prevTrack click': function () {
+                scwidget.playPrevPlaylist($('#widgetWrapper', self.element));
             }
         });
     }

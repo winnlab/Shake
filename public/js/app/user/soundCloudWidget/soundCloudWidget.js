@@ -2,10 +2,11 @@ define([
     'canjs',
     'underscore',
     'core/appState',
+    'core/hub',
     'soundcloud/sdk',
     'soundcloud/api'
 ],
-    function (can, _, appState) {
+    function (can, _, appState, hub) {
 
         var Widget = can.Control.extend({
             defaults: {
@@ -78,7 +79,7 @@ define([
                 }
             },
 
-            initIframe: function ( $selector, currentPlaylist, currentPlaylistPosition ) {
+            initIframe: function ( $selector, currentPlaylist, currentPlaylistPosition, auto_play ) {
                 var self = this;
 
                 var $iframe = $selector.find('iframe');
@@ -93,7 +94,7 @@ define([
                         height: '450',
                         scrolling: 'no',
                         frameborder: 'no',
-                        auto_play: 'false',
+                        auto_play: true,
                         hide_related: 'true',
                         show_comments: 'false',
                         show_user: 'false',
@@ -112,6 +113,27 @@ define([
                 var self = this;
 
                 self.widget = SC.Widget(document.getElementById('soundcloud_widget'));
+
+                self.widget.bind(SC.Widget.Events.PLAY, function() {
+                    self.trackStartedPlaying();
+                });
+                self.widget.bind(SC.Widget.Events.PAUSE, function() {
+                    self.trackPaused();
+                });
+            },
+
+            trackStartedPlaying: function () {
+                var self = this;
+
+                self.widget.getCurrentSound(function ( sound ) {
+                    self.podcast.attr('currentSound', sound);
+                    self.podcast.attr('currentTitle', sound.title);
+                    appState.attr('paused', true);
+                });
+            },
+
+            trackPaused: function () {
+                appState.attr('paused', false);
             },
 
             playNextPlaylist: function ( $selector ) {
@@ -121,12 +143,16 @@ define([
                     self.widget.pause();
                 }
 
+                self.podcast.attr('currentSound', null);
+                self.podcast.attr('currentTitle', null);
+                appState.attr('paused', false);
+
                 if ( self.currentPlaylistIndex + 1 <= self.playlists.length - 1) {
                     self.currentPlaylistIndex++;
                 } else {
                     self.currentPlaylistIndex = 0;
                 }
-                self.initIframe( $selector, self.playlists[self.currentPlaylistIndex], self.currentPlaylistIndex);
+                self.initIframe( $selector, self.playlists[self.currentPlaylistIndex], self.currentPlaylistIndex, true);
             },
 
             playPrevPlaylist: function ( $selector ) {
@@ -136,12 +162,16 @@ define([
                     self.widget.pause();
                 }
 
+                self.podcast.attr('currentSound', null);
+                self.podcast.attr('currentTitle', null);
+                appState.attr('paused', false);
+
                 if ( self.currentPlaylistIndex - 1 >= 0) {
                     self.currentPlaylistIndex--;
                 } else {
                     self.currentPlaylistIndex = self.playlists.length - 1;
                 }
-                self.initIframe( $selector, self.playlists[self.podcast.attr('currentPlaylistPosition')], self.currentPlaylistIndex);
+                self.initIframe( $selector, self.playlists[self.podcast.attr('currentPlaylistPosition')], self.currentPlaylistIndex, true);
             },
 
             togglePause: function ($selector) {
@@ -150,7 +180,7 @@ define([
                 if ( self.widget ) {
                     self.widget.toggle();
                 } else {
-                    self.initSoundCloudWidget($selector);
+                    can.trigger(hub, 'silentModule', ['podcast', 'podcast']);
                 }
             },
 

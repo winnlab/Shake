@@ -18,6 +18,7 @@ define([
 				viewMode: 'bottle',
 
                 muted: false,
+                paused: false,
 
 /*				podcast: {
                     isPlayed: false,

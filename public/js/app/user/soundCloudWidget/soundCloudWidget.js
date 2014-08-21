@@ -91,7 +91,7 @@ define([
                 $selector.html(
                     can.view(self.options.viewpath + 'iframe.stache', {
                         width: '100%',
-                        height: '350',
+                        height: '450',
                         scrolling: 'no',
                         frameborder: 'no',
                         auto_play: true,

@@ -1,0 +1,28 @@
+<div class="content-header">
+    <h3 class="content-title clearfix">Редактирование анонса подкаста</h3>
+</div>
+<div class="content">
+    <div class="col-md-12">
+
+        <div class="box box-primary">
+
+            <div class="box-body">
+
+                <upload
+                        class="col-md-6"
+                        name="image"
+                        url="/admin/soundCloudImage"
+                        delete-url="/admin/soundCloudImage"
+                        entity="{soundCloudImage}"
+                        uploaded="{soundCloudImage.image.image}"
+                        accept="image/*"
+                        >
+                    Загрузить картинку
+                </upload>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

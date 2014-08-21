@@ -28,6 +28,10 @@ define({
             name: 'newPodcasts',
             path: 'app/newPodcasts/newPodcasts',
             title: ''
+        }, {
+            name: 'soundCloudImages',
+            path: 'app/soundCloudImages/soundCloudImages',
+            title: ''
         }]
 	}
 });

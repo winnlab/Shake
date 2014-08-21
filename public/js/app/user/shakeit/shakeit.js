@@ -164,17 +164,18 @@ define([
                 var prevNextImageTop = '-6.5em';
 
                 var $prev = el;
+                var $carouselWrapChildren = el.parents('.carouselWrap').children();
 
                 if ( $prev.prev().length > 0 ) {
                     var $beforePrev = $prev.prev();
                 } else {
-                    var $beforePrev = el.parents('.carouselWrap').children().last();
+                    var $beforePrev = $carouselWrapChildren.last();
                 }
 
                 if ( el.next().length > 0 ) {
                     var $сurrent = el.next();
                 } else {
-                    var $сurrent = el.parents('.carouselWrap').children().first();
+                    var $сurrent = $carouselWrapChildren.first();
                 }
 
                 var halfWidth = $сurrent.width()/2;
@@ -182,7 +183,7 @@ define([
                 if ( $сurrent.next().length > 0 ) {
                     var $next = $сurrent.next();
                 } else {
-                    var $next = el.parents('.carouselWrap').children().first();
+                    var $next = $carouselWrapChildren.first();
                 }
 
                 var $videoBlock = $сurrent.find('.video');
@@ -219,7 +220,6 @@ define([
                         $(this).addClass('current');
                         $(this).find('.fragmentItemInfoContent').velocity('fadeIn');
                         $(this).find('.video').velocity('fadeIn', function () {
-                            console.log('play video');
                             $(this).find('video')[0].play();
                         });
                     });

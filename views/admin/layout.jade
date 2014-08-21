@@ -47,10 +47,14 @@ html(lang="ru")
                             a.module(href="/admin/days")
                                 i.fa.fa-calendar
                                 span= "Дни"
-                        li(class= (currentHref == 'days' ? "active" : ""))
+                        li(class= (currentHref == 'newPodcasts' ? "active" : ""))
                             a.module(href="/admin/newPodcasts")
-                                i.fa.fa-volume-off
+                                i.fa.fa-volume-up
                                 span= "Анонсы подкастов"
+                        li(class= (currentHref == 'soundCloudImages' ? "active" : ""))
+                            a.module(href="/admin/soundCloudImages")
+                                i.fa.fa-picture-o
+                                span= "Картинки плейлистов"
             aside#moduleContent
                 block content
         block scripts

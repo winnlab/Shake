@@ -7,6 +7,7 @@ Products = require './admin/products'
 Fragments = require './admin/fragments'
 Days = require './admin/days'
 NewPodcasts = require './admin/newPodcasts'
+SoundCloudImages = require './admin/soundCloudImages'
 
 Router = express.Router()
 
@@ -43,6 +44,12 @@ Router.get '/newPodcast', NewPodcasts.findAll
 Router.post '/newPodcast', NewPodcasts.save
 Router.put '/newPodcast/:id?', NewPodcasts.save
 Router.delete '/newPodcast/:id?', NewPodcasts.delete
+
+#----------------#
+
+Router.get '/soundCloudImage', SoundCloudImages.findAll
+Router.post '/soundCloudImage/:id?', SoundCloudImages.save
+Router.delete '/soundCloudImage/:id?', SoundCloudImages.delete
 
 #----------------#
 

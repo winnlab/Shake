@@ -2,10 +2,11 @@ define([
     'canjs',
     'underscore',
     'core/appState',
+	'core/helpers/preloader',
     'app/soundCloudWidget/soundCloudWidget',
     'css!app/podcast/css/podcast.css'
 ],
-    function (can, _, appState, scwidget) {
+    function (can, _, appState, Preloader, scwidget) {
 
         return can.Control.extend({
             defaults: {
@@ -19,15 +20,36 @@ define([
                     can.view(self.options.viewpath + 'index.stache', {
                         currentTrackPosition: this.currentTrackPosition,
                         appState: appState
+                    }, {
+	                    makeBg: function (playlist) {
+		                    if (playlist()) {
+			                    var id = playlist().attr('id'),
+			                        image = _.find(appState.attr('soundCloudImages'), function(image){
+				                        return image.attr('playlistId') === id;
+			                        });
+
+		                        if (image) {
+			                        self.element.css('background-image', 'url(/uploads/' + image.image + ')')
+		                        } else {
+			                        self.element.removeAttr('style')
+		                        }
+		                    }
+		                    return '';
+	                    }
                     })
                 );
 
                 self.initFuturePodcasts();
                 scwidget.initSoundCloudWidget($('#widgetWrapper', self.element));
 
-                if (self.options.isReady) {
-                    self.options.isReady.resolve();
-                }
+	            if (self.options.isReady) {
+		            new Preloader({
+		                images: _.pluck(appState.attr('soundCloudImages'), 'image'),
+		                callback: function () {
+			                self.options.isReady.resolve();
+		                }
+	                });
+	            }
             },
 
             initFuturePodcasts: function () {

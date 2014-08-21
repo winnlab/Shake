@@ -5,22 +5,26 @@ define([
 	function (can, _) {
 		return can.Map.extend({
 
+			namespace: 'preloader',
+			loaded: 0,
+
 			init: function () {
 				this.loadImages();
 			},
 
-			namespace: 'preloader',
-
-			loaded: 0,
-
-			loadImages: function (folder) {
+			loadImages: function () {
 				this.folder = this.folder || '/uploads/';
-				
-				_.each(this.images, function(imgSrc) {
-					if (imgSrc) {
-						this.loadImage(this.folder + imgSrc);
-					}
-				}.bind(this));
+
+				if (this.images.length) {
+					_.each(this.images, function(imgSrc) {
+						if (imgSrc) {
+							this.loadImage(this.folder + imgSrc);
+						}
+					}.bind(this));
+				} else {
+					this.callback && this.callback();
+				}
+
 			},
 			
 			loadImage: function (imgSrc) {

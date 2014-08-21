@@ -1,3 +1,4 @@
+{{makeBg appState.podcast.currentPlaylist}}
 <div class="podcastWrap">
 
     <div class="header">

@@ -42,7 +42,7 @@ exports.save = (req, res) ->
 				image: req.files?[imgName]?.name
 
 			if doc
-				doc = data
+				_.extend doc, data
 				doc.save next
 			else
 				Model 'SoundCloudImage', 'create', next, data

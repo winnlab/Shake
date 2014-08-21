@@ -60,6 +60,8 @@ getData = (lang, cb) ->
 			Products.lean().exec proceed
 		newPodcasts: (proceed) ->
 			Model 'NewPodcast', 'find', proceed
+		soundCloudImages: (proceed) ->
+			Model 'SoundCloudImage', 'find', proceed
 		parties: (proceed) ->
 			query =
 				active: true

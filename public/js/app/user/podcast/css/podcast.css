@@ -23,6 +23,22 @@
         font-weight: 300;
         font-size: 4.6rem;
         margin-left: -0.8rem; }
+  .podcastWrap .subheader {
+    text-align: center;
+    display: block;
+    color: #ffffff;
+    font-family: PFDinTextCondPro;
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-decoration: none;
+    margin: 1rem 0; }
+    .podcastWrap .subheader h3 {
+      font-weight: 300;
+      margin: 0;
+      line-height: 1; }
+      .podcastWrap .subheader h3:hover {
+        text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+        cursor: pointer; }
   .podcastWrap .widgetWrapper {
     position: relative;
     width: 450px;
@@ -129,7 +145,7 @@
           border-radius: 50%; }
   .podcastWrap .soundCloudPlayer .prevTrackWrapper {
     left: -3.5rem;
-    top: 16.5rem; }
+    top: 19.5rem; }
     .podcastWrap .soundCloudPlayer .prevTrackWrapper .roundedButton .btn {
       width: 7rem;
       height: 7rem; }
@@ -185,7 +201,7 @@
       /* IE10+ */
       background: linear-gradient(to bottom, #fa5100 0%, #ff2601 100%);
       /* W3C */
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa5100', endColorstr='#ff2601',GradientType=0 );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa5100', endColorstr='#ff2601',GradientType=0 );
       /* IE6-9 */
       position: absolute;
       top: 0.8rem;
@@ -206,7 +222,7 @@
       top: 0.8rem;
       background-image: url("/img/user/introLogo.png"); }
   .podcastWrap .soundCloudPlayer .nextTrackWrapper {
-    top: 16.5rem;
+    top: 19.5rem;
     right: -3.5rem; }
     .podcastWrap .soundCloudPlayer .nextTrackWrapper .roundedButton .btn {
       width: 7rem;

@@ -28,10 +28,27 @@
         font-weight: 300;
         font-size: 4.6rem;
         margin-left: -0.8rem; }
+  .podcastsWrap .subheader {
+    text-align: center;
+    display: block;
+    color: #ffffff;
+    font-family: PFDinTextCondPro;
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-decoration: none;
+    margin: 1rem 0; }
+    .podcastsWrap .subheader h3 {
+      font-weight: 300;
+      margin: 0;
+      line-height: 1; }
+      .podcastsWrap .subheader h3:hover {
+        text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+        cursor: pointer; }
   .podcastsWrap .allPodcasts .playlist {
     float: left;
     width: 16rem;
-    margin-right: 3rem; }
+    margin-right: 3rem;
+    margin-bottom: 2rem; }
     .podcastsWrap .allPodcasts .playlist:nth-child(3n) {
       margin-right: 0; }
     .podcastsWrap .allPodcasts .playlist .stripe {
@@ -44,20 +61,26 @@
       width: 100%;
       height: 16rem; }
       .podcastsWrap .allPodcasts .playlist .centralContent .logo {
-        height: 5em;
-        width: 5em;
-        margin-left: -2.5em;
+        height: 4em;
+        width: 4em;
+        margin-left: -2em;
         left: 50%;
         position: relative;
         top: 0.8rem;
         background-image: url("/img/user/introLogo.png"); }
       .podcastsWrap .allPodcasts .playlist .centralContent .trackWrapper {
         position: absolute;
-        z-index: 1; }
+        z-index: 1;
+        left: 50%;
+        margin-left: -4rem;
+        top: 40%;
+        margin-top: -4rem; }
         .podcastsWrap .allPodcasts .playlist .centralContent .trackWrapper .roundedButton {
           text-align: center;
           padding: 2rem 0 2rem; }
           .podcastsWrap .allPodcasts .playlist .centralContent .trackWrapper .roundedButton .btn {
+            width: 8rem;
+            height: 8rem;
             display: inline-block;
             position: relative;
             background: rgba(28, 27, 27, 0.8);
@@ -65,20 +88,24 @@
             padding: 0.5rem 0;
             text-align: center;
             text-transform: uppercase;
-            cursor: pointer;
             color: #fff;
             font: 2rem PFDinTextCondPro;
             font-weight: 400; }
+            .podcastsWrap .allPodcasts .playlist .centralContent .trackWrapper .roundedButton .btn .trackInfo {
+              padding: 0.4em 0.2rem 0; }
             .podcastsWrap .allPodcasts .playlist .centralContent .trackWrapper .roundedButton .btn img {
               width: 25%; }
             .podcastsWrap .allPodcasts .playlist .centralContent .trackWrapper .roundedButton .btn p {
               margin: 0;
-              line-height: 1;
+              line-height: 1.2;
+              font-weight: 300;
+              font-size: 1.2rem; }
+            .podcastsWrap .allPodcasts .playlist .centralContent .trackWrapper .roundedButton .btn .number {
               font-weight: 300; }
+            .podcastsWrap .allPodcasts .playlist .centralContent .trackWrapper .roundedButton .btn .composer {
+              font-size: 1rem; }
             .podcastsWrap .allPodcasts .playlist .centralContent .trackWrapper .roundedButton .btn p.bold {
               font-weight: 500; }
-            .podcastsWrap .allPodcasts .playlist .centralContent .trackWrapper .roundedButton .btn:hover {
-              cursor: pointer; }
             .podcastsWrap .allPodcasts .playlist .centralContent .trackWrapper .roundedButton .btn:before, .podcastsWrap .allPodcasts .playlist .centralContent .trackWrapper .roundedButton .btn:after {
               content: "";
               border: 1px solid #fff;

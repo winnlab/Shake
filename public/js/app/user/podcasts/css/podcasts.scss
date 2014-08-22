@@ -4,8 +4,10 @@
 @import '../../../../../scss/base/_mixins.scss';
 @import '../../../../../scss/base/_placeholders.scss';
 
-$logo_width: 5em;
-$logo_height: 5em;
+$logo_width: 4em;
+$logo_height: 4em;
+$btnSize: 8rem;
+
 
 .podcastsWrap {
 
@@ -35,6 +37,28 @@ $logo_height: 5em;
 		}
 	}
 
+	.subheader {
+		text-align: center;
+		display: block;
+		color: #ffffff;
+		font-family: PFDinTextCondPro;
+		text-transform: uppercase;
+		font-size: 1rem;
+		text-decoration: none;
+		margin: 1rem 0;
+
+		h3 {
+			font-weight: 300;
+			margin: 0;
+			line-height: 1;
+
+			&:hover {
+				text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+				cursor: pointer;
+			}
+		}
+	}
+
 	.allPodcasts {
 
 		.playlist {
@@ -42,6 +66,7 @@ $logo_height: 5em;
 			float: left;
 			width: 16rem;
 			margin-right: 3rem;
+			margin-bottom: 2rem;
 
 			&:nth-child(3n) {
 				margin-right: 0;
@@ -79,6 +104,10 @@ $logo_height: 5em;
 
 					position: absolute;
 					z-index: 1;
+					left: 50%;
+					margin-left: -$btnSize/2;
+					top: 40%;
+					margin-top: -$btnSize/2;
 
 					.roundedButton {
 
@@ -86,6 +115,9 @@ $logo_height: 5em;
 						padding: 2rem 0 2rem;
 
 						.btn {
+
+							width: $btnSize;
+							height: $btnSize;
 
 							display: inline-block;
 							position: relative;
@@ -97,25 +129,32 @@ $logo_height: 5em;
 							text-align: center;
 							text-transform: uppercase;
 
-							cursor: pointer;
 							color: #fff;
 							font: 2rem PFDinTextCondPro;
 							font-weight: 400;
+
+							.trackInfo {
+								padding: 0.4em 0.2rem 0;
+							}
 
 							img {
 								width: 25%;
 							}
 							p {
 								margin: 0;
-								line-height: 1;
+								line-height: 1.2;
 								font-weight: 300;
+								font-size: 1.2rem;
+							}
+							.number {
+								font-weight: 300;
+							}
+
+							.composer {
+								font-size: 1rem;
 							}
 							p.bold {
 								font-weight: 500;
-							}
-
-							&:hover {
-								cursor: pointer;
 							}
 
 							&:before,

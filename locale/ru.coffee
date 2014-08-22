@@ -37,3 +37,5 @@ module.exports =
 
     newPodcast: 'новый подкаст'
     by: 'от'
+    allPodcasts: 'Все подкасты'
+    back: 'Назад'

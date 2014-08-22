@@ -16,8 +16,6 @@ define([
                 var self = this;
                 this.elementObject = elementObject;
 
-                console.log(arguments);
-
                 if ( appState.attr('podcast.playlists') ) {
                     self.renderPodcasts(appState.attr('podcast.playlists'));
                 } else {

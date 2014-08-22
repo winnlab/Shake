@@ -36,3 +36,5 @@ module.exports =
 
 	newPodcast: 'new'
 	by: 'by'
+	allPodcasts: 'All podcasts'
+	back: 'Back'

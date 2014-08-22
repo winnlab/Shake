@@ -5,6 +5,10 @@
         <h1>shake <span>mix</span></h1>
     </div>
 
+    <a class="subheader module" href="/podcasts">
+        <h3>{{appState.locale.allPodcasts}}</h3>
+    </a>
+
     <div class="soundCloudPlayer">
 
         <div class="trackWrapper prevTrackWrapper">

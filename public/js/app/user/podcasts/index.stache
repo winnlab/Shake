@@ -4,6 +4,10 @@
         <h1>shake <span>mix</span></h1>
     </div>
 
+    <a class="subheader module" href="/podcast">
+        <h3>{{appState.locale.back}}</h3>
+    </a>
+
     <div class="allPodcasts">
 
         {{#each appState.podcast.playlists}}
@@ -34,6 +38,8 @@
             </div>
 
         {{/each}}
+
+        <div class="clearfix"></div>
 
     </div>
 

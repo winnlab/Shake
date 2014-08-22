@@ -7,7 +7,7 @@
 $playerContentSize: 22rem;
 $logo_width: 5em;
 $logo_height: 5em;
-$prevNextTop: 16.5rem;
+$prevNextTop: 19.5rem;
 $prevNextBtnSize: 7rem;
 $currentBtnSize: 10rem;
 $currentBtnTop: 4rem;
@@ -39,6 +39,29 @@ $currentBtnTop: 4rem;
 			}
 		}
 	}
+
+	.subheader {
+		text-align: center;
+		display: block;
+		color: #ffffff;
+		font-family: PFDinTextCondPro;
+		text-transform: uppercase;
+		font-size: 1rem;
+		text-decoration: none;
+		margin: 1rem 0;
+
+		h3 {
+			font-weight: 300;
+			margin: 0;
+			line-height: 1;
+
+			&:hover {
+				text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+				cursor: pointer;
+			}
+		}
+	}
+
 
 	.widgetWrapper {
 		position: relative;

@@ -193,8 +193,13 @@ define([
                 var self = this;
 
                 if ( self.widget ) {
-                    console.log(self.widget.getVolume());
-/*                    self.widget.toggleMute();*/
+                    self.widget.getVolume(function (volume) {
+                        if (volume > 0) {
+                            self.widget.setVolume(0);
+                        } else {
+                            self.widget.setVolume(1);
+                        }
+                    });
                 }
             }
         });

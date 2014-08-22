@@ -4,7 +4,7 @@
 
 		<div class="menuWrap clearfix">
 			<div class="icons">
-				<span class="soundIcon {{#if muted}}muted{{/if}}"></span>
+				<span class="soundIcon {{#if appState.muted}}muted{{/if}}"></span>
 				<span class="langsWrap text-uppercase">
 					{{#appState.langs}}
 						<a href="/{{#unless default}}{{isoCode}}{{/unless}}" class="isoLang">{{isoCode}}</a>

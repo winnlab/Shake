@@ -25,24 +25,29 @@ define([
                 self.podcast = appState.attr('podcast');
             },
 
-            initSoundCloudWidget: function ( $selector ) {
+            initSoundCloudWidget: function ($selector, playPlaylist, callback) {
                 var self = this;
 
                 SC.initialize({
                     client_id: self.options.clientId
                 });
 
-                self.getPlaylists($selector);
+                self.getPlaylists($selector, playPlaylist, callback);
             },
 
-            getPlaylists: function ( $selector ) {
+            getPlaylists: function ( $selector, playPlaylist, callback ) {
                 var self = this;
 
                 SC.get(
                     self.options.userPlaylistsLink,
                     function ( playlists ) {
                         self.playlists = playlists;
-                        self.playRandomPlaylist( $selector, playlists );
+                        appState.attr('podcast.playlists', playlists);
+                        if ( playPlaylist ) {
+                            self.playRandomPlaylist( $selector, playlists );
+                        } else {
+                            callback();
+                        }
                     }
                 );
             },
@@ -188,7 +193,8 @@ define([
                 var self = this;
 
                 if ( self.widget ) {
-                    self.widget.toggleMute();
+                    console.log(self.widget.getVolume());
+/*                    self.widget.toggleMute();*/
                 }
             }
         });

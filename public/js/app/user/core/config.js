@@ -38,6 +38,10 @@ define({
             name: 'shakeit',
             path: 'app/shakeit/shakeit',
             title: ''
+        }, {
+            name: 'podcasts',
+            path: 'app/podcasts/podcasts',
+            title: ''
         }]
 	}
 });

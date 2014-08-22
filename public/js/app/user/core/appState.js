@@ -36,6 +36,8 @@ define([
                 },*/
 
                 podcast: {
+                    playlists: null,
+
                     currentTitle: null,
                     currentSound: null,
 

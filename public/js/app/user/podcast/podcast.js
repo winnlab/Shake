@@ -40,7 +40,7 @@ define([
                 );
 
                 self.initFuturePodcasts();
-                scwidget.initSoundCloudWidget($('#widgetWrapper', self.element));
+                scwidget.initSoundCloudWidget($('#widgetWrapper', self.element), true);
 
 	            if (self.options.isReady) {
 		            new Preloader({

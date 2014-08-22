@@ -5,10 +5,10 @@ module.exports =
     healthWarn: 'НАДМІРНЕ СПОЖИВАННЯ АЛКОГОЛЮ ШКОДИТЬ ВАШОМУ ЗДОРОВ\'Ю'
     consume: 'СПОЖИВАЙ <span class="clearfix"></span> РОЗУМНО'
     allCocktails: 'Всі коктейлі'
-    bottle: 'Бутилка'
+    bottle: 'Пляшка'
     can: 'Банка'
     menu: 'Меню'
-    close: 'Зачинити'
+    close: 'Закрити'
 
     contacts:
         contacts: 'Контакти'

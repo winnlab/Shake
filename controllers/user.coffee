@@ -21,6 +21,7 @@ Router.get '/products', Main.index
 Router.get '/product/:name?', Main.index
 Router.get '/parties', Main.index
 Router.get '/podcast', Main.index
+Router.get '/podcasts', Main.index
 Router.get '/contacts', Main.index
 Router.get '/shakeit', Main.index
 

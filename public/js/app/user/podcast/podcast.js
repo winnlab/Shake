@@ -40,6 +40,7 @@ define([
                 );
 
                 self.initFuturePodcasts();
+
                 scwidget.initSoundCloudWidget($('#widgetWrapper', self.element), true);
 
 	            if (self.options.isReady) {
@@ -50,6 +51,15 @@ define([
 		                }
 	                });
 	            }
+
+                self.initBindings();
+            },
+
+            initBindings: function () {
+                appState.bind('podcastChange', function () {
+                    console.log('binding');
+                    scwidget.playPlaylist($('#widgetWrapper', self.element), appState.attr('podcast.playlists'));
+                });
             },
 
             initFuturePodcasts: function () {

@@ -12,7 +12,7 @@
 
         {{#each appState.podcast.playlists}}
 
-            <div class="playlist" data-playlistIndex="{{@index}}">
+            <div class="playlist" data-playlist_index="{{@index}}">
 
                 <div class="stripe"></div>
 
@@ -24,7 +24,7 @@
                         <div class="roundedButton">
                             <div class="btn">
                                 <div class="trackInfo">
-                                    <p class="number">#test</p>
+                                    <p class="number">#{{showPlaylistNumber @index}}</p>
                                     <p class="trackName">{{title}}</p>
                                     <p class="composer">{{user.username}}</p>
                                 </div>

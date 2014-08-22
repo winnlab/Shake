@@ -35,6 +35,7 @@ define([
                     nextPlaylist: null
                 },*/
 
+                podcastChange: null,
                 podcast: {
                     playlists: null,
 

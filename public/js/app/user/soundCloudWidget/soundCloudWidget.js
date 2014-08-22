@@ -44,7 +44,7 @@ define([
                         self.playlists = playlists;
                         appState.attr('podcast.playlists', playlists);
                         if ( playPlaylist ) {
-                            self.playRandomPlaylist( $selector, playlists );
+                            self.playPlaylist( $selector, playlists );
                         } else {
                             callback();
                         }
@@ -52,13 +52,19 @@ define([
                 );
             },
 
-            playRandomPlaylist: function ( $selector, playlists ) {
+            playPlaylist: function ( $selector, playlists ) {
                 var self = this;
-                var randomPlaylistPosition = Math.floor(Math.random() * (parseInt(playlists.length) - 1));
 
-                self.podcast.attr('currentPlaylistSystemPosition', randomPlaylistPosition);
-                self.currentPlaylistIndex = randomPlaylistPosition;
-                self.initIframe( $selector, playlists[randomPlaylistPosition], randomPlaylistPosition );
+                if (appState.attr('podcast.currentPlaylist')) {
+                    self.currentPlaylistIndex = self.podcast.attr('currentPlaylistSystemPosition');
+                    self.initIframe( $selector, appState.attr('podcast.currentPlaylist'), self.podcast.attr('currentPlaylistSystemPosition') );
+                } else {
+                    var randomPlaylistPosition = Math.floor(Math.random() * (parseInt(playlists.length) - 1));
+
+                    self.podcast.attr('currentPlaylistSystemPosition', randomPlaylistPosition);
+                    self.currentPlaylistIndex = randomPlaylistPosition;
+                    self.initIframe( $selector, playlists[randomPlaylistPosition], randomPlaylistPosition );
+                }
             },
 
             displayPlaylists: function ( $selector, playlists, playlistPosition ) {

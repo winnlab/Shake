@@ -13,5 +13,8 @@ define([
             return splitBySlash[2] + '/' + splitBySlash[1];
         });
 
+        can.mustache.registerHelper('showPlaylistNumber', function (index) {
+            return index()+1;
+        });
 	}
 );

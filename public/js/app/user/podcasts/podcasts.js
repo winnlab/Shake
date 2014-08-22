@@ -39,6 +39,13 @@ define([
 
             '.playlist click': function ( el, ev ) {
 
+                var playlistIndex = parseInt(el.data('playlist_index'));
+                var playlists = appState.attr('podcast.playlists');
+
+                appState.attr('podcast.currentPlaylist', playlists[playlistIndex]);
+                appState.attr('podcast.currentPlaylistSystemPosition', playlistIndex);
+                appState.attr('podcastChange', playlists[playlistIndex]);
+
                 can.route.attr({
                     module: 'podcast'
                 }, true);

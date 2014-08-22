@@ -35,6 +35,13 @@ define([
                 if (self.options.isReady) {
                     self.options.isReady.resolve();
                 }
+            },
+
+            '.playlist click': function ( el, ev ) {
+
+                can.route.attr({
+                    module: 'podcast'
+                }, true);
             }
         });
     }

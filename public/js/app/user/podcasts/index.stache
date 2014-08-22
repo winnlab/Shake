@@ -12,7 +12,7 @@
 
         {{#each appState.podcast.playlists}}
 
-            <div class="playlist">
+            <div class="playlist" data-playlistIndex="{{@index}}">
 
                 <div class="stripe"></div>
 

@@ -1,0 +1,8 @@
+{
+	"framework": "jasmine",
+	"test_page": "js/app/tests/userTest.html",
+	"watch_files": "js/app/**/*.js",
+	"launch_in_dev": [
+		"PhantomJS"
+	]
+}

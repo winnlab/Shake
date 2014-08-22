@@ -1,8 +1,10 @@
 require.config({
 	baseUrl: '/js/lib',
+	urlArgs: 'cb=' + Math.random(),
 	paths: {
 		app: '../app/user',
 		core: '../app/user/core',
+		helpers: '../app/user/core/helpers',
 		can: 'canjs/amd/can/',
 		canjs: 'canjs/amd/can',
 		jquery: 'jquery/dist/jquery',
@@ -40,53 +42,17 @@ require.config({
         TweenLite: {
             deps: ['CSSPlugin', 'Ease', 'ScrollToPlugin']
         }
-	},
-
-	waitSeconds: 15
+	}
 });
 
-require([
-		'core/router',
-		'app/viewport/viewport',
-		'app/menu/menu',
-		'core/config',
-		'core/appState',
-		'app/global/global',
-		'core/helpers/preloader',
-		'app/soundCloudWidget/soundCloudWidget',
-		'core/helpers/viewHelpers',
+require(['jquery'], function($) {
+	var specs = [];
 
-		'css!core/css/reset.css',
-		'css!core/css/global.css'
-	],
-	function (
-		Router,
-		Viewport,
-		Menu,
-		config,
-		appState,
-		Global,
-		Preloader
-	) {
-		var body = $('body');
+	specs.push('helpers/preloader_test');
 
-		new Viewport(body, {
-			state: appState
+	$(function() {		
+		require(specs, function(preloader_test) {			
+			executeTests();			
 		});
-
-		new Menu(body, {
-			state: appState
-		});
-
-		new Router(body, config.router);
-
-		new Global(body);
-
-		setTimeout(function () {
-			new Preloader({
-				images: appState.getProductImages()
-			});
-		}, 2000);
-		
-	}
-);
+	});
+});

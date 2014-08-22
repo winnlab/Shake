@@ -3,7 +3,13 @@ define([
 	'underscore'
 ],
 	function (can, _) {
-		return can.Map.extend({
+		$('#sandbox').on('click', function() {
+			$('#sandbox').append('<p>some another text</p>');
+		});
+
+		return can.Construct.extend({
+
+		}, {
 
 			init: function () {
 				this.loadImages();
@@ -31,7 +37,7 @@ define([
 				image.src = imgSrc;
 			},
 
-			imageIsLoaded: function () {				
+			imageIsLoaded: function () {
 				this.loaded += 1;
 
 				if (this.loaded == this.images.length && this.callback) {

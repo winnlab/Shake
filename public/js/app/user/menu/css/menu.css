@@ -69,6 +69,8 @@ header {
       cursor: pointer;
       color: #ffffff;
       text-decoration: none; }
+      header .langsWrap .isoLang:hover {
+        text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff; }
   header .menuIcon {
     -webkit-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     -moz-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -189,3 +191,5 @@ header {
     z-index: 15; }
     header.opened .pages {
       display: block; }
+
+/*# sourceMappingURL=menu.css.map */

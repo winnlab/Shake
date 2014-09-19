@@ -113,7 +113,7 @@ define(
 				this.viewModel.attr({
 					'id': Date.now(),
 					'viewState': 'edit'
-				})				
+				});
 
 				var formWrap = this.element.find('.setProductWrap'),
 					product = _.find(this.viewModel.products, function (product) {
@@ -127,14 +127,10 @@ define(
 
 			'.removeProduct click': function (el) {
 				var product = el.parents('.product').data('product');
+				console.log(product);
 
 				if (confirm('Вы действительно хотите удалить продукт: "' + product.attr('name') + '"?')) {
 					product.destroy().always(function (product, status, def) {
-						console.log(arguments);
-						console.log(product.attr());
-						console.log(status);
-						console.log(def);
-
 						appState.attr('notification', {
 							status: status,
 							msg: product.name + '. '+ def.responseJSON.message

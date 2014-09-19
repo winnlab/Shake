@@ -44,9 +44,9 @@
 
 <div class="healtWarn">
 	<div class="content text-uppercase">
-		<div class="warning left">
+<!--		<div class="warning left">
 			<img src="{{appState.imgPath}}warnWhite.png"/>
-		</div>
+		</div>-->
 		<p class="bigWarn">
 			{{appState.locale.healthWarn}}
 		</p>

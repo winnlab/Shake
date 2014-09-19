@@ -16,5 +16,9 @@
 
 		color: #ffffff;
 		text-decoration: none;
+
+		&:hover {
+			text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+		}
 	}
 }

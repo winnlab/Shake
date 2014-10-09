@@ -1,0 +1,1 @@
+define(["canjs"],function(e){return e.Model.extend({id:"_id",findAll:"GET /admin/newPodcast",create:"POST /admin/newPodcast",update:"PUT /admin/newPodcast",destroy:"DELETE /admin/newPodcast/{id}",parseModel:function(e){return e.success&&(e=e.message),e},parseModels:function(e){return e.message.newPodcasts}},{})});

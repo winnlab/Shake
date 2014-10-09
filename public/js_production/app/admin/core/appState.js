@@ -1,0 +1,1 @@
+define(["canjs"],function(e){var t=e.Map.extend({define:{notification:{value:{},serialize:!1}}});return new t});

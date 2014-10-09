@@ -1,0 +1,244 @@
+@charset "UTF-8";
+@import '../../../../../css/bourbon/_bourbon.scss';
+@import '../../../../../scss/base/_variables.scss';
+@import '../../../../../scss/base/_mixins.scss';
+@import '../../../../../scss/base/_placeholders.scss';
+
+$productWidth: 5.5rem;
+$blockMarginRight: 2.2rem;
+
+.productWrap {
+
+	color: #ffffff;
+	padding: 7rem 0 3rem;
+	position: relative;
+
+	.productWrapLeft {
+
+		float: left;
+		position: relative;
+		margin-right: $blockMarginRight;
+		margin-left: -4.5rem;
+
+
+		.img {
+			@include clearfix;
+			@include size(11rem 28rem);
+			@extend %bg-image-contain;			
+
+			margin-bottom: 0.25rem;
+		}
+	}
+
+	.productWrapCenter {
+
+		float: left;
+		position: relative;
+		width: 44rem;
+		padding-top: 15rem;
+
+		canvas {
+			position: absolute;
+			top: -3rem;
+		}		
+	}
+
+	.productWrapCenterBottom {
+		position: relative;
+		z-index: 1;
+		cursor: default;
+	}
+
+	.productWrapDescriptionSwitcher {
+
+		margin-top: 2rem;
+
+
+		.bottleType {
+			@include user-select(none);
+			font-family: PFDinTextCompPro;
+			font-size: 1.2rem;
+
+			.bottlesIcon {
+				@include size(4rem 3.9rem);
+				margin: 0 1rem 0 0;
+
+				@extend %bg-image-contain;
+				background-image: url('#{$img_path}bottles.png');
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				.can & {
+					background-image: url('#{$img_path}bottlesCan.png');
+				}
+			}
+
+			span {
+				@extend %in-block-middle;
+
+				&:hover {
+					text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+					cursor: pointer;
+				}
+			}
+
+			a {
+				color: #ffffff;
+				text-decoration: none;
+
+				&:hover {
+					text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	.productWrapHeader {
+
+		h1 {
+			@include user-select(none);
+			font-size: 8.5rem;
+			letter-spacing: -0.25rem;
+			text-align: left;
+			margin: 3.5rem 0 2rem;
+			line-height: 1;
+
+			left: 0.2rem;
+		}
+	}
+
+	.productWrapProductsList {
+
+		float: left;
+		width: 35%;
+		margin-right: 5%;
+
+		.productsListItem {
+
+			font-family: PFDinTextCondPro;
+			font-weight: 200;
+			font-size: 2rem;
+			color: #ffffff;
+			text-decoration: none;
+			line-height: 1;
+
+			.name {
+
+				&:hover {
+					text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+				}
+			}
+		}
+	}
+
+	.productWrapDescription {
+
+		float: left;
+		width: 60%;
+
+		.productWrapDescriptionText {
+			font-family: PFDinTextPro;
+			font-weight: 200;
+			font-size: 0.8rem;
+
+			p {
+				margin: 0;
+				line-height: 1.3;
+			}
+		}
+	}
+
+	.productWrapRight {
+
+		position: relative;
+		float: left;
+	}
+
+	.shakeItButton {
+		position: absolute;
+		top: 13rem;
+		right: -4.5rem;
+	}
+
+	.roundedButton {
+
+		text-align: center;
+		padding: 2rem 0 2rem;
+
+		.btn {
+			display: inline-block;
+			position: relative;
+
+			width: 7rem;
+			height: 7rem;
+			padding: 0.5rem 0;
+
+			text-align: center;
+			text-transform: uppercase;
+
+			cursor: pointer;
+			color: #fff;
+			font: 2rem PFDinTextCondPro;
+			font-weight: 400;
+
+			img {
+				width: 25%;
+			}
+			p {
+				margin: 0;
+				line-height: 1;
+				font-weight: 300;
+			}
+			p.bold {
+				font-weight: 500;
+			}
+
+			&:before,
+			&:after {
+				content: "";
+
+				border: 1px solid #fff;
+
+				opacity: 0;
+			}
+
+			&:before {
+				@include emptyCircles(0);
+			}
+
+			&:after {
+				@include emptyCircles(-5px);
+			}
+
+			@import '../../../../../scss/blocks/circleAnimation.scss';
+		}
+
+		.rounded {
+			@include emptyCircles(-10px);
+
+			border: 1px solid #fff;
+			opacity: 0;
+
+			&:before,
+			&:after {
+				content: "";
+
+				border: 1px solid #fff;
+
+				opacity: 0;
+			}
+
+			&:before {
+				@include emptyCircles(-7px);
+			}
+
+			&:after {
+				@include emptyCircles(-12px);
+			}
+		}
+	}
+
+}

@@ -1,0 +1,125 @@
+@charset "UTF-8";
+@import '../../../../../css/bourbon/_bourbon.scss';
+@import '../../../../../scss/base/_variables.scss';
+@import '../../../../../scss/base/_mixins.scss';
+@import '../../../../../scss/base/_placeholders.scss';
+
+$productWidth: 5.5rem;
+$canWidth: 7rem;
+
+#products {
+	color: #ffffff;
+	padding: 6rem 0 0;
+
+	.bottleType {
+		@include user-select(none);
+		text-align: center;
+		font-family: PFDinTextCompPro;
+		font-size: 1rem;
+
+		cursor: default;
+
+		span {			
+			@extend %in-block-middle;
+		}
+	}
+
+	.bottlesIcon {
+		@include size(4rem 3.9rem);
+		margin: -0.7rem 0.5rem 0;
+		
+		cursor: pointer;
+
+		@extend %bg-image-contain;
+		background-image: url('#{$img_path}bottles.png');	
+	}
+
+	.can {
+		.bottlesIcon {
+			background-image: url('#{$img_path}bottlesCan.png');
+		}
+	}
+
+	.bigTitle {
+		@include user-select(none);
+
+		z-index: 0;
+		position: absolute;
+		top: 3rem;
+
+		font-size: 11.2rem;
+		letter-spacing: -0.5rem;
+		text-align: justify;
+		
+		width: 102%;
+	
+		left: 0.2rem;
+
+		.ru & {
+			font-size: 10.3rem;
+		}
+
+		.en & {
+			font-size: 10.4rem;
+		}
+	}	
+
+
+	.productsWrap {
+		padding: 3rem 0 2rem;
+		margin: 0 -2rem;
+		text-align: center;
+	}
+
+	.productItem {
+		@extend %in-block-middle;
+
+
+		width: $productWidth;
+		margin: 0 1.9rem;
+
+		position: relative;
+		z-index: 1;
+
+		line-height: 100%;
+		color: #ffffff;
+		text-decoration: none;
+		text-align: center;
+
+
+		.img {
+			@include size($productWidth 21rem);
+			@extend %bg-image-contain;
+			@include clearfix;
+
+			margin-bottom: 0.25rem;
+		}
+
+		.name {
+			display: table-cell;
+			vertical-align: middle;
+            @include size($productWidth 3rem);
+
+			font-weight: 200;
+			font-size: 1.25rem;
+		}
+	}
+
+	.can {
+
+		.productItem {
+			width: $canWidth;
+			margin: 0 1.2rem;
+
+
+			.img {
+				@include size($canWidth 21rem);
+			}
+
+			.name {
+				@include size($canWidth 3rem);
+			}
+
+		}
+	}
+}

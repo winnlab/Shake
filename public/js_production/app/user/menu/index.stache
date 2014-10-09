@@ -1,0 +1,48 @@
+<header class="header {{appState.menu}}" style="{{#isPrimitive appState.menu 'opened'}}height: {{appState.getPageHeight}}px; {{/isPrimitive}}">
+	<div class="content">
+		<a id="logo" class="module" href="/products"></a>
+
+		<div class="menuWrap clearfix">
+			<div class="icons">
+				<span class="soundIcon {{#if appState.muted}}muted{{/if}}"></span>
+				<span class="langsWrap text-uppercase">
+					{{#appState.langs}}
+						<a href="/{{#unless default}}{{isoCode}}{{/unless}}" class="isoLang">{{isoCode}}</a>
+					{{/appState.langs}}
+				</span>
+				<span class="menuIconWrap menu">
+					<span class="menuIcon"></span>
+				</span>
+				<span class="line"></span>
+			</div>
+			<div class="control">
+				<span class="menu text-uppercase">
+					{{#isPrimitive appState.menu 'opened'}}
+						{{appState.locale.close}}
+					{{else}}
+						{{appState.locale.menu}}
+					{{/isPrimitive}}
+				</span>
+			</div>
+		</div>
+
+		<div class="shakeMixWrap">
+			<div class="shakeMix text-uppercase">
+				<span class="mixLabel module" data-href="/podcast">
+					<span class="text-bold">shake</span>mix
+				</span>
+				<div class="playBtn {{#if appState.paused}}paused{{/if}}"></div>
+			</div>
+	        <div class="podcast module" data-href="/podcast">{{appState.podcast.currentTitle}}</div>
+		</div>
+	</div>
+
+	<nav class="pages text-uppercase">
+		<a class="module" href="/shakeit">Shake it</a>
+		<a class="module" href="/products">Coctails</a>
+		<a class="module" href="/podcast">Shakemix</a>
+		<a class="module" href="/contacts">Contacts</a>
+
+		{{>app/core/views/socIcons.stache}}
+	</nav>
+</header>

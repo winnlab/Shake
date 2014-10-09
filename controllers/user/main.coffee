@@ -71,6 +71,7 @@ getData = (lang, cb) ->
 			Fragments.lean().exec proceed
 	, (err, data) ->
 		return cb err if err
+		data.env = process.env.NODE_ENV
 		data.lang = if lang.default then '' else lang.isoCode		
 		data.langs = _.map langs, (lang)-> 
 			return _.pick lang, 'isoCode', 'default'

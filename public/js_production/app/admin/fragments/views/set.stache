@@ -1,0 +1,132 @@
+<div class="content-header">
+	<h3 class="content-title clearfix">Редактирование фрагмента</h3>
+</div>
+<div class="content">
+	<div class="col-md-12">
+		<tabs>
+			<panel name="Форма фрагмента">
+				<div class="box box-primary">
+					<form class="form-horizontal setFragment">
+						<input type="hidden" name="product_id" value="{{product_id}}" />
+
+						<div class="box-body">
+
+							<div class="form-group">
+								<label class="col-md-2 control-label" for="description">День:</label>
+								<div class="col-md-10">
+									<select class="form-control" name="day_id">
+										{{#each days}}
+											<option value="{{_id}}" {{checkSelected _id fragment.day_id}}>
+												{{name}}
+											</option>
+										{{/each}}
+									</select>
+									<div class="help help-block"></div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-2 control-label" for="position">Позиция:</label>
+								<div class="col-md-10">
+									<input class="form-control" type="text" value="{{fragment.position}}" name="position" placeholder="Позиция фрагмента">
+									<div class="help help-block"></div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-md-2 control-label" for="active">Активный:</label>
+								<div class="col-md-10">
+									<input type="checkbox" value="true" name="active" {{#if fragment.active}}checked{{/if}}>
+									<div class="help help-block"></div>
+								</div>
+							</div>
+
+							<tabs>
+								{{#each langs}}
+									<panel name="{{name}}">
+										<input type="hidden" value="{{_id}}" name="lang[{{@index}}]language_id">
+
+										<div class="form-group">
+											<label class="col-md-2 control-label" for="name">Название:</label>
+											<div class="col-md-10">
+												<input class="form-control" type="text" value="{{getArrayObjValue fragment.lang @index 'name'}}" name="lang[{{@index}}]name" placeholder="Наименование фрагмента">
+												<div class="help help-block"></div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-md-2 control-label" for="description">Описание:</label>
+											<div class="col-md-10">
+												<textarea class="textarea form-control" name="lang[{{@index}}]description" placeholder="Описание фрагмента">{{getArrayObjValue fragment.lang @index 'description'}}</textarea>
+												<div class="help help-block"></div>
+											</div>
+										</div>
+									</panel>
+								{{/each}}
+							</tabs>
+
+						</div>
+						
+						<div class="box-footer">
+							<button class="btn btn-primary col-md-offset-2" type="submit">
+								Сохранить изменения
+							</button>
+						</div>
+					</form>
+				</div>
+			</panel>
+
+			<panel name="Материалы фрагмента">
+				<div class="box box-primary">
+					<div class="box-body clearfix">
+						<upload 
+							class="col-md-4"
+							name="mp4"
+							url="/admin/fragment/video"
+							delete-url="/admin/fragment/video"
+							entity="{fragment}"
+							uploaded="{fragment.video.mp4}"
+							accept="video/mp4"
+						>
+							Загрузить видео (формат mp4)
+						</upload>
+						<upload 
+							class="col-md-4"
+							name="webm"
+							url="/admin/fragment/video"
+							delete-url="/admin/fragment/video"
+							entity="{fragment}"
+							uploaded="{fragment.video.webm}"
+							accept="video/webm"
+						>
+							Загрузить видео (формат webm)
+						</upload>
+						<upload 
+							class="col-md-4"
+							name="ogv"
+							url="/admin/fragment/video"
+							delete-url="/admin/fragment/video"
+							entity="{fragment}"
+							uploaded="{fragment.video.ogv}"
+							accept="video/ogg"
+						>
+							Загрузить видео (формат ogv)
+						</upload>
+						<div class="clearfix"></div>
+						<upload 
+							class="col-md-6"
+							name="img"
+							url="/admin/fragment/img"
+							delete-url="/admin/fragment/img"
+							entity="{fragment}"
+							uploaded="{fragment.img}"
+							accept="image/*"
+						>
+							Загрузить картинку
+						</upload>
+					</div>
+				</div>
+			</panel>
+		</tabs>
+	</div>
+</div>

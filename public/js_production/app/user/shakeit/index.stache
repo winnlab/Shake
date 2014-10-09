@@ -1,0 +1,67 @@
+<div class="shakeitWrap carouselWrap" style="min-height: {{wrapMinHeight}}">
+
+    {{#each appState.products}}
+
+        <div class="fragmentItem">
+
+            <div class="video">
+                <video muted="muted" loop="loop" preload="none">
+                    {{#if fragment.video.mp4}}<source src="{{appState.uploadPath}}{{fragment.video.mp4}}">{{/if}}
+                    {{#if fragment.video.ogv}}<source src="{{appState.uploadPath}}{{fragment.video.ogv}}">{{/if}}
+                    {{#if fragment.video.webm}}<source src="{{appState.uploadPath}}{{fragment.video.webm}}">{{/if}}
+                </video>
+            </div>
+
+            <div class="fragmentItemContent">
+                <div class="roundedButton">
+                    <div class="btn">
+                        <div class="fragmentItemInfo">
+
+                            <div class="image">
+                                <img src="{{appState.uploadPath}}{{#isPrimitive appState.viewMode 'bottle'}}{{img.bottle}}{{else}}{{img.can}}{{/isPrimitive}}" alt=""/>
+                            </div>
+
+                            <div class="fragmentItemInfoContent">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="shareMoment">
+                                                <a href="#">
+                                                    <p>{{appState.locale.shakeit.share}}</p>
+                                                    <p class="thin">{{appState.locale.shakeit.moment}}</p>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="nameRow">
+                                        <td>
+                                            <div class="productName">
+                                                <p>{{lang.name}}</p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="ringtone">
+                                                <a href="#">
+                                                    <p>{{appState.locale.shakeit.download}}</p>
+                                                    <p class="thin">{{appState.locale.shakeit.ringtone}}</p>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+
+                        </div>
+                        <div class="rounded"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    {{/each}}
+
+</div>

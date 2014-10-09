@@ -1,0 +1,69 @@
+{{#checkState}}
+	<div class="right-side">
+		<div class="content-header">
+			<h3 class="content-title clearfix">
+				Список продуктов
+				<div class="pull-right btn btn-primary addProduct">
+					<i class="fa fa-plus"></i>
+					&nbsp;Добавить продукт
+				</div>
+			</h3>
+		</div>
+		<div class="content">
+			{{#if products.isResolved}}
+				{{#if products.length}}
+					<div class="row">
+						{{#each products}}
+							<div class="col-lg-3 col-xs-6">
+								<div class="product small-box clearfix {{getBoxName @index}}" {{data "product"}}>
+									<div class="inner">
+										<h2>{{getName}}</h2>
+										<p>Языки:
+                                            {{{checkLanguages lang 'name' 'description'}}}
+                                        </p>
+										<p>
+											Картики: 
+											{{#if img.bottle}}
+												<span class="label label-info">Бутылка</span>
+                                            {{/if}}
+                                            {{#if img.bottle_list}}
+                                                <span class="label label-info">Бутылка (список)</span>
+                                            {{/if}}
+                                            {{#if img.can}}
+                                                <span class="label label-info">Банка</span>
+                                            {{/if}}
+                                            {{#if img.can_list}}
+                                                <span class="label label-info">Банка (список)</span>
+											{{/if}}
+										</p>
+									</div>
+									<a class="module col-md-12 small-box-footer" href="/admin/fragments/{{_id}}">
+										Фрагменты&nbsp;
+										<i class="fa fa-film"></i>
+									</a>
+									<div class="editProduct small-box-footer col-md-6 pull-left">
+										Изменить&nbsp;
+										<i class="fa fa-pencil"></i>
+									</div>
+									<div class="removeProduct small-box-footer col-md-6 pull-right">
+										Удалить&nbsp;
+										<i class="fa fa-trash-o"></i>
+									</div>
+								</div>
+							</div>
+						{{/each}}
+					</div>
+				{{else}}
+					<div class="alert alert-info">
+						<i class="fa fa-info"></i>
+						<b>Примечание! </b>
+						Ни одного продукта еще не добавлено
+					</div>
+				{{/if}}
+			{{/if}}
+		</div>
+	</div>
+{{else}}
+	<div class="btn btn-primary toList" can-click="toList">Вернутся к списку продуктов</div>	
+	{{{createForm id 'setProductWrap'}}}
+{{/checkState}}

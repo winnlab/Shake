@@ -1,0 +1,226 @@
+@charset "UTF-8";
+@import '../../../../../css/bourbon/_bourbon.scss';
+@import '../../../../../scss/base/_variables.scss';
+@import '../../../../../scss/base/_mixins.scss';
+@import '../../../../../scss/base/_placeholders.scss';
+
+$logo_width: 4em;
+$logo_height: 4em;
+$btnSize: 8rem;
+
+
+.podcastsWrap {
+
+	color: #ffffff;
+	padding: 6rem 0 3rem;
+	position: relative;
+	width: 54rem;
+	margin: 0 auto;
+
+	.header {
+		text-align: center;
+		color: #ffffff;
+		font-family: PFDinTextCondPro;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 2.2rem;
+
+		h1 {
+			margin: 0;
+			line-height: 1;
+
+			span {
+				font-weight: 300;
+				font-size: 4.6rem;
+				margin-left: -0.8rem;
+			}
+		}
+	}
+
+	.subheader {
+		text-align: center;
+		display: block;
+		color: #ffffff;
+		font-family: PFDinTextCondPro;
+		text-transform: uppercase;
+		font-size: 1rem;
+		text-decoration: none;
+		margin: 1rem 0;
+
+		h3 {
+			font-weight: 300;
+			margin: 0;
+			line-height: 1;
+
+			&:hover {
+				text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.allPodcasts {
+
+		.playlist {
+
+			float: left;
+			width: 16rem;
+			margin-right: 3rem;
+			margin-bottom: 2rem;
+
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+
+			.stripe {
+				width: 100%;
+				height: 5px;
+				background: #ff3500;
+				margin-bottom: 1px;
+			}
+
+			.centralContent {
+
+				position: relative;
+				width: 100%;
+				height: 16rem;
+
+
+				@extend %bg-image-cover;
+
+				.logo {
+					@include size($logo_width $logo_height);
+					margin-left: -$logo_width / 2;
+					left: 50%;
+
+					position: relative;
+					top: 0.8rem;
+
+					background-image: url('#{$img_path}introLogo.png');
+					@extend %bg-image-contain;
+				}
+
+				.trackWrapper {
+
+					position: absolute;
+					z-index: 1;
+					left: 50%;
+					margin-left: -$btnSize/2;
+					top: 40%;
+					margin-top: -$btnSize/2;
+
+					.roundedButton {
+
+						text-align: center;
+						padding: 2rem 0 2rem;
+
+						.btn {
+
+							width: $btnSize;
+							height: $btnSize;
+
+							display: inline-block;
+							position: relative;
+							background: rgba(28, 27, 27, 0.8);
+							border-radius: 50%;
+
+							padding: 0.5rem 0;
+
+							text-align: center;
+							text-transform: uppercase;
+
+							color: #fff;
+							font: 2rem PFDinTextCondPro;
+							font-weight: 400;
+
+							.trackInfo {
+								padding: 0.4em 0.2rem 0;
+							}
+
+							img {
+								width: 25%;
+							}
+							p {
+								margin: 0;
+								line-height: 1.2;
+								font-weight: 300;
+								font-size: 1.2rem;
+							}
+							.number {
+								font-weight: 300;
+							}
+
+							.composer {
+								font-size: 1rem;
+							}
+							p.bold {
+								font-weight: 500;
+							}
+
+							&:before,
+							&:after {
+								content: "";
+
+								border: 1px solid #fff;
+
+								opacity: 0;
+							}
+
+							&:before {
+								@include emptyCircles(0);
+							}
+
+							&:after {
+								@include emptyCircles(-5px);
+							}
+
+							&:before {
+								@include animation(disappearing 2s linear 0s infinite);
+							}
+
+							&:after {
+								@include animation(disappearing 2s linear 0s infinite);
+							}
+
+							.rounded {
+								@include animation(disappearing 2s linear 0s infinite);
+
+								&:before {
+									@include animation(disappearing 2s linear 0s infinite);
+								}
+
+								&:after {
+									@include animation(disappearing 2s linear 0s infinite);
+								}
+							}
+						}
+
+						.rounded {
+							@include emptyCircles(-10px);
+
+							border: 1px solid #fff;
+							opacity: 0;
+
+							&:before,
+							&:after {
+								content: "";
+
+								border: 1px solid #fff;
+
+								opacity: 0;
+							}
+
+							&:before {
+								@include emptyCircles(-7px);
+							}
+
+							&:after {
+								@include emptyCircles(-12px);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

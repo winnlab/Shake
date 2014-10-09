@@ -1,0 +1,46 @@
+<div class="podcastsWrap">
+
+    <div class="header">
+        <h1>shake <span>mix</span></h1>
+    </div>
+
+    <a class="subheader module" href="/podcast">
+        <h3>{{appState.locale.back}}</h3>
+    </a>
+
+    <div class="allPodcasts">
+
+        {{#each appState.podcast.playlists}}
+
+            <div class="playlist" data-playlist_index="{{@index}}">
+
+                <div class="stripe"></div>
+
+                <div class="centralContent" style="background-image: url({{artwork_url}});">
+
+                    <div class="logo"></div>
+
+                    <div class="trackWrapper">
+                        <div class="roundedButton">
+                            <div class="btn">
+                                <div class="trackInfo">
+                                    <p class="number">#{{showPlaylistNumber @index}}</p>
+                                    <p class="trackName">{{title}}</p>
+                                    <p class="composer">{{user.username}}</p>
+                                </div>
+                                <div class="rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        {{/each}}
+
+        <div class="clearfix"></div>
+
+    </div>
+
+</div>

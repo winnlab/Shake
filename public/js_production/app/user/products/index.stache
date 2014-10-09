@@ -1,0 +1,24 @@
+<div class="content text-uppercase {{appState.viewMode}}">
+	<div class="bottleType">
+		<span>0.33 {{appState.locale.bottle}}</span>
+		<span class="bottlesIcon"></span>
+		<span>0.5 {{appState.locale.can}}</span>
+	</div>
+
+	<div class="bigTitle text-bold">
+		{{appState.locale.allCocktails}}
+	</div>
+
+	<div class="productsWrap">
+		{{#each appState.products}}
+			{{#if img.bottle}}
+				<a class="productItem module" href="/product/{{link}}">
+					<div class="img" 
+						style="background-image: url('{{appState.uploadPath}}{{#isPrimitive appState.viewMode 'bottle'}}{{img.bottle}}{{else}}{{img.can}}{{/isPrimitive}}')"
+					></div>
+					<div class="name">{{lang.name}}</div>
+				</a>
+			{{/if}}
+		{{/each}}
+	</div>
+</div>

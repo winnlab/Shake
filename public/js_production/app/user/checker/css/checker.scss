@@ -1,0 +1,142 @@
+@charset "UTF-8";
+@import '../../../../../css/bourbon/_bourbon.scss';
+@import '../../../../../scss/base/_variables.scss';
+@import '../../../../../scss/base/_mixins.scss';
+@import '../../../../../scss/base/_placeholders.scss';
+
+$logo_width: 13rem;
+$logo_height: 10.6rem;
+
+#checker {
+
+	@extend %bg-image-cover;
+	background-image: url('#{$img_path}introBg.jpg');
+
+	position: relative;
+	z-index: 19;
+
+	.topOffset {
+		padding-top: 5.5rem;
+	}
+
+	@import '../../../../../scss/blocks/langs.scss';
+
+	.langsWrap {
+		display: block;
+		margin: 0 auto;
+		width: 7rem;
+		text-align: center;
+		padding: 3rem 0 2rem;
+	}
+
+	.logo {
+		@include size($logo_width $logo_height);
+		margin-left: -$logo_width / 2;
+		left: 50%;
+		
+		position: relative;
+
+		background-image: url('#{$img_path}introLogo.png');
+		@extend %bg-image-contain;
+	}
+
+	#checkTitle {
+		text-align: center;
+		margin: -3rem 0 -6rem;
+	}
+
+	.title {
+		font: 5.2rem PFDinTextCondPro;
+		font-weight: 500;
+		line-height: 4.8rem;
+
+		letter-spacing: 3px;
+
+		padding: 2.35rem 0 20rem;
+
+		color: #ffffff;
+
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	.checkerBtns {
+		opacity: 0;
+		position: relative;
+		text-align: center;
+		padding: 2rem 0 6rem;
+		@include transform(translateY(30px));
+		@include transition(all .3s ease-in);
+
+		&.active {
+			opacity: 1;
+			@include transform(translateY(0px));		
+		}
+
+		.btn {
+			display: inline-block;
+			position: relative;
+
+			width: 5.5rem;
+			height: 5.5rem;
+			margin: 0 7rem;
+			padding: 1.1rem 0;
+			
+			text-align: center;
+			text-transform: uppercase;
+			
+			cursor: pointer;
+			color: #fff;
+			font: 2.8rem PFDinTextCondPro;
+			font-weight: 500;
+
+			&:before,
+			&:after {
+				content: "";
+				
+				border: 2px solid #fff;
+				
+				opacity: 0;
+			}
+
+			&:before {
+				@include emptyCircles(0);
+			}
+
+			&:after {
+				@include emptyCircles(-5px);
+			}
+
+			&:hover {
+
+				@import '../../../../../scss/blocks/circleAnimation.scss';
+			}
+		}
+
+		.rounded {
+			@include emptyCircles(-10px);
+
+			border: 2px solid #fff;
+			opacity: 0;
+
+			&:before,
+			&:after {
+				content: "";
+
+				border: 2px solid #fff;
+
+				opacity: 0;
+			}
+
+			&:before {
+				@include emptyCircles(-7px);
+			}
+
+			&:after {				
+				@include emptyCircles(-12px);
+			}
+		}
+
+	}
+}
+

@@ -1,0 +1,57 @@
+{{#isContactsShown}}
+	<div class="mainFooter">
+
+		<div class="footerContent">
+
+			<div class="newProductsInfo">
+
+				<div class="newProductsLogo">
+					<h1>{{appState.locale.contacts.contacts}}</h1>
+				</div>
+
+				{{>app/core/views/socIcons.stache}}
+
+			</div>
+
+			<div class="address">
+				<h5>{{appState.locale.contacts.mainOffice}}</h5>
+				<p>{{appState.locale.contacts.postAddress}}</p>
+				<p>{{appState.locale.contacts.address}}</p>
+				<p>{{appState.locale.contacts.phone}}</p>
+			</div>
+
+			<div class="importer">
+				<h5>{{appState.locale.contacts.importerInRF}}</h5>
+				<p>{{appState.locale.contacts.novyeProducty}}</p>
+				<p>{{appState.locale.contacts.importerPlacement}}</p>
+				<p>{{appState.locale.contacts.importerAddress}}</p>
+				<p>{{appState.locale.contacts.importerPhone}}</p>
+				<p>{{appState.locale.contacts.importerEmail}}</p>
+			</div>
+
+			<div class="exportDepartment">
+				<h5>{{appState.locale.contacts.exportDepartment}}</h5>
+				<p>{{appState.locale.contacts.exportEmail}}</p>
+				<p>{{appState.locale.contacts.exportPhone}}</p>
+			</div>
+
+			<div class="clearfix"></div>
+
+		</div>
+
+	</div>
+{{/isContactsShown}}
+
+<div class="healtWarn">
+	<div class="content text-uppercase">
+<!--		<div class="warning left">
+			<img src="{{appState.imgPath}}warnWhite.png"/>
+		</div>-->
+		<p class="bigWarn">
+			{{appState.locale.healthWarn}}
+		</p>
+		<div class="warning right">
+			<img src="{{appState.imgPath}}warnWhite.png"/>
+		</div>
+	</div>
+</div>

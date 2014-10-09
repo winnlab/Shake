@@ -1,0 +1,93 @@
+@charset "UTF-8";
+@import '../../../../../css/bourbon/_bourbon.scss';
+@import '../../../../../scss/base/_variables.scss';
+@import '../../../../../scss/base/_mixins.scss';
+@import '../../../../../scss/base/_placeholders.scss';
+
+.contactsWrap {
+
+  color: #ffffff;
+  padding: 6rem 0 0;
+  position: relative;
+
+  .header {
+    text-align: center;
+    color: #ffffff;
+    font-family: PFDinTextCondPro;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+
+    h1 {
+      margin: 0 0 0.5rem;
+    }
+  }
+  
+  .map {
+
+    iframe {
+      width: 100%;
+      height: 25rem;
+    }
+  }
+
+  .footer {
+
+    width: 100%;
+    background: #ffffff;
+
+    .footerContent {
+
+      margin: 0 auto;
+      padding: 40px 0;
+      width: 54rem;
+      color: #231f20;
+
+      h5 {
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 1;
+        margin: 0;
+      }
+
+      p {
+        font-weight: 200;
+        line-height: 1;
+        margin: 0;
+
+      }
+
+      .newProductsInfo {
+
+        float: left;
+        width: 30%;
+        margin-right: 5%;
+
+        .newProductsLogo {
+          margin-bottom: 40px;
+        }
+      }
+
+      .address {
+
+        float: left;
+        width: 15%;
+        margin-right: 5%;
+      }
+
+      .importer {
+
+        float: left;
+        width: 20%;
+        margin-right: 5%;
+      }
+
+      .exportDepartment {
+
+        float: left;
+        width: 20%;
+      }
+    }
+  }
+
+}

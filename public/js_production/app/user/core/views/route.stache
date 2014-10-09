@@ -1,0 +1,3 @@
+{{#each modules}}
+	<module class="{{#if active}}active{{/if}}" id="{{id}}"></module>
+{{/each}}

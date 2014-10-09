@@ -48,6 +48,8 @@ configure = () ->
 		matchType: ///js/image/images/image/img///
 	@use '/uploads', express.static "#{__dirname}/../uploads"
 	@use '/js', express.static "#{__dirname}/../public/js"
+	@use '/js_production', express.static "#{__dirname}/../public/js_production"
+	@use '/js_development', express.static "#{__dirname}/../public/js_development"
 	@use '/img', express.static "#{__dirname}/../public/img"
 	@use '/css', express.static "#{__dirname}/../public/css"
 	@use '/fonts', express.static "#{__dirname}/../public/fonts"

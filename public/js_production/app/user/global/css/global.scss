@@ -1,0 +1,112 @@
+@charset "UTF-8";
+@import '../../../../../css/bourbon/_bourbon.scss';
+@import '../../../../../scss/base/_variables.scss';
+@import '../../../../../scss/base/_mixins.scss';
+@import '../../../../../scss/base/_placeholders.scss';
+
+.mainFooter {
+    position: relative;
+    z-index: 20;
+
+    width: 100%;
+    background: #000000;
+
+    .footerContent {
+
+        margin: 0 auto;
+        padding: 20px 0;
+        width: 54rem;
+        color: #ffffff;
+
+        h1 {
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1;
+            font-size: 3.2rem;
+
+        }
+
+        h5 {
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1;
+            margin: 0;
+        }
+
+        p {
+            font-weight: 200;
+            line-height: 1;
+            margin: 0;
+
+        }
+
+        .newProductsInfo {
+
+            float: left;
+            width: 30%;
+            margin-right: 5%;
+
+            .newProductsLogo {
+                margin-bottom: 40px;
+            }
+        }
+
+        .address {
+
+            float: left;
+            width: 15%;
+            margin-right: 5%;
+        }
+
+        .importer {
+
+            float: left;
+            width: 20%;
+            margin-right: 5%;
+        }
+
+        .exportDepartment {
+
+            float: left;
+            width: 20%;
+        }
+    }
+}
+
+.healtWarn {
+	position: relative;
+	z-index: 20;
+
+	background: #fff;
+	color: #000;
+
+	width: 100%;
+	height: $healthWarnHeight;
+	padding: 0.7rem 0;
+
+	font-family: PFDinTextCompPro;
+	font-weight: 200;
+	line-height: 1;
+
+	.bigWarn {
+		font-size: 2rem;
+		text-align: center;
+		width: 100%;
+	}
+
+	.warning {
+		position: absolute;
+		top: 0;
+		height: 100%;
+
+		img {
+			height: 100%;
+		}
+	}
+	.warning.left {
+		left: 0;
+	}
+	.warning.right {
+		right: 0;
+	}
+}

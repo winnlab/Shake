@@ -1,0 +1,7 @@
+<div class="socialButtons">
+	<a href="http://www.facebook.com"><img src="{{appState.imgPath}}social/facebookWhite.png" alt=""/></a>
+	<a href="http://www.vk.com"><img src="{{appState.imgPath}}social/vkWhite.png" alt=""/></a>
+	<a href="http://www.youtube.com"><img src="{{appState.imgPath}}social/youtubeWhite.png" alt=""/></a>
+	<a href="http://www.instagram.com"><img src="{{appState.imgPath}}social/instagramWhite.png" alt=""/></a>
+	<a href="http://www.coub.com"><img src="{{appState.imgPath}}social/coubWhite.png" alt=""/></a>
+</div>

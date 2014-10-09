@@ -1,0 +1,92 @@
+<div class="fragments">
+{{#checkState}}
+	<div class="right-side">
+		{{#if product.isResolved}}
+			{{#if product.0}}
+				<div class="content-header">
+					<h3 class="content-title clearfix">
+						Список фрагментов продукта:
+						<strong>
+							{{product.0.name}}
+						</strong>
+						
+						<div class="pull-right btn btn-primary addFragment">
+							<i class="fa fa-plus"></i>
+							&nbsp;Добавить фрагмент
+						</div>
+					</h3>
+				</div>
+				<div class="content">
+					{{#if fragments.isResolved}}
+						{{#if fragments.length}}
+
+							<table class="table table-bordered table-striped">
+								<thead>
+									<th>Название</th>
+									<th>Видео</th>
+									<th>Изображение</th>
+									<th>Действия</th>
+								</thead>
+								<tbody>
+									{{#each fragments}}
+										<tr class="fragment" {{data 'fragment'}}>
+											<td>{{getName}}</td>
+											<td>
+												{{#if video.mp4}}
+													<span class="label label-info">mp4</span>
+												{{/if}}
+												{{#if video.webm}}
+													<span class="label label-warning">webm</span>
+												{{/if}}
+												{{#if video.ogv}}
+													<span class="label label-primary">ogv</span>
+												{{/if}}
+											</td>
+											<td>
+												{{#if img}}
+													<span class="label label-success">Да</span>
+												{{else}}
+													<span class="label label-default">Нет</span>
+												{{/if}}
+											</td>
+											<td>
+												<div class="btn btn-default editFragment">
+													<i class="fa fa-pencil"></i>
+												</div>
+												<div class="btn btn-danger removeFragment">
+													<i class="fa fa-trash-o"></i>
+												</div>
+											</td>
+										</tr>
+									{{/each}}
+								</tbody>
+							</table>
+						{{else}}
+							<div class="alert alert-info">
+								<i class="fa fa-info"></i>
+								<b>Примечание! </b>
+								Ни одного фрагмента еще не добавлено
+							</div>
+						{{/if}}
+					{{/if}}
+				</div>
+			{{else}}
+				<div class="content-header">
+					<h3 class="content-title clearfix">
+						<span class="clearfix">Извините но больше этого списка фрагментов не существует.</span>
+						Возможно вы удалили 
+						{{#if deletedProduct}} 
+							продукт "{{deletedProduct}}".
+						{{else}}
+							продукт связанный с этим списком.
+						{{/if}}
+					</h3>
+				</div>
+			{{/if}}
+		{{/if}}
+	</div>
+{{else}}
+	<div class="btn btn-primary toList" can-click="toList">Вернутся к списку фрагментов</div>	
+	{{{createForm id 'setFragmentWrap'}}}
+{{/checkState}}
+</div>

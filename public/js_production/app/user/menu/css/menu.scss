@@ -1,0 +1,240 @@
+@charset "UTF-8";
+@import '../../../../../css/bourbon/_bourbon.scss';
+@import '../../../../../scss/base/_variables.scss';
+@import '../../../../../scss/base/_mixins.scss';
+@import '../../../../../scss/base/_placeholders.scss';
+
+$playBtnSize: 1.6rem;
+$playBtnOffset: $playBtnSize * 1.2;
+
+header {
+	position: absolute;
+	top: 0;
+
+	@include size(100% 5rem);
+
+	color: #fff;
+	font-family: PFDinTextCondPro;
+    z-index: 18;
+
+	@extend %bg-image-cover;
+
+	&.opened {
+		background-image: url('#{$img_path}introBg.jpg');
+	}	
+
+	#logo {
+		@include size(13.3rem 5.5rem);
+
+		@extend %bg-image-contain;
+		background-image: url('#{$img_path}logo.png');
+
+		position: absolute;
+
+		top: 0;
+		left: 0;
+	}
+
+	.menuWrap {
+		width: 25rem;
+		margin: 0 auto;
+		padding-top: 1.85rem;
+		padding-left: 3.1rem;
+	}
+
+	.icons {
+		float: left;
+		width: 50%;
+		text-align: right;
+	}
+
+	.soundIcon {
+		@include size(1.2rem 1.4rem);
+		@extend %bg-image-contain;
+		@extend %in-block-middle;
+		background-image: url('#{$img_path}sound.png');
+		position: relative;
+
+
+		&.muted {
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				@include size(1.7rem 1.7rem);
+				top: -0.1rem;
+				left: -0.2rem;
+				background-image: url("#{$img_path}soundMuted.png");
+				-webkit-background-size: cover;
+				background-size: cover;
+			}
+		}
+	}
+
+	@import '../../../../../scss/blocks/langs.scss';
+
+	.menuIcon {
+		@extend %in-block-middle;
+
+		@include transition(all 0.3s $ease-in-out-sine);
+		position: relative;
+		cursor: pointer;
+
+		@include size(1.2rem 3px);
+		margin: 0 0 0 0.5rem;
+				
+		background: #fff;
+
+		&:before,
+		&:after {
+			@include transition(all 0.3s $ease-in-out-sine);
+
+			content: '';
+			display: block;
+
+			width: 100%;
+			height: 3px;
+
+			background: #ffffff;
+
+			position: absolute;
+		}
+
+		&:before {
+			@include transform(translateY(-250%));
+		}
+
+		&:after {
+			@include transform(translateY(250%));
+		}
+
+	}
+
+	&.opened .menuIcon {
+		background-color: transparent;
+
+		&:before {
+			@include transform(translateY(0) rotate(45deg));
+		}
+		&:after {
+			@include transform(translateY(0) rotate(-45deg));
+		}
+	}
+
+	.line {
+		@extend %in-block-middle;
+
+		margin: 0 -0.1rem 0 0.6rem;
+		height: 1rem;
+		width: 3px;
+
+		background: #ffffff;
+	}
+
+	.control {
+		float: left;
+		width: 50%;
+		padding: 0.25rem 0 0 0.8rem;
+	}
+
+	.menu {
+		@include user-select(none);
+		font-size: 1rem;
+		cursor: pointer;
+	}
+
+	.shakeMixWrap {
+		position: absolute;
+		right: $playBtnOffset;
+		top: 1.6rem;
+
+		.podcast {
+			text-align: right;
+			position: absolute;
+			right: 0;
+			top: 2.5rem;
+		}
+	}
+
+	.shakeMix {
+		position: relative;
+
+		font-weight: 200;
+		font-size: 1.8rem;
+
+		&:before {
+			@include size(2.4rem 2.3rem);
+			margin-right: 0.05em;
+
+			@extend %in-block-middle;
+			@extend %bg-image-contain;
+			background-image: url('#{$img_path}soundWave.png');
+
+			content: '';
+		}
+
+		.mixLabel {
+			top: 0.2rem;
+			left: -0.25rem;
+			position: relative;
+		}		
+	}
+
+	.playBtn {
+		@include size($playBtnSize $playBtnSize);
+		@extend %bg-image-contain;
+		background-image: url('#{$img_path}play.png');
+
+		position: absolute;
+		right: -$playBtnOffset;
+		top: 0.35rem;
+
+		&.paused {
+			background-image: url('#{$img_path}pause.png');
+		}
+
+		&:hover {
+			cursor: pointer;
+
+		}
+	}
+
+	.pages {
+		display: none;
+
+		width: 100%;
+
+		position: absolute;
+		top: 9.2rem;
+
+		a.module {
+			width: 20rem;
+			margin: 0 auto;
+
+			display: block;
+			color: #fff;
+
+			text-align: center;
+			font-size: 5.5rem;
+			line-height: 90%;
+			text-decoration: none;
+			letter-spacing: -4px;
+
+			&:hover {
+				text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+			}
+		}
+
+		.socialButtons {
+			text-align: center;
+			padding-top: 4rem;
+		}
+	}
+
+	&.opened{ 
+		z-index: 15;
+		.pages {
+			display: block;
+		}
+	}
+}

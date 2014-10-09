@@ -1,0 +1,11 @@
+/*!
+ * CanJS - 2.1.2
+ * http://canjs.us/
+ * Copyright (c) 2014 Bitovi
+ * Mon, 16 Jun 2014 20:44:18 GMT
+ * Licensed MIT
+ * Includes: CanJS default build
+ * Download from: http://canjs.us/
+ */
+
+steal("can/util","can/map","can/list",function(e,t){e.dev.warn("can/map/attributes is a deprecated plugin and will be removed in a future release. can/map/define provides the same functionality in a more complete API."),e.each([e.Map,e.Model],function(t){if(t===undefined)return;var n=function(e){return typeof e=="object"&&e!==null&&e};e.extend(t,{attributes:{},convert:{date:function(e){var t=typeof e;return t==="string"?(e=Date.parse(e),isNaN(e)?null:new Date(e)):t==="number"?new Date(e):e},number:function(e){return parseFloat(e)},"boolean":function(e){return e==="false"||e==="0"||!e?!1:!0},"default":function(t,n,r,i){if(e.Map.prototype.isPrototypeOf(i.prototype)&&typeof i.model=="function"&&typeof i.models=="function")return i[e.isArray(t)?"models":"model"](t);if(e.Map.prototype.isPrototypeOf(i.prototype))return e.isArray(t)&&typeof i.List=="function"?new i.List(t):new i(t);if(typeof i=="function")return i(t,n);var s=e.getObject(i),o=window,u;return i.indexOf(".")>=0&&(u=i.substring(0,i.lastIndexOf(".")),o=e.getObject(u)),typeof s=="function"?s.call(o,t,n):t}},serialize:{"default":function(e,t){return n(e)&&e.serialize?e.serialize():e},date:function(e){return e&&e.getTime()}}});var r=t.setup;t.setup=function(t,n,i){var s=this;r.call(s,t,n,i),e.each(["attributes"],function(e){if(!s[e]||t[e]===s[e])s[e]={}}),e.each(["convert","serialize"],function(n){t[n]!==s[n]&&(s[n]=e.extend({},t[n],s[n]))})}}),e.Map.prototype.__convert=function(e,t){var n=this.constructor,r=this.__get(e),i,s;return n.attributes&&(i=n.attributes[e],s=n.convert[i]||n.convert["default"]),t===null||!i?t:s.call(n,t,r,function(){},i)};var n=e.Map.helpers._serialize;e.Map.helpers._serialize=function(e,t,r){var i=e.constructor,s=i.attributes?i.attributes[t]:0,o=i.serialize?i.serialize[s]:0;return r&&typeof r.serialize=="function"?n.apply(this,arguments):o?o(r,s):n.apply(this,arguments)};var r=e.Map.prototype.serialize;return e.Map.prototype.serialize=function(e){var t=r.apply(this,arguments);return e?t[e]:t},e.Map});

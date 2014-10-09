@@ -1,0 +1,65 @@
+<div class="content text-uppercase {{appState.viewMode}}">
+
+    <div class="productWrap">
+
+        <div class="productWrapLeft">
+
+            <div class="img"
+                 style="background-image: url('{{appState.uploadPath}}{{#isPrimitive appState.viewMode 'bottle'}}{{product.img.bottle}}{{else}}{{product.img.can}}{{/isPrimitive}}')"
+                    >
+            </div>
+
+        </div>
+
+        <div class="productWrapCenter">
+            <div id="{{titleId}}"></div>            
+
+            <div class="productWrapCenterBottom">
+
+                <div class="productWrapProductsList">
+
+                    {{#each appState.products}}
+                        <a class="productsListItem module" href="/product/{{link}}">
+                            <div class="name">{{lang.name}}</div>
+                        </a>
+                    {{/each}}
+
+                </div>
+
+                <div class="productWrapDescription">
+
+                    <div class="productWrapDescriptionText">
+                        <p>{{product.lang.description}}</p>
+                    </div>
+
+                    <div class="productWrapDescriptionSwitcher">
+
+                        <div class="bottleType">
+                            <span class="bottlesIcon"></span>
+                            <a class="module" href="/products"><span>{{appState.locale.allCocktails}}</span></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+        </div>
+
+        <div class="roundedButton shakeItButton">
+            <div class="btn shakeIt module" data-href="/shakeit">
+                <img src="{{appState.imgPath}}shakeItLogo.png" alt=""/>
+                <p class="bold">shake</p>
+                <p>it</p>
+                <div class="rounded"></div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+</div>

@@ -1,0 +1,48 @@
+<div class="content-header">
+    <h3 class="content-title clearfix">Редактирование анонса подкаста</h3>
+</div>
+<div class="content">
+    <div class="col-md-12">
+
+        <div class="box box-primary">
+            <form class="form-horizontal setNewPodcast">
+
+                <div class="box-body">
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="name">Название:</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" value="{{newPodcast.name}}" name="name" placeholder="Название подкаста">
+                            <div class="help help-block"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="author">Автор:</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" value="{{newPodcast.author}}" name="author" placeholder="Автор подкаста">
+                            <div class="help help-block"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="date">Дата:</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" value="{{newPodcast.date}}" name="date" placeholder="Дата выпуска подкаста">
+                            <div class="help help-block"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="box-footer">
+                    <button class="btn btn-primary col-md-offset-2" type="submit">
+                        Сохранить изменения
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

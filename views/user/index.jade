@@ -24,6 +24,6 @@ html(lang="#{data.lang}")
 	body(class="#{data.lang}")
 		div#preloader
 			img(src="/img/user/loader.gif")
-		script(data-main="/js/app/user/core/core.js" src='/js/lib/require.js')
+		script(data-main="/js_#{process.env.NODE_ENV}/app/user/core/core.js" src='/js_#{process.env.NODE_ENV}/lib/require.js')
 		script.
 			window['data'] = !{JSON.stringify(data)};

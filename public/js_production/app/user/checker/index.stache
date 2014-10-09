@@ -1,0 +1,26 @@
+<span class="langsWrap text-uppercase">
+	{{#langs}}
+		<a href="/{{#unless default}}{{isoCode}}{{/unless}}" class="isoLang">{{isoCode}}</a>
+	{{/langs}}
+</span>
+<div class="logo"></div>
+
+{{#if is18Show}}
+
+	<div id="checkTitle"></div>
+
+	<div class="checkerBtns">
+		<div class="btn yes">
+			{{locale.yes}}
+			<div class="rounded"></div>
+		</div>
+		<div class="btn no">
+			{{locale.no}}
+			<div class="rounded"></div>
+		</div>
+	</div>
+{{else}}
+	<div class="title">
+		Oooops!
+	</div>
+{{/if}}

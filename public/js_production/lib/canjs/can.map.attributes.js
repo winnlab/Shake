@@ -1,0 +1,11 @@
+/*!
+ * CanJS - 2.1.2
+ * http://canjs.us/
+ * Copyright (c) 2014 Bitovi
+ * Mon, 16 Jun 2014 20:44:30 GMT
+ * Licensed MIT
+ * Includes: can/map/attributes
+ * Download from: http://canjs.com
+ */
+
+(function(e){var t=function(t,n){t.each([t.Map,t.Model],function(n){if(n===e)return;var r=function(e){return typeof e=="object"&&e!==null&&e};t.extend(n,{attributes:{},convert:{date:function(e){var t=typeof e;return t==="string"?(e=Date.parse(e),isNaN(e)?null:new Date(e)):t==="number"?new Date(e):e},number:function(e){return parseFloat(e)},"boolean":function(e){return e==="false"||e==="0"||!e?!1:!0},"default":function(e,n,r,i){if(t.Map.prototype.isPrototypeOf(i.prototype)&&typeof i.model=="function"&&typeof i.models=="function")return i[t.isArray(e)?"models":"model"](e);if(t.Map.prototype.isPrototypeOf(i.prototype))return t.isArray(e)&&typeof i.List=="function"?new i.List(e):new i(e);if(typeof i=="function")return i(e,n);var s=t.getObject(i),o=window,u;return i.indexOf(".")>=0&&(u=i.substring(0,i.lastIndexOf(".")),o=t.getObject(u)),typeof s=="function"?s.call(o,e,n):e}},serialize:{"default":function(e,t){return r(e)&&e.serialize?e.serialize():e},date:function(e){return e&&e.getTime()}}});var i=n.setup;n.setup=function(e,n,r){var s=this;i.call(s,e,n,r),t.each(["attributes"],function(t){if(!s[t]||e[t]===s[t])s[t]={}}),t.each(["convert","serialize"],function(n){e[n]!==s[n]&&(s[n]=t.extend({},e[n],s[n]))})}}),t.Map.prototype.__convert=function(e,t){var n=this.constructor,r=this.__get(e),i,s;return n.attributes&&(i=n.attributes[e],s=n.convert[i]||n.convert["default"]),t===null||!i?t:s.call(n,t,r,function(){},i)};var r=t.Map.helpers._serialize;t.Map.helpers._serialize=function(e,t,n){var i=e.constructor,s=i.attributes?i.attributes[t]:0,o=i.serialize?i.serialize[s]:0;return n&&typeof n.serialize=="function"?r.apply(this,arguments):o?o(n,s):r.apply(this,arguments)};var i=t.Map.prototype.serialize;return t.Map.prototype.serialize=function(e){var t=i.apply(this,arguments);return e?t[e]:t},t.Map}(window.can,e,e)})();

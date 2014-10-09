@@ -1,0 +1,27 @@
+html {
+	overflow-y: scroll;
+}
+
+.left-side  {
+	z-index: 10;
+}
+
+.navTabs {
+	margin-bottom: 15px;
+}
+
+#appNotification {
+	position: fixed;
+	bottom: 0px;
+	left: 10px;
+	z-index: 100;
+	cursor: pointer;
+}
+
+.moduleWrap {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}

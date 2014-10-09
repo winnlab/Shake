@@ -1,0 +1,72 @@
+<div class="podcastWrap">
+
+    <div class="header">
+        <h1>shake <span>mix</span></h1>
+    </div>
+
+    <div class="soundCloudPlayer">
+
+        <div class="trackWrapper prevTrackWrapper">
+            <div class="roundedButton">
+                <div class="btn prevTrack">
+                    <div class="trackInfo">
+                        {{#if appState.podcast.prevSound}}
+                            <p class="number">#{{appState.podcast.prevTrackPosition}}</p>
+                            <p class="trackName">{{appState.podcast.prevSound.title}}</p>
+                            <p class="composer">{{appState.podcast.prevSound.user.username}}</p>
+                        {{/if}}
+                    </div>
+                    <div class="rounded"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="centralWrapper">
+
+            <div class="stripe"></div>
+
+            <div class="centralContent">
+
+                    <button class="playTrack"><img src="{{appState.imgPath}}playBtn.png" alt=""/></button>
+
+                <div class="logo"></div>
+
+                <div class="trackWrapper currentTrackWrapper">
+                    <div class="roundedButton">
+                        <div class="btn">
+                            <div class="trackInfo">
+                                {{#if appState.podcast.currentSound}}
+                                    <p class="number">#{{appState.podcast.currentTrackPosition}}</p>
+                                    <p class="trackName">{{appState.podcast.currentSound.title}}</p>
+                                    <p class="composer">{{appState.podcast.currentSound.user.username}}</p>
+                                {{/if}}
+                            </div>
+                            <div class="rounded"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="trackWrapper nextTrackWrapper">
+            <div class="roundedButton">
+                <div class="btn nextTrack">
+                    <div class="trackInfo">
+                        {{#if appState.podcast.nextSound}}
+                            <p class="number">#{{appState.podcast.nextTrackPosition}}</p>
+                            <p class="trackName">{{appState.podcast.nextSound.title}}</p>
+                            <p class="composer">{{appState.podcast.nextSound.user.username}}</p>
+                        {{/if}}
+                    </div>
+                    <div class="rounded"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="marquee"></div>

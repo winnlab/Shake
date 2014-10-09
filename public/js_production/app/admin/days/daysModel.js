@@ -1,0 +1,1 @@
+define(["canjs"],function(e){return e.Model.extend({id:"_id",findAll:"GET /admin/day",create:"POST /admin/day",update:"PUT /admin/day",destroy:"DELETE /admin/day/{id}",parseModel:function(e){return e.success&&(e=e.message),e},parseModels:function(e){return e.message.days}},{})});

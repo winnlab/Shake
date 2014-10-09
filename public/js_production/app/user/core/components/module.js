@@ -1,0 +1,1 @@
+define(["canjs"],function(e){e.Component.extend({tag:"module",template:"{{#if active}}<content />{{/if}}"})});

@@ -1,0 +1,11 @@
+/*!
+ * CanJS - 2.1.2
+ * http://canjs.us/
+ * Copyright (c) 2014 Bitovi
+ * Mon, 16 Jun 2014 20:44:18 GMT
+ * Licensed MIT
+ * Includes: CanJS default build
+ * Download from: http://canjs.us/
+ */
+
+define(["can/util/can"],function(e){return e.addEvent=function(e,t){var n=this.__bindEvents||(this.__bindEvents={}),r=n[e]||(n[e]=[]);return r.push({handler:t,name:e}),this},e.listenTo=function(t,n,r){var i=this.__listenToEvents;i||(i=this.__listenToEvents={});var s=e.cid(t),o=i[s];o||(o=i[s]={obj:t,events:{}});var u=o.events[n];u||(u=o.events[n]=[]),u.push(r),e.bind.call(t,n,r)},e.stopListening=function(t,n,r){var i=this.__listenToEvents,s=i,o=0;if(!i)return this;if(t){var u=e.cid(t);(s={})[u]=i[u];if(!i[u])return this}for(var a in s){var f=s[a],l;t=i[a].obj,n?(l={})[n]=f.events[n]:l=f.events;for(var c in l){var h=l[c]||[];o=0;while(o<h.length)r&&r===h[o]||!r?(e.unbind.call(t,c,h[o]),h.splice(o,1)):o++;h.length||delete f.events[c]}e.isEmptyObject(f.events)&&delete i[a]}return this},e.removeEvent=function(e,t,n){if(!this.__bindEvents)return this;var r=this.__bindEvents[e]||[],i=0,s,o=typeof t=="function";while(i<r.length)s=r[i],(n?n(s,e,t):o&&s.handler===t||!o&&(s.cid===t||!t))?r.splice(i,1):i++;return this},e.dispatch=function(e,t){var n=this.__bindEvents;if(!n)return;typeof e=="string"&&(e={type:e});var r=e.type,i=(n[r]||[]).slice(0),s=[e];t&&s.push.apply(s,t);for(var o=0,u=i.length;o<u;o++)i[o].handler.apply(this,s);return e},e.one=function(t,n){var r=function(){return e.unbind.call(this,t,r),n.apply(this,arguments)};return e.bind.call(this,t,r),this},e.event={on:function(){return arguments.length===0&&e.Control&&this instanceof e.Control?e.Control.prototype.on.call(this):e.addEvent.apply(this,arguments)},off:function(){return arguments.length===0&&e.Control&&this instanceof e.Control?e.Control.prototype.off.call(this):e.removeEvent.apply(this,arguments)},bind:e.addEvent,unbind:e.removeEvent,delegate:function(t,n,r){return e.addEvent.call(this,n,r)},undelegate:function(t,n,r){return e.removeEvent.call(this,n,r)},trigger:e.dispatch,one:e.one,addEvent:e.addEvent,removeEvent:e.removeEvent,listenTo:e.listenTo,stopListening:e.stopListening,dispatch:e.dispatch},e.event});

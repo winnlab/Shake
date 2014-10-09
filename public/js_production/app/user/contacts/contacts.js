@@ -1,0 +1,1 @@
+define(["canjs","core/appState","css!app/contacts/css/contacts.css"],function(e,t){return e.Control.extend({defaults:{viewpath:"app/contacts/"}},{init:function(){var n=this;n.element.html(e.view(n.options.viewpath+"index.stache",t)),n.options.isReady&&n.options.isReady.resolve()}})});

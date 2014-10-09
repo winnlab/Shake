@@ -1,5 +1,5 @@
 require.config({
-	baseUrl: '/js/lib',
+	baseUrl: '/js_'+env+'/lib',
 	paths: {
 		app: '../app/admin',
 		core: '../app/admin/core',

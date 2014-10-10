@@ -1,0 +1,19 @@
+.langsWrap {
+  display: inline-block;
+  padding: 0 0 0 1rem;
+  vertical-align: middle; }
+  .langsWrap .isoLang {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+    margin: 0 0.1rem;
+    padding: 0.3rem 0 0;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none; }
+    .langsWrap .isoLang:hover {
+      text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff; }
+
+/*# sourceMappingURL=langs.css.map */

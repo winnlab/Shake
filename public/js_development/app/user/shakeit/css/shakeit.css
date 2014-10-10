@@ -1,3 +1,6 @@
+#shakeit {
+  overflow-x: hidden; }
+
 .shakeitWrap {
   width: 54rem;
   padding: 6rem 0;
@@ -235,3 +238,5 @@
     .shakeitWrap .fragmentItem.next .fragmentItemContent .roundedButton .btn .fragmentItemInfo .image {
       opacity: 0;
       top: -6.5em; }
+
+/*# sourceMappingURL=shakeit.css.map */

@@ -6,28 +6,22 @@ module {
 @-webkit-keyframes disappearing {
   0% {
     opacity: 0; }
-
   50% {
     opacity: 1; }
-
   100% {
     opacity: 0; } }
 @-moz-keyframes disappearing {
   0% {
     opacity: 0; }
-
   50% {
     opacity: 1; }
-
   100% {
     opacity: 0; } }
 @keyframes disappearing {
   0% {
     opacity: 0; }
-
   50% {
     opacity: 1; }
-
   100% {
     opacity: 0; } }
 @font-face {
@@ -157,3 +151,5 @@ module {
 @media (min-width: 1920px) {
   html {
     font-size: 22px; } }
+
+/*# sourceMappingURL=global.css.map */

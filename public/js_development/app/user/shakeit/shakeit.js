@@ -66,6 +66,10 @@ define([
 
             },
 
+            '.ringtone a click': function (el, ev) {
+                ev.stopPropagation();                
+            },
+
             '.next click': function ( el, ev ) {
 
                 var animTime = this.options.animTime;

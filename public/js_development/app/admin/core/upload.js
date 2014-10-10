@@ -20,14 +20,14 @@ define([
 			define: {
 				'uploadId': {
 					value: function () {
-						var result = 'uploader-' + Math.ceil(Math.random() * 1000);						
+						var result = 'uploader-' + Math.ceil(Math.random() * 1000);
 						return result;
 					}
 				},
 				'uploaded': {
 					set: function (newVal) {
 						var uploaded = new can.List([]),
-							files = this.attr('files');						
+							files = this.attr('files');
 						files.replace([]);
 						if (newVal) {
 							if (this.attr('multiple')) {
@@ -64,7 +64,7 @@ define([
 							self.attr('progress', 100);
 						}
 					};
-					
+
 					var formSubmited = form.ajaxSubmit(options);
 					var xhr = formSubmited.data('jqxhr');
 
@@ -72,7 +72,7 @@ define([
 						// self.attr('uploaded', data.message.name);
 
 						if (entity.uploaded) {
-							entity.uploaded(name, data.message.name);
+							entity.uploaded(name, data.message[name]);
 						}
 
 						appState.attr('notification', {
@@ -117,12 +117,12 @@ define([
 					}
 					appState.attr('notification', {
 						status: 'success',
-						msg: data.message
+						msg: 'Файл успешно удален'
 					});
 				}).fail(function (data) {
 					appState.attr('notification', {
 						status: 'error',
-						msg: data.message
+						msg: 'Ошибка удаления файла'
 					});
 				});
 			}
@@ -131,10 +131,10 @@ define([
 		can.Component.extend({
 			tag: "upload",
 			scope: UploadViewModel,
-			template: 
+			template:
 				'<label class="btn btn-primary" for="{{uploadId}}">' +
 					'<content />' +
-				'</label>' + 
+				'</label>' +
 					'{{#if progress}}' +
 						'<div class="progress">' +
 							'<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">' +
@@ -164,13 +164,13 @@ define([
 						'{{/each}}' +
 					'</div>' +
 				'{{/if}}'
-			,			
-			events: {				
+			,
+			events: {
 				'input change': function (el, ev) {
 					var scope = this.scope,
 						scopeFiles = scope.attr('files'),
 						files = el[0].files;
-					
+
 					scopeFiles.replace(files);
 					scope.upload(el.parents('form'));
 				},
@@ -185,13 +185,13 @@ define([
 				isDeleteBtn: function (options) {
 					var files = this.attr('uploaded');
 					return this.attr('delete-url') && files.length
-						? options.fn() 
+						? options.fn()
 						: options.inverse();
 				},
 				renderUploaded: function (options) {
 					var accept = this.attr('accept') || 'image',
 						source = options.context,
-						html;					
+						html;
 					if (accept.indexOf('image') !== -1) {
 						html = '<span class="uploaded thumbnail" style="background-image: url(\'/uploads/' + source + '\')"></span>';
 					} else {

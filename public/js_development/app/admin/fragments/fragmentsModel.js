@@ -1,7 +1,7 @@
 define(
 	[
-		'canjs'		
-	], 
+		'canjs'
+	],
 
 	function (can) {
 
@@ -9,7 +9,7 @@ define(
 			id: "_id",
 			findAll: "GET /admin/fragment",
 			create:  'POST /admin/fragment',
-			update:  'PUT /admin/fragment',
+			update:  'PUT /admin/fragment/{id}',
 			destroy: 'DELETE /admin/fragment/{id}',
 			parseModel: function (data) {
 				if (data.success) {
@@ -18,7 +18,7 @@ define(
 				return data;
 			},
 			parseModels: function (data) {
-				return data.message.fragments;
+				return data.message;
 			}
 		}, {
 			getName: function () {
@@ -47,4 +47,4 @@ define(
 		});
 
 	}
-); 
+);

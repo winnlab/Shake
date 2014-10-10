@@ -3,7 +3,7 @@ mongoose = require 'mongoose'
 ObjectId = mongoose.Schema.Types.ObjectId
 Mixed = mongoose.Schema.Types.Mixed
 
-FragmentShemaFields = 
+FragmentShemaFields =
 	product_id:
 		type: String
 		ref: 'Product'
@@ -14,30 +14,37 @@ FragmentShemaFields =
 		language_id:
 			type: ObjectId
 			ref: 'Language'
-		name: 
+		name:
 			type: String
 			trim: true
 		description:
 			type: String
 			trim: true
-	]	
+	]
 	position:
 		type: Number
 		required: true
 	active:
 		type: Boolean
 		default: true
-	video: 
+	track:
+		mp3:
+			type: String
+			default: ''
+		wav: 
+			type: String
+			default: ''
+	video:
 		mp4:
 			type: String
 			default: ''
 		webm:
 			type: String
 			default: ''
-		ogv: 
+		ogv:
 			type: String
 			default: ''
-	img: 
+	img:
 		type: String
 		default: ''
 

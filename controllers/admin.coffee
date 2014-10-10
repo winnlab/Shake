@@ -53,16 +53,13 @@ Router.delete '/soundCloudImage/:id?', SoundCloudImages.delete
 
 #----------------#
 
-Router.post '/fragment/img', Fragments.imgSave
-Router.delete '/fragment/img', Fragments.imgDelete
+Router.use '/fragment/img', Fragments.restFile
 
-Router.post '/fragment/video', Fragments.videoSave
-Router.delete '/fragment/video', Fragments.videoDelete
+Router.use '/fragment/video', Fragments.restFile
 
-Router.get '/fragment', Fragments.findAll
-Router.post '/fragment', Fragments.save
-Router.put '/fragment/:id?', Fragments.save
-Router.delete '/fragment/:id?', Fragments.delete
+Router.use '/fragment/track', Fragments.restFile
+
+Router.use '/fragment/:id?', Fragments.rest
 
 #----------------#
 

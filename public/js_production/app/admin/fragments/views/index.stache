@@ -9,7 +9,7 @@
 						<strong>
 							{{product.0.name}}
 						</strong>
-						
+
 						<div class="pull-right btn btn-primary addFragment">
 							<i class="fa fa-plus"></i>
 							&nbsp;Добавить фрагмент
@@ -24,6 +24,7 @@
 								<thead>
 									<th>Название</th>
 									<th>Видео</th>
+									<th>Трек</th>
 									<th>Изображение</th>
 									<th>Действия</th>
 								</thead>
@@ -40,6 +41,14 @@
 												{{/if}}
 												{{#if video.ogv}}
 													<span class="label label-primary">ogv</span>
+												{{/if}}
+											</td>
+											<td>
+												{{#if track.mp3}}
+													<span class="label label-info">mp3</span>
+												{{/if}}
+												{{#if track.wav}}
+													<span class="label label-warning">wav</span>
 												{{/if}}
 											</td>
 											<td>
@@ -74,8 +83,8 @@
 				<div class="content-header">
 					<h3 class="content-title clearfix">
 						<span class="clearfix">Извините но больше этого списка фрагментов не существует.</span>
-						Возможно вы удалили 
-						{{#if deletedProduct}} 
+						Возможно вы удалили
+						{{#if deletedProduct}}
 							продукт "{{deletedProduct}}".
 						{{else}}
 							продукт связанный с этим списком.
@@ -86,7 +95,7 @@
 		{{/if}}
 	</div>
 {{else}}
-	<div class="btn btn-primary toList" can-click="toList">Вернутся к списку фрагментов</div>	
+	<div class="btn btn-primary toList" can-click="toList">Вернутся к списку фрагментов</div>
 	{{{createForm id 'setFragmentWrap'}}}
 {{/checkState}}
 </div>

@@ -40,9 +40,11 @@ define([
                 $current.addClass('current');
                 var $currentInfoContent = $current.find('.fragmentItemInfoContent');
                 $currentInfoContent.velocity('fadeIn');
-                var $videoBlock = $current.find('.video');
+                var $videoBlock = $current.find('.video'),
+                    $audioBlock = $current.find('.audio');
                 $videoBlock.velocity('fadeIn', function () {
                     $videoBlock.find('video')[0].play();
+                    $videoBlock.find('audio')[0].play();
                     setTimeout(function () {
                         $currentInfoContent.velocity('fadeOut', 1000);
                     }, 3000);
@@ -96,6 +98,7 @@ define([
                 var $videoBlock = $сurrent.find('.video');
                 $videoBlock.velocity('fadeOut', function () {
                     $(this).find('video')[0].pause();
+                    $(this).find('audio')[0].pause();
                 });
                 $сurrent.find('.fragmentItemInfoContent').velocity('fadeOut', function(){  // hide text content of current product
 
@@ -126,8 +129,8 @@ define([
                         $(this).addClass('current');
                         $(this).find('.fragmentItemInfoContent').velocity('fadeIn');
                         $(this).find('.video').velocity('fadeIn', function () {
-                            console.log('play video');
                             $(this).find('video')[0].play();
+                            $(this).find('audio')[0].play();
                         });
                     });
                     $next.find('.image').velocity({
@@ -189,6 +192,7 @@ define([
                 var $videoBlock = $сurrent.find('.video');
                 $videoBlock.velocity('fadeOut', function () {
                     $(this).find('video')[0].pause();
+                    $(this).find('audio')[0].pause();
                 });
                 $сurrent.find('.fragmentItemInfoContent').velocity('fadeOut', function () {
 
@@ -221,6 +225,7 @@ define([
                         $(this).find('.fragmentItemInfoContent').velocity('fadeIn');
                         $(this).find('.video').velocity('fadeIn', function () {
                             $(this).find('video')[0].play();
+                            $(this).find('audio')[0].play();
                         });
                     });
                     $prev.find('.image').velocity({

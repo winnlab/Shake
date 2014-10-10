@@ -10,7 +10,12 @@
                     {{#if fragment.video.ogv}}<source src="{{appState.uploadPath}}{{fragment.video.ogv}}">{{/if}}
                     {{#if fragment.video.webm}}<source src="{{appState.uploadPath}}{{fragment.video.webm}}">{{/if}}
                 </video>
+                <audio class="audio" loop="loop" preload="none" volume="0.1">
+                    {{#if fragment.track.mp3}}<source src="{{appState.uploadPath}}{{fragment.track.mp3}}">{{/if}}
+                    {{#if fragment.track.wav}}<source src="{{appState.uploadPath}}{{fragment.track.wav}}">{{/if}}
+                </audio>
             </div>
+
 
             <div class="fragmentItemContent">
                 <div class="roundedButton">
@@ -43,7 +48,7 @@
                                     <tr>
                                         <td>
                                             <div class="ringtone">
-                                                <a href="#">
+                                                <a target="_blank" href="{{appState.uploadPath}}{{fragment.track.mp3}}" download="{{lang.name}}">
                                                     <p>{{appState.locale.shakeit.download}}</p>
                                                     <p class="thin">{{appState.locale.shakeit.ringtone}}</p>
                                                 </a>

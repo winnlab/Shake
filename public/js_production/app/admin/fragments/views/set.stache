@@ -66,7 +66,7 @@
 							</tabs>
 
 						</div>
-						
+
 						<div class="box-footer">
 							<button class="btn btn-primary col-md-offset-2" type="submit">
 								Сохранить изменения
@@ -79,7 +79,7 @@
 			<panel name="Материалы фрагмента">
 				<div class="box box-primary">
 					<div class="box-body clearfix">
-						<upload 
+						<upload
 							class="col-md-4"
 							name="mp4"
 							url="/admin/fragment/video"
@@ -90,7 +90,7 @@
 						>
 							Загрузить видео (формат mp4)
 						</upload>
-						<upload 
+						<upload
 							class="col-md-4"
 							name="webm"
 							url="/admin/fragment/video"
@@ -101,7 +101,7 @@
 						>
 							Загрузить видео (формат webm)
 						</upload>
-						<upload 
+						<upload
 							class="col-md-4"
 							name="ogv"
 							url="/admin/fragment/video"
@@ -113,7 +113,32 @@
 							Загрузить видео (формат ogv)
 						</upload>
 						<div class="clearfix"></div>
-						<upload 
+
+						<upload
+							class="col-md-4"
+							name="mp3"
+							url="/admin/fragment/track"
+							delete-url="/admin/fragment/track"
+							entity="{fragment}"
+							uploaded="{fragment.track.mp3}"
+							accept="audio/mpeg"
+						>
+							Загрузить трек (формат mp3)
+						</upload>
+						<upload
+							class="col-md-4"
+							name="wav"
+							url="/admin/fragment/track"
+							delete-url="/admin/fragment/track"
+							entity="{fragment}"
+							uploaded="{fragment.track.wav}"
+							accept="audio/wav"
+						>
+							Загрузить трек (формат wav)
+						</upload>
+
+						<div class="clearfix"></div>
+						<upload
 							class="col-md-6"
 							name="img"
 							url="/admin/fragment/img"

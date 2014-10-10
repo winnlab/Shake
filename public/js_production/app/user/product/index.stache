@@ -5,23 +5,33 @@
         <div class="productWrapLeft">
 
             <div class="img"
-                 style="background-image: url('{{appState.uploadPath}}{{#isPrimitive appState.viewMode 'bottle'}}{{product.img.bottle}}{{else}}{{product.img.can}}{{/isPrimitive}}')"
+                 style="background-image: url('{{appState.uploadPath}}{{#is appState.viewMode 'bottle'}}{{product.img.bottle}}{{else}}{{product.img.can}}{{/is}}')"
                     >
             </div>
 
         </div>
 
         <div class="productWrapCenter">
-            <div id="{{titleId}}"></div>            
+            <div id="{{titleId}}"></div>
 
             <div class="productWrapCenterBottom">
 
                 <div class="productWrapProductsList">
-
                     {{#each appState.products}}
-                        <a class="productsListItem module" href="/product/{{link}}">
-                            <div class="name">{{lang.name}}</div>
-                        </a>
+                        {{#is appState.viewMode 'bottle'}}
+                            {{#if img.bottle}}
+                                <a class="productsListItem module" href="/product/{{link}}">
+                                    <div class="name">{{lang.name}}</div>
+                                </a>
+                            {{/if}}
+                        {{/is}}
+                        {{#is appState.viewMode 'can'}}
+                            {{#if img.can}}
+                                <a class="productsListItem module" href="/product/{{link}}">
+                                    <div class="name">{{lang.name}}</div>
+                                </a>
+                            {{/if}}
+                        {{/is}}
                     {{/each}}
 
                 </div>
@@ -35,7 +45,9 @@
                     <div class="productWrapDescriptionSwitcher">
 
                         <div class="bottleType">
-                            <span class="bottlesIcon"></span>
+                            {{#and product.img.bottle product.img.can}}
+                                <span class="bottlesIcon"></span>
+                            {{/and}}
                             <a class="module" href="/products"><span>{{appState.locale.allCocktails}}</span></a>
                         </div>
 

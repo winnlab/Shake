@@ -11,14 +11,26 @@
 
 	<div class="productsWrap">
 		{{#each appState.products}}
-			{{#if img.bottle}}
-				<a class="productItem module" href="/product/{{link}}">
-					<div class="img" 
-						style="background-image: url('{{appState.uploadPath}}{{#isPrimitive appState.viewMode 'bottle'}}{{img.bottle}}{{else}}{{img.can}}{{/isPrimitive}}')"
-					></div>
-					<div class="name">{{lang.name}}</div>
-				</a>
-			{{/if}}
+			{{#is appState.viewMode 'bottle'}}
+				{{#if img.bottle}}
+					<a class="productItem module" href="/product/{{link}}">
+						<div class="img"
+							style="background-image: url('{{appState.uploadPath}}{{img.bottle}}')"
+						></div>
+						<div class="name">{{lang.name}}</div>
+					</a>
+				{{/if}}
+			{{/is}}
+			{{#is appState.viewMode 'can'}}
+				{{#if img.can}}
+					<a class="productItem module" href="/product/{{link}}">
+						<div class="img"
+							style="background-image: url('{{appState.uploadPath}}{{img.can}}')"
+						></div>
+						<div class="name">{{lang.name}}</div>
+					</a>
+				{{/if}}
+			{{/is}}
 		{{/each}}
 	</div>
 </div>

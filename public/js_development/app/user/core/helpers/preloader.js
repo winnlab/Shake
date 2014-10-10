@@ -16,17 +16,19 @@ define([
 				this.folder = this.folder || '/uploads/';
 
 				if (this.images.length) {
-					_.each(this.images, function(imgSrc) {
+					_.each(this.images, can.proxy(function(imgSrc) {
 						if (imgSrc) {
 							this.loadImage(this.folder + imgSrc);
+						} else {
+							this.loaded += 1;
 						}
-					}.bind(this));
+					}, this));
 				} else {
 					this.callback && this.callback();
 				}
 
 			},
-			
+
 			loadImage: function (imgSrc) {
 				var image = new Image();
 
@@ -35,7 +37,7 @@ define([
 				image.src = imgSrc;
 			},
 
-			imageIsLoaded: function () {				
+			imageIsLoaded: function () {
 				this.loaded += 1;
 
 				if (this.loaded == this.images.length && this.callback) {

@@ -9,7 +9,7 @@ _ = require 'underscore'
 cookieParser = require 'cookie-parser'
 bodyParser = require 'body-parser'
 session = require 'express-session'
-methodOverride = require 'method-override' 
+methodOverride = require 'method-override'
 multer = require 'multer'
 compression = require 'compression'
 gzip = require 'connect-gzip'
@@ -35,7 +35,7 @@ sessionParams =
 routes = () ->
 	@use user_controller.Router
 	@use '/', user_controller.Router
-	@use '/:lang(ru|en)', user_controller.Router	
+	@use '/:lang(ru|en)', user_controller.Router
 	@use '/admin', admin_controller.Router
 
 configure = () ->
@@ -57,18 +57,18 @@ configure = () ->
 		res.set 'Content-Type', 'text/plain'
 		res.send "User-agent: *\nDisallow: /"
 	@use multer
-			dest: './uploads/',
+			dest: './public/uploads/',
 			rename: (fieldname, filename) ->
 				return Crypto.md5 filename + Date.now()
 	@use Cache.requestCache
 	@use bodyParser()
 	@use cookieParser 'LmAK3VNuA6'
-	@use session sessionParams	
+	@use session sessionParams
 	@use passport.initialize()
 	@use passport.session()
 	@use '/admin', Auth.isAuth
 	@use methodOverride()
-	@use View.globals	
+	@use View.globals
 	@use '/admin', (req, res, next) ->
 		Ajax.isAjax req, res, next, pages, admin_controller.layoutPage
 

@@ -12,7 +12,7 @@ Notifier = require '../lib/notifier'
 AuthStartegies = require './auth'
 ModelPreloader = require './mpload'
 
-appPort = 80
+appPort = 3000
 
 async.waterfall [
 	(next) ->
@@ -22,7 +22,7 @@ async.waterfall [
 		Logger.log 'info', 'Logger is initializated'
 
 		Migrate.init next
-	(next) ->		
+	(next) ->
 		Logger.log 'info', 'Migrate is initializated'
 
 		ModelPreloader "#{process.cwd()}/models/", next

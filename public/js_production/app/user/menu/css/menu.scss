@@ -36,15 +36,15 @@ header {
 	}
 
 	.menuWrap {
-		width: 25rem;
 		margin: 0 auto;
 		padding-top: 1.85rem;
 		padding-left: 3.1rem;
+		float: right;
+		width: 50%;
 	}
 
 	.icons {
-		float: left;
-		width: 50%;
+		float: right;
 		text-align: right;
 	}
 
@@ -54,6 +54,7 @@ header {
 		@extend %in-block-middle;
 		background-image: url('#{$img_path}sound.png');
 		position: relative;
+		display: none;
 
 
 		&.muted {
@@ -132,9 +133,9 @@ header {
 	}
 
 	.control {
-		float: left;
-		width: 50%;
+		float: right;
 		padding: 0.25rem 0 0 0.8rem;
+		width: 2.9rem;
 	}
 
 	.menu {

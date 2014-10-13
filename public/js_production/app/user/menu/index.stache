@@ -3,6 +3,15 @@
 		<a id="logo" class="module" href="/products"></a>
 
 		<div class="menuWrap clearfix">
+            <div class="control">
+				<span class="menu text-uppercase">
+                    {{#isPrimitive appState.menu 'opened'}}
+                        {{appState.locale.close}}
+                    {{else}}
+                        {{appState.locale.menu}}
+                    {{/isPrimitive}}
+                </span>
+            </div>
 			<div class="icons">
 				<span class="soundIcon {{#if appState.muted}}muted{{/if}}"></span>
 				<span class="langsWrap text-uppercase">
@@ -14,15 +23,6 @@
 					<span class="menuIcon"></span>
 				</span>
 				<span class="line"></span>
-			</div>
-			<div class="control">
-				<span class="menu text-uppercase">
-					{{#isPrimitive appState.menu 'opened'}}
-						{{appState.locale.close}}
-					{{else}}
-						{{appState.locale.menu}}
-					{{/isPrimitive}}
-				</span>
 			</div>
 		</div>
 

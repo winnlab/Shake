@@ -12,6 +12,8 @@
                     {{/isPrimitive}}
                 </span>
             </div>
+
+
 			<div class="icons">
 				<span class="soundIcon {{#if appState.muted}}muted{{/if}}"></span>
 				<span class="langsWrap text-uppercase">

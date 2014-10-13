@@ -71,7 +71,8 @@ getData = (lang, cb) ->
 			Fragments.lean().exec proceed
 	, (err, data) ->
 		return cb err if err
-		data.env = process.env.NODE_ENV
+		console.log process.env.environment
+		data.env = unless process.env.NODE_ENV then 'production' else process.env.NODE_ENV
 		data.lang = if lang.default then '' else lang.isoCode		
 		data.langs = _.map langs, (lang)-> 
 			return _.pick lang, 'isoCode', 'default'

@@ -27,7 +27,8 @@ exports.dashboard = (req, res) ->
 		(next) ->
 			Model 'Language', 'find', next, active: true
 		(langs) ->
-			View.render 'admin/board/index', res, {langs: langs, env: 'development'}
+			env = unless process.env.NODE_ENV then 'production' else process.env.NODE_ENV
+			View.render 'admin/board/index', res, {langs: langs, env: env}
 	], (err) ->
 		msg = "Error in #{__filename}: #{err.message or err}"
 		Logger.log 'error', msg

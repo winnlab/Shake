@@ -24,6 +24,15 @@ define([
 			},
 
 			'.menu click': function () {
+				this.menuClick();
+			},
+
+			'#logo click': function (el, ev) {
+				ev.preventDefault();
+				this.menuClick();
+			},
+
+			menuClick: function () {
 				var state = this.options.state,
 					menu = state.attr('menu');
 				state.attr('menu', menu == 'opened' ? 'closed' : 'opened');

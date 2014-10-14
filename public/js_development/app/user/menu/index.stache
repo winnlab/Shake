@@ -1,6 +1,6 @@
 <header class="header {{appState.menu}}" style="{{#isPrimitive appState.menu 'opened'}}height: {{appState.getPageHeight}}px; {{/isPrimitive}}">
 	<div class="content">
-		<a id="logo" class="module" href="/products"></a>
+		<a id="logo" href=""></a>
 
 		<div class="menuWrap clearfix">
             <div class="control">

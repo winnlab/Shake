@@ -48,8 +48,7 @@ define([
 					randIndex = Math.floor(Math.random() * products.length);
 
 				can.route.attr({
-					module: 'product',
-					id: products.attr(randIndex + '.link')
+					module: 'products'
 				}, true);
 				this.titleManager.stopAnimate.call(this.titleManager);
 			},

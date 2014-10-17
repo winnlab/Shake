@@ -71,6 +71,10 @@ app/admin/days/css/days.css
 ----------------
 app/admin/days/css/days.css
 
+app/admin/feedback/css/feedback.css
+----------------
+app/admin/feedback/css/feedback.css
+
 app/admin/fragments/css/fragments.css
 ----------------
 app/admin/fragments/css/fragments.css

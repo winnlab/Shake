@@ -2,6 +2,7 @@ define([
 	'canjs',
 	'core/appState',
 	'social/fb/fb_sdk',
+	'social/vk/vk_sdk',
 	'css!app/global/css/global.css'
 ],
 	function (can) {
@@ -27,6 +28,7 @@ define([
 
 				self.element.append(html);
 				self.initFbSDK();
+				self.initVkSDK();
 			},
 
 			initFbSDK: function () {
@@ -37,8 +39,13 @@ define([
 					xfbml: true,
 					version: 'v2.1'
 				});
-			}
+			},
 
+			initVkSDK: function () {
+				VK.init({
+					apiId: 4593957
+				})
+			}
 		});
 	}
 );

@@ -1,11 +1,12 @@
 define([
     'canjs',
     'core/appState',
+	'underscore',
     'velocity',
 	'social/fb/fb_sdk',
     'css!app/shakeit/css/shakeit.css'
 ],
-    function (can, appState) {
+    function (can, appState, _) {
 
         return can.Control.extend({
             defaults: {
@@ -289,15 +290,48 @@ define([
 
 	        fbShare: function (imageName, slogan) {
 
-		        console.log ('' + window.location.origin + appState.attr('imgPath') + 'shakeItShare/' + imageName + '.png');
+		        console.log ('' + window.location.origin + appState.attr('imgPath') + 'shakeItShare/' + imageName + '.jpg');
 		        FB.ui({
 			        method: 'feed',
 			        name: slogan.title,
 			        link: window.location.origin,
-			        picture: '' + window.location.origin + appState.attr('imgPath') + 'shakeItShare/' + imageName + '.png',
+			        picture: '' + window.location.origin + appState.attr('imgPath') + 'shakeItShare/' + imageName + '.jpg',
 			        description: slogan.content,
 			        message: 'Shake test message'
 		        });
+	        },
+
+	        '.vkShare click': function (el, ev) {
+		        ev.preventDefault();
+		        var link = el.data('link');
+
+		        var sloganIndex = Math.floor(Math.random() * (parseInt(appState.locale.shareSlogans.length)));
+		        var randomSlogan = appState.locale.shareSlogans[sloganIndex];
+
+		        var imgReference = _.find(
+			        appState.social.imgReferences.attr(), function(element){
+			        return element.name == link;
+		        });
+		        var imageName = imgReference.photo;
+
+		        this.vkShare(imageName, randomSlogan);
+	        },
+
+	        vkShare: function (imageName, slogan) {
+		        var attachments = '';
+
+		        attachments += window.location.origin;
+
+		        attachments += (attachments.length ? ',' : '') + imageName;
+
+		        VK.Api.call('wall.post', {
+			        message: slogan.title + slogan.content,
+			        attachments: attachments
+		        }, function (response) {
+			        if (response && !response.error) {
+				        cb(response.response.post_id);
+			        }
+		        })
 	        }
         });
 

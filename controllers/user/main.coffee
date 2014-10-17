@@ -7,6 +7,7 @@ View = require '../../lib/view'
 Model = require '../../lib/model'
 
 locale = require '../../locale'
+social = require '../../meta/social'
 
 timestamp = new Date()
 day = null
@@ -80,6 +81,7 @@ getData = (lang, cb) ->
 		data.products = filterLang data.products, lang._id
 		data.parties = filterLang data.parties, lang._id
 		data.products = mergeArrays data.products, data.parties, '_id', 'product_id', 'fragment'
+		data.social = social
 		delete data.parties
 		cb null, data
 

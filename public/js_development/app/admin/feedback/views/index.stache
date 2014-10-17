@@ -1,0 +1,59 @@
+<div class="newPodcasts">
+    {{#checkState}}
+        <div class="right-side">
+            <div class="content-header">
+                <h3 class="content-title clearfix">
+                    Список анонсов подкастов:
+
+                    <div class="pull-right btn btn-primary addNewPodcast">
+                        <i class="fa fa-plus"></i>
+                        &nbsp;Добавить анонс
+                    </div>
+                </h3>
+            </div>
+            <div class="content">
+                {{#if newPodcasts.isResolved}}
+                    {{#if newPodcasts.length}}
+
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>Название</th>
+                                <th>Автор</th>
+                                <th>Дата</th>
+                                <th>Действия</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{#each newPodcasts}}
+                                <tr class="newPodcast" {{data 'newPodcast'}}>
+                                    <td>{{name}}</td>
+                                    <td>{{author}}</td>
+                                    <td>{{date}}</td>
+                                    <td>
+                                        <div class="btn btn-default editNewPodcast">
+                                            <i class="fa fa-pencil"></i>
+                                        </div>
+                                        <div class="btn btn-danger removeNewPodcast">
+                                            <i class="fa fa-trash-o"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    {{else}}
+                        <div class="alert alert-info">
+                            <i class="fa fa-info"></i>
+                            <b>Примечание! </b>
+                            Ни одного анонса еще не добавлено
+                        </div>
+                    {{/if}}
+                {{/if}}
+            </div>
+        </div>
+    {{else}}
+        <div class="btn btn-primary toList" can-click="toList">Вернутся к списку анонсов подкастов</div>
+        {{{createForm id 'setNewPodcastWrap'}}}
+    {{/checkState}}
+</div>

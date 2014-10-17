@@ -1,45 +1,45 @@
 {
-  "name": "Shake",
-  "version": "0.0.1",
-  "description": "Shake promo site",
-  "private": true,
-  "scripts": {
-    "start": "coffee init"
-  },
-  "authors": {
-    "andrew-sygyda": "andrew.sygyda@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/winnlab/Shake"
-  },
-  "dependencies": {
-    "express": "4.3.1",
-    "async": "0.9.0",
-    "mongoose": "3.8.11",
-    "winston": "0.7.3",
-    "underscore": "1.6.0",
-    "underscore.string": "2.3.3",
-    "moment": "2.6.0",
-    "passport": "0.2.0",
-    "passport-local": "1.0.0",
-    "glob": "4.0.0",
-    "jade": "1.3.1",
-    "body-parser": "1.2.2",
-    "cookie-parser": "1.1.0",
-    "cookie-session": "1.0.2",
-    "express-session": "https://github.com/expressjs/session/archive/v1.2.1.tar.gz",
-    "method-override": "1.0.2",
-    "multer": "0.1.0",
-    "email-templates": "1.0.0",
-    "nodemailer": "0.6.5",
-    "compression": "https://github.com/expressjs/compression/archive/1.0.6.tar.gz",
-    "connect-gzip": "0.1.5",    
-    "mongoose-tree": "https://github.com/Rastopyr/mongoose-tree/tarball/master",
-    "roles": "https://github.com/Rastopyr/node-roles/tarball/master",
-    "socket.io": "1.0.1",
-    "sorto": "~0.0.2",
-    "mongoose-post-find": "0.0.2",
-    "sprintf": "0.1.3"
-  }
+	"name": "Shake",
+	"version": "0.0.1",
+	"description": "Shake promo site",
+	"private": true,
+	"scripts": {
+		"start": "coffee init"
+	},
+	"authors": {
+		"andrew-sygyda": "andrew.sygyda@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/winnlab/Shake"
+	},
+	"dependencies": {
+		"express": "4.3.1",
+		"async": "0.9.0",
+		"mongoose": "3.8.11",
+		"winston": "0.7.3",
+		"underscore": "1.6.0",
+		"underscore.string": "2.3.3",
+		"moment": "2.6.0",
+		"passport": "0.2.0",
+		"passport-local": "1.0.0",
+		"glob": "4.0.0",
+		"jade": "1.3.1",
+		"body-parser": "1.2.2",
+		"cookie-parser": "1.1.0",
+		"cookie-session": "1.0.2",
+		"express-session": "https://github.com/expressjs/session/archive/v1.2.1.tar.gz",
+		"method-override": "1.0.2",
+		"multer": "0.1.0",
+		"email-templates": "1.0.0",
+		"nodemailer": "1.3.0",
+		"compression": "https://github.com/expressjs/compression/archive/1.0.6.tar.gz",
+		"connect-gzip": "0.1.5",
+		"mongoose-tree": "https://github.com/Rastopyr/mongoose-tree/tarball/master",
+		"roles": "https://github.com/Rastopyr/node-roles/tarball/master",
+		"socket.io": "1.0.1",
+		"sorto": "~0.0.2",
+		"mongoose-post-find": "0.0.2",
+		"sprintf": "0.1.3"
+	}
 }

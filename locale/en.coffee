@@ -38,3 +38,10 @@ module.exports =
 	by: 'by'
 	allPodcasts: 'All podcasts'
 	back: 'Back'
+
+	email: 'E-mail'
+	name: 'Name'
+	subject: 'Subject'
+	message: 'Message'
+	send: 'Send'
+	feedbackSuccess: 'Your message was successfully delivered'

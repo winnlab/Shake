@@ -1,11 +1,31 @@
 <div class="contactsWrap">
 
+    <div class="feedbackSuccess" style="display: none">
+        <h2>{{locale.feedbackSuccess}}</h2>
+    </div>
+
     <div class="header">
         <h1>{{locale.contacts.contacts}}</h1>
     </div>
 
-    <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2541.167019398094!2d30.522541499999996!3d50.437989599999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cefe16b84849%3A0x954fceae527935b9!2z0KHQv9C-0YDRgtC40LLQvdCwINC_0LsuLCAzLCDQmtC40ZfQsiwg0LzRltGB0YLQviDQmtC40ZfQsg!5e0!3m2!1suk!2sua!4v1407162227963" frameborder="0" style="border:0"></iframe>
+    <div class="contactsContent">
+
+        <div class="feedback">
+            <form id="feedbackForm">
+                <input type="email" name="email" placeholder="{{locale.email}}"/>
+                <input type="text" name="name" placeholder="{{locale.name}}"/>
+                <input type="text" name="subject" placeholder="{{locale.subject}}"/>
+                <textarea name="message" placeholder="{{locale.message}}"></textarea>
+                <button type="submit">{{locale.send}}</button>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2541.167019398094!2d30.522541499999996!3d50.437989599999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cefe16b84849%3A0x954fceae527935b9!2z0KHQv9C-0YDRgtC40LLQvdCwINC_0LsuLCAzLCDQmtC40ZfQsiwg0LzRltGB0YLQviDQmtC40ZfQsg!5e0!3m2!1suk!2sua!4v1407162227963" frameborder="0" style="border:0"></iframe>
+        </div>
+
+        <div class="clearfix"></div>
     </div>
 
     <div class="footer">

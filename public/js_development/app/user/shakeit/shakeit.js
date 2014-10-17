@@ -2,6 +2,7 @@ define([
     'canjs',
     'core/appState',
     'velocity',
+	'social/fb/fb_sdk',
     'css!app/shakeit/css/shakeit.css'
 ],
     function (can, appState) {
@@ -272,7 +273,25 @@ define([
                 } else {
                     el.find('.image').velocity({opacity: 0}, 200);
                 }
-            }
+            },
+
+	        '.shareMomentLink click': function (el, ev) {
+		        ev.preventDefault();
+		        var imageName = el.data('link');
+		        this.fbShare(imageName);
+	        },
+
+	        fbShare: function (imageName) {
+		        FB.ui({
+			        method: 'feed',
+			        name: 'Shake test name',
+			        link: window.location.origin,
+			        picture: '' + window.location.origin + appState.attr('imgPath') + 'shakeItShare/' + imageName + '.png',
+			        caption: 'Shake test caption',
+			        description: 'Shake test description',
+			        message: 'Shake test message'
+		        });
+	        }
         });
 
     }

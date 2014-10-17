@@ -32,6 +32,10 @@ define({
             name: 'soundCloudImages',
             path: 'app/soundCloudImages/soundCloudImages',
             title: ''
-        }]
+        }, {
+			name: 'feedback',
+			path: 'app/feedback/feedback',
+			title: ''
+		}]
 	}
 });

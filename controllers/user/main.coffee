@@ -1,6 +1,7 @@
 
 async = require 'async'
 _ = require 'underscore'
+nodemailer = require 'nodemailer'
 
 View = require '../../lib/view'
 Model = require '../../lib/model'
@@ -114,3 +115,27 @@ exports.index = (req, res) ->
 		
 exports.ie = (req, res) ->
 	View.render 'user/ie', res, {}
+
+exports.saveFeedback = (req, res) ->
+	data = req.body
+
+	if data
+		transporter = nodemailer.createTransport()
+
+		mailOptions =
+			from: "#{data.email}"
+			to: "shake.newproducts@gmail.com"
+			subject: "#{data.subject}"
+			text: "#{data.message}"
+
+		transporter.sendMail mailOptions, (error, info) ->
+			if error
+				res.send error
+			else
+				if info.error
+					res.send info.error
+				else
+					View.clientSuccess info: info, res
+
+	else
+		res.send 'No data received'

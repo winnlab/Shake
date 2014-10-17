@@ -24,5 +24,6 @@ Router.get '/podcast', Main.index
 Router.get '/podcasts', Main.index
 Router.get '/contacts', Main.index
 Router.get '/shakeit', Main.index
+Router.post '/saveFeedback', Main.saveFeedback
 
 exports.Router = Router

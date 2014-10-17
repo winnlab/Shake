@@ -8,6 +8,7 @@ Fragments = require './admin/fragments'
 Days = require './admin/days'
 NewPodcasts = require './admin/newPodcasts'
 SoundCloudImages = require './admin/soundCloudImages'
+Feedback = require './admin/feedback'
 
 Router = express.Router()
 
@@ -60,6 +61,11 @@ Router.use '/fragment/video', Fragments.restFile
 Router.use '/fragment/track', Fragments.restFile
 
 Router.use '/fragment/:id?', Fragments.rest
+
+#----------------#
+
+Router.get '/feedback', Feedback.findAll
+Router.delete '/feedback/:id?', Feedback.delete
 
 #----------------#
 

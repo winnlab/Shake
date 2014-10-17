@@ -1,7 +1,7 @@
 define([
 	'canjs',
 	'core/appState',
-	
+	'social/fb/fb_sdk',
 	'css!app/global/css/global.css'
 ],
 	function (can) {
@@ -26,6 +26,17 @@ define([
 					});
 
 				self.element.append(html);
+				self.initFbSDK();
+			},
+
+			initFbSDK: function () {
+
+				FB.init({
+					appId: 311273662414271,
+					cookie: true,
+					xfbml: true,
+					version: 'v2.1'
+				});
 			}
 
 		});

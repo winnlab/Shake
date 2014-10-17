@@ -6,88 +6,168 @@
 
 .contactsWrap {
 
-  color: #ffffff;
-  padding: 6rem 0 0;
-  position: relative;
+	color: #ffffff;
+	padding: 6rem 0 0;
+	position: relative;
 
-  .header {
-    text-align: center;
-    color: #ffffff;
-    font-family: PFDinTextCondPro;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 2.2rem;
+	.feedbackSuccess {
+		position: fixed;
+		bottom: rem(15);
+		right: rem(15);
+		padding: rem(10) rem(15);
+		background: #000;
+		color: #ffffff;
+		z-index: 1;
 
-    h1 {
-      margin: 0 0 0.5rem;
-    }
-  }
-  
-  .map {
 
-    iframe {
-      width: 100%;
-      height: 25rem;
-    }
-  }
+		h2 {
+			font-family: PFDinTextCondPro;
+			font-weight: 300;
+		}
+	}
+	.header {
+		text-align: center;
+		color: #ffffff;
+		font-family: PFDinTextCondPro;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 2.2rem;
 
-  .footer {
+		h1 {
+			margin: 0 0 0.5rem;
+		}
+	}
 
-    width: 100%;
-    background: #ffffff;
+	.contactsContent {
+		width: 54rem;
+		position: relative;
+		margin: 0 auto rem(70);
 
-    .footerContent {
+		.feedback {
+			float: left;
+			width: 45%;
+			margin-right: 10%;
 
-      margin: 0 auto;
-      padding: 40px 0;
-      width: 54rem;
-      color: #231f20;
+			#feedbackForm {
+				width: 100%;
+				color: #000000;
+				font-family: 'PFDinTextCondPro', sans-serif;
+				font-size: 24px;
+				font-weight: 300;
 
-      h5 {
-        font-weight: 500;
-        text-transform: uppercase;
-        line-height: 1;
-        margin: 0;
-      }
+				::-webkit-input-placeholder { /* WebKit browsers */
+					color:    #000000;
+				}
+				:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+					color:    #000000;
+					opacity:  1;
+				}
+				::-moz-placeholder { /* Mozilla Firefox 19+ */
+					color:    #000000;
+					opacity:  1;
+				}
+				:-ms-input-placeholder { /* Internet Explorer 10+ */
+					color:    #000000;
+				}
 
-      p {
-        font-weight: 200;
-        line-height: 1;
-        margin: 0;
+				input, textarea {
+					color: #000000;
+					width: 100%;
+					background-color: #ffffff;
+					border: none;
+					padding: rem(5) rem(15);
+					margin-bottom: rem(10);
+					text-transform: uppercase;
+				}
+				textarea {
+					height: rem(200);
+				}
+				button {
+					color: #000000;
+					background: #ffffff;
+					float: right;
+					border: none;
+					text-transform: uppercase;
+					padding: rem(5) rem(10);
+					line-height: 1;
+					@include transition(all 0.3s ease-in-out 0s);
 
-      }
+					&:hover {
+						color: #ffffff;
+						background: #000000;
+					}
+				}
+			}
+		}
 
-      .newProductsInfo {
+		.map {
+			float: left;
+			width: 45%;
 
-        float: left;
-        width: 30%;
-        margin-right: 5%;
+			iframe {
+				width: 100%;
+				height: 25rem;
+			}
+		}
+	}
 
-        .newProductsLogo {
-          margin-bottom: 40px;
-        }
-      }
+	.footer {
 
-      .address {
+		width: 100%;
+		background: #ffffff;
 
-        float: left;
-        width: 15%;
-        margin-right: 5%;
-      }
+		.footerContent {
 
-      .importer {
+			margin: 0 auto;
+			padding: 40px 0;
+			width: 54rem;
+			color: #231f20;
 
-        float: left;
-        width: 20%;
-        margin-right: 5%;
-      }
+			h5 {
+				font-weight: 500;
+				text-transform: uppercase;
+				line-height: 1;
+				margin: 0;
+			}
 
-      .exportDepartment {
+			p {
+				font-weight: 200;
+				line-height: 1;
+				margin: 0;
 
-        float: left;
-        width: 20%;
-      }
-    }
-  }
+			}
+
+			.newProductsInfo {
+
+				float: left;
+				width: 30%;
+				margin-right: 5%;
+
+				.newProductsLogo {
+					margin-bottom: 40px;
+				}
+			}
+
+			.address {
+
+				float: left;
+				width: 15%;
+				margin-right: 5%;
+			}
+
+			.importer {
+
+				float: left;
+				width: 20%;
+				margin-right: 5%;
+			}
+
+			.exportDepartment {
+
+				float: left;
+				width: 20%;
+			}
+		}
+	}
 
 }

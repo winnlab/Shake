@@ -1,0 +1,1 @@
+define(["canjs"],function(e){return e.Model.extend({id:"_id",findAll:"GET /admin/feedback",destroy:"DELETE /admin/feedback/{id}",parseModel:function(e){return e.success&&(e=e.message),e},parseModels:function(e){return e.message.feedback}},{})});

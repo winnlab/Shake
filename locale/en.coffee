@@ -45,3 +45,17 @@ module.exports =
 	message: 'Message'
 	send: 'Send'
 	feedbackSuccess: 'Your message was successfully delivered'
+
+	shareSlogans: [
+		title: 'Это же BEST PARTY EVER!'
+		content: 'Отвязные тусовки, фэшн, танцы до утра, любимые треки ждут тебя с SHAKE COCKTAILS. Ты с нами?'
+	,
+		title: 'Момент, который запомню НАВСЕГДА! '
+		content: 'SHAKE PARTY - это ночные приключения, модная музыка, Shake в руке и никаких проблем. Выбери свою пати и поделись моментом с друзьями!'
+	,
+		title: 'Я тусуюсь круче, чем Пэрис Хилтон.'
+		content: 'Главное правило – Shake в руке и никаких правил..;) '
+	,
+		title: 'Это мой момент!'
+		content: 'Я за Shake и драйв! А ты? Сделай свой выбор! '
+	]

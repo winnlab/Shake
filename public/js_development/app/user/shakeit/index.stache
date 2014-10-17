@@ -28,8 +28,13 @@
 
                             <div class="fragmentItemInfoContent">
                                 <table>
-                                    <tr>
+                                    <tr class="shareRow">
                                         <td>
+                                            <div class="shareButtons">
+                                                <a class="fbShare" href=""><img src="{{appState.imgPath}}social/facebookWhite.png" alt=""/></a>
+                                                <a class="vkShare" href=""><img src="{{appState.imgPath}}social/vkWhite.png" alt=""/></a>
+                                            </div>
+
                                             <div class="shareMoment">
                                                 <a class="shareMomentLink" data-link="{{link}}" href="#">
                                                     <p>{{appState.locale.shakeit.share}}</p>

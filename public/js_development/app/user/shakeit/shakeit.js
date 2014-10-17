@@ -46,9 +46,10 @@ define([
                 $videoBlock.velocity('fadeIn', function () {
                     $videoBlock.find('video')[0].play();
                     $videoBlock.find('audio')[0].play();
-                    setTimeout(function () {
+	                $currentInfoContent.velocity('fadeOut');
+/*                    setTimeout(function () {
                         $currentInfoContent.velocity('fadeOut', 1000);
-                    }, 3000);
+                    }, 3000);*/
                 });
 
                 $next.velocity({scale: 0.5}, 100, function () {
@@ -275,20 +276,23 @@ define([
                 }
             },
 
-	        '.shareMomentLink click': function (el, ev) {
+	        '.fbShare click': function (el, ev) {
 		        ev.preventDefault();
 		        var imageName = el.data('link');
-		        this.fbShare(imageName);
+
+		        var sloganIndex = Math.floor(Math.random() * (parseInt(appState.locale.shareSlogans.length)));
+		        var randomSlogan = appState.locale.shareSlogans[sloganIndex];
+
+		        this.fbShare(imageName, randomSlogan);
 	        },
 
-	        fbShare: function (imageName) {
+	        fbShare: function (imageName, slogan) {
 		        FB.ui({
 			        method: 'feed',
-			        name: 'Shake test name',
+			        name: slogan.title,
 			        link: window.location.origin,
 			        picture: '' + window.location.origin + appState.attr('imgPath') + 'shakeItShare/' + imageName + '.png',
-			        caption: 'Shake test caption',
-			        description: 'Shake test description',
+			        description: slogan.content,
 			        message: 'Shake test message'
 		        });
 	        }

@@ -280,6 +280,7 @@ define([
 		        ev.preventDefault();
 		        var imageName = el.data('link');
 
+		        console.log();
 		        var sloganIndex = Math.floor(Math.random() * (parseInt(appState.locale.shareSlogans.length)));
 		        var randomSlogan = appState.locale.shareSlogans[sloganIndex];
 
@@ -287,6 +288,8 @@ define([
 	        },
 
 	        fbShare: function (imageName, slogan) {
+
+		        console.log ('' + window.location.origin + appState.attr('imgPath') + 'shakeItShare/' + imageName + '.png');
 		        FB.ui({
 			        method: 'feed',
 			        name: slogan.title,

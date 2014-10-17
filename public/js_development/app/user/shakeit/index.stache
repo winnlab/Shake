@@ -22,7 +22,6 @@
                     <div class="btn">
                         <div class="fragmentItemInfo">
 
-
                             <div class="image">
                                 <img src="{{appState.uploadPath}}{{#isPrimitive appState.viewMode 'bottle'}}{{img.bottle}}{{else}}{{img.can}}{{/isPrimitive}}" alt=""/>
                             </div>

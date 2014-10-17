@@ -290,7 +290,6 @@ define([
 
 	        fbShare: function (imageName, slogan) {
 
-		        console.log ('' + window.location.origin + appState.attr('imgPath') + 'shakeItShare/' + imageName + '.jpg');
 		        FB.ui({
 			        method: 'feed',
 			        name: slogan.title,

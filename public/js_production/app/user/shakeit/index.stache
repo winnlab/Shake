@@ -22,6 +22,7 @@
                     <div class="btn">
                         <div class="fragmentItemInfo">
 
+
                             <div class="image">
                                 <img src="{{appState.uploadPath}}{{#isPrimitive appState.viewMode 'bottle'}}{{img.bottle}}{{else}}{{img.can}}{{/isPrimitive}}" alt=""/>
                             </div>
@@ -31,7 +32,7 @@
                                     <tr class="shareRow">
                                         <td>
                                             <div class="shareButtons">
-                                                <a class="fbShare" href=""><img src="{{appState.imgPath}}social/facebookWhite.png" alt=""/></a>
+                                                <a class="fbShare" data-link="{{link}}" href=""><img src="{{appState.imgPath}}social/facebookWhite.png" alt=""/></a>
                                                 <a class="vkShare" href=""><img src="{{appState.imgPath}}social/vkWhite.png" alt=""/></a>
                                             </div>
 

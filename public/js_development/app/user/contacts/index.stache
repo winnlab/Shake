@@ -41,9 +41,9 @@
                 </div>
 
                 <div class="socialButtons">
-                    <a href="https://www.facebook.com/ShakeCocktailsUA"><img src="{{imgPath}}social/facebookWhite.png" alt=""/></a>
-                    <a href="http://vk.com/shakecocktails"><img src="{{imgPath}}social/vkWhite.png" alt=""/></a>
-                    <a href="https://www.youtube.com/user/ShakeCocktailsUA"><img src="{{imgPath}}social/youtubeWhite.png" alt=""/></a>
+                    <a href="https://www.facebook.com/ShakeCocktailsUA"><img src="{{imgPath}}social/facebook.png" alt=""/></a>
+                    <a href="http://vk.com/shakecocktails"><img src="{{imgPath}}social/vk.png" alt=""/></a>
+                    <a href="https://www.youtube.com/user/ShakeCocktailsUA"><img src="{{imgPath}}social/youtube.png" alt=""/></a>
 <!--                    <a href="http://www.instagram.com"><img src="{{imgPath}}social/instagram.png" alt=""/></a>
                     <a href="http://www.coub.com"><img src="{{imgPath}}social/coub.png" alt=""/></a>-->
                 </div>

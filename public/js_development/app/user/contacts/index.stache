@@ -44,8 +44,8 @@
                     <a href="http://www.facebook.com"><img src="{{imgPath}}social/facebook.png" alt=""/></a>
                     <a href="http://www.vk.com"><img src="{{imgPath}}social/vk.png" alt=""/></a>
                     <a href="http://www.youtube.com"><img src="{{imgPath}}social/youtube.png" alt=""/></a>
-                    <a href="http://www.instagram.com"><img src="{{imgPath}}social/instagram.png" alt=""/></a>
-                    <a href="http://www.coub.com"><img src="{{imgPath}}social/coub.png" alt=""/></a>
+<!--                    <a href="http://www.instagram.com"><img src="{{imgPath}}social/instagram.png" alt=""/></a>
+                    <a href="http://www.coub.com"><img src="{{imgPath}}social/coub.png" alt=""/></a>-->
                 </div>
 
             </div>

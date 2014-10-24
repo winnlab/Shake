@@ -1,7 +1,8 @@
 define([
-	'canjs'
+	'canjs',
+	'core/appState'
 ],
-	function (can) {
+	function (can, appState) {
 
 		function computedVal (value) {
 			if (typeof value === 'function') {
@@ -51,6 +52,19 @@ define([
 			}
 
 			return result ? options.fn() : options.inverse();
+		});
+
+		can.mustache.registerHelper('getContactsMap', function (index) {
+			var result = '';
+
+			appState.contacts.forEach(function (value) {
+				if (value.link == 'main-office') {
+					result = value.map;
+				}
+			});
+
+			return result;
+
 		});
 	}
 );

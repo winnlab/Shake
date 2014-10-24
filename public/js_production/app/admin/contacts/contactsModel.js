@@ -1,0 +1,1 @@
+define(["canjs"],function(e){return e.Model.extend({id:"_id",findAll:"GET /admin/contact",create:"POST /admin/contact",update:"PUT /admin/contact",destroy:"DELETE /admin/contact/{id}",parseModel:function(e){return e.success&&(e=e.message),e},parseModels:function(e){return e.message.contacts}},{})});

@@ -13,14 +13,16 @@
 
 			</div>
 
-            {{#each appState.contacts}}
+            <div class="contactsList">
+                {{#each appState.contacts}}
 
-                <div class="contactsItem">
-                    <h5>{{lang.0.title}}</h5>
-                    <div>{{{lang.0.content}}}</div>
-                </div>
+                    <div class="contactsItem">
+                        <h5>{{lang.0.title}}</h5>
+                        <div>{{{lang.0.content}}}</div>
+                    </div>
 
-            {{/each}}
+                {{/each}}
+            </div>
 
 			<div class="clearfix"></div>
 

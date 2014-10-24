@@ -59,6 +59,10 @@ admin/plugins/ckeditor/skins/moono/editor_iequirks.css
 ----------------
 admin/plugins/ckeditor/skins/moono/editor_iequirks.css
 
+app/admin/contacts/css/contacts.css
+----------------
+app/admin/contacts/css/contacts.css
+
 app/admin/core/css/style.css
 ----------------
 app/admin/core/css/style.css

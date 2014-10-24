@@ -55,6 +55,10 @@ html(lang="ru")
 							a.module(href="/admin/soundCloudImages")
 								i.fa.fa-picture-o
 								span= "Картинки плейлистов"
+						li(class= (currentHref == 'contacts' ? "active" : ""))
+							a.module(href="/admin/contacts")
+								i.fa.fa-picture-o
+								span= "Контакты"
 			aside#moduleContent
 				block content
 		block scripts

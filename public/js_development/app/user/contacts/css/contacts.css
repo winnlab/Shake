@@ -103,16 +103,13 @@
         margin-right: 5%; }
         .contactsWrap .footer .footerContent .newProductsInfo .newProductsLogo {
           margin-bottom: 40px; }
-      .contactsWrap .footer .footerContent .address {
-        float: left;
-        width: 15%;
-        margin-right: 5%; }
-      .contactsWrap .footer .footerContent .importer {
+      .contactsWrap .footer .footerContent .contactsList .contactsItem {
         float: left;
         width: 20%;
         margin-right: 5%; }
-      .contactsWrap .footer .footerContent .exportDepartment {
-        float: left;
-        width: 20%; }
+      .contactsWrap .footer .footerContent .contactsList .contactsItem:first-child {
+        width: 15%; }
+      .contactsWrap .footer .footerContent .contactsList .contactsItem:last-child {
+        margin-right: 0; }
 
 /*# sourceMappingURL=contacts.css.map */

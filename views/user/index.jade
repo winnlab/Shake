@@ -2,7 +2,7 @@ doctype html
 html(lang="#{data.lang}")
 	head
 		link(rel="shortcut icon" href="/img/user/favicon.ico" type="image/x-icon")
-		title Shake coctails
+		title Shake cocktails
 		style.
 			#preloader {
 				position: fixed;
@@ -24,6 +24,13 @@ html(lang="#{data.lang}")
 	body(class="#{data.lang}")
 		div#preloader
 			img(src="/img/user/loader.gif")
+		script.
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-56032825-1', 'auto');
+			ga('send', 'pageview');
 		script(data-main="/js_#{data.env}/app/user/core/core.js" src='/js_#{data.env}/lib/require.js')
 		script.
 			window['data'] = !{JSON.stringify(data)};

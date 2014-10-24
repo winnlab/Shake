@@ -1,7 +1,7 @@
 express = require 'express'
 
 View = require '../lib/view'
-
+Contacts = require './admin/contacts'
 Main = require './admin/main'
 Products = require './admin/products'
 Fragments = require './admin/fragments'
@@ -66,6 +66,11 @@ Router.use '/fragment/:id?', Fragments.rest
 
 Router.get '/feedback', Feedback.findAll
 Router.delete '/feedback/:id?', Feedback.delete
+
+Router.get '/contact', Contacts.findAll
+Router.post '/contact', Contacts.save
+Router.put '/contact/:id?', Contacts.save
+Router.delete '/contact/:id?', Contacts.delete
 
 #----------------#
 

@@ -22,7 +22,6 @@
         </div>
 
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2541.167019398094!2d30.522541499999996!3d50.437989599999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cefe16b84849%3A0x954fceae527935b9!2z0KHQv9C-0YDRgtC40LLQvdCwINC_0LsuLCAzLCDQmtC40ZfQsiwg0LzRltGB0YLQviDQmtC40ZfQsg!5e0!3m2!1suk!2sua!4v1407162227963" frameborder="0" style="border:0"></iframe>
         </div>
 
         <div class="clearfix"></div>
@@ -50,26 +49,15 @@
 
             </div>
 
-            <div class="address">
-                <h5>{{locale.contacts.mainOffice}}</h5>
-                <p>{{locale.contacts.postAddress}}</p>
-                <p>{{locale.contacts.address}}</p>
-                <p>{{locale.contacts.phone}}</p>
-            </div>
+            <div class="contactsList">
+                {{#each contacts}}
 
-            <div class="importer">
-                <h5>{{locale.contacts.importerInRF}}</h5>
-                <p>{{locale.contacts.novyeProducty}}</p>
-                <p>{{locale.contacts.importerPlacement}}</p>
-                <p>{{locale.contacts.importerAddress}}</p>
-                <p>{{locale.contacts.importerPhone}}</p>
-                <p>{{locale.contacts.importerEmail}}</p>
-            </div>
+                    <div class="contactsItem">
+                        <h5>{{lang.0.title}}</h5>
+                        <div>{{{lang.0.content}}}</div>
+                    </div>
 
-            <div class="exportDepartment">
-                <h5>{{locale.contacts.exportDepartment}}</h5>
-                <p>{{locale.contacts.exportEmail}}</p>
-                <p>{{locale.contacts.exportPhone}}</p>
+                {{/each}}
             </div>
 
             <div class="clearfix"></div>

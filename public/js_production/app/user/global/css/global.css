@@ -1,1 +1,70 @@
-.mainFooter{position:relative;z-index:20;width:100%;background:#000000;}.mainFooter .footerContent{margin:0 auto;padding:20px 0;width:54rem;color:#ffffff;}.mainFooter .footerContent h1{text-transform:uppercase;margin:0;line-height:1;font-size:3.2rem;}.mainFooter .footerContent h5{font-weight:500;text-transform:uppercase;line-height:1;margin:0;}.mainFooter .footerContent p{font-weight:200;line-height:1;margin:0;}.mainFooter .footerContent .newProductsInfo{float:left;width:30%;margin-right:5%;}.mainFooter .footerContent .newProductsInfo .newProductsLogo{margin-bottom:40px;}.mainFooter .footerContent .address{float:left;width:15%;margin-right:5%;}.mainFooter .footerContent .importer{float:left;width:20%;margin-right:5%;}.mainFooter .footerContent .exportDepartment{float:left;width:20%;}.healtWarn{position:relative;z-index:20;background:#fff;color:#000;width:100%;height:3.8rem;padding:0.7rem 0;font-family:PFDinTextCompPro;font-weight:200;line-height:1;}.healtWarn .bigWarn{font-size:2.6rem;text-align:center;width:100%;letter-spacing:-0.1rem;}.healtWarn .warning{position:absolute;top:0;height:100%;}.healtWarn .warning img{height:100%;}.healtWarn .warning.left{left:0;}.healtWarn .warning.right{right:0;}
+.mainFooter {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  background: #000000; }
+  .mainFooter .footerContent {
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 54rem;
+    color: #ffffff; }
+    .mainFooter .footerContent h1 {
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 1;
+      font-size: 3.2rem; }
+    .mainFooter .footerContent h5 {
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 1;
+      margin: 0; }
+    .mainFooter .footerContent p {
+      font-weight: 200;
+      line-height: 1;
+      margin: 0; }
+    .mainFooter .footerContent .newProductsInfo {
+      float: left;
+      width: 30%;
+      margin-right: 5%; }
+      .mainFooter .footerContent .newProductsInfo .newProductsLogo {
+        margin-bottom: 40px; }
+    .mainFooter .footerContent .address {
+      float: left;
+      width: 15%;
+      margin-right: 5%; }
+    .mainFooter .footerContent .importer {
+      float: left;
+      width: 20%;
+      margin-right: 5%; }
+    .mainFooter .footerContent .exportDepartment {
+      float: left;
+      width: 20%; }
+
+.healtWarn {
+  position: relative;
+  z-index: 20;
+  background: #fff;
+  color: #000;
+  width: 100%;
+  height: 4.4rem;
+  padding: 0.7rem 0;
+  font-family: PFDinTextCompPro;
+  font-weight: 200;
+  line-height: 1; }
+  .healtWarn .bigWarn {
+    font-size: 2.6rem;
+    text-align: center;
+    width: 100%;
+    letter-spacing: -0.1rem; }
+  .healtWarn .warning {
+    position: absolute;
+    top: 0;
+    height: 100%; }
+    .healtWarn .warning img {
+      height: 100%; }
+  .healtWarn .warning.left {
+    left: 0; }
+  .healtWarn .warning.right {
+    right: 0; }
+
+/*# sourceMappingURL=global.css.map */

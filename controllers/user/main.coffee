@@ -62,6 +62,8 @@ getData = (lang, cb) ->
 			Products.lean().exec proceed
 		newPodcasts: (proceed) ->
 			Model 'NewPodcast', 'find', proceed
+		contacts: (proceed) ->
+			Model 'Contact', 'find', proceed
 		soundCloudImages: (proceed) ->
 			Model 'SoundCloudImage', 'find', proceed
 		parties: (proceed) ->
@@ -80,6 +82,7 @@ getData = (lang, cb) ->
 		data.locale = locale[lang.isoCode]
 		data.products = filterLang data.products, lang._id
 		data.parties = filterLang data.parties, lang._id
+		data.contacts = filterLang data.contacts, lang._id
 		data.products = mergeArrays data.products, data.parties, '_id', 'product_id', 'fragment'
 		data.social = social
 		delete data.parties

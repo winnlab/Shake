@@ -13,27 +13,14 @@
 
 			</div>
 
-			<div class="address">
-				<h5>{{appState.locale.contacts.mainOffice}}</h5>
-				<p>{{appState.locale.contacts.postAddress}}</p>
-				<p>{{appState.locale.contacts.address}}</p>
-				<p>{{appState.locale.contacts.phone}}</p>
-			</div>
+            {{#each appState.contacts}}
 
-			<div class="importer">
-				<h5>{{appState.locale.contacts.importerInRF}}</h5>
-				<p>{{appState.locale.contacts.novyeProducty}}</p>
-				<p>{{appState.locale.contacts.importerPlacement}}</p>
-				<p>{{appState.locale.contacts.importerAddress}}</p>
-				<p>{{appState.locale.contacts.importerPhone}}</p>
-				<p>{{appState.locale.contacts.importerEmail}}</p>
-			</div>
+                <div class="contactsItem">
+                    <h5>{{lang.0.title}}</h5>
+                    <div>{{{lang.0.content}}}</div>
+                </div>
 
-			<div class="exportDepartment">
-				<h5>{{appState.locale.contacts.exportDepartment}}</h5>
-				<p>{{appState.locale.contacts.exportEmail}}</p>
-				<p>{{appState.locale.contacts.exportPhone}}</p>
-			</div>
+            {{/each}}
 
 			<div class="clearfix"></div>
 

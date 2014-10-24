@@ -1,0 +1,9 @@
+#contacts {
+  position: relative; }
+  #contacts .toList {
+    position: absolute;
+    z-index: 1;
+    right: 15px;
+    top: 30px; }
+
+/*# sourceMappingURL=contacts.css.map */

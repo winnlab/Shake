@@ -1,1 +1,196 @@
-.productWrap .productWrapLeft .img,.productWrap .productWrapDescriptionSwitcher .bottleType .bottlesIcon{background-size:contain;background-repeat:no-repeat;background-position:center center;}.productWrap .productWrapDescriptionSwitcher .bottleType span{display:inline-block;vertical-align:middle;}.productWrap{color:#ffffff;padding:7rem 0 3rem;position:relative;}.productWrap .productWrapLeft{float:left;position:relative;margin-right:2.2rem;margin-left:-4.5rem;}.productWrap .productWrapLeft .img{height:28rem;width:11rem;margin-bottom:0.25rem;}.productWrap .productWrapLeft .img:after{content:"";display:table;clear:both;}.productWrap .productWrapCenter{float:left;position:relative;width:44rem;padding-top:15rem;}.productWrap .productWrapCenter canvas{position:absolute;top:-3rem;}.productWrap .productWrapCenterBottom{position:relative;z-index:1;cursor:default;}.productWrap .productWrapDescriptionSwitcher{margin-top:2rem;}.productWrap .productWrapDescriptionSwitcher .bottleType{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-family:PFDinTextCompPro;font-size:1.2rem;}.productWrap .productWrapDescriptionSwitcher .bottleType .bottlesIcon{height:3.9rem;width:4rem;margin:0 1rem 0 0;background-image:url("/img/user/bottles.png");}.productWrap .productWrapDescriptionSwitcher .bottleType .bottlesIcon:hover{cursor:pointer;}.can .productWrap .productWrapDescriptionSwitcher .bottleType .bottlesIcon{background-image:url("/img/user/bottlesCan.png");}.productWrap .productWrapDescriptionSwitcher .bottleType span:hover{text-shadow:0 0 8px #ffffff,0 0 8px #ffffff,0 0 8px #ffffff,0 0 16px #ffffff;cursor:pointer;}.productWrap .productWrapDescriptionSwitcher .bottleType a{color:#ffffff;text-decoration:none;}.productWrap .productWrapDescriptionSwitcher .bottleType a:hover{text-shadow:0 0 8px #ffffff,0 0 8px #ffffff,0 0 8px #ffffff,0 0 16px #ffffff;cursor:pointer;}.productWrap .productWrapHeader h1{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;font-size:8.5rem;letter-spacing:-0.25rem;text-align:left;margin:3.5rem 0 2rem;line-height:1;left:0.2rem;}.productWrap .productWrapProductsList{float:left;width:35%;margin-right:5%;}.productWrap .productWrapProductsList .productsListItem{font-family:PFDinTextCondPro;font-weight:200;font-size:2rem;color:#ffffff;text-decoration:none;line-height:1;}.productWrap .productWrapProductsList .productsListItem .name:hover{text-shadow:0 0 8px #ffffff,0 0 8px #ffffff,0 0 8px #ffffff,0 0 16px #ffffff;}.productWrap .productWrapDescription{float:left;width:60%;}.productWrap .productWrapDescription .productWrapDescriptionText{font-family:PFDinTextPro;font-weight:200;font-size:0.9rem;}.productWrap .productWrapDescription .productWrapDescriptionText p{margin:0;line-height:1.3;}.productWrap .productWrapRight{position:relative;float:left;}.productWrap .shakeItButton{position:absolute;top:13rem;right:-4.5rem;}.productWrap .roundedButton{text-align:center;padding:2rem 0 2rem;}.productWrap .roundedButton .btn{display:inline-block;position:relative;width:7rem;height:7rem;padding:0.5rem 0;text-align:center;text-transform:uppercase;cursor:pointer;color:#fff;font:2rem PFDinTextCondPro;font-weight:400;}.productWrap .roundedButton .btn img{width:25%;}.productWrap .roundedButton .btn p{margin:0;line-height:1;font-weight:300;}.productWrap .roundedButton .btn p.bold{font-weight:500;}.productWrap .roundedButton .btn:before,.productWrap .roundedButton .btn:after{content:"";border:1px solid #fff;opacity:0;}.productWrap .roundedButton .btn:before{top:0;right:0;bottom:0;left:0;position:absolute;border-radius:50%;}.productWrap .roundedButton .btn:after{top:-5px;right:-5px;bottom:-5px;left:-5px;position:absolute;border-radius:50%;}.productWrap .roundedButton .btn:before{-webkit-animation:disappearing 2s linear 0s infinite;-moz-animation:disappearing 2s linear 0s infinite;animation:disappearing 2s linear 0s infinite;}.productWrap .roundedButton .btn:after{-webkit-animation:disappearing 2s linear 0.1s infinite;-moz-animation:disappearing 2s linear 0.1s infinite;animation:disappearing 2s linear 0.1s infinite;}.productWrap .roundedButton .btn .rounded{-webkit-animation:disappearing 2s linear 0.2s infinite;-moz-animation:disappearing 2s linear 0.2s infinite;animation:disappearing 2s linear 0.2s infinite;}.productWrap .roundedButton .btn .rounded:before{-webkit-animation:disappearing 2s linear 0.3s infinite;-moz-animation:disappearing 2s linear 0.3s infinite;animation:disappearing 2s linear 0.3s infinite;}.productWrap .roundedButton .btn .rounded:after{-webkit-animation:disappearing 2s linear 0.4s infinite;-moz-animation:disappearing 2s linear 0.4s infinite;animation:disappearing 2s linear 0.4s infinite;}.productWrap .roundedButton .rounded{top:-10px;right:-10px;bottom:-10px;left:-10px;position:absolute;border-radius:50%;border:1px solid #fff;opacity:0;}.productWrap .roundedButton .rounded:before,.productWrap .roundedButton .rounded:after{content:"";border:1px solid #fff;opacity:0;}.productWrap .roundedButton .rounded:before{top:-7px;right:-7px;bottom:-7px;left:-7px;position:absolute;border-radius:50%;}.productWrap .roundedButton .rounded:after{top:-12px;right:-12px;bottom:-12px;left:-12px;position:absolute;border-radius:50%;}
+.productWrap .productWrapLeft .img, .productWrap .productWrapDescriptionSwitcher .bottleType .bottlesIcon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.productWrap .productWrapDescriptionSwitcher .bottleType span {
+  display: inline-block;
+  vertical-align: middle; }
+
+.productWrap {
+  color: #ffffff;
+  padding: 7rem 0 3rem;
+  position: relative; }
+  .productWrap .productWrapLeft {
+    float: left;
+    position: relative;
+    margin-right: 2.2rem;
+    margin-left: -4.5rem; }
+    .productWrap .productWrapLeft .img {
+      height: 28rem;
+      width: 11rem;
+      margin-bottom: 0.25rem; }
+      .productWrap .productWrapLeft .img:after {
+        content: "";
+        display: table;
+        clear: both; }
+  .productWrap .productWrapCenter {
+    float: left;
+    position: relative;
+    width: 44rem;
+    padding-top: 15rem; }
+    .productWrap .productWrapCenter canvas {
+      position: absolute;
+      top: -3rem; }
+  .productWrap .productWrapCenterBottom {
+    position: relative;
+    z-index: 1;
+    cursor: default; }
+  .productWrap .productWrapDescriptionSwitcher {
+    margin-top: 2rem; }
+    .productWrap .productWrapDescriptionSwitcher .bottleType {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      font-family: PFDinTextCompPro;
+      font-size: 1.2rem; }
+      .productWrap .productWrapDescriptionSwitcher .bottleType .bottlesIcon {
+        height: 3.9rem;
+        width: 4rem;
+        margin: 0 1rem 0 0;
+        background-image: url("/img/user/bottles.png"); }
+        .productWrap .productWrapDescriptionSwitcher .bottleType .bottlesIcon:hover {
+          cursor: pointer; }
+        .can .productWrap .productWrapDescriptionSwitcher .bottleType .bottlesIcon {
+          background-image: url("/img/user/bottlesCan.png"); }
+      .productWrap .productWrapDescriptionSwitcher .bottleType span:hover {
+        text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+        cursor: pointer; }
+      .productWrap .productWrapDescriptionSwitcher .bottleType a {
+        color: #ffffff;
+        text-decoration: none; }
+        .productWrap .productWrapDescriptionSwitcher .bottleType a:hover {
+          text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff;
+          cursor: pointer; }
+  .productWrap .productWrapHeader h1 {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 8.5rem;
+    letter-spacing: -0.25rem;
+    text-align: left;
+    margin: 3.5rem 0 2rem;
+    line-height: 1;
+    left: 0.2rem; }
+  .productWrap .productWrapProductsList {
+    float: left;
+    width: 35%;
+    margin-right: 5%; }
+    .productWrap .productWrapProductsList .productsListItem {
+      font-family: PFDinTextCondPro;
+      font-weight: 200;
+      font-size: 2rem;
+      color: #ffffff;
+      text-decoration: none;
+      line-height: 1; }
+      .productWrap .productWrapProductsList .productsListItem .name:hover {
+        text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff; }
+  .productWrap .productWrapDescription {
+    float: left;
+    width: 60%; }
+    .productWrap .productWrapDescription .productWrapDescriptionText {
+      font-family: PFDinTextPro;
+      font-weight: 200;
+      font-size: 0.9rem; }
+      .productWrap .productWrapDescription .productWrapDescriptionText p {
+        margin: 0;
+        line-height: 1.3; }
+  .productWrap .productWrapRight {
+    position: relative;
+    float: left; }
+  .productWrap .shakeItButton {
+    position: absolute;
+    top: 13rem;
+    right: -4.5rem; }
+  .productWrap .roundedButton {
+    text-align: center;
+    padding: 2rem 0 2rem; }
+    .productWrap .roundedButton .btn {
+      display: inline-block;
+      position: relative;
+      width: 7rem;
+      height: 7rem;
+      padding: 0.5rem 0;
+      text-align: center;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: #fff;
+      font: 2rem PFDinTextCondPro;
+      font-weight: 400; }
+      .productWrap .roundedButton .btn img {
+        width: 25%; }
+      .productWrap .roundedButton .btn p {
+        margin: 0;
+        line-height: 1;
+        font-weight: 300; }
+      .productWrap .roundedButton .btn p.bold {
+        font-weight: 500; }
+      .productWrap .roundedButton .btn:before, .productWrap .roundedButton .btn:after {
+        content: "";
+        border: 1px solid #fff;
+        opacity: 0; }
+      .productWrap .roundedButton .btn:before {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        border-radius: 50%; }
+      .productWrap .roundedButton .btn:after {
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+        left: -5px;
+        position: absolute;
+        border-radius: 50%; }
+      .productWrap .roundedButton .btn:before {
+        -webkit-animation: disappearing 2s linear 0s infinite;
+        -moz-animation: disappearing 2s linear 0s infinite;
+        animation: disappearing 2s linear 0s infinite; }
+      .productWrap .roundedButton .btn:after {
+        -webkit-animation: disappearing 2s linear 0.1s infinite;
+        -moz-animation: disappearing 2s linear 0.1s infinite;
+        animation: disappearing 2s linear 0.1s infinite; }
+      .productWrap .roundedButton .btn .rounded {
+        -webkit-animation: disappearing 2s linear 0.2s infinite;
+        -moz-animation: disappearing 2s linear 0.2s infinite;
+        animation: disappearing 2s linear 0.2s infinite; }
+        .productWrap .roundedButton .btn .rounded:before {
+          -webkit-animation: disappearing 2s linear 0.3s infinite;
+          -moz-animation: disappearing 2s linear 0.3s infinite;
+          animation: disappearing 2s linear 0.3s infinite; }
+        .productWrap .roundedButton .btn .rounded:after {
+          -webkit-animation: disappearing 2s linear 0.4s infinite;
+          -moz-animation: disappearing 2s linear 0.4s infinite;
+          animation: disappearing 2s linear 0.4s infinite; }
+    .productWrap .roundedButton .rounded {
+      top: -10px;
+      right: -10px;
+      bottom: -10px;
+      left: -10px;
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      opacity: 0; }
+      .productWrap .roundedButton .rounded:before, .productWrap .roundedButton .rounded:after {
+        content: "";
+        border: 1px solid #fff;
+        opacity: 0; }
+      .productWrap .roundedButton .rounded:before {
+        top: -7px;
+        right: -7px;
+        bottom: -7px;
+        left: -7px;
+        position: absolute;
+        border-radius: 50%; }
+      .productWrap .roundedButton .rounded:after {
+        top: -12px;
+        right: -12px;
+        bottom: -12px;
+        left: -12px;
+        position: absolute;
+        border-radius: 50%; }
+
+/*# sourceMappingURL=product.css.map */

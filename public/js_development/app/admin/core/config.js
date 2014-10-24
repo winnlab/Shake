@@ -36,6 +36,10 @@ define({
 			name: 'feedback',
 			path: 'app/feedback/feedback',
 			title: ''
+		}, {
+			name: 'contacts',
+			path: 'app/contacts/contacts',
+			title: ''
 		}]
 	}
 });

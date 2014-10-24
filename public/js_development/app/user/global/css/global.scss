@@ -51,25 +51,19 @@
             }
         }
 
-        .address {
-
-            float: left;
-            width: 15%;
-            margin-right: 5%;
-        }
-
-        .importer {
-
-            float: left;
-            width: 20%;
-            margin-right: 5%;
-        }
-
-        .exportDepartment {
-
-            float: left;
-            width: 20%;
-        }
+	    .contactsList {
+		    .contactsItem {
+			    float: left;
+			    width: 20%;
+			    margin-right: 5%;
+		    }
+	    }
+	    .contactsList .contactsItem:first-child {
+		    width: 15%;
+	    }
+	    .contactsList .contactsItem:last-child {
+		    margin-right: 0;
+	    }
     }
 }
 
@@ -82,7 +76,7 @@
 
 	width: 100%;
 	height: $healthWarnHeight;
-	padding: 0.7rem 0;
+	padding: 1.1rem 0;
 
 	font-family: PFDinTextCompPro;
 	font-weight: 200;

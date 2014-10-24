@@ -55,5 +55,10 @@ define([
             console.log(languages().attr());
         });
 
+		can.mustache.registerHelper('ckeditor', function (index) {
+			return function (el) {
+				CKEDITOR.replace(el);
+			};
+		});
 	}
 );

@@ -82,6 +82,7 @@ define([
                 newPodcasts: data && data.newPodcasts ? data.newPodcasts : false,
 				soundCloudImages: data && data.soundCloudImages ? data.soundCloudImages : false,
 				social: data && data.social ? data.social : false,
+				contacts: data && data.contacts ? data.contacts : false,
 
                 getProductImages: function (props) {
 					var products = this.attr('products'),

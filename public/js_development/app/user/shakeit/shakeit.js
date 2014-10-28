@@ -114,16 +114,18 @@ define([
                         $prev.removeClass('previous');
                     });
 
+	                $сurrent.find('.image').velocity({
+		                top: prevNextImageTop,
+		                opacity: 0
+	                });
+
                     $сurrent.velocity({
                         scale: prevNextScale,
                         left: 0
                     }, animTime, function () {
-                        $(this).removeClass('current');
+
+	                    $(this).removeClass('current');
                         $(this).addClass('previous');
-                    });
-                    $сurrent.find('.image').velocity({
-                        top: prevNextImageTop,
-                        opacity: 0
                     });
 
                     $next.velocity({
@@ -134,15 +136,20 @@ define([
                     }, animTime, function () {
                         $(this).removeClass('next');
                         $(this).addClass('current');
-                        $(this).find('.fragmentItemInfoContent').velocity('fadeIn');
+                        $(this).find('.fragmentItemInfoContent').velocity('fadeIn', function(){
+	                        var $content = $(this);
+	                        setTimeout(function(){
+		                        $content.velocity('fadeOut');
+	                        }, 1000);
+                        });
                         $(this).find('.video').velocity('fadeIn', function () {
                             $(this).find('video')[0].play();
                             $(this).find('audio')[0].play();
                         });
-                    });
-                    $next.find('.image').velocity({
-                        top: currentImageTop,
-                        opacity: 1
+	                    $(this).find('.image').velocity({
+		                    top: currentImageTop,
+		                    opacity: 1
+	                    });
                     });
 
                     $afterNext.velocity({
@@ -209,16 +216,18 @@ define([
                     });
 
                     $сurrent.css({left: 'auto'});
+
+	                $сurrent.find('.image').velocity({
+		                top: prevNextImageTop,
+		                opacity: 0
+	                });
+
                     $сurrent.velocity({
                         scale: prevNextScale,
                         right: 0
                     }, animTime, function () {
                         $(this).removeClass('current');
                         $(this).addClass('next');
-                    });
-                    $сurrent.find('.image').velocity({
-                        top: prevNextImageTop,
-                        opacity: 0
                     });
 
                     $prev.velocity({
@@ -229,15 +238,20 @@ define([
                     }, animTime, function () {
                         $(this).removeClass('previous');
                         $(this).addClass('current');
-                        $(this).find('.fragmentItemInfoContent').velocity('fadeIn');
+                        $(this).find('.fragmentItemInfoContent').velocity('fadeIn', function (){
+	                        var $content = $(this);
+	                        setTimeout(function(){
+		                        $content.velocity('fadeOut');
+	                        }, 1000);
+                        });
                         $(this).find('.video').velocity('fadeIn', function () {
                             $(this).find('video')[0].play();
                             $(this).find('audio')[0].play();
                         });
-                    });
-                    $prev.find('.image').velocity({
-                        top: currentImageTop,
-                        opacity: 1
+	                    $(this).find('.image').velocity({
+		                    top: currentImageTop,
+		                    opacity: 1
+	                    });
                     });
 
                     $beforePrev.velocity({

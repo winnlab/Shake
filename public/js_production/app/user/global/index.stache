@@ -40,7 +40,7 @@
 			{{appState.locale.healthWarn}}
 		</p>
 		<div class="warning right">
-			<img src="{{appState.imgPath}}warnWhite.png"/>
+			<img src="{{appState.imgPath}}{{appState.locale.healthWarnImage}}"/>
 		</div>
 	</div>
 </div>

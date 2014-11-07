@@ -57,7 +57,7 @@ configure = () ->
 		res.set 'Content-Type', 'text/plain'
 		res.send "User-agent: *\nDisallow: /"
 	@use multer
-			dest: './public/uploads/',
+			dest: './uploads/',
 			rename: (fieldname, filename) ->
 				return Crypto.md5 filename + Date.now()
 	@use Cache.requestCache

@@ -1,1 +1,273 @@
-#shakeit{overflow-x:hidden;}.shakeitWrap{width:54rem;padding:6rem 0;margin:0 auto;position:relative;}.shakeitWrap .fragmentItem{display:none;top:50%;position:absolute;z-index:5;margin-top:-6.5rem;width:13rem;height:13rem;}.shakeitWrap .fragmentItem .video{position:fixed;top:0;left:0;width:100%;height:100%;overflow:hidden;z-index:-1;display:none;}.shakeitWrap .fragmentItem .video video{position:absolute;bottom:0px;right:0px;min-width:100%;min-height:100%;width:auto;height:auto;overflow:hidden;}.shakeitWrap .fragmentItem .fragmentItemContent{width:100%;font-weight:400;}.shakeitWrap .fragmentItem .fragmentItemContent .thin{font-weight:300;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton{text-align:center;position:absolute;top:50%;margin-top:-6.5rem;left:50%;margin-left:-6.5rem;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn{display:inline-block;position:relative;border-radius:50%;width:13rem;height:13rem;text-align:center;text-transform:uppercase;cursor:pointer;color:#fff;font:2rem PFDinTextCondPro;font-weight:400;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo{position:relative;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent{padding:0.7rem;width:13rem;height:13rem;border-radius:50%;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent table{width:100%;height:100%;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent table .nameRow{height:100%;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent table tr td{vertical-align:middle;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .image{position:absolute;top:-1em;width:100%;text-align:center;z-index:-1;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .image img{width:60%;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo a{text-decoration:none;color:#ffffff;line-height:1;margin:0;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo a:hover{text-shadow:0 0 8px #ffffff,0 0 8px #ffffff,0 0 8px #ffffff,0 0 16px #ffffff;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo p{line-height:1;margin:0;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent{display:none;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow{position:relative;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow .shareButtons{position:absolute;top:1.2rem;left:50%;margin-left:-39px;overflow:hidden;opacity:0;-webkit-transition:all 0.3s ease-in-out 0s;-moz-transition:all 0.3s ease-in-out 0s;transition:all 0.3s ease-in-out 0s;z-index:1;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow .shareButtons a{opacity:0.7;-webkit-transition:all 0.3s ease-in-out 0s;-moz-transition:all 0.3s ease-in-out 0s;transition:all 0.3s ease-in-out 0s;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow .shareButtons a:hover{opacity:1;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow .shareMoment{overflow:visible;opacity:1;font-size:1.3rem;-webkit-transition:all 0.3s ease-in-out 0s;-moz-transition:all 0.3s ease-in-out 0s;transition:all 0.3s ease-in-out 0s;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow:hover .shareMoment{overflow:hidden;opacity:0;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow:hover .shareButtons{overflow:visible;opacity:1;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .productName{font-size:2.5rem;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .ringtone{font-size:1.3rem;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn:before,.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn:after{content:"";border:1px solid #fff;opacity:0;z-index:-1;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn:before{top:0;right:0;bottom:0;left:0;position:absolute;border-radius:50%;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn:after{top:-5px;right:-5px;bottom:-5px;left:-5px;position:absolute;border-radius:50%;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn:before{-webkit-animation:disappearing 2s linear 0s infinite;-moz-animation:disappearing 2s linear 0s infinite;animation:disappearing 2s linear 0s infinite;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn:after{-webkit-animation:disappearing 2s linear 0.1s infinite;-moz-animation:disappearing 2s linear 0.1s infinite;animation:disappearing 2s linear 0.1s infinite;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .rounded{-webkit-animation:disappearing 2s linear 0.2s infinite;-moz-animation:disappearing 2s linear 0.2s infinite;animation:disappearing 2s linear 0.2s infinite;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .rounded:before{-webkit-animation:disappearing 2s linear 0.3s infinite;-moz-animation:disappearing 2s linear 0.3s infinite;animation:disappearing 2s linear 0.3s infinite;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .rounded:after{-webkit-animation:disappearing 2s linear 0.4s infinite;-moz-animation:disappearing 2s linear 0.4s infinite;animation:disappearing 2s linear 0.4s infinite;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .rounded{top:-10px;right:-10px;bottom:-10px;left:-10px;position:absolute;border-radius:50%;border:1px solid #fff;opacity:0;z-index:-1;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .rounded:before,.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .rounded:after{content:"";border:1px solid #fff;opacity:0;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .rounded:before{top:-7px;right:-7px;bottom:-7px;left:-7px;position:absolute;border-radius:50%;}.shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .rounded:after{top:-12px;right:-12px;bottom:-12px;left:-12px;position:absolute;border-radius:50%;}.shakeitWrap .fragmentItem.current{display:block;left:50%;margin-left:-6.5rem;z-index:1;}.shakeitWrap .fragmentItem.current .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent{background:rgba(28,27,27,0.8);}.shakeitWrap .fragmentItem.previous{display:block;left:0;margin-left:-6.5rem;}.shakeitWrap .fragmentItem.previous .fragmentItemContent .roundedButton .btn .fragmentItemInfo .image{opacity:0;top:-6.5em;}.shakeitWrap .fragmentItem.next{display:block;right:0;margin-right:-6.5rem;}.shakeitWrap .fragmentItem.next .fragmentItemContent .roundedButton .btn .fragmentItemInfo .image{opacity:0;top:-6.5em;}
+#shakeit {
+  overflow-x: hidden; }
+
+.shakeitWrap {
+  width: 54rem;
+  padding: 6rem 0;
+  margin: 0 auto;
+  position: relative;
+  /*    .fragmentItem.beforePrevious {
+  
+  		left: -50%;
+  		margin-left: -$prevNextCircleSize/2;
+  		margin-top: -$prevNextCircleSize/2;
+  		width: $prevNextCircleSize;
+  		height: $prevNextCircleSize;
+  
+  		.fragmentItemContent {
+  
+  			.roundedButton {
+  
+  				top: 50%;
+  				margin-top: -$prevNextCircleSize/2;
+  
+  				left: 50%;
+  				margin-left: -$prevNextCircleSize/2;
+  
+  				.btn {
+  
+  					width: $prevNextCircleSize;
+  					height: $prevNextCircleSize;
+  				}
+  			}
+  		}
+  	}
+  
+  	.fragmentItem.afterNext {
+  
+  		right: -50%;
+  		margin-left: -$prevNextCircleSize/2;
+  		margin-top: -$prevNextCircleSize/2;
+  		width: $prevNextCircleSize;
+  		height: $prevNextCircleSize;
+  
+  		.fragmentItemContent {
+  
+  			.roundedButton {
+  
+  				top: 50%;
+  				margin-top: -$prevNextCircleSize/2;
+  
+  				left: 50%;
+  				margin-left: -$prevNextCircleSize/2;
+  
+  				.btn {
+  
+  					width: $prevNextCircleSize;
+  					height: $prevNextCircleSize;
+  				}
+  			}
+  		}
+  	}*/ }
+  .shakeitWrap .fragmentItem {
+    display: none;
+    top: 50%;
+    position: absolute;
+    z-index: 5;
+    margin-top: -6.5rem;
+    width: 13rem;
+    height: 13rem; }
+    .shakeitWrap .fragmentItem .video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      display: none; }
+      .shakeitWrap .fragmentItem .video video {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        overflow: hidden; }
+    .shakeitWrap .fragmentItem .fragmentItemContent {
+      /*      position: relative;*/
+      width: 100%;
+      font-weight: 400; }
+      .shakeitWrap .fragmentItem .fragmentItemContent .thin {
+        font-weight: 300; }
+      .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        margin-top: -6.5rem;
+        left: 50%;
+        margin-left: -6.5rem; }
+        .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn {
+          display: inline-block;
+          position: relative;
+          border-radius: 50%;
+          width: 13rem;
+          height: 13rem;
+          text-align: center;
+          text-transform: uppercase;
+          cursor: pointer;
+          color: #fff;
+          font: 2rem PFDinTextCondPro;
+          font-weight: 400; }
+          .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo {
+            position: relative; }
+            .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent {
+              padding: 0.7rem;
+              width: 13rem;
+              height: 13rem;
+              border-radius: 50%; }
+              .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent table {
+                width: 100%;
+                height: 100%; }
+                .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent table .nameRow {
+                  height: 100%; }
+                .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent table tr td {
+                  vertical-align: middle; }
+            .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .image {
+              position: absolute;
+              top: -1em;
+              width: 100%;
+              text-align: center;
+              z-index: -1; }
+              .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .image img {
+                width: 60%; }
+            .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo a {
+              text-decoration: none;
+              color: #ffffff;
+              line-height: 1;
+              margin: 0; }
+              .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo a:hover {
+                text-shadow: 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 8px #ffffff, 0 0 16px #ffffff; }
+            .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo p {
+              line-height: 1;
+              margin: 0; }
+            .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent {
+              display: none; }
+            .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow {
+              position: relative; }
+              .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow .shareButtons {
+                position: absolute;
+                top: 1.2rem;
+                left: 50%;
+                margin-left: -39px;
+                overflow: hidden;
+                opacity: 0;
+                -webkit-transition: all 0.3s ease-in-out 0s;
+                -moz-transition: all 0.3s ease-in-out 0s;
+                transition: all 0.3s ease-in-out 0s;
+                z-index: 1; }
+                .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow .shareButtons a {
+                  opacity: 0.7;
+                  -webkit-transition: all 0.3s ease-in-out 0s;
+                  -moz-transition: all 0.3s ease-in-out 0s;
+                  transition: all 0.3s ease-in-out 0s; }
+                  .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow .shareButtons a:hover {
+                    opacity: 1; }
+              .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow .shareMoment {
+                overflow: visible;
+                opacity: 1;
+                font-size: 1.3rem;
+                -webkit-transition: all 0.3s ease-in-out 0s;
+                -moz-transition: all 0.3s ease-in-out 0s;
+                transition: all 0.3s ease-in-out 0s; }
+              .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow:hover .shareMoment {
+                overflow: hidden;
+                opacity: 0; }
+              .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .shareRow:hover .shareButtons {
+                overflow: visible;
+                opacity: 1; }
+            .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .productName {
+              font-size: 2.5rem; }
+            .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .fragmentItemInfo .ringtone {
+              font-size: 1.3rem; }
+          .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn:before, .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn:after {
+            content: "";
+            border: 1px solid #fff;
+            opacity: 0;
+            z-index: -1; }
+          .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn:before {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            border-radius: 50%; }
+          .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn:after {
+            top: -5px;
+            right: -5px;
+            bottom: -5px;
+            left: -5px;
+            position: absolute;
+            border-radius: 50%; }
+          .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn:before {
+            -webkit-animation: disappearing 2s linear 0s infinite;
+            -moz-animation: disappearing 2s linear 0s infinite;
+            animation: disappearing 2s linear 0s infinite; }
+          .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn:after {
+            -webkit-animation: disappearing 2s linear 0.1s infinite;
+            -moz-animation: disappearing 2s linear 0.1s infinite;
+            animation: disappearing 2s linear 0.1s infinite; }
+          .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .rounded {
+            -webkit-animation: disappearing 2s linear 0.2s infinite;
+            -moz-animation: disappearing 2s linear 0.2s infinite;
+            animation: disappearing 2s linear 0.2s infinite; }
+            .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .rounded:before {
+              -webkit-animation: disappearing 2s linear 0.3s infinite;
+              -moz-animation: disappearing 2s linear 0.3s infinite;
+              animation: disappearing 2s linear 0.3s infinite; }
+            .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .btn .rounded:after {
+              -webkit-animation: disappearing 2s linear 0.4s infinite;
+              -moz-animation: disappearing 2s linear 0.4s infinite;
+              animation: disappearing 2s linear 0.4s infinite; }
+        .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .rounded {
+          top: -10px;
+          right: -10px;
+          bottom: -10px;
+          left: -10px;
+          position: absolute;
+          border-radius: 50%;
+          border: 1px solid #fff;
+          opacity: 0;
+          z-index: -1; }
+          .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .rounded:before, .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .rounded:after {
+            content: "";
+            border: 1px solid #fff;
+            opacity: 0; }
+          .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .rounded:before {
+            top: -7px;
+            right: -7px;
+            bottom: -7px;
+            left: -7px;
+            position: absolute;
+            border-radius: 50%; }
+          .shakeitWrap .fragmentItem .fragmentItemContent .roundedButton .rounded:after {
+            top: -12px;
+            right: -12px;
+            bottom: -12px;
+            left: -12px;
+            position: absolute;
+            border-radius: 50%; }
+  .shakeitWrap .fragmentItem.current {
+    display: block;
+    left: 50%;
+    margin-left: -6.5rem;
+    z-index: 1; }
+    .shakeitWrap .fragmentItem.current .fragmentItemContent .roundedButton .btn .fragmentItemInfo .fragmentItemInfoContent {
+      background: rgba(28, 27, 27, 0.8); }
+  .shakeitWrap .fragmentItem.previous {
+    display: block;
+    left: 0;
+    margin-left: -6.5rem; }
+    .shakeitWrap .fragmentItem.previous .fragmentItemContent .roundedButton .btn .fragmentItemInfo .image {
+      opacity: 0;
+      top: -6.5em; }
+  .shakeitWrap .fragmentItem.next {
+    display: block;
+    right: 0;
+    margin-right: -6.5rem; }
+    .shakeitWrap .fragmentItem.next .fragmentItemContent .roundedButton .btn .fragmentItemInfo .image {
+      opacity: 0;
+      top: -6.5em; }
+
+/*# sourceMappingURL=shakeit.css.map */

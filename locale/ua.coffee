@@ -54,3 +54,5 @@ module.exports =
 		title: 'Відривались як могли. BEST SHAKE-PARTY EVER!'
 		content: ''
 	]
+
+	healthWarnImage: 'healthWarnWhiteUkr.png'

@@ -53,3 +53,5 @@ module.exports =
 		title: 'Partied as hard as we could. BEST SHAKE-PARTY EVER!'
 		content: ''
 	]
+
+	healthWarnImage: 'healthWarnWhiteEng.png'

@@ -41,11 +41,11 @@ module.exports =
     back: 'Назад'
 
 module.exports =
-	checkAge: 'BAM&nbsp;БІЛЬШЕ 18 РОКІВ?'
+	checkAge: 'BAM&nbsp;БОЛЬШЕ 18 ЛЕТ?'
 	yes: 'Так'
 	no: 'Ні'
-	healthWarn: 'НАДМІРНЕ СПОЖИВАННЯ АЛКОГОЛЮ ШКОДИТЬ ВАШОМУ ЗДОРОВ\'Ю'
-	consume: 'СПОЖИВАЙ <span class="clearfix"></span> РОЗУМНО'
+	healthWarn: 'Чрезмерное употребление алкоголя вредит вашему здоровью'
+	consume: 'УПОТРЕБЛЯЙ <span class="clearfix"></span> ОТВЕТСТВЕННО'
 	allCocktails: 'Всі коктейлі'
 	bottle: 'Пляшка'
 	can: 'Банка'
@@ -79,7 +79,7 @@ module.exports =
 
 	newPodcast: 'новый подкаст'
 	by: 'от'
-	allPodcasts: 'Всі подкасти'
+	allPodcasts: 'Все подкасты'
 	back: 'Назад'
 
 	email: 'E-mail'

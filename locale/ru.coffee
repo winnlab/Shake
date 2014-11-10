@@ -85,7 +85,7 @@ module.exports =
 	email: 'E-mail'
 	name: 'Имя'
 	subject: 'Тема'
-	message: 'Сообщение'
+	message: 'Ваше сообщение'
 	send: 'Отправить'
 	feedbackSuccess: 'Ваше сообщение было успешно доставлено'
 

@@ -43,7 +43,7 @@ module.exports =
 	email: 'E-mail'
 	name: 'Ім’я'
 	subject: 'Тема'
-	message: 'Повідомлення'
+	message: 'Ваше повідомлення'
 	send: 'Відправити'
 	feedbackSuccess: 'Ваше повідомлення було успішно надіслано'
 

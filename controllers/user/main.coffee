@@ -129,7 +129,7 @@ exports.saveFeedback = (req, res) ->
 
 		mailOptions =
 			from: "#{data.email}"
-			to: "shake.newproducts@gmail.com"
+			to: "gordienko@newproducts.ua"
 			subject: "#{data.subject}"
 			text: "#{data.message}"
 

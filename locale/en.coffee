@@ -42,7 +42,7 @@ module.exports =
 	email: 'E-mail'
 	name: 'Name'
 	subject: 'Subject'
-	message: 'Message'
+	message: 'Your message'
 	send: 'Send'
 	feedbackSuccess: 'Your message was successfully delivered'
 

@@ -295,7 +295,6 @@ define([
 		        ev.preventDefault();
 		        var imageName = el.data('link');
 
-		        console.log();
 		        var sloganIndex = Math.floor(Math.random() * (parseInt(appState.locale.shareSlogans.length)));
 		        var randomSlogan = appState.locale.shareSlogans[sloganIndex];
 

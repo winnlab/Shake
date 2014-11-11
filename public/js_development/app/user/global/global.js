@@ -1,11 +1,12 @@
 define([
 	'canjs',
 	'core/appState',
+	'underscore',
 	'social/fb/fb_sdk',
 	'social/vk/vk_sdk',
 	'css!app/global/css/global.css'
 ],
-	function (can) {
+	function (can, appState, _) {
 		
 		return can.Control.extend({
 			defaults: {
@@ -33,12 +34,24 @@ define([
 
 			initFbSDK: function () {
 
-				FB.init({
-					appId: 311273662414271,
-					cookie: true,
-					xfbml: true,
-					version: 'v2.1'
+				var app = _.find(appState.attr('social.fbApps'), function (fbApp) {
+					return _.find(fbApp.domains, function (fbDomain) {
+						return fbDomain == window.location.hostname
+					});
 				});
+
+				if (app)  {
+
+					console.log(app.attr('appId'));
+
+					FB.init({
+						appId: app.attr('appId'),
+						cookie: true,
+						xfbml: true,
+						version: 'v2.1'
+					});
+				}
+
 			},
 
 			initVkSDK: function () {

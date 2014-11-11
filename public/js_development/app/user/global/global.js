@@ -36,9 +36,13 @@ define([
 
 				var app = _.find(appState.attr('social.fbApps'), function (fbApp) {
 					return _.find(fbApp.domains, function (fbDomain) {
+						console.log(fbDomain);
 						return fbDomain == window.location.hostname
 					});
 				});
+
+				console.log('--------------');
+				console.log(window.location.hostname);
 
 				if (app)  {
 

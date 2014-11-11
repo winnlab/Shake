@@ -24,7 +24,8 @@ module.exports =
 		domains: [
 			'shake-cocktails.com',
 			'shake.ua',
-			'shake.kiev.ua'
+			'shake.kiev.ua',
+			'ru.shake.ua'
 		]
 	,
 		appId: 850195255001261

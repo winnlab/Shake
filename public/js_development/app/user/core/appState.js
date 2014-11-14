@@ -56,14 +56,14 @@ define([
 					return Number($('body').css('font-size').replace(/px$/, ""));
 				},
 
-				getPageHeight: function () {					
+				getPageHeight: function () {
 					return $('module.active').outerHeight();
 				},
 
 				size: {
 					width: 0,
 					height: 0,
-					aspectRatio: 0					
+					aspectRatio: 0
 				},
 
 				scene: {
@@ -98,7 +98,9 @@ define([
 					}
 
 					return imgs;
-				}
+				},
+
+				shakeItProduct: null
 
 			}),
 			appState = new AppState();

@@ -17,6 +17,14 @@ define([
         }, {
             init: function () {
                 var self = this;
+
+                self.render();
+                self.initBindings();
+            },
+
+            render: function () {
+                var self = this;
+
                 var wrapMinHeight = $(window).height();
 
                 self.element.html(
@@ -33,11 +41,77 @@ define([
                 }
             },
 
+            initBindings: function () {
+                var self = this;
+
+                appState.bind('shakeItProduct', function () {
+                    self.render();
+                });
+            },
+
+            '{can.route} module set': function(newVal) {
+                if (newVal != 'shakeit') {
+                    $('audio', self.element).each(function(){
+                        this.pause();
+                    });
+                } else {
+                    var $current = $('.fragmentItem.current', self.element);
+
+                    if ($current.length > 0) {
+                        var $currentAudio = $current.find('audio');
+
+                        if ( $currentAudio.length > 0) {
+                            $($currentAudio).each(function(){
+                                this.play();
+                            });
+                        }
+                    }
+                }
+            },
+
             initCarousel: function ( $wrapper ) {
 
-                var $current = $wrapper.children().first();
-                var $next = $current.next(),
+                var $current = null,
+                    $next = null,
+                    $previous = null;
+
+                if (appState.attr('shakeItProduct')) {
+                    console.log(appState.attr('shakeItProduct'));
+                    var products = appState.attr('products').attr();
+                    var index = -1;
+                    for( var productIndex in products) {
+                        if (products.hasOwnProperty(productIndex)) {
+                            if (products[productIndex].link === appState.attr('shakeItProduct')) {
+                                index = productIndex;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (index !== -1) {
+                        $current = $wrapper.children().eq(index);
+
+                        if (index == 0) {
+                            $next = $current.next();
+                            $previous = $wrapper.children().last();
+                        } else if (index == products.length - 1) {
+                            $next = $wrapper.children().first();
+                            $previous = $current.prev();
+                        } else {
+                            $next = $current.next();
+                            $previous = $current.prev();
+                        }
+
+                    } else {
+                        $current = $wrapper.children().first();
+                        $next = $current.next();
+                        $previous = $wrapper.children().last();
+                    }
+                } else {
+                    $current = $wrapper.children().first();
+                    $next = $current.next();
                     $previous = $wrapper.children().last();
+                }
 
                 $current.addClass('current');
                 var $currentInfoContent = $current.find('.fragmentItemInfoContent');

@@ -84,8 +84,11 @@ define([
 				} else {
 					this.titleManager.stopAnimate.call(this.titleManager);
 				}
-			}
+			},
 
+			'.module.shakeIt click': function (el, ev) {
+				appState.attr('shakeItProduct', el.data('product'));
+			}
 		});
 	}
 );

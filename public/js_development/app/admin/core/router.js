@@ -59,7 +59,7 @@ define(['canjs', 'underscore'],
 			}
 		}, {
 			init: function (el, options) {
-				
+
 				this.Placeholder = new Placeholder();
 
 				var html = can.view(this.options.viewpath + 'route.stache', {

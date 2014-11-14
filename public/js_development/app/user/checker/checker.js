@@ -1,7 +1,7 @@
 define([
 	'canjs',
 	'core/appState',
-	'managers/TitleManager',	
+	'managers/TitleManager',
 
 	'css!app/checker/css/checker.css'
 ],
@@ -18,6 +18,10 @@ define([
 
 			init: function () {
 				var self = this;
+
+				if (appState.attr('is18Conf')) {
+                    return self.redirect();
+                }
 
 				self.element.html(
 					can.view(self.options.viewpath + 'index.stache', appState)
@@ -44,18 +48,28 @@ define([
 			},
 
 			'.yes click': function () {
-				var products = appState.attr('products'),
-					randIndex = Math.floor(Math.random() * products.length);
-
-				can.route.attr({
-					module: 'products'
-				}, true);
+				appState.attr('is18Conf', true);
 				this.titleManager.stopAnimate.call(this.titleManager);
+				this.redirect();
 			},
 
 			'.no click': function () {
-				appState.attr('is18Show', false);				
-			}
+				appState.attr('is18Show', false);
+			},
+
+			redirect: function () {
+                var startRoute = appState.attr('startRoute');
+
+                if (startRoute) {
+                    can.route.attr(startRoute, true);
+                } else {
+					console.log('go')
+                    can.route.attr({
+                        module: 'products'
+                    }, true);
+                }
+
+            }
 
 		});
 	}

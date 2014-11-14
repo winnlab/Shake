@@ -4,7 +4,20 @@ define([
 	function (can) {
 
 		var AppState = can.Map.extend({
-
+				define: {
+	                // Is 18 years old was confirmed
+	                is18Conf: {
+	                    set: function (newVal) {
+	                        if (newVal) {
+	                            localStorage.setItem('is18Conf', newVal)
+	                        }
+	                        return newVal;
+	                    },
+	                    get: function () {
+	                        return localStorage.getItem('is18Conf');
+	                    }
+	                }
+	            },
 				//Settings
 				imgPath: '/img/user/',
 				uploadPath: '/uploads/',

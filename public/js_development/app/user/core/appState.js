@@ -4,7 +4,20 @@ define([
 	function (can) {
 
 		var AppState = can.Map.extend({
-
+				define: {
+	                // Is 18 years old was confirmed
+	                is18Conf: {
+	                    set: function (newVal) {
+	                        if (newVal) {
+	                            localStorage.setItem('is18Conf', newVal)
+	                        }
+	                        return newVal;
+	                    },
+	                    get: function () {
+	                        return localStorage.getItem('is18Conf');
+	                    }
+	                }
+	            },
 				//Settings
 				imgPath: '/img/user/',
 				uploadPath: '/uploads/',
@@ -56,14 +69,14 @@ define([
 					return Number($('body').css('font-size').replace(/px$/, ""));
 				},
 
-				getPageHeight: function () {					
+				getPageHeight: function () {
 					return $('module.active').outerHeight();
 				},
 
 				size: {
 					width: 0,
 					height: 0,
-					aspectRatio: 0					
+					aspectRatio: 0
 				},
 
 				scene: {

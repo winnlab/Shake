@@ -62,7 +62,7 @@
         </div>
 
         <div class="roundedButton shakeItButton">
-            <div class="btn shakeIt module" data-href="/shakeit">
+            <div class="btn shakeIt module" data-href="/shakeit" data-product="{{product.link}}">
                 <img src="{{appState.imgPath}}shakeItLogo.png" alt=""/>
                 <p class="bold">shake</p>
                 <p>it</p>

@@ -47,6 +47,9 @@ define([
                 appState.bind('shakeItProduct', function () {
                     self.render();
                 });
+                appState.bind('viewMode', function () {
+                    self.render();
+                });
             },
 
             '{can.route} module set': function(newVal) {
@@ -76,7 +79,6 @@ define([
                     $previous = null;
 
                 if (appState.attr('shakeItProduct')) {
-                    console.log(appState.attr('shakeItProduct'));
                     var products = appState.attr('products').attr();
                     var index = -1;
                     for( var productIndex in products) {
@@ -89,7 +91,7 @@ define([
                     }
 
                     if (index !== -1) {
-                        $current = $wrapper.children().eq(index);
+                        $current = $wrapper.find(".fragmentItem[data-link="+appState.attr('shakeItProduct')+"]");
 
                         if (index == 0) {
                             $next = $current.next();

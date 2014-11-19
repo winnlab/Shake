@@ -384,7 +384,13 @@ define([
 			        picture: '' + window.location.origin + appState.attr('imgPath') + 'shakeItShare/' + imageName + '.jpg',
 			        description: slogan.content,
 			        message: 'Shake test message'
-		        });
+		        }, function(response) {
+                    if (response && !response.error_code) {
+                        console.info(response);
+                    } else {
+                        alert('Error while posting.');
+                    }
+                });
 	        },
 
 	        '.vkShare click': function (el, ev) {
@@ -415,7 +421,7 @@ define([
 			        attachments: attachments
 		        }, function (response) {
 			        if (response && !response.error) {
-				        cb(response.response.post_id);
+				        console.info(response.response.post_id);
 			        }
 		        })
 	        }

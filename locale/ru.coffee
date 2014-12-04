@@ -42,8 +42,8 @@ module.exports =
 
 module.exports =
 	checkAge: 'BAM&nbsp;БОЛЬШЕ 18 ЛЕТ?'
-	yes: 'Так'
-	no: 'Ні'
+	yes: 'Да'
+	no: 'Нет'
 	healthWarn: 'Чрезмерное употребление алкоголя вредит вашему здоровью'
 	consume: 'УПОТРЕБЛЯЙ <span class="clearfix"></span> ОТВЕТСТВЕННО'
 	allCocktails: 'Всі коктейлі'

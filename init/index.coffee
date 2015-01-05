@@ -1,3 +1,4 @@
+require 'newrelic'
 async = require 'async'
 _ = require 'underscore'
 _.str = require 'underscore.string'

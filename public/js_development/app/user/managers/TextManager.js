@@ -1751,6 +1751,9 @@ var Text3D = new Class({
                 metricsList.push( {xadvance: this.spaceWidth });
                 // wordIndex++;
                 //Should we include space as bounds?
+                if (c === ' ' && text.charAt(i - 1) === 'M') {
+                    xoff += 20
+                }
                 continue;
             }
 

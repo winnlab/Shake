@@ -1,4 +1,3 @@
-require 'newrelic'
 async = require 'async'
 _ = require 'underscore'
 _.str = require 'underscore.string'
@@ -13,7 +12,7 @@ Notifier = require '../lib/notifier'
 AuthStartegies = require './auth'
 ModelPreloader = require './mpload'
 
-appPort = 80
+appPort = 3000
 
 async.waterfall [
 	(next) ->

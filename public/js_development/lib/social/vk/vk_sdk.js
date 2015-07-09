@@ -752,7 +752,7 @@ if (!VK.xdConnectionCallbacks) {
 						var status = 'connected';
 					} else {
 						var session = null;
-						var status = response.user ? 'logined' : 'unknown';
+						var status = response.user ? 'not_authorized' : 'unknown';
 						VK.Cookie.clear();
 					}
 					VK.Auth.setSession(session, status, false, response);
@@ -792,11 +792,11 @@ if (!VK.UI) {
 				left = parseInt(screenX + ((outerWidth - width) / 2), 10),
 				top = parseInt(screenY + ((outerHeight - height) / 2.5), 10),
 				features = (
-					'width=' + width +
-						',height=' + height +
-						',left=' + left +
-						',top=' + top
-					);
+				'width=' + width +
+				',height=' + height +
+				',left=' + left +
+				',top=' + top
+				);
 			this.active = window.open(options.url, 'vk_openapi', features);
 		},
 		button: function(el, handler) {
@@ -811,12 +811,12 @@ if (!VK.UI) {
 			index = this._buttons.length - 1;
 
 			html = (
-				'<table cellspacing="0" cellpadding="0" id="openapi_UI_' + index + '" onmouseover="VK.UI._change(1, ' + index + ');" onmouseout="VK.UI._change(0, ' + index + ');" onmousedown="VK.UI._change(2, ' + index + ');" onmouseup="VK.UI._change(1, ' + index + ');" style="cursor: pointer; border: 0px; font-family: tahoma, arial, verdana, sans-serif, Lucida Sans; font-size: 10px;"><tr style="vertical-align: middle">' +
-					'<td><div style="border: 1px solid #3b6798;border-radius: 2px 0px 0px 2px;-moz-border-radius: 2px 0px 0px 2px;-webkit-border-radius: 2px 0px 0px 2px;"><div style="border: 1px solid #5c82ab; border-top-color: #7e9cbc; background-color: #6D8DB1; color: #fff; text-shadow: 0px 1px #45688E; height: 15px; padding: 2px 4px 0px 6px;line-height: 13px;">&#1042;&#1086;&#1081;&#1090;&#1080;</div></div></td>' +
-					'<td><div style="background: url(' + VK._protocol + '//vk.com/images/btns.png) 0px -42px no-repeat; width: 21px; height: 21px"></div></td>' +
-					'<td><div style="border: 1px solid #3b6798;border-radius: 0px 2px 2px 0px;-moz-border-radius: 0px 2px 2px 0px;-webkit-border-radius: 0px 2px 2px 0px;"><div style="border: 1px solid #5c82ab; border-top-color: #7e9cbc; background-color: #6D8DB1; color: #fff; text-shadow: 0px 1px #45688E; height: 15px; padding: 2px 6px 0px 4px;line-height: 13px;">&#1050;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;&#1077;</div></div></td>' +
-					'</tr></table>'
-				);
+			'<table cellspacing="0" cellpadding="0" id="openapi_UI_' + index + '" onmouseover="VK.UI._change(1, ' + index + ');" onmouseout="VK.UI._change(0, ' + index + ');" onmousedown="VK.UI._change(2, ' + index + ');" onmouseup="VK.UI._change(1, ' + index + ');" style="cursor: pointer; border: 0px; font-family: tahoma, arial, verdana, sans-serif, Lucida Sans; font-size: 10px;"><tr style="vertical-align: middle">' +
+			'<td><div style="border: 1px solid #3b6798;border-radius: 2px 0px 0px 2px;-moz-border-radius: 2px 0px 0px 2px;-webkit-border-radius: 2px 0px 0px 2px;"><div style="border: 1px solid #5c82ab; border-top-color: #7e9cbc; background-color: #6D8DB1; color: #fff; text-shadow: 0px 1px #45688E; height: 15px; padding: 2px 4px 0px 6px;line-height: 13px;">&#1042;&#1086;&#1081;&#1090;&#1080;</div></div></td>' +
+			'<td><div style="background: url(' + VK._protocol + '//vk.com/images/btns.png) 0px -42px no-repeat; width: 21px; height: 21px"></div></td>' +
+			'<td><div style="border: 1px solid #3b6798;border-radius: 0px 2px 2px 0px;-moz-border-radius: 0px 2px 2px 0px;-webkit-border-radius: 0px 2px 2px 0px;"><div style="border: 1px solid #5c82ab; border-top-color: #7e9cbc; background-color: #6D8DB1; color: #fff; text-shadow: 0px 1px #45688E; height: 15px; padding: 2px 6px 0px 4px;line-height: 13px;">&#1050;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;&#1077;</div></div></td>' +
+			'</tr></table>'
+			);
 			el.innerHTML = html;
 			el.style.width = el.childNodes[0].offsetWidth + 'px';
 		},
@@ -1229,6 +1229,7 @@ if (!VK.Widgets) {
 		params.color1 = options.color1 || '';
 		params.color2 = options.color2 || '';
 		params.color3 = options.color3 || '';
+		params.class_name = options.class_name || '';
 		if (options.no_head) params.no_head = 1;
 		if (!options.height) options.height = 290;
 		if (options.wide) {
@@ -1866,4 +1867,5 @@ if (window.vkAsyncInitCallbacks && vkAsyncInitCallbacks.length) {
 		}
 	}, 0);
 }
-try{if (window.stManager) stManager.done('api/openapi.js');}catch(e){}
+
+try{stManager.done('api/openapi.js');}catch(e){}

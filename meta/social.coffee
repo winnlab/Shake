@@ -12,10 +12,10 @@ module.exports =
 		name: 'mojito'
 		photo: 'photo-78842569_341917251'
 	,
-		name: 'sex-on-the-beach'
+		name: 'sexx-on-the-beach'
 		photo: 'photo-78842569_341917284'
 	,
-		name: 'bora-bora'
+		name: 'tequila-sombrero'
 		photo: 'photo-78842569_341917474'
 	]
 

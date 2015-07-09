@@ -408,25 +408,25 @@ define([
                     });
 		        var imageName = imgReference.photo;
 
-		        this.vkShare(imageName, randomSlogan);
+		        this.vkShare(imageName, randomSlogan, link);
 	        },
 
-	        vkShare: function (imageName, slogan) {
+	        vkShare: function (imageName, slogan, link) {
 
                 var width = 700,
                     height = 500,
                     left = (screen.width - width) / 2,
                     top = (screen.height - height) / 2;
 
-		        var attachments = '';
+		        //var attachments = '';
+		        //
+		        //attachments += window.location.origin;
+		        //
+		        //attachments += (attachments.length ? ',' : '') + imageName;
 
-		        attachments += window.location.origin;
+                var picture = '' + window.location.origin + appState.attr('imgPath') + 'shakeItShare/' + link + '.jpg';
 
-		        attachments += (attachments.length ? ',' : '') + imageName;
-                var picture = '' + window.location.origin + appState.attr('imgPath') + 'shakeItShare/' + imageName + '.jpg';
-
-                console.log(imageName);
-                window.open('http://vk.com/share.php?url='+window.location.origin+'&title='+slogan.title+'&description='+slogan.content+'&image='+imageName+'', '_blank', 'width='+width+',height='+height+',toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left='+left+',top='+top+'');
+                window.open('http://vk.com/share.php?url='+window.location.origin+'&title='+slogan.title+'&description='+slogan.content+'&image='+picture+'', '_blank', 'width='+width+',height='+height+',toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left='+left+',top='+top+'');
 /*		        VK.Api.call('wall.post', {
 			        message: slogan.title + slogan.content,
 			        attachments: attachments

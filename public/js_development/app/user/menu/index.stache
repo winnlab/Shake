@@ -41,7 +41,7 @@
 
 	<nav class="pages text-uppercase">
 		<a class="module" href="/shakeit">Shake it</a>
-		<a class="module" href="/products">Coctails</a>
+		<a class="module" href="/products">Cocktails</a>
 		<!-- <a class="module" href="/podcast">Shakemix</a> -->
 		<a class="module" href="/contacts">Contacts</a>
 
